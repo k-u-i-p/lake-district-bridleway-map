@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lake District Bridleways</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" crossorigin="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0d10; --panel:rgba(12,14,18,.92); --panel-border:rgba(255,255,255,.08);
+    --fg:#f2f2f2; --muted:#9aa3ad; --accent:#e41b23;
+  }
+  html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,sans-serif;font-size:14px}
+  #map{position:absolute;inset:0;background:#1a2a1a}
+  #map.plan{cursor:crosshair}
+  .leaflet-container{font-family:Inter,system-ui,sans-serif}
+
+  #panel{position:absolute;top:16px;left:16px;z-index:1000;width:300px;max-width:calc(100vw - 32px);
+    background:var(--panel);border:1px solid var(--panel-border);border-radius:10px;backdrop-filter:blur(8px);
+    box-shadow:0 10px 30px rgba(0,0,0,.45);overflow:hidden;display:flex;flex-direction:column;max-height:calc(100vh - 32px)}
+  #panel header{padding:12px 12px 10px 16px;border-bottom:1px solid var(--panel-border);display:flex;align-items:center;justify-content:space-between;gap:8px;flex:none}
+  #panel h1{font-family:Oswald,Impact,sans-serif;font-weight:700;font-size:19px;letter-spacing:.04em;text-transform:uppercase;margin:0;line-height:1.1}
+  #panel h1 small{display:block;font-family:Inter,sans-serif;font-weight:400;font-size:11px;letter-spacing:.02em;color:var(--muted);text-transform:none;margin-top:3px}
+  .icons{display:flex;gap:4px;flex:none}
+  .ib{width:30px;height:30px;border-radius:7px;border:1px solid var(--panel-border);background:#1b1f26;color:#cfd4da;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+  .ib:hover{background:#262b34;color:#fff}
+  .ib.on{background:#2b303a;color:#fff;border-color:#666}
+  .ib svg{width:17px;height:17px;fill:currentColor}
+  .chev{transition:transform .2s;font-size:14px}
+  #panel.collapsed .chev{transform:rotate(-90deg)}
+  #panel.collapsed .body{display:none}
+  #panel .body{padding:12px 16px 14px;overflow:auto;min-height:0}
+  #panel section{margin-bottom:14px}
+  #panel section:last-child{margin-bottom:0}
+  #panel h2,.dialog h3{font-family:Oswald,sans-serif;font-weight:500;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+  .btn.primary{background:#2b303a;border-color:#555}
+  .dialog{display:none;position:absolute;top:16px;left:332px;z-index:1001;width:280px;max-width:calc(100vw - 32px);padding:12px 16px 14px;
+    background:var(--panel);border:1px solid var(--panel-border);border-radius:10px;backdrop-filter:blur(8px);box-shadow:0 10px 30px rgba(0,0,0,.45);max-height:calc(100vh - 32px);overflow:auto;box-sizing:border-box}
+  .dialog.open{display:block}
+  .dialog h2{font-family:Oswald,sans-serif;font-weight:500;font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 10px;display:flex;justify-content:space-between;align-items:center}
+  .dialog h2 .x{background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer;padding:0 2px;line-height:1}
+  .dialog section{margin-bottom:12px}
+  .dialog section:last-child{margin-bottom:0}
+  .row{display:flex;align-items:center;gap:10px;padding:4px 0;cursor:pointer;user-select:none}
+  .row input{accent-color:var(--accent);margin:0}
+  .sw{width:26px;height:4px;border-radius:2px;flex:none}
+  .sw.dash{background:repeating-linear-gradient(90deg,currentColor 0 6px,transparent 6px 10px)}
+  .sw.thin{height:2px}
+  .row .lbl{flex:1}
+  .row .km{font-family:Oswald,sans-serif;font-weight:500;color:var(--muted);font-variant-numeric:tabular-nums}
+  input[type=search]{width:100%;box-sizing:border-box;background:#15181d;border:1px solid var(--panel-border);color:var(--fg);padding:8px 10px;border-radius:6px;font:inherit;outline:none}
+  input[type=search]:focus{border-color:#555}
+  select{background:#15181d;border:1px solid var(--panel-border);color:var(--fg);padding:5px 6px;border-radius:6px;font:inherit;font-size:12px}
+  .hint{color:var(--muted);font-size:12px;margin-top:6px;line-height:1.4}
+  .btn{display:inline-block;background:#1b1f26;border:1px solid var(--panel-border);color:var(--fg);padding:7px 11px;border-radius:6px;font:inherit;font-size:13px;cursor:pointer}
+  .btn:hover{background:#262b34}
+  .btn.on{background:var(--accent);border-color:var(--accent);color:#fff}
+  .btn:disabled{opacity:.4;cursor:default}
+  .btnrow{display:flex;gap:8px;flex-wrap:wrap}
+  label.filebtn{position:relative;overflow:hidden}
+  label.filebtn input{position:absolute;inset:0;opacity:0;cursor:pointer}
+  .base{display:flex;gap:6px;flex-wrap:wrap}
+  .base button{flex:1;min-width:0;background:#1b1f26;border:1px solid var(--panel-border);color:var(--muted);padding:6px 4px;border-radius:6px;font:inherit;font-size:12px;cursor:pointer;white-space:nowrap}
+  .base button.on{background:#2b303a;color:var(--fg);border-color:#555}
+  .opts{display:grid;grid-template-columns:1fr auto;gap:8px 10px;align-items:center;font-size:12px;color:var(--muted)}
+  table.bk{width:100%;border-collapse:collapse;font-size:12px;margin-top:8px}
+  table.bk td{padding:2px 0;border-bottom:1px solid var(--panel-border)}
+  table.bk td:last-child{text-align:right;font-family:Oswald,sans-serif;font-variant-numeric:tabular-nums}
+  table.bk td i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+
+  #stats{position:absolute;right:16px;bottom:36px;z-index:1000;background:#000;color:#fff;padding:14px 18px 12px;
+    font-family:Oswald,Impact,sans-serif;text-transform:uppercase;letter-spacing:.04em;min-width:250px;
+    box-shadow:0 8px 24px rgba(0,0,0,.5);transform:rotate(-0.6deg);clip-path:polygon(1% 3%,99% 0,100% 96%,2% 100%)}
+  #stats .t{font-size:11px;color:#aaa;letter-spacing:.14em;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:260px}
+  #stats canvas{display:block;width:260px;height:70px;margin:4px 0 6px}
+  #stats .l{display:flex;justify-content:space-between;gap:24px;font-size:17px;line-height:1.5}
+  #stats .l span:last-child{font-variant-numeric:tabular-nums}
+  #stats.hidden{display:none}
+
+  .lake-label{font-family:Oswald,Impact,sans-serif;font-weight:700;font-size:16px;letter-spacing:.06em;color:#fff;text-transform:uppercase;
+    text-shadow:0 0 3px #000,0 0 6px #000,1px 1px 2px #000;white-space:nowrap;pointer-events:none;transform-origin:center}
+  .lake-label.sm{font-size:13px}
+  .peak{position:relative;width:0;height:0;pointer-events:none}
+  .peak i{position:absolute;left:-7px;top:-6px;width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:12px solid #fff;filter:drop-shadow(0 0 2px #000)}
+  .peak b{display:none;position:absolute;left:10px;top:-8px;font-family:Oswald,sans-serif;font-weight:500;font-size:12px;letter-spacing:.03em;color:#fff;white-space:nowrap;text-shadow:0 0 3px #000,0 0 5px #000}
+  .peak b small{color:#ddd;font-weight:400}
+  .wp{width:22px;height:22px;border-radius:50%;background:var(--accent);border:2px solid #fff;color:#fff;font:600 11px/22px Inter,sans-serif;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.6);cursor:grab}
+  .wp.start{background:#111}
+
+  .leaflet-popup-content-wrapper{background:var(--panel);color:var(--fg);border-radius:8px;border:1px solid var(--panel-border)}
+  .leaflet-popup-tip{background:var(--panel)}
+  .leaflet-popup-content{margin:12px 14px;line-height:1.45;font-size:13px}
+  .pp h3{font-family:Oswald,sans-serif;font-weight:500;font-size:16px;margin:0 0 6px;letter-spacing:.03em}
+  .pp .tag{display:inline-block;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#000;margin-bottom:6px}
+  .pp table{border-collapse:collapse}
+  .pp td{padding:1px 8px 1px 0;vertical-align:top}
+  .pp td:first-child{color:var(--muted)}
+  .pp a{color:#8ab4ff}
+  .leaflet-control-attribution{background:rgba(0,0,0,.6)!important;color:#bbb!important;font-size:10px}
+  .leaflet-control-attribution a{color:#ddd!important}
+  .leaflet-bar a{background:#15181d;color:#eee;border-bottom-color:#333}
+  .leaflet-bar a:hover{background:#262b34}
+  .leaflet-control-scale-line{background:rgba(0,0,0,.5);color:#fff;border-color:#fff}
+  #status{position:absolute;top:16px;right:60px;z-index:1000;background:rgba(0,0,0,.7);color:#fff;padding:6px 10px;border-radius:6px;font-size:12px;display:none}
+  @media (max-width:640px){
+    #panel{width:calc(100vw - 32px)} #panel.collapsed header{border-bottom:none}
+    .dialog{left:16px;top:88px}
+    #stats{min-width:0;padding:10px 14px;right:12px;bottom:28px} #stats .l{font-size:14px;gap:16px} #stats canvas{width:200px;height:50px}
+  }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div id="status"></div>
+
+<div id="panel">
+  <header>
+    <h1>Lake District<br>Bridleways<small>Loop planner · OpenStreetMap data</small></h1>
+    <div class="icons">
+      <button class="ib" id="ib-display" title="Display: base map and layers" aria-label="Display"><svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 10-5-10-5Zm-8 9.5-2 1 10 5 10-5-2-1-8 4-8-4Z"/></svg></button>
+      <button class="ib" id="ib-settings" title="Routing settings" aria-label="Settings"><svg viewBox="0 0 24 24"><path d="M19.4 13a7.6 7.6 0 0 0 0-2l2.1-1.6-2-3.5-2.5 1a7.7 7.7 0 0 0-1.7-1L15 3H9l-.3 2.9a7.7 7.7 0 0 0-1.7 1l-2.5-1-2 3.5L4.6 11a7.6 7.6 0 0 0 0 2l-2.1 1.6 2 3.5 2.5-1a7.7 7.7 0 0 0 1.7 1L9 21h6l.3-2.9a7.7 7.7 0 0 0 1.7-1l2.5 1 2-3.5L19.4 13ZM12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Z"/></svg></button>
+      <button class="ib" id="ib-collapse" title="Collapse panel" aria-label="Collapse"><span class="chev">▾</span></button>
+    </div>
+  </header>
+  <div class="body">
+    <section>
+      <div class="btnrow">
+        <button class="btn primary" id="planbtn">Start planning</button>
+        <button class="btn" id="undo" disabled>Undo</button>
+        <button class="btn" id="clearplan" disabled>Clear</button>
+      </div>
+      <div class="hint" id="planhint">Click the map to drop waypoints. The loop follows bridleways first, then footpaths, then roads, and returns to the start by a different way where it can. Drag a waypoint to move it, right-click to remove it.</div>
+      <div id="planout"></div>
+      <div class="btnrow" style="margin-top:8px">
+        <button class="btn" id="elev" disabled>Get elevation</button>
+        <button class="btn" id="exportgpx" disabled>Download GPX</button>
+      </div>
+      <div class="hint" id="elevhint"></div>
+    </section>
+    <section>
+      <h2>Routes</h2>
+      <label class="row"><input type="checkbox" id="refroute" checked><span class="sw" style="background:#e41b23"></span><span class="lbl">Loop from the reference image</span><span class="km" id="refkm"></span></label>
+      <div class="btnrow" style="margin-top:6px">
+        <label class="btn filebtn">Load GPX<input type="file" id="gpx" accept=".gpx,application/gpx+xml"></label>
+        <button class="btn" id="clearroute" style="display:none">Clear GPX</button>
+        <button class="btn" id="fit">Reset view</button>
+      </div>
+      <div class="hint" id="gpxinfo">Overlay your own GPX track to compare against the network.</div>
+    </section>
+  </div>
+</div>
+
+<div class="dialog" id="dlg-display">
+  <h2>Display <button class="x" data-close>×</button></h2>
+  <section><h3>Base map</h3><div class="base" id="basebtns"></div></section>
+  <section><h3>Rights of way</h3><div id="layers"></div></section>
+  <section><h3>Overlays</h3>
+    <label class="row"><input type="checkbox" id="peaks" checked><span class="lbl">Ten highest fells</span></label>
+    <label class="row"><input type="checkbox" id="labels" checked><span class="lbl">Valley &amp; lake labels</span></label>
+    <label class="row"><input type="checkbox" id="focus" checked><span class="lbl">Focus area outline</span></label>
+  </section>
+</div>
+
+<div class="dialog" id="dlg-settings">
+  <h2>Routing settings <button class="x" data-close>×</button></h2>
+  <div class="opts">
+    <span>Footpath penalty</span><select id="fp"><option value="2">×2 (relaxed)</option><option value="3" selected>×3</option><option value="5">×5</option><option value="10">×10 (avoid)</option></select>
+    <span>Road penalty</span><select id="rd"><option value="3">×3 (relaxed)</option><option value="5" selected>×5</option><option value="8">×8</option><option value="15">×15 (avoid)</option></select>
+    <span>Re-riding penalty</span><select id="up"><option value="1">none</option><option value="2">×2</option><option value="4" selected>×4</option><option value="10">×10 (avoid)</option></select>
+  </div>
+  <div class="hint">Penalties multiply the distance of each type of way when choosing a route. Bridleways and byways always count ×1. The re-riding penalty discourages the return leg from using tracks already ridden.</div>
+</div>
+
+<div id="stats">
+  <div class="t" id="s-title">Route</div>
+  <canvas id="profile" width="520" height="140"></canvas>
+  <div class="l"><span>Distance:</span><span id="s-dist">–</span></div>
+  <div class="l"><span>Elevation:</span><span id="s-asc">–</span></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" crossorigin=""></script>
+<script>
+/*__ROUTER__*/
+</script>
+<script>
+const DATA = /*__DATA__*/;
+const REF = /*__ROUTE__*/;
+
+const CATS = {
+  bridleway:  {name:'Public bridleway',           color:'#3ddc84', dash:null, on:true},
+  boat:       {name:'Byway open to all traffic',  color:'#ff9f1a', dash:null, on:false},
+  restricted: {name:'Restricted byway',           color:'#b388ff', dash:null, on:false},
+  permissive: {name:'Permissive bridleway',       color:'#4fd1ff', dash:'6 6', on:false},
+  other:      {name:'Bridleway (undesignated)',   color:'#ffffff', dash:'6 6', on:false},
+  footpath:   {name:'Public footpath',            color:'#ff6b9d', dash:'3 5', on:false, thin:true},
+  path:       {name:'Other paths & cycleways',    color:'#e8d5a3', dash:'3 5', on:false, thin:true, also:['cycleway']},
+};
+const CI = {}; DATA.cats.forEach((c,i)=>CI[c]=i);
+const FOCUS = L.latLngBounds([[54.27,-3.44],[54.69,-2.74]]);
+
+const map = L.map('map',{zoomControl:false, preferCanvas:true, minZoom:8, maxZoom:18, zoomSnap:0.25, zoomDelta:0.5, wheelPxPerZoomLevel:120});
+L.control.zoom({position:'topright'}).addTo(map);
+L.control.scale({position:'bottomleft', imperial:true}).addTo(map);
+function panelPad(){ return matchMedia('(max-width:640px)').matches?0:340; }
+function fitFocus(){ map.invalidateSize(); const w=map.getSize().x; const pad=w>2*panelPad()?panelPad():0; map.fitBounds(FOCUS,{paddingTopLeft:[pad+10,10],paddingBottomRight:[10,10]}); }
+fitFocus();
+let fitted = map.getSize().x>0 && map.getSize().y>0;
+map.on('resize',()=>{ if(!fitted && map.getSize().x>0 && map.getSize().y>0){ fitted=true; fitFocus(); } });
+window.addEventListener('load',()=>{ if(!fitted && map.getSize().x>0){ fitted=true; fitFocus(); } });
+let touched=false; map.once('zoomstart dragstart',()=>touched=true); setTimeout(()=>{ if(!touched) fitFocus(); },600);
+const status = document.getElementById('status');
+function setStatus(t){ status.textContent=t; status.style.display=t?'block':'none'; }
+
+// ---- base layers
+const bases = {
+  'Satellite': L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:18,attribution:'Imagery © Esri, Maxar, Earthstar Geographics'}),
+  'Topo': L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',{maxZoom:17,attribution:'© OpenStreetMap contributors, SRTM | © OpenTopoMap (CC-BY-SA)'}),
+  'Cycle': L.tileLayer('https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png',{maxZoom:18,attribution:'© OpenStreetMap contributors | CyclOSM'}),
+  'OSM': L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap contributors'}),
+};
+let curBase=null; const baseBtns=document.getElementById('basebtns');
+Object.keys(bases).forEach(k=>{ const b=document.createElement('button'); b.textContent=k; b.onclick=()=>setBase(k); baseBtns.appendChild(b); });
+function setBase(k){ if(curBase) map.removeLayer(bases[curBase]); curBase=k; bases[k].addTo(map); bases[k].bringToBack();
+  [...baseBtns.children].forEach(b=>b.classList.toggle('on',b.textContent===k)); try{localStorage.setItem('ldb-base',k)}catch(e){} }
+let savedBase='Satellite'; try{savedBase=localStorage.getItem('ldb-base')||'Satellite'}catch(e){}
+setBase(bases[savedBase]?savedBase:'Satellite');
+
+// ---- way layers (one shared canvas so clicks reach every shape)
+const renderer = L.canvas({padding:0.5, tolerance:6});
+const groups={}, visible={};
+const wayCoords = new Array(DATA.ways.length); // decoded lazily
+function coordsOf(w){ if(!wayCoords[w]){ const f=Router.decode(DATA.ways[w][3]); const a=new Array(f.length/2); for(let i=0;i<f.length;i+=2) a[i>>1]=[f[i]/1e5,f[i+1]/1e5]; wayCoords[w]=a; } return wayCoords[w]; }
+function props(w){ const r=DATA.ways[w]; return Object.assign({id:r[2], c:DATA.cats[r[0]], len:r[1]}, r[4]||{}); }
+function catKey(c){ return CATS[c]?c:(c==='cycleway'?'path':null); }
+function styleFor(p){
+  const c=CATS[catKey(p.c)];
+  return {color:c.color, weight:c.thin?2:3, opacity:0.9, dashArray:c.dash, renderer, lineCap:'round', lineJoin:'round', interactive:true};
+}
+function fmtKm(m){return (m/1000).toFixed(m<10000?2:1)+' km'}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function popupHtml(p){
+  const c=CATS[catKey(p.c)]; const cname = p.c==='cycleway'?'Cycleway':c.name;
+  const rows=[['Length',fmtKm(p.len)],['PROW ref',p.prow_ref],['Surface',p.surface],['Track grade',p.tracktype],['OSM highway',p.hw]]
+    .filter(r=>r[1]).map(r=>`<tr><td>${r[0]}</td><td>${esc(r[1])}</td></tr>`).join('');
+  return `<div class="pp"><h3>${esc(p.name||'Unnamed '+cname.toLowerCase())}</h3><span class="tag" style="background:${c.color}">${cname}</span>
+    <table>${rows}</table><div style="margin-top:6px"><a href="https://www.openstreetmap.org/way/${p.id}" target="_blank" rel="noopener">View on OpenStreetMap ↗</a></div></div>`;
+}
+const layerList=document.getElementById('layers');
+function buildGroup(k){
+  const cats=[k].concat(CATS[k].also||[]).map(c=>CI[c]);
+  const g=L.layerGroup();
+  DATA.ways.forEach((r,w)=>{ if(!cats.includes(r[0])) return; const p=props(w);
+    const l=L.polyline(coordsOf(w), styleFor(p)); l._p=p;
+    l.on('click',e=>{ if(planMode) return; L.popup({maxWidth:320}).setLatLng(e.latlng).setContent(popupHtml(p)).openOn(map); });
+    l.on('mouseover',()=>{ if(!planMode) l.setStyle({weight:6,opacity:1}); });
+    l.on('mouseout',()=>l.setStyle(styleFor(p)));
+    g.addLayer(l); });
+  return g;
+}
+Object.keys(CATS).forEach(k=>{
+  const cats=[k].concat(CATS[k].also||[]).map(c=>CI[c]);
+  const km=DATA.ways.reduce((a,r)=>cats.includes(r[0])?a+r[1]:a,0)/1000;
+  visible[k]=CATS[k].on; if(CATS[k].on){ groups[k]=buildGroup(k).addTo(map); }
+  const row=document.createElement('label'); row.className='row';
+  row.innerHTML=`<input type="checkbox" ${CATS[k].on?'checked':''} data-k="${k}"><span class="sw ${CATS[k].dash?'dash':''} ${CATS[k].thin?'thin':''}" style="background:${CATS[k].dash?'':CATS[k].color};color:${CATS[k].color}"></span><span class="lbl">${CATS[k].name}</span><span class="km">${km.toFixed(0)} km</span>`;
+  row.querySelector('input').onchange=e=>{ visible[k]=e.target.checked;
+    if(e.target.checked){ if(!groups[k]){ setStatus('Drawing '+CATS[k].name.toLowerCase()+'…'); setTimeout(()=>{ groups[k]=buildGroup(k).addTo(map); setStatus(''); },20); } else groups[k].addTo(map); }
+    else if(groups[k]) map.removeLayer(groups[k]); };
+  layerList.appendChild(row);
+});
+
+// ---- labels, peaks, focus box
+const LABELS=[['Bassenthwaite',54.650,-3.215,-62],['Buttermere',54.542,-3.280,-40],['Ennerdale',54.522,-3.385,0],['Borrowdale',54.515,-3.150,80],['Thirlmere',54.535,-3.065,60],['Ullswater',54.580,-2.885,-30],['Haweswater',54.515,-2.800,-60],['Langdale',54.445,-3.090,0],['Eskdale',54.395,-3.275,-45],['Wast Water',54.440,-3.300,-35,'sm'],['Windermere',54.335,-2.930,-65],['Coniston',54.335,-3.072,-80],['Duddon',54.335,-3.200,-70],['Keswick',54.601,-3.137,0,'sm'],['Ambleside',54.428,-2.962,0,'sm'],['Grasmere',54.459,-3.025,0,'sm'],['Kentmere',54.430,-2.845,-80,'sm'],['Shap',54.531,-2.676,0,'sm']];
+const labelLayer=L.layerGroup(LABELS.map(([t,la,lo,rot,cls])=>L.marker([la,lo],{interactive:false,icon:L.divIcon({className:'',html:`<div class="lake-label ${cls||''}" style="transform:translate(-50%,-50%) rotate(${rot}deg)">${t}</div>`,iconSize:[0,0]})}))).addTo(map);
+document.getElementById('labels').onchange=e=>e.target.checked?labelLayer.addTo(map):map.removeLayer(labelLayer);
+const peakLayer=L.layerGroup(DATA.peaks.map((p,i)=>L.marker([p.la,p.lo],{interactive:false,icon:L.divIcon({className:'',html:`<div class="peak"><i></i><b>${i+1}. ${esc(p.n)} <small>${p.e} m</small></b></div>`,iconSize:[0,0]})}))).addTo(map);
+document.getElementById('peaks').onchange=e=>e.target.checked?peakLayer.addTo(map):map.removeLayer(peakLayer);
+function zoomStyles(){ const z=map.getZoom(); document.querySelectorAll('.lake-label').forEach(el=>el.style.opacity = z<=13 && z>=9 ? 1 : 0); document.querySelectorAll('.peak b').forEach(el=>el.style.display = z>=11 ? 'block' : 'none'); }
+map.on('zoomend',zoomStyles); map.on('layeradd',()=>setTimeout(zoomStyles,0));
+const focusRect=L.rectangle(FOCUS,{color:'#fff',weight:1.5,dashArray:'6 8',fill:false,opacity:.7,interactive:false,renderer}).addTo(map);
+document.getElementById('focus').onchange=e=>e.target.checked?focusRect.addTo(map):map.removeLayer(focusRect);
+document.getElementById('fit').onclick=fitFocus;
+
+// ---- stats box + profile
+const prof=document.getElementById('profile'), pctx=prof.getContext('2d');
+function drawProfile(eles){
+  pctx.clearRect(0,0,prof.width,prof.height); if(!eles||eles.length<2) return;
+  const W=prof.width,H=prof.height, mn=Math.min(...eles), mx=Math.max(...eles), rng=Math.max(mx-mn,50);
+  pctx.strokeStyle='#fff'; pctx.lineWidth=2.5; pctx.beginPath();
+  eles.forEach((e,i)=>{ const x=10+(W-20)*i/(eles.length-1), y=H-10-(H-20)*(e-mn)/rng; i?pctx.lineTo(x,y):pctx.moveTo(x,y); });
+  pctx.stroke(); pctx.strokeStyle='#fff'; pctx.lineWidth=2; pctx.beginPath(); pctx.moveTo(10,10); pctx.lineTo(10,H-8); pctx.lineTo(W-10,H-8); pctx.stroke();
+}
+function showStats(title,len,asc,profile){
+  document.getElementById('s-title').textContent=title; document.getElementById('s-dist').textContent=(len/1000).toFixed(1)+' km';
+  document.getElementById('s-asc').textContent=asc!=null?asc+' m':'–'; drawProfile(profile); document.getElementById('stats').classList.remove('hidden');
+}
+function routeLine(coords,color){ return L.layerGroup([
+  L.polyline(coords,{color:'#000',weight:7,opacity:.5,interactive:false,renderer}),
+  L.polyline(coords,{color,weight:3.5,opacity:1,interactive:false,renderer}),
+  L.circleMarker(coords[0],{radius:7,color:'#fff',weight:2,fillColor:color,fillOpacity:1,interactive:false,renderer})]); }
+
+// ---- reference route (reconstructed from the image)
+let refLayer=null;
+if(REF){ refLayer=routeLine(REF.coords,'#e41b23').addTo(map); document.getElementById('refkm').textContent=(REF.len/1000).toFixed(0)+' km'; }
+else document.getElementById('refroute').parentElement.style.display='none';
+document.getElementById('refroute').onchange=e=>{ if(!refLayer) return; e.target.checked?refLayer.addTo(map):map.removeLayer(refLayer); refreshStats(); };
+function refreshStats(){
+  if(plan.result) showStats('Planned loop', plan.result.len, plan.asc, plan.profile);
+  else if(gpxRoute) showStats(gpxRoute.name, gpxRoute.len, gpxRoute.asc, gpxRoute.profile);
+  else if(REF && map.hasLayer(refLayer)) showStats(REF.name, REF.len, REF.asc, REF.profile);
+  else document.getElementById('stats').classList.add('hidden');
+}
+
+// ---- GPX overlay
+let gpxLayer=null, gpxRoute=null;
+document.getElementById('gpx').addEventListener('change',e=>{
+  const f=e.target.files[0]; if(!f) return;
+  const r=new FileReader(); r.onload=()=>{
+    const xml=new DOMParser().parseFromString(r.result,'application/xml');
+    const pts=[...xml.querySelectorAll('trkpt, rtept')].map(p=>({lat:+p.getAttribute('lat'),lon:+p.getAttribute('lon'),ele:parseFloat(p.querySelector('ele')?.textContent)}));
+    if(pts.length<2){document.getElementById('gpxinfo').textContent='No track points found in that file.';return;}
+    if(gpxLayer) map.removeLayer(gpxLayer);
+    const ll=pts.map(p=>[p.lat,p.lon]); gpxLayer=routeLine(ll,'#ffd400').addTo(map);
+    let len=0; for(let i=1;i<ll.length;i++) len+=Router.hav(ll[i-1][0],ll[i-1][1],ll[i][0],ll[i][1]);
+    const eles=pts.map(p=>p.ele).filter(isFinite); const asc=eles.length>pts.length/2?Router.ascent(eles):null;
+    gpxRoute={name:f.name.replace(/\.gpx$/i,''), len, asc, profile:asc!=null?eles:null};
+    document.getElementById('gpxinfo').textContent=`${f.name}: ${(len/1000).toFixed(1)} km`+(asc!=null?`, ${asc} m ascent`:'');
+    document.getElementById('clearroute').style.display=''; map.fitBounds(L.latLngBounds(ll),{paddingTopLeft:[panelPad()+30,30],paddingBottomRight:[30,30]}); refreshStats();
+  }; r.readAsText(f);
+});
+document.getElementById('clearroute').onclick=()=>{ if(gpxLayer){map.removeLayer(gpxLayer);gpxLayer=null;} gpxRoute=null; document.getElementById('gpxinfo').textContent='Overlay your own GPX track to compare against the network.'; document.getElementById('clearroute').style.display='none'; document.getElementById('gpx').value=''; refreshStats(); };
+
+// ---- loop planner
+let G=null, planMode=false;
+const plan={wps:[], markers:[], layer:null, result:null, asc:null, profile:null, eles:null};
+const planbtn=document.getElementById('planbtn'), planout=document.getElementById('planout'), planhint=document.getElementById('planhint');
+function ensureGraph(cb){ if(G) return cb(); setStatus('Building route network…'); setTimeout(()=>{ G=Router.build(DATA); setStatus(''); cb(); },30); }
+planbtn.onclick=()=>{ planMode=!planMode; planbtn.textContent=planMode?'Stop planning':'Start planning'; planbtn.classList.toggle('on',planMode); document.getElementById('map').classList.toggle('plan',planMode); planMode?map.doubleClickZoom.disable():map.doubleClickZoom.enable(); if(planMode) ensureGraph(()=>{}); };
+map.on('click',e=>{ if(!planMode) return; ensureGraph(()=>addWaypoint(e.latlng)); });
+function addWaypoint(ll){
+  const s=Router.nearest(G,ll.lat,ll.lng,400);
+  if(!s){ setStatus('No path or road within 400 m of that point'); setTimeout(()=>setStatus(''),2000); return; }
+  const i=plan.wps.length;
+  const m=L.marker([s.lat,s.lon],{draggable:true,icon:wpIcon(i)}).addTo(map);
+  m.on('dragend',()=>{ const p=m.getLatLng(); const s2=Router.nearest(G,p.lat,p.lng,400); if(s2){ m.setLatLng([s2.lat,s2.lon]); plan.wps[plan.markers.indexOf(m)]=s2; } else m.setLatLng([plan.wps[plan.markers.indexOf(m)].lat,plan.wps[plan.markers.indexOf(m)].lon]); recompute(); });
+  m.on('contextmenu',()=>{ const k=plan.markers.indexOf(m); map.removeLayer(m); plan.markers.splice(k,1); plan.wps.splice(k,1); plan.markers.forEach((mm,j)=>mm.setIcon(wpIcon(j))); recompute(); });
+  plan.wps.push(s); plan.markers.push(m); recompute();
+}
+function wpIcon(i){ return L.divIcon({className:'',html:`<div class="wp ${i?'':'start'}">${i?i:'S'}</div>`,iconSize:[22,22],iconAnchor:[11,11]}); }
+function factors(){ return Router.defaultFactors(+document.getElementById('fp').value, +document.getElementById('rd').value); }
+['fp','rd','up'].forEach(id=>document.getElementById(id).onchange=()=>recompute());
+const GROUPS=[['Bridleways & byways',['bridleway','boat','restricted','permissive','other'],'#3ddc84'],['Cycleways & tracks',['cycleway','track'],'#e8d5a3'],['Footpaths',['footpath','path'],'#ff6b9d'],['Roads',['road_minor','road_major','trunk'],'#9aa3ad'],['Ferry',['ferry'],'#4fd1ff']];
+function recompute(){
+  if(plan.layer){ map.removeLayer(plan.layer); plan.layer=null; }
+  plan.result=null; plan.asc=null; plan.profile=null; plan.eles=null; document.getElementById('elevhint').textContent='';
+  document.getElementById('undo').disabled=document.getElementById('clearplan').disabled=!plan.wps.length;
+  if(plan.wps.length<2){ planout.innerHTML=plan.wps.length?'<div class="hint">Add at least one more waypoint.</div>':''; document.getElementById('elev').disabled=document.getElementById('exportgpx').disabled=true; refreshStats(); return; }
+  const res=Router.loop(G, plan.wps.map(w=>w.node), {factors:factors(), usedPenalty:+document.getElementById('up').value});
+  if(!res){ planout.innerHTML='<div class="hint">No route found between those points.</div>'; refreshStats(); return; }
+  plan.result=res; plan.layer=routeLine(res.coords,'#ffd400').addTo(map);
+  let rows=''; GROUPS.forEach(([n,cats,col])=>{ const m=cats.reduce((a,c)=>a+(res.byCat[c]||0),0); if(m>0) rows+=`<tr><td><i style="background:${col}"></i>${n}</td><td>${(m/1000).toFixed(1)} km</td></tr>`; });
+  planout.innerHTML=`<table class="bk">${rows}<tr><td><b>Total</b></td><td><b>${(res.len/1000).toFixed(1)} km</b></td></tr></table>`;
+  document.getElementById('elev').disabled=document.getElementById('exportgpx').disabled=false; refreshStats();
+}
+document.getElementById('undo').onclick=()=>{ const m=plan.markers.pop(); if(m) map.removeLayer(m); plan.wps.pop(); recompute(); };
+document.getElementById('clearplan').onclick=()=>{ plan.markers.forEach(m=>map.removeLayer(m)); plan.markers=[]; plan.wps=[]; recompute(); };
+document.getElementById('exportgpx').onclick=()=>{
+  if(!plan.result) return; const pts=plan.eles?Router.resample(plan.result.coords,100):plan.result.coords;
+  const blob=new Blob([Router.gpx('Planned loop',pts,plan.eles)],{type:'application/gpx+xml'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='planned-loop.gpx'; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+};
+document.getElementById('elev').onclick=async()=>{
+  if(!plan.result) return; const btn=document.getElementById('elev'); btn.disabled=true; const hint=document.getElementById('elevhint');
+  const res=plan.result; const samp=Router.resample(res.coords,100);
+  hint.textContent='Fetching elevation…';
+  const eles=await Router.fetchElevation(samp,(f,src)=>{ hint.textContent=`Fetching elevation from ${src}… ${Math.round(f*100)}%`; });
+  if(plan.result!==res){ hint.textContent=''; return; }
+  if(!eles){ hint.textContent='Elevation lookup failed: the free elevation services are rate-limited or offline. Try again later.'; btn.disabled=false; return; }
+  plan.eles=eles; plan.asc=Router.ascent(eles); plan.profile=eles; hint.textContent=`${plan.asc} m of climbing. The GPX now includes elevation.`; refreshStats();
+};
+refreshStats();
+
+// ---- panel collapse
+document.getElementById('ib-collapse').onclick=()=>document.getElementById('panel').classList.toggle('collapsed');
+const dialogs={display:document.getElementById('dlg-display'), settings:document.getElementById('dlg-settings')};
+function openDialog(name){ Object.keys(dialogs).forEach(k=>{ const on=k===name&&!dialogs[k].classList.contains('open'); dialogs[k].classList.toggle('open',on); document.getElementById('ib-'+k).classList.toggle('on',on); }); }
+document.getElementById('ib-display').onclick=()=>openDialog('display');
+document.getElementById('ib-settings').onclick=()=>openDialog('settings');
+document.querySelectorAll('.dialog [data-close]').forEach(b=>b.onclick=()=>openDialog(null));
+if(matchMedia('(max-width:640px)').matches) document.getElementById('panel').classList.add('collapsed');
+</script>
+</body>
+</html>
