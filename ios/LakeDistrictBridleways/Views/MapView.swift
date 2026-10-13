@@ -1,3 +1,4 @@
+import CoreLocation
 import MapKit
 import SwiftUI
 
@@ -35,6 +36,8 @@ struct MapView: UIViewRepresentable {
         map.register(PeakView.self, forAnnotationViewWithReuseIdentifier: PeakView.reuseID)
         map.register(LabelView.self, forAnnotationViewWithReuseIdentifier: LabelView.reuseID)
         map.register(StartDotView.self, forAnnotationViewWithReuseIdentifier: StartDotView.reuseID)
+        map.register(UserLocationView.self, forAnnotationViewWithReuseIdentifier: UserLocationView.reuseID)
+        map.showsUserLocation = true
 
         let doubleTap = UITapGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.ignore(_:)))
         doubleTap.numberOfTapsRequired = 2
@@ -47,10 +50,13 @@ struct MapView: UIViewRepresentable {
 
         let coordinator = context.coordinator
         map.onSizeChange = { [weak map, weak coordinator] _ in
-            guard let map, let coordinator, !coordinator.userHasMovedMap else { return }
+            guard let map, let coordinator else { return }
+            coordinator.updateHeadingOrientation(for: map)
+            guard !coordinator.userHasMovedMap else { return }
             let f = coordinator.model.region.focus
             coordinator.fit(FitRequest(south: f.south, north: f.north, west: f.west, east: f.east, animated: false), on: map)
         }
+        coordinator.startLocation()
         return map
     }
 
@@ -60,8 +66,12 @@ struct MapView: UIViewRepresentable {
 
     // MARK: - Coordinator
 
-    final class Coordinator: NSObject, MKMapViewDelegate, UIGestureRecognizerDelegate {
+    final class Coordinator: NSObject, MKMapViewDelegate, UIGestureRecognizerDelegate, @preconcurrency CLLocationManagerDelegate {
         let model: AppModel
+        private let locationManager = CLLocationManager()
+        /// Latest compass reading: true heading and accuracy in degrees.
+        private var heading: (degrees: Double, accuracy: Double)?
+        private weak var mapView: MKMapView?
         private var insets = UIEdgeInsets.zero
 
         private var tileOverlay: CachedTileOverlay?
@@ -97,6 +107,7 @@ struct MapView: UIViewRepresentable {
             applyWaypoints(to: map)
             applyPeaks(to: map)
             applyLabels(to: map)
+            applyTracking(to: map)
             if let req = model.fitRequest, req.id != fitID {
                 fitID = req.id
                 userHasMovedMap = true
@@ -269,6 +280,85 @@ struct MapView: UIViewRepresentable {
             }
         }
 
+        // MARK: Location
+
+        func startLocation() {
+            locationManager.headingFilter = 2
+            locationManager.delegate = self // reports the current authorisation straight away
+        }
+
+        private func applyTracking(to map: MKMapView) {
+            mapView = map
+            let mode: MKUserTrackingMode = switch model.locationTracking {
+            case .off: .none
+            case .follow: .follow
+            case .heading: .followWithHeading
+            }
+            if mode != .none, locationManager.authorizationStatus == .notDetermined {
+                locationManager.requestWhenInUseAuthorization()
+            }
+            guard mode != map.userTrackingMode else { return }
+            let wasHeading = map.userTrackingMode == .followWithHeading
+            if mode != .none { userHasMovedMap = true }
+            map.setUserTrackingMode(mode, animated: true)
+            if wasHeading, mode == .none, map.camera.heading != 0 {
+                // Leaving heading mode from the button turns the map back to north up.
+                let camera = map.camera.copy() as! MKMapCamera
+                camera.heading = 0
+                map.setCamera(camera, animated: true)
+            }
+            updateBeam(on: map)
+        }
+
+        /// Compass headings are relative to the top of the device, so follow the interface orientation.
+        func updateHeadingOrientation(for map: MKMapView) {
+            let orientation: CLDeviceOrientation = switch map.window?.windowScene?.effectiveGeometry.interfaceOrientation {
+            case .landscapeLeft: .landscapeRight
+            case .landscapeRight: .landscapeLeft
+            case .portraitUpsideDown: .portraitUpsideDown
+            default: .portrait
+            }
+            if locationManager.headingOrientation != orientation { locationManager.headingOrientation = orientation }
+        }
+
+        private func updateBeam(on map: MKMapView) {
+            guard let view = map.view(for: map.userLocation) as? UserLocationView else { return }
+            guard let heading, map.userTrackingMode != .followWithHeading else {
+                view.setBeam(angle: nil, halfWidth: 0)
+                return
+            }
+            let angle = (heading.degrees - map.camera.heading) * .pi / 180
+            let halfWidth = min(max(heading.accuracy, 18), 60) * .pi / 180
+            view.setBeam(angle: angle, halfWidth: halfWidth)
+        }
+
+        func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+            switch manager.authorizationStatus {
+            case .authorizedWhenInUse, .authorizedAlways:
+                model.locationAccess = .granted
+                if CLLocationManager.headingAvailable() { manager.startUpdatingHeading() }
+            case .denied, .restricted:
+                model.locationAccess = .denied
+                model.locationTracking = .off
+                manager.stopUpdatingHeading()
+                heading = nil
+            case .notDetermined:
+                model.locationAccess = .unknown
+                manager.requestWhenInUseAuthorization()
+            @unknown default:
+                break
+            }
+        }
+
+        func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+            if newHeading.headingAccuracy < 0 {
+                heading = nil
+            } else {
+                heading = (newHeading.trueHeading >= 0 ? newHeading.trueHeading : newHeading.magneticHeading, newHeading.headingAccuracy)
+            }
+            if let mapView { updateBeam(on: mapView) }
+        }
+
         func fit(_ req: FitRequest, on map: MKMapView) {
             let sw = MKMapPoint(CLLocationCoordinate2D(latitude: req.south, longitude: req.west))
             let ne = MKMapPoint(CLLocationCoordinate2D(latitude: req.north, longitude: req.east))
@@ -359,6 +449,11 @@ struct MapView: UIViewRepresentable {
                 v.isHidden = !showPlaceLabels
                 v.displayPriority = .required
                 return v
+            case is MKUserLocation:
+                let v = mapView.dequeueReusableAnnotationView(withIdentifier: UserLocationView.reuseID, for: annotation)
+                v.displayPriority = .required
+                v.zPriority = .max
+                return v
             case is StartDotAnnotation:
                 let v = mapView.dequeueReusableAnnotationView(withIdentifier: StartDotView.reuseID, for: annotation)
                 v.displayPriority = .required
@@ -393,6 +488,25 @@ struct MapView: UIViewRepresentable {
                recognizers.contains(where: { $0.state == .began || $0.state == .changed || $0.state == .ended }) {
                 userHasMovedMap = true
             }
+        }
+
+        func mapView(_ mapView: MKMapView, didAdd views: [MKAnnotationView]) {
+            if views.contains(where: { $0 is UserLocationView }) { updateBeam(on: mapView) }
+        }
+
+        func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
+            updateBeam(on: mapView) // keeps the beam true while the map rotates
+        }
+
+        func mapView(_ mapView: MKMapView, didChange mode: MKUserTrackingMode, animated: Bool) {
+            // MapKit drops tracking when the map is panned; keep the button in step.
+            let tracking: LocationTracking = switch mode {
+            case .follow: .follow
+            case .followWithHeading: .heading
+            default: .off
+            }
+            if model.locationTracking != tracking { model.locationTracking = tracking }
+            updateBeam(on: mapView)
         }
 
         func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {

@@ -1,4 +1,5 @@
 import CoreData
+import CoreLocation
 import Foundation
 import Observation
 import os
@@ -35,6 +36,16 @@ enum ElevationState: Equatable, Sendable {
 enum ActiveSheet: String, Identifiable {
     case display, settings
     var id: String { rawValue }
+}
+
+/// How the map follows the device, cycled by the location button as in Apple Maps.
+enum LocationTracking: Sendable {
+    case off, follow, heading
+}
+
+/// Whether the app may use the device's location.
+enum LocationAccess: Sendable {
+    case unknown, granted, denied
 }
 
 /// All application state for one region: the loaded network and graph, map display options, routing
@@ -110,6 +121,11 @@ final class AppModel {
     var selectedWay: WayInfo?
     var fitRequest: FitRequest?
     var activeSheet: ActiveSheet?
+
+    // MARK: Location
+    var locationTracking: LocationTracking = .off
+    /// Set by the map from Core Location's authorisation status.
+    var locationAccess: LocationAccess = .unknown
 
     let persistence: PersistenceController
     private let defaults: UserDefaults
@@ -195,6 +211,19 @@ final class AppModel {
         var s = f.lat, n = f.lat, w = f.lon, e = f.lon
         for c in coords { s = min(s, c.lat); n = max(n, c.lat); w = min(w, c.lon); e = max(e, c.lon) }
         fitRequest = FitRequest(south: s, north: n, west: w, east: e, animated: animated)
+    }
+
+    /// The location button: off → follow → follow with heading (where there is a compass) → off.
+    func cycleLocationTracking() {
+        if locationAccess == .denied {
+            flashStatus("Turn on Location Services for this app in Settings", seconds: 3)
+            return
+        }
+        switch locationTracking {
+        case .off: locationTracking = .follow
+        case .follow: locationTracking = CLLocationManager.headingAvailable() ? .heading : .off
+        case .heading: locationTracking = .off
+        }
     }
 
     /// Called when the map is tapped outside planning mode: picks the nearest visible way.

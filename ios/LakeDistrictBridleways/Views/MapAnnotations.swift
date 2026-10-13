@@ -221,6 +221,69 @@ final class StartDotView: MKAnnotationView {
     }
 }
 
+/// MapKit's blue location dot with an Apple Maps style heading beam: a soft wedge fading out from
+/// the dot in the direction the device faces, wider when the compass is less certain. MapKit draws
+/// its own beam only in follow-with-heading mode, so the map hides this one then.
+final class UserLocationView: MKUserLocationView {
+    static let reuseID = "userLocation"
+    private static let radius: CGFloat = 56
+    private let beam = CAGradientLayer()
+    private let beamMask = CAShapeLayer()
+    private var spread: CGFloat = -1
+
+    override init(annotation: (any MKAnnotation)?, reuseIdentifier: String?) {
+        super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
+        // Taps pass through to the map, so a waypoint can be added at your own position.
+        isEnabled = false
+        canShowCallout = false
+        tintColor = .systemBlue // the dot follows the tint, which is otherwise the app's red accent
+        let r = Self.radius
+        beam.type = .radial
+        beam.colors = [UIColor.systemBlue.withAlphaComponent(0.6).cgColor,
+                       UIColor.systemBlue.withAlphaComponent(0.3).cgColor,
+                       UIColor.systemBlue.withAlphaComponent(0).cgColor]
+        beam.locations = [0.15, 0.5, 1]
+        beam.startPoint = CGPoint(x: 0.5, y: 0.5)
+        beam.endPoint = CGPoint(x: 1, y: 1)
+        beam.bounds = CGRect(x: 0, y: 0, width: r * 2, height: r * 2)
+        beamMask.frame = beam.bounds
+        beam.mask = beamMask
+        beam.isHidden = true
+        layer.insertSublayer(beam, at: 0)
+    }
+
+    required init?(coder: NSCoder) { fatalError("init(coder:) is not supported") }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        beam.position = CGPoint(x: bounds.midX, y: bounds.midY)
+        CATransaction.commit()
+    }
+
+    /// Points the beam `angle` radians clockwise from the top of the screen, `halfWidth` radians either
+    /// side. Nil hides it.
+    func setBeam(angle: CGFloat?, halfWidth: CGFloat) {
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        defer { CATransaction.commit() }
+        guard let angle else { beam.isHidden = true; return }
+        if abs(halfWidth - spread) > 0.01 {
+            spread = halfWidth
+            let r = Self.radius
+            let path = UIBezierPath()
+            path.move(to: CGPoint(x: r, y: r))
+            path.addArc(withCenter: CGPoint(x: r, y: r), radius: r,
+                        startAngle: -.pi / 2 - halfWidth, endAngle: -.pi / 2 + halfWidth, clockwise: true)
+            path.close()
+            beamMask.path = path.cgPath
+        }
+        beam.setAffineTransform(CGAffineTransform(rotationAngle: angle))
+        beam.isHidden = false
+    }
+}
+
 extension UIFont {
     nonisolated func withWidth(_ width: UIFont.Width) -> UIFont {
         let traits: [UIFontDescriptor.TraitKey: Any] = [.width: width.rawValue]

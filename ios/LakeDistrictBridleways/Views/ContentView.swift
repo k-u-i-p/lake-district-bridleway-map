@@ -67,7 +67,7 @@ struct ContentView: View {
     }
 }
 
-/// Round buttons floating over the map: layers, routing settings and fit-to-route.
+/// Round buttons floating over the map: layers, routing settings, fit-to-route and your location.
 struct MapControls: View {
     @Environment(AppModel.self) private var model
 
@@ -77,10 +77,27 @@ struct MapControls: View {
             control("slider.horizontal.3", "Routing settings") { model.activeSheet = .settings }
             control(model.loop != nil ? "point.topleft.down.to.point.bottomright.curvepath" : "arrow.up.left.and.down.right.magnifyingglass",
                     model.loop != nil ? "Fit route" : "Fit the \(model.region.name)") { model.fitToRoute() }
+            control(locationIcon, locationLabel, tint: model.locationTracking == .off ? .white : .blue) { model.cycleLocationTracking() }
         }
     }
 
-    private func control(_ system: String, _ label: String, action: @escaping () -> Void) -> some View {
+    private var locationIcon: String {
+        switch model.locationTracking {
+        case .off: "location"
+        case .follow: "location.fill"
+        case .heading: "location.north.line.fill"
+        }
+    }
+
+    private var locationLabel: String {
+        switch model.locationTracking {
+        case .off: "Show my location"
+        case .follow: "Following my location"
+        case .heading: "Following my location and heading"
+        }
+    }
+
+    private func control(_ system: String, _ label: String, tint: Color = .white, action: @escaping () -> Void) -> some View {
         Button(action: action) {
             Image(systemName: system)
                 .font(.system(size: 16, weight: .medium))
@@ -90,7 +107,7 @@ struct MapControls: View {
                 .shadow(color: .black.opacity(0.35), radius: 6, y: 3)
         }
         .buttonStyle(.plain)
-        .foregroundStyle(.white)
+        .foregroundStyle(tint)
         .accessibilityLabel(label)
     }
 }
