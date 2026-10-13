@@ -1,0 +1,7 @@
+{
+  "id": "lomond",
+  "name": "Loch Lomond & The Trossachs",
+  "bbox": [55.95, -5.15, 56.52, -4.00],
+  "peaks": ["Ben More", "Stob Binnein", "Ben Lui", "Cruach Ardrain", "Ben Oss", "Beinn Ìme", "An Caisteal", "Ben Vorlich", "Beinn Dubhchraig", "Stùc a' Chroin"],
+  "scottishAccess": true
+}

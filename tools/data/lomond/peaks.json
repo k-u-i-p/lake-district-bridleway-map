@@ -1,0 +1,6343 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-05-06T03:25:00Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 8870336,
+  "lat": 56.3860093,
+  "lon": -4.5400634,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-001",
+    "communication:amateur_radio:sota:points": "10",
+    "ele": "1174",
+    "munro": "yes",
+    "munro_number": "M016",
+    "name": "Ben More",
+    "name:gd": "A' Bheinn Mhòr",
+    "name:translation": "Big Mountain",
+    "natural": "peak",
+    "prominence": "989",
+    "wikidata": "Q3395632",
+    "wikipedia": "en:Ben More (Crianlarich)"
+  }
+},
+{
+  "type": "node",
+  "id": 25697071,
+  "lat": 56.1903623,
+  "lon": -4.6332874,
+  "tags": {
+    "cairn": "yes",
+    "communication:amateur_radio:sota": "GM/SS-011",
+    "communication:amateur_radio:sota:points": "6",
+    "description": "Beacon hill",
+    "ele": "974",
+    "man_made": "survey_point",
+    "munro": "yes",
+    "munro_number": "M184",
+    "name": "Ben Lomond",
+    "name:gd": "Beinn Laomainn",
+    "natural": "peak",
+    "prominence": "819",
+    "wikidata": "Q816556",
+    "wikipedia": "en:Ben Lomond"
+  }
+},
+{
+  "type": "node",
+  "id": 25697075,
+  "lat": 56.3969764,
+  "lon": -4.8105690,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-003",
+    "communication:amateur_radio:sota:points": "10",
+    "description": "Calf hill",
+    "ele": "1130",
+    "man_made": "cairn",
+    "marilyn": "yes",
+    "munro": "yes",
+    "munro_number": "M028",
+    "name": "Ben Lui",
+    "name:gd": "Beinn Laoigh",
+    "natural": "peak",
+    "prominence": "875",
+    "wikidata": "Q3397729",
+    "wikipedia": "en:Ben Lui"
+  }
+},
+{
+  "type": "node",
+  "id": 25706521,
+  "lat": 56.1843024,
+  "lon": -4.6470112,
+  "tags": {
+    "corbett": "no",
+    "donald": "no",
+    "ele": "731",
+    "graham": "no",
+    "munro": "no",
+    "name": "Ptarmigan",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 25713486,
+  "lat": 56.3902442,
+  "lon": -4.8356421,
+  "tags": {
+    "description": "Hill of the creel or chest",
+    "ele": "916",
+    "man_made": "cairn",
+    "munro": "yes",
+    "munro_number": "M280",
+    "name": "Beinn a' Chleibh",
+    "name:gd": "Beinn a' Chlèibh",
+    "natural": "peak",
+    "prominence": "141",
+    "wikidata": "Q3402891",
+    "wikipedia": "en:Beinn a' Chleibh"
+  }
+},
+{
+  "type": "node",
+  "id": 29335474,
+  "lat": 56.0216576,
+  "lon": -4.0007673,
+  "tags": {
+    "ele": "356",
+    "ele:ft": "1170",
+    "name": "Darrach Hill",
+    "natural": "peak",
+    "source": "npe"
+  }
+},
+{
+  "type": "node",
+  "id": 29340248,
+  "lat": 56.0601241,
+  "lon": -4.0138104,
+  "tags": {
+    "ele": "276",
+    "ele:ft": "907",
+    "name": "Drummarnock",
+    "natural": "peak",
+    "source": "npe"
+  }
+},
+{
+  "type": "node",
+  "id": 33075225,
+  "lat": 56.0139344,
+  "lon": -4.1394960,
+  "tags": {
+    "cairn": "no",
+    "communication:amateur_radio:sota": "GM/SS-129",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "donald": "no",
+    "ele": "570",
+    "graham": "no",
+    "man_made": "survey_post",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Meikle Bin",
+    "natural": "peak",
+    "prominence": "237",
+    "source": "npe; survey; gps",
+    "tourism": "viewpoint",
+    "wikidata": "Q15252845",
+    "wikipedia": "en:Meikle Bin"
+  }
+},
+{
+  "type": "node",
+  "id": 232941638,
+  "lat": 56.2586070,
+  "lon": -4.3221237,
+  "tags": {
+    "alt_name": "Beinn Lididh",
+    "communication:amateur_radio:sota": "GM/SS-023",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "ele": "879",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Ben Ledi",
+    "name:gd": "Beinn Lididh",
+    "natural": "peak",
+    "prominence": "528",
+    "wikidata": "Q816543",
+    "wikipedia": "en:Ben Ledi"
+  }
+},
+{
+  "type": "node",
+  "id": 252100378,
+  "lat": 56.4501173,
+  "lon": -5.0264833,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/WS-065",
+    "communication:amateur_radio:sota:points": "6",
+    "description": "Fowling hill",
+    "ele": "989",
+    "man_made": "cairn",
+    "marilyn": "yes",
+    "munro": "yes",
+    "munro_number": "M156",
+    "name": "Beinn Eunaich",
+    "natural": "peak",
+    "prominence": "425",
+    "source": "survey",
+    "wikidata": "Q13125846"
+  }
+},
+{
+  "type": "node",
+  "id": 252103762,
+  "lat": 56.5028441,
+  "lon": -4.7221593,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/CS-008",
+    "communication:amateur_radio:sota:points": "8",
+    "corbett": "no",
+    "description": "Hill of the steamlet",
+    "donald": "no",
+    "ele": "1076",
+    "graham": "no",
+    "man_made": "cairn",
+    "marilyn": "yes",
+    "munro": "yes",
+    "munro_number": "M064",
+    "name": "Beinn Dorain",
+    "name:gd": "Beinn Dòbhrainn",
+    "natural": "peak",
+    "prominence": "332",
+    "source": "NPE;survey",
+    "wikidata": "Q3500856",
+    "wikipedia": "en:Beinn Dorain"
+  }
+},
+{
+  "type": "node",
+  "id": 252104886,
+  "lat": 56.3292563,
+  "lon": -4.2375367,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-010",
+    "communication:amateur_radio:sota:points": "6",
+    "description": "Peak of harm or danger",
+    "ele": "975",
+    "marilyn": "yes",
+    "munro": "yes",
+    "munro_number": "M182",
+    "name": "Stùc a' Chroin",
+    "natural": "peak",
+    "prominence": "252",
+    "source": "NPE",
+    "wikidata": "Q6979322",
+    "wikipedia": "en:Stùc a' Chroin"
+  }
+},
+{
+  "type": "node",
+  "id": 254500090,
+  "lat": 55.9605671,
+  "lon": -4.0694475,
+  "tags": {
+    "corbett": "no",
+    "donald": "no",
+    "ele": "155",
+    "graham": "no",
+    "munro": "no",
+    "name": "Castle Hill",
+    "natural": "peak",
+    "note": "height confirmed by gps and alti meter"
+  }
+},
+{
+  "type": "node",
+  "id": 254500241,
+  "lat": 55.9590747,
+  "lon": -4.0719686,
+  "tags": {
+    "ele": "150",
+    "name": "Bar Hill",
+    "natural": "peak",
+    "wikidata": "Q24656404"
+  }
+},
+{
+  "type": "node",
+  "id": 254504162,
+  "lat": 56.0050640,
+  "lon": -4.2891959,
+  "tags": {
+    "ele": "508",
+    "name": "Dumbreck",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 254504334,
+  "lat": 56.0171069,
+  "lon": -4.2983959,
+  "tags": {
+    "corbett": "no",
+    "ele": "504",
+    "graham": "no",
+    "munro": "no",
+    "name": "Little Earl",
+    "natural": "peak",
+    "source": "survey"
+  }
+},
+{
+  "type": "node",
+  "id": 254504439,
+  "lat": 56.0127121,
+  "lon": -4.2932631,
+  "tags": {
+    "corbett": "no",
+    "ele": "504",
+    "graham": "no",
+    "munro": "no",
+    "name": "Owsen Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 254504471,
+  "lat": 56.0257009,
+  "lon": -4.2963258,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-126",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "donald": "no",
+    "ele": "578",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Earl's Seat",
+    "natural": "peak",
+    "prominence": "511",
+    "source": "position by gps july 2016",
+    "wikidata": "Q24648076"
+  }
+},
+{
+  "type": "node",
+  "id": 254504570,
+  "lat": 56.0234453,
+  "lon": -4.3218097,
+  "tags": {
+    "corbett": "no",
+    "ele": "542",
+    "graham": "no",
+    "munro": "no",
+    "name": "Garloch Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 254504721,
+  "lat": 56.0155914,
+  "lon": -4.3411909,
+  "tags": {
+    "colour": "grey",
+    "corbett": "no",
+    "donald": "no",
+    "ele": "435",
+    "graham": "no",
+    "marilyn": "no",
+    "marker": "post",
+    "munro": "no",
+    "name": "Dumgoyne",
+    "natural": "peak",
+    "note": "not classed as a scottish marilyn due to lack of drop in height from Garloch Hill",
+    "source": "height recorded by gps 22 July 2008. Position gps july 2016.",
+    "tourism": "viewpoint",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 254504794,
+  "lat": 56.0055144,
+  "lon": -4.3139484,
+  "tags": {
+    "ele": "496",
+    "name": "Slackdhu",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 255149461,
+  "lat": 56.0986912,
+  "lon": -4.5207103,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-239",
+    "communication:amateur_radio:sota:points": "1",
+    "ele": "361",
+    "munro": "no",
+    "name": "Conic Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 258819149,
+  "lat": 56.2214527,
+  "lon": -4.7893997,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-016",
+    "communication:amateur_radio:sota:points": "6",
+    "description": "Hill of notches",
+    "ele": "926",
+    "marilyn": "yes",
+    "munro": "yes",
+    "munro_number": "M259",
+    "name": "Beinn Narnain",
+    "name:gd": "Beinn Nàrnain",
+    "natural": "peak",
+    "prominence": "289",
+    "source": "NPE",
+    "wikidata": "Q41206",
+    "wikipedia": "en:Beinn Narnain"
+  }
+},
+{
+  "type": "node",
+  "id": 258819152,
+  "lat": 56.2495980,
+  "lon": -4.7817629,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-017",
+    "communication:amateur_radio:sota:points": "6",
+    "description": "Middle hill",
+    "ele": "916",
+    "marilyn": "yes",
+    "munro": "yes",
+    "munro_number": "M281",
+    "name": "Ben Vane",
+    "name:gd": "Beinn Mheadhain",
+    "natural": "peak",
+    "prominence": "423",
+    "source": "NPE_local/gps trip",
+    "wikidata": "Q35364",
+    "wikipedia": "en:Ben Vane"
+  }
+},
+{
+  "type": "node",
+  "id": 258820144,
+  "lat": 56.2740128,
+  "lon": -4.7550724,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-013",
+    "communication:amateur_radio:sota:points": "6",
+    "description": "Hill of the bay",
+    "ele": "943",
+    "marilyn": "yes",
+    "munro": "yes",
+    "munro_number": "M229",
+    "name": "Ben Vorlich",
+    "name:gd": "Beinn Mhùrlaig",
+    "natural": "peak",
+    "prominence": "632",
+    "source": "NPE",
+    "wikidata": "Q35374",
+    "wikipedia": "en:Ben Vorlich, Loch Lomond"
+  }
+},
+{
+  "type": "node",
+  "id": 258820960,
+  "lat": 56.3257917,
+  "lon": -4.6414315,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-014",
+    "communication:amateur_radio:sota:points": "6",
+    "description": "Hill of the hawk (possibly)",
+    "ele": "933",
+    "marilyn": "yes",
+    "munro": "yes",
+    "munro_number": "M244",
+    "name": "Beinn Chabhair",
+    "natural": "peak",
+    "prominence": "314",
+    "source": "NPE",
+    "wikidata": "Q4881329",
+    "wikipedia": "en:Beinn Chabhair"
+  }
+},
+{
+  "type": "node",
+  "id": 258820961,
+  "lat": 56.3385530,
+  "lon": -4.6244890,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-007",
+    "communication:amateur_radio:sota:points": "6",
+    "description": "The castle",
+    "ele": "995",
+    "marilyn": "yes",
+    "munro": "yes",
+    "munro_number": "M147",
+    "name": "An Caisteal",
+    "natural": "peak",
+    "prominence": "472",
+    "source": "NPE",
+    "wikidata": "Q1811796",
+    "wikipedia": "en:An Caisteal"
+  }
+},
+{
+  "type": "node",
+  "id": 258821202,
+  "lat": 56.3323177,
+  "lon": -4.6084964,
+  "tags": {
+    "description": "Hill of harm or danger",
+    "ele": "942",
+    "munro": "yes",
+    "munro_number": "M231",
+    "name": "Beinn a' Chroin",
+    "natural": "peak",
+    "note": "gps shows this as the true top.",
+    "prominence": "137",
+    "source": "NPE",
+    "wikidata": "Q4881350",
+    "wikipedia": "en:Beinn a' Chroin"
+  }
+},
+{
+  "type": "node",
+  "id": 258821906,
+  "lat": 56.3564540,
+  "lon": -4.5761975,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-004",
+    "communication:amateur_radio:sota:points": "8",
+    "description": "Stack of the high part",
+    "ele": "1046",
+    "munro": "yes",
+    "munro_number": "M087",
+    "name": "Cruach Ardrain",
+    "name:gd": "Cruach Àrdrain",
+    "natural": "peak",
+    "prominence": "549",
+    "source": "NPE",
+    "wikidata": "Q5189746",
+    "wikipedia": "en:Cruach Ardrain"
+  }
+},
+{
+  "type": "node",
+  "id": 258821907,
+  "lat": 56.3422195,
+  "lon": -4.5632896,
+  "tags": {
+    "description": "Hill of the hillocks",
+    "ele": "946",
+    "munro": "yes",
+    "munro_number": "M220",
+    "name": "Beinn Tulaichean",
+    "natural": "peak",
+    "prominence": "121",
+    "source": "NPE",
+    "wikidata": "Q4881340",
+    "wikipedia": "en:Beinn Tulaichean"
+  }
+},
+{
+  "type": "node",
+  "id": 258829325,
+  "lat": 56.4529169,
+  "lon": -4.4952835,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/CS-042",
+    "communication:amateur_radio:sota:points": "6",
+    "description": "Back wing",
+    "ele": "921",
+    "marilyn": "yes",
+    "munro": "yes",
+    "munro_number": "M270",
+    "name": "Sgiath Chùil",
+    "natural": "peak",
+    "prominence": "312",
+    "source": "NPE",
+    "wikidata": "Q7459755",
+    "wikipedia": "en:Sgiath Chùil"
+  }
+},
+{
+  "type": "node",
+  "id": 258829326,
+  "lat": 56.4602248,
+  "lon": -4.5268777,
+  "tags": {
+    "ele": "937",
+    "name": "Beinn Cheathaich",
+    "natural": "peak",
+    "source": "NPE",
+    "wikidata": "Q20598254"
+  }
+},
+{
+  "type": "node",
+  "id": 258829328,
+  "lat": 56.4601227,
+  "lon": -4.4959692,
+  "tags": {
+    "ele": "917",
+    "name": "Meall a' Churain",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 258829589,
+  "lat": 56.4558528,
+  "lon": -4.5466103,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/CS-033",
+    "communication:amateur_radio:sota:points": "6",
+    "description": "Greenish-grey hill",
+    "ele": "959",
+    "marilyn": "yes",
+    "munro": "yes",
+    "munro_number": "M199",
+    "name": "Meall Glas",
+    "natural": "peak",
+    "note": "height recorded by gps",
+    "prominence": "554",
+    "source": "NPE",
+    "wikidata": "Q6803530",
+    "wikipedia": "en:Meall Glas"
+  }
+},
+{
+  "type": "node",
+  "id": 258829658,
+  "lat": 56.4894917,
+  "lon": -4.6140581,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/CS-013",
+    "communication:amateur_radio:sota:points": "8",
+    "description": "Big rock",
+    "ele": "1032",
+    "marilyn": "yes",
+    "munro": "yes",
+    "munro_number": "M084",
+    "name": "Creag Mhòr",
+    "natural": "peak",
+    "prominence": "393",
+    "source": "NPE",
+    "wikidata": "Q3399612",
+    "wikipedia": "en:Creag Mhòr"
+  }
+},
+{
+  "type": "node",
+  "id": 258829659,
+  "lat": 56.4546681,
+  "lon": -4.6192551,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/CS-021",
+    "communication:amateur_radio:sota:points": "8",
+    "description": "Callum's hill",
+    "ele": "1025",
+    "marilyn": "yes",
+    "munro": "yes",
+    "munro_number": "M106",
+    "name": "Beinn Chaluim",
+    "name:en": "Ben Challum",
+    "natural": "peak",
+    "note": "Gaelic name use as this is the right name for this Mountain, other name is a also a miss spelt",
+    "prominence": "450",
+    "source": "NPE",
+    "wikidata": "Q3397111",
+    "wikipedia": "en:Beinn Challuim"
+  }
+},
+{
+  "type": "node",
+  "id": 258829700,
+  "lat": 56.5102745,
+  "lon": -4.5792800,
+  "tags": {
+    "alt_name:gd": "Beinn Theasairginneach",
+    "communication:amateur_radio:sota": "GM/CS-007",
+    "communication:amateur_radio:sota:points": "8",
+    "description": "Sheltering or peaceful hill",
+    "ele": "1078",
+    "man_made": "cairn",
+    "marilyn": "yes",
+    "munro": "yes",
+    "munro_number": "M062",
+    "name": "Beinn Heasgarnich",
+    "name:en": "Beinn Heasgarnich",
+    "name:gd": "Beinn Sheasgarnaich",
+    "natural": "peak",
+    "prominence": "579",
+    "wikidata": "Q3404889",
+    "wikipedia": "en:Beinn Heasgarnich"
+  }
+},
+{
+  "type": "node",
+  "id": 259032678,
+  "lat": 56.4267792,
+  "lon": -5.1318182,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/WS-013",
+    "communication:amateur_radio:sota:points": "10",
+    "description": "Stacky hill",
+    "ele": "1126",
+    "marilyn": "yes",
+    "munro": "yes",
+    "munro_number": "M031",
+    "name": "Ben Cruachan",
+    "name:gd": "Cruachan",
+    "natural": "peak",
+    "prominence": "879",
+    "source": "gps",
+    "source:name": "NPE",
+    "wikidata": "Q3395413",
+    "wikipedia": "en:Ben Cruachan"
+  }
+},
+{
+  "type": "node",
+  "id": 259034088,
+  "lat": 56.4313393,
+  "lon": -5.0914398,
+  "tags": {
+    "description": "Peak of the stag",
+    "ele": "998",
+    "munro": "yes",
+    "munro_number": "M143",
+    "name": "Stob Diamh",
+    "natural": "peak",
+    "prominence": "134.5",
+    "wikidata": "Q20598746"
+  }
+},
+{
+  "type": "node",
+  "id": 259035673,
+  "lat": 56.3707765,
+  "lon": -4.5356275,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-002",
+    "communication:amateur_radio:sota:points": "10",
+    "description": "Peak",
+    "ele": "1165",
+    "marilyn": "yes",
+    "munro": "yes",
+    "munro_number": "M018",
+    "name": "Stob Binnein",
+    "natural": "peak",
+    "prominence": "303",
+    "wikidata": "Q939376",
+    "wikipedia": "en:Stob Binnein"
+  }
+},
+{
+  "type": "node",
+  "id": 259037375,
+  "lat": 56.0048234,
+  "lon": -4.0784976,
+  "tags": {
+    "ele": "453",
+    "name": "Garrel Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 259038770,
+  "lat": 56.0037676,
+  "lon": -4.3062923,
+  "tags": {
+    "ele": "488",
+    "name": "Sandy Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 259039147,
+  "lat": 56.0137025,
+  "lon": -4.3322102,
+  "tags": {
+    "corbett": "no",
+    "ele": "426",
+    "munro": "no",
+    "name": "Dumfoyn",
+    "natural": "peak",
+    "source": "old map height needs to be confirmed"
+  }
+},
+{
+  "type": "node",
+  "id": 259042212,
+  "lat": 55.9708821,
+  "lon": -4.3278352,
+  "tags": {
+    "ele": "177",
+    "name": "Moot Hill",
+    "natural": "peak",
+    "source": "old map/ height by gps"
+  }
+},
+{
+  "type": "node",
+  "id": 264316238,
+  "lat": 56.4301459,
+  "lon": -5.1098641,
+  "tags": {
+    "ele": "1009",
+    "munro": "no",
+    "name": "Drochard Ghlas",
+    "natural": "peak",
+    "source": "gps",
+    "wikidata": "Q20582252"
+  }
+},
+{
+  "type": "node",
+  "id": 264316857,
+  "lat": 56.4254599,
+  "lon": -5.0898090,
+  "tags": {
+    "ele": "980",
+    "munro": "no",
+    "name": "Stob Garbh",
+    "natural": "peak",
+    "wikidata": "Q20598754"
+  }
+},
+{
+  "type": "node",
+  "id": 264318296,
+  "lat": 56.4187496,
+  "lon": -5.1308831,
+  "tags": {
+    "ele": "918",
+    "munro": "no",
+    "name": "Meall Cuanail",
+    "natural": "peak",
+    "wikidata": "Q20582261"
+  }
+},
+{
+  "type": "node",
+  "id": 264323644,
+  "lat": 56.4089591,
+  "lon": -5.0906322,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/WS-115",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "description": "Hill of the bellowing",
+    "donald": "no",
+    "ele": "897",
+    "graham": "no",
+    "man_made": "cairn",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn a` Bhuiridh",
+    "natural": "peak",
+    "prominence": "169",
+    "source": "GPS Survey",
+    "wikidata": "Q13125910"
+  }
+},
+{
+  "type": "node",
+  "id": 264326317,
+  "lat": 56.4285214,
+  "lon": -5.1438394,
+  "tags": {
+    "ele": "1104",
+    "munro": "no",
+    "name": "Stob Dearg",
+    "natural": "peak",
+    "wikidata": "Q20582281"
+  }
+},
+{
+  "type": "node",
+  "id": 264990945,
+  "lat": 56.2465279,
+  "lon": -4.8181109,
+  "tags": {
+    "ele": "888",
+    "munro": "no",
+    "name": "Beinn Chorranach",
+    "natural": "peak",
+    "wikidata": "Q3398093",
+    "wikipedia": "en:Beinn Chorranach"
+  }
+},
+{
+  "type": "node",
+  "id": 265662146,
+  "lat": 56.2131795,
+  "lon": -4.8091540,
+  "tags": {
+    "alt_name": "The Cobbler",
+    "communication:amateur_radio:sota": "GM/SS-020",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "donald": "no",
+    "ele": "884",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Ben Arthur (The Cobbler)",
+    "name:gd": "Beinn Artair",
+    "natural": "peak",
+    "prominence": "256",
+    "source": "survey",
+    "wikidata": "Q41210",
+    "wikipedia": "en:The Cobbler"
+  }
+},
+{
+  "type": "node",
+  "id": 266999602,
+  "lat": 55.9703300,
+  "lon": -4.3466085,
+  "tags": {
+    "ele": "137",
+    "munro": "no",
+    "name": "Scroggy Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 268130239,
+  "lat": 56.2834568,
+  "lon": -4.4109998,
+  "tags": {
+    "ele": "674",
+    "munro": "no",
+    "name": "Meall Cala",
+    "natural": "peak",
+    "wikidata": "Q13130009"
+  }
+},
+{
+  "type": "node",
+  "id": 268130351,
+  "lat": 56.3358285,
+  "lon": -4.4115148,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-088",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "description": "Big crag",
+    "ele": "657",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Creag Mhòr",
+    "natural": "peak",
+    "prominence": "293",
+    "wikidata": "Q20595389"
+  }
+},
+{
+  "type": "node",
+  "id": 268130947,
+  "lat": 56.2951753,
+  "lon": -4.4700513,
+  "tags": {
+    "ele": "687",
+    "munro": "no",
+    "name": "Beinn Bhreac",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 268131294,
+  "lat": 56.2916506,
+  "lon": -4.4518552,
+  "tags": {
+    "ele": "653",
+    "munro": "no",
+    "name": "Cnoc Odhar",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 268132129,
+  "lat": 56.2933008,
+  "lon": -4.3684510,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-031",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "description": "Middle hill",
+    "donald": "no",
+    "ele": "821",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Benvane",
+    "name:gd": "Beinn Bhan",
+    "natural": "peak",
+    "prominence": "215",
+    "wikidata": "Q13125989"
+  }
+},
+{
+  "type": "node",
+  "id": 268132415,
+  "lat": 56.2830757,
+  "lon": -4.3157191,
+  "tags": {
+    "alt_name": "Ardnandave Hill",
+    "ele": "715",
+    "munro": "no",
+    "name": "Ardnandave",
+    "name:en": "Ardnandave",
+    "name:gd": "Àird nan Damh",
+    "natural": "peak",
+    "wikidata": "Q20579088"
+  }
+},
+{
+  "type": "node",
+  "id": 268133667,
+  "lat": 56.2820275,
+  "lon": -4.3400950,
+  "tags": {
+    "ele": "662",
+    "munro": "no",
+    "name": "Stùc Dhubh",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 268669218,
+  "lat": 56.0323572,
+  "lon": -4.1154633,
+  "tags": {
+    "ele": "296",
+    "munro": "no",
+    "name": "Haugh Hill",
+    "natural": "peak",
+    "source": "OS7; local"
+  }
+},
+{
+  "type": "node",
+  "id": 268669742,
+  "lat": 56.0042433,
+  "lon": -4.1753898,
+  "tags": {
+    "corbett": "no",
+    "donald": "no",
+    "ele": "547",
+    "graham": "no",
+    "man_made": "cairn",
+    "munro": "no",
+    "name": "Lecket Hill",
+    "natural": "peak",
+    "note": "small cairn",
+    "source": "npe"
+  }
+},
+{
+  "type": "node",
+  "id": 268669770,
+  "lat": 55.9938465,
+  "lon": -4.1634444,
+  "tags": {
+    "corbett": "no",
+    "donald": "no",
+    "ele": "531",
+    "graham": "no",
+    "man_made": "survey post",
+    "munro": "no",
+    "name": "Cort Ma Law",
+    "natural": "peak",
+    "source": "npe"
+  }
+},
+{
+  "type": "node",
+  "id": 268670245,
+  "lat": 55.9917061,
+  "lon": -4.1788287,
+  "tags": {
+    "corbett": "no",
+    "donald": "no",
+    "ele": "518",
+    "graham": "no",
+    "man_made": "cairn",
+    "munro": "no",
+    "name": "Lairs",
+    "natural": "peak",
+    "source": "npe"
+  }
+},
+{
+  "type": "node",
+  "id": 268670702,
+  "lat": 55.9929825,
+  "lon": -4.2044714,
+  "tags": {
+    "corbett": "no",
+    "donald": "no",
+    "ele": "463",
+    "graham": "no",
+    "man_made": "cairn",
+    "munro": "no",
+    "name": "Crichton's Cairn",
+    "natural": "peak",
+    "source": "npe"
+  }
+},
+{
+  "type": "node",
+  "id": 268673102,
+  "lat": 55.9851549,
+  "lon": -4.1432756,
+  "tags": {
+    "ele": "400",
+    "munro": "no",
+    "name": "Brown Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 268673468,
+  "lat": 56.0046459,
+  "lon": -4.1310004,
+  "tags": {
+    "corbett": "no",
+    "ele": "480",
+    "graham": "no",
+    "munro": "no",
+    "name": "Black Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 268766840,
+  "lat": 56.2309320,
+  "lon": -4.7632232,
+  "tags": {
+    "ele": "848",
+    "munro": "no",
+    "name": "A' Chrois",
+    "natural": "peak",
+    "wikidata": "Q3396248",
+    "wikipedia": "en:A' Chrois"
+  }
+},
+{
+  "type": "node",
+  "id": 268767488,
+  "lat": 56.2076389,
+  "lon": -4.7932934,
+  "tags": {
+    "ele": "614",
+    "name": "An t-Sron",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 268767659,
+  "lat": 56.2312531,
+  "lon": -4.8363118,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-025",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "description": "Hill of plants",
+    "ele": "858",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn Luibhean",
+    "natural": "peak",
+    "prominence": "183",
+    "wikidata": "Q41205",
+    "wikipedia": "en:Beinn Luibhean"
+  }
+},
+{
+  "type": "node",
+  "id": 268768873,
+  "lat": 56.2119251,
+  "lon": -4.8064050,
+  "tags": {
+    "ele": "858",
+    "name": "Arthur's Seat",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 268770754,
+  "lat": 56.2646474,
+  "lon": -4.7883716,
+  "tags": {
+    "ele": "773",
+    "munro": "no",
+    "name": "Beinn Dubh",
+    "natural": "peak",
+    "wikidata": "Q13125981"
+  }
+},
+{
+  "type": "node",
+  "id": 269578157,
+  "lat": 55.9648559,
+  "lon": -4.1818206,
+  "tags": {
+    "ele": "56",
+    "name": "Gallow Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 270592601,
+  "lat": 56.2426762,
+  "lon": -4.4187504,
+  "tags": {
+    "ele": "454",
+    "munro": "no",
+    "name": "Ben A'an",
+    "name:en": "Ben A'an",
+    "name:gd": "Am Binnean",
+    "natural": "peak",
+    "source": "height by gps/ name old map.",
+    "wikidata": "Q15198353",
+    "wikipedia": "en:Ben A'an"
+  }
+},
+{
+  "type": "node",
+  "id": 270593887,
+  "lat": 56.2547743,
+  "lon": -4.4072833,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-134",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "description": "Sandy hill",
+    "ele": "566",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Meall Gainmheich",
+    "natural": "peak",
+    "prominence": "223"
+  }
+},
+{
+  "type": "node",
+  "id": 303627139,
+  "lat": 56.0917585,
+  "lon": -4.5351523,
+  "tags": {
+    "ele": "187",
+    "munro": "no",
+    "name": "Tom nan Oisgin (Oisgean)",
+    "natural": "peak",
+    "source": "height taken from out of copyright map and local info, will be confirded by gps asap"
+  }
+},
+{
+  "type": "node",
+  "id": 303629609,
+  "lat": 56.0931635,
+  "lon": -4.5543582,
+  "tags": {
+    "ele": "40",
+    "munro": "no",
+    "name": "Creag Mhor",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 320740776,
+  "lat": 56.3138802,
+  "lon": -4.2623605,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-034",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "description": "Hill of the horse",
+    "ele": "813",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn Each",
+    "natural": "peak",
+    "prominence": "158",
+    "wikidata": "Q20581452",
+    "wikipedia": "en:Beinn Each"
+  }
+},
+{
+  "type": "node",
+  "id": 376553014,
+  "lat": 56.2154049,
+  "lon": -4.7224302,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-218",
+    "communication:amateur_radio:sota:points": "1",
+    "corbett": "no",
+    "description": "Stack of the isthmus",
+    "ele": "415",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Cruach Tairbeirt",
+    "natural": "peak",
+    "prominence": "280"
+  }
+},
+{
+  "type": "node",
+  "id": 379015203,
+  "lat": 56.2250090,
+  "lon": -4.4623626,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-058",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "no",
+    "description": "The miniature mountain",
+    "ele": "729",
+    "graham": "yes",
+    "man_made": "cairn",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Ben Venue",
+    "natural": "peak",
+    "prominence": "545",
+    "wikidata": "Q2895592",
+    "wikipedia": "en:Ben Venue"
+  }
+},
+{
+  "type": "node",
+  "id": 380635909,
+  "lat": 56.4655695,
+  "lon": -4.3417897,
+  "tags": {
+    "ele": "521",
+    "name": "Sron a Chlachain",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 382450384,
+  "lat": 56.3893211,
+  "lon": -4.7754019,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-005",
+    "communication:amateur_radio:sota:points": "8",
+    "description": "Hill of the elk",
+    "ele": "1029",
+    "marilyn": "yes",
+    "munro": "yes",
+    "munro_number": "M101",
+    "name": "Ben Oss",
+    "name:gd": "Beinn Ois",
+    "natural": "peak",
+    "prominence": "342",
+    "source": "GPS survey",
+    "source:ele": "GPS survey",
+    "wikidata": "Q3397500",
+    "wikipedia": "en:Ben Oss"
+  }
+},
+{
+  "type": "node",
+  "id": 382450453,
+  "lat": 56.3913389,
+  "lon": -4.7432864,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-009",
+    "communication:amateur_radio:sota:points": "6",
+    "corbett": "no",
+    "description": "Black-rock hill",
+    "donald": "no",
+    "ele": "978",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "yes",
+    "munro_number": "M175",
+    "name": "Beinn Dubhchraig",
+    "name:gd": "Beinn Dubh-chreig",
+    "natural": "peak",
+    "prominence": "199",
+    "source": "NPE",
+    "wikidata": "Q3397916",
+    "wikipedia": "en:Beinn Dubhchraig"
+  }
+},
+{
+  "type": "node",
+  "id": 383764748,
+  "lat": 56.5105657,
+  "lon": -4.7134427,
+  "tags": {
+    "corbett": "no",
+    "donald": "no",
+    "ele": "994",
+    "munro": "no",
+    "name": "Meall Garbh",
+    "natural": "peak",
+    "note": "Sub peak Of Beinn Dorain",
+    "source": "local_knowledge"
+  }
+},
+{
+  "type": "node",
+  "id": 383825912,
+  "lat": 56.5146974,
+  "lon": -4.6965377,
+  "tags": {
+    "corbett": "no",
+    "donald": "no",
+    "ele": "728",
+    "munro": "no",
+    "name": "Meall Tionail",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 383876474,
+  "lat": 56.5063502,
+  "lon": -4.7231881,
+  "tags": {
+    "donald": "no",
+    "ele": "1063",
+    "graham": "no",
+    "man_made": "cairn",
+    "munro": "no",
+    "name": "Cairn Sasunnaich",
+    "natural": "peak",
+    "note": "Sub peak of Beinn Dorain",
+    "source": "local_knowledge",
+    "wikidata": "Q20581416"
+  }
+},
+{
+  "type": "node",
+  "id": 393969002,
+  "lat": 56.3584285,
+  "lon": -4.6009969,
+  "tags": {
+    "ele": "806",
+    "name": "Meall Dhamh",
+    "natural": "peak",
+    "source": "local_knowledge",
+    "wikidata": "Q20596632"
+  }
+},
+{
+  "type": "node",
+  "id": 393969074,
+  "lat": 56.3720447,
+  "lon": -4.5770924,
+  "tags": {
+    "ele": "855",
+    "munro": "no",
+    "name": "Stob Coire Bhuidhe",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 393969422,
+  "lat": 56.3648042,
+  "lon": -4.5736752,
+  "tags": {
+    "ele": "959",
+    "name": "Stob Garbh",
+    "natural": "peak",
+    "wikidata": "Q7617760",
+    "wikipedia": "en:Stob Garbh"
+  }
+},
+{
+  "type": "node",
+  "id": 393979024,
+  "lat": 56.3651993,
+  "lon": -4.5299284,
+  "tags": {
+    "ele": "1065",
+    "munro": "no",
+    "name": "Stob Coire an Lochain",
+    "natural": "peak",
+    "wikidata": "Q13131638"
+  }
+},
+{
+  "type": "node",
+  "id": 393979457,
+  "lat": 56.3699532,
+  "lon": -4.5097582,
+  "tags": {
+    "ele": "966",
+    "munro": "no",
+    "name": "Meall na Dìge",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 413286340,
+  "lat": 56.4543666,
+  "lon": -4.7336622,
+  "tags": {
+    "ele": "653",
+    "munro": "no",
+    "name": "Beinn Bheag",
+    "natural": "peak",
+    "wikidata": "Q13125809"
+  }
+},
+{
+  "type": "node",
+  "id": 425760143,
+  "lat": 56.4460900,
+  "lon": -4.5676889,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/CS-063",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "description": "Hill of the ridges",
+    "ele": "849",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn nan Imirean",
+    "natural": "peak",
+    "prominence": "185"
+  }
+},
+{
+  "type": "node",
+  "id": 436962224,
+  "lat": 56.0726016,
+  "lon": -5.0416286,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-053",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "no",
+    "description": "Big hill",
+    "ele": "741",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn Mhor",
+    "natural": "peak",
+    "prominence": "696",
+    "wikidata": "Q4881334",
+    "wikipedia": "en:Beinn Mhòr (Cowal)"
+  }
+},
+{
+  "type": "node",
+  "id": 455607333,
+  "lat": 56.0352852,
+  "lon": -5.0011991,
+  "tags": {
+    "ele": "482",
+    "ele:ft": "1570",
+    "name": "A' Chruach",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 460389973,
+  "lat": 56.4229454,
+  "lon": -4.0219986,
+  "tags": {
+    "ele": "543",
+    "name": "Creag na h-lolaire",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 539382655,
+  "lat": 56.2307345,
+  "lon": -4.8753280,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-018",
+    "communication:amateur_radio:sota:points": "6",
+    "corbett": "yes",
+    "description": "Mountain of the lochan",
+    "ele": "901",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn an Lochain",
+    "natural": "peak",
+    "prominence": "640",
+    "source:ele": "OS7",
+    "wikidata": "Q41214",
+    "wikipedia": "en:Beinn an Lochain"
+  }
+},
+{
+  "type": "node",
+  "id": 539750216,
+  "lat": 56.2252679,
+  "lon": -4.9273700,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-055",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "no",
+    "ele": "732",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Stob an Eas",
+    "natural": "peak",
+    "prominence": "248",
+    "source": "OS7",
+    "wikidata": "Q7617764",
+    "wikipedia": "en:Stob an Eas"
+  }
+},
+{
+  "type": "node",
+  "id": 539750459,
+  "lat": 56.2304733,
+  "lon": -4.9044918,
+  "tags": {
+    "ele": "719",
+    "name": "Beinn an t-Seilich",
+    "natural": "peak",
+    "source": "OS7"
+  }
+},
+{
+  "type": "node",
+  "id": 539751213,
+  "lat": 56.1877424,
+  "lon": -4.8285324,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-040",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "ele": "787",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "The Brack",
+    "natural": "peak",
+    "prominence": "403",
+    "source": "OS7",
+    "wikidata": "Q7719786",
+    "wikipedia": "en:The Brack"
+  }
+},
+{
+  "type": "node",
+  "id": 539753699,
+  "lat": 56.1979341,
+  "lon": -4.8732649,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-027",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "ele": "847",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Ben Donich",
+    "name:gd": "Beinn Dòmhnaich",
+    "natural": "peak",
+    "prominence": "558",
+    "source": "OS7",
+    "wikidata": "Q3778412",
+    "wikipedia": "en:Ben Donich"
+  }
+},
+{
+  "type": "node",
+  "id": 540247938,
+  "lat": 56.2933893,
+  "lon": -4.7428785,
+  "tags": {
+    "corbett": "no",
+    "donald": "no",
+    "ele": "611",
+    "graham": "no",
+    "munro": "no",
+    "name": "Stob na Coinnich Bhacain",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 540248930,
+  "lat": 56.3057713,
+  "lon": -4.7369563,
+  "tags": {
+    "ele": "387",
+    "name": "Stob an Fhithich",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 560764190,
+  "lat": 56.4204649,
+  "lon": -4.5468986,
+  "tags": {
+    "ele": "465",
+    "name": "Creag Lubhair",
+    "natural": "peak",
+    "source": "local_knowledge"
+  }
+},
+{
+  "type": "node",
+  "id": 560771980,
+  "lat": 56.4103932,
+  "lon": -4.5840588,
+  "tags": {
+    "ele": "553",
+    "name": "Creag Liaragan",
+    "natural": "peak",
+    "source": "local_knowledge"
+  }
+},
+{
+  "type": "node",
+  "id": 560778772,
+  "lat": 56.4025232,
+  "lon": -4.5911890,
+  "tags": {
+    "ele": "345",
+    "name": "Dun nam Muclach",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 560931876,
+  "lat": 56.4300783,
+  "lon": -4.7617192,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-091",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "description": "Brown hill",
+    "ele": "656",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Meall Odhar",
+    "natural": "peak",
+    "prominence": "183",
+    "source": "local_knowledge",
+    "wikidata": "Q6803531",
+    "wikipedia": "en:Meall Odhar"
+  }
+},
+{
+  "type": "node",
+  "id": 560933097,
+  "lat": 56.4236112,
+  "lon": -4.7891521,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-021",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "description": "Cairn hill",
+    "ele": "880",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn Chuirn",
+    "natural": "peak",
+    "prominence": "446",
+    "source": "local_knowledge",
+    "source:ele": "GPS survey",
+    "wikidata": "Q3405785",
+    "wikipedia": "en:Beinn Chùirn"
+  }
+},
+{
+  "type": "node",
+  "id": 560933276,
+  "lat": 56.4192914,
+  "lon": -4.8194502,
+  "tags": {
+    "corbett": "no",
+    "ele": "696",
+    "graham": "no",
+    "munro": "no",
+    "name": "Beinn Dubh",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 561519030,
+  "lat": 56.3692735,
+  "lon": -4.6024361,
+  "tags": {
+    "ele": "685",
+    "munro": "no",
+    "name": "Grey Height",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 561520414,
+  "lat": 56.3568142,
+  "lon": -4.6319538,
+  "tags": {
+    "ele": "707",
+    "name": "Sron Gharbh",
+    "natural": "peak",
+    "source": "local_knowledge"
+  }
+},
+{
+  "type": "node",
+  "id": 561520575,
+  "lat": 56.3475856,
+  "lon": -4.5846032,
+  "tags": {
+    "ele": "832",
+    "name": "Stob Glas",
+    "natural": "peak",
+    "source": "local_knowledge"
+  }
+},
+{
+  "type": "node",
+  "id": 561520665,
+  "lat": 56.3438755,
+  "lon": -4.6454572,
+  "tags": {
+    "cairn": "no",
+    "ele": "708",
+    "name": "Stob Glas",
+    "natural": "peak",
+    "source": "local_knowledge"
+  }
+},
+{
+  "type": "node",
+  "id": 561521096,
+  "lat": 56.3313641,
+  "lon": -4.6842027,
+  "tags": {
+    "ele": "620",
+    "name": "Ben Glas",
+    "natural": "peak",
+    "source": "local_knowledge",
+    "wikidata": "Q13125956"
+  }
+},
+{
+  "type": "node",
+  "id": 561521190,
+  "lat": 56.3320303,
+  "lon": -4.6906400,
+  "tags": {
+    "ele": "579",
+    "name": "Meall Mar nan Eag",
+    "natural": "peak",
+    "source": "local_knowledge"
+  }
+},
+{
+  "type": "node",
+  "id": 563847828,
+  "lat": 56.4206723,
+  "lon": -4.2876781,
+  "tags": {
+    "ele": "663",
+    "name": "Meall na Cloiche",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 564243252,
+  "lat": 56.3173262,
+  "lon": -4.6636891,
+  "tags": {
+    "ele": "662",
+    "munro": "no",
+    "name": "Parlan Hill",
+    "natural": "peak",
+    "source": "NPE",
+    "wikidata": "Q13130586"
+  }
+},
+{
+  "type": "node",
+  "id": 564244047,
+  "lat": 56.3101024,
+  "lon": -4.6562398,
+  "tags": {
+    "ele": "535",
+    "munro": "no",
+    "name": "Sithean a` Chatha",
+    "natural": "peak",
+    "source": "OS7"
+  }
+},
+{
+  "type": "node",
+  "id": 564245507,
+  "lat": 56.3099473,
+  "lon": -4.6898674,
+  "tags": {
+    "ele": "511",
+    "munro": "no",
+    "name": "Cruach",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 564974029,
+  "lat": 56.3007536,
+  "lon": -4.6136671,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-050",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "no",
+    "description": "Big hill",
+    "ele": "747",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Meall Mòr",
+    "natural": "peak",
+    "prominence": "262",
+    "source": "OS7",
+    "wikidata": "Q20598369"
+  }
+},
+{
+  "type": "node",
+  "id": 564974881,
+  "lat": 56.3038013,
+  "lon": -4.5923811,
+  "tags": {
+    "ele": "727",
+    "munro": "no",
+    "name": "Stob an Duidhe",
+    "natural": "peak",
+    "source": "OS7"
+  }
+},
+{
+  "type": "node",
+  "id": 564975523,
+  "lat": 56.2937050,
+  "lon": -4.5785623,
+  "tags": {
+    "ele": "715",
+    "munro": "no",
+    "name": "An Garadh",
+    "natural": "peak",
+    "source": "OS7",
+    "wikidata": "Q20577679"
+  }
+},
+{
+  "type": "node",
+  "id": 564976235,
+  "lat": 56.3096846,
+  "lon": -4.5601879,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-024",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "ele": "869",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Stob a' Choin",
+    "natural": "peak",
+    "prominence": "480",
+    "source": "OS7",
+    "wikidata": "Q20598586"
+  }
+},
+{
+  "type": "node",
+  "id": 565008442,
+  "lat": 56.3157039,
+  "lon": -4.5125585,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-078",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "description": "Speckled point",
+    "ele": "685",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Stob Breac",
+    "natural": "peak",
+    "prominence": "243",
+    "source": "OS7",
+    "wikidata": "Q13131639"
+  }
+},
+{
+  "type": "node",
+  "id": 565008522,
+  "lat": 56.3002298,
+  "lon": -4.5117002,
+  "tags": {
+    "ele": "665",
+    "munro": "no",
+    "name": "An Stuichd",
+    "natural": "peak",
+    "source": "OS7"
+  }
+},
+{
+  "type": "node",
+  "id": 565009163,
+  "lat": 56.2886320,
+  "lon": -4.5150390,
+  "tags": {
+    "ele": "514",
+    "munro": "no",
+    "name": "Beinn Mheadhonach",
+    "natural": "peak",
+    "source": "OS7"
+  }
+},
+{
+  "type": "node",
+  "id": 592054847,
+  "lat": 56.3238196,
+  "lon": -4.2918891,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-095",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "description": "Wing of steepness",
+    "donald": "no",
+    "ele": "645",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Sgiath a' Chaise",
+    "natural": "peak",
+    "note": "no cairn",
+    "prominence": "304",
+    "source": "survey, GPS",
+    "wikidata": "Q13131294"
+  }
+},
+{
+  "type": "node",
+  "id": 592164050,
+  "lat": 56.0610558,
+  "lon": -5.0895565,
+  "tags": {
+    "ele": "571",
+    "name": "Meall Dubh",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 598109051,
+  "lat": 56.2912360,
+  "lon": -4.8372230,
+  "tags": {
+    "ele": "604",
+    "name": "Maol Meadhonach",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 608112163,
+  "lat": 56.3790154,
+  "lon": -4.6657686,
+  "tags": {
+    "corbett": "no",
+    "donald": "no",
+    "ele": "464",
+    "graham": "no",
+    "munro": "no",
+    "name": "Craw Knowe",
+    "natural": "peak",
+    "source": "OS7"
+  }
+},
+{
+  "type": "node",
+  "id": 608113016,
+  "lat": 56.3910372,
+  "lon": -4.6446542,
+  "tags": {
+    "corbett": "no",
+    "ele": "381",
+    "graham": "no",
+    "munro": "no",
+    "name": "Kirk Craig",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 608113792,
+  "lat": 56.3975929,
+  "lon": -4.6837073,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-093",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "description": "Crooked",
+    "donald": "no",
+    "ele": "650",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Fiarach",
+    "natural": "peak",
+    "prominence": "181",
+    "source": "OS7",
+    "wikidata": "Q13128436"
+  }
+},
+{
+  "type": "node",
+  "id": 608115231,
+  "lat": 56.3724089,
+  "lon": -4.7145204,
+  "tags": {
+    "ele": "586",
+    "name": "Cruachan Cruinn",
+    "natural": "peak",
+    "source": "OS7"
+  }
+},
+{
+  "type": "node",
+  "id": 609914620,
+  "lat": 56.5033973,
+  "lon": -4.3621467,
+  "tags": {
+    "ele": "741",
+    "name": "Meall Dhùin Croisg",
+    "natural": "peak",
+    "wikidata": "Q13130020"
+  }
+},
+{
+  "type": "node",
+  "id": 609915074,
+  "lat": 56.5093011,
+  "lon": -4.3369830,
+  "tags": {
+    "ele": "916",
+    "name": "Creag na Caillich",
+    "natural": "peak",
+    "wikidata": "Q13130086"
+  }
+},
+{
+  "type": "node",
+  "id": 609915538,
+  "lat": 56.5155806,
+  "lon": -4.3252564,
+  "tags": {
+    "ele": "1000",
+    "name": "Beinn nan Eachan",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 609920367,
+  "lat": 56.5193957,
+  "lon": -4.3514662,
+  "tags": {
+    "ele": "813",
+    "name": "Beinn a' Bhuic",
+    "natural": "peak",
+    "wikidata": "Q13130085"
+  }
+},
+{
+  "type": "node",
+  "id": 609924243,
+  "lat": 56.4963599,
+  "lon": -4.3050221,
+  "tags": {
+    "ele": "564",
+    "name": "Meall Liath",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 611357770,
+  "lat": 56.4652129,
+  "lon": -4.0981355,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-022",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "description": "Convex crag",
+    "ele": "879",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Creag Uchdag",
+    "natural": "peak",
+    "prominence": "273"
+  }
+},
+{
+  "type": "node",
+  "id": 611358113,
+  "lat": 56.4804780,
+  "lon": -4.1051736,
+  "tags": {
+    "ele": "833",
+    "name": "Meall nan Oighreag",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 611358667,
+  "lat": 56.4909514,
+  "lon": -4.0645757,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-047",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "no",
+    "description": "Fairy-hill of Ardtalnaig",
+    "ele": "759",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Shee of Ardtalnaig",
+    "natural": "peak",
+    "prominence": "224",
+    "wikidata": "Q20597284"
+  }
+},
+{
+  "type": "node",
+  "id": 611358689,
+  "lat": 56.5041693,
+  "lon": -4.1068902,
+  "tags": {
+    "ele": "682",
+    "name": "Tullich Hill",
+    "natural": "peak",
+    "wikidata": "Q13132055"
+  }
+},
+{
+  "type": "node",
+  "id": 636984339,
+  "lat": 56.3155138,
+  "lon": -4.2887135,
+  "tags": {
+    "corbett": "no",
+    "donald": "no",
+    "ele": "567",
+    "graham": "no",
+    "munro": "no",
+    "name": "Creag a' Mhadaidh",
+    "natural": "peak",
+    "source": "GPS"
+  }
+},
+{
+  "type": "node",
+  "id": 663812311,
+  "lat": 56.0835365,
+  "lon": -4.9151569,
+  "tags": {
+    "ele": "657",
+    "name": "Creachan Mór",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 676931557,
+  "lat": 55.9631103,
+  "lon": -4.0348339,
+  "tags": {
+    "corbett": "no",
+    "donald": "no",
+    "ele": "149",
+    "graham": "no",
+    "munro": "no",
+    "name": "Croy Hill",
+    "natural": "peak",
+    "new_donald": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 702985080,
+  "lat": 56.0338739,
+  "lon": -4.1935266,
+  "tags": {
+    "corbett": "no",
+    "ele": "425",
+    "munro": "no",
+    "name": "Dungoil",
+    "natural": "peak",
+    "source": "survey"
+  }
+},
+{
+  "type": "node",
+  "id": 703259865,
+  "lat": 56.0783939,
+  "lon": -4.2040528,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-163",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "ele": "511",
+    "graham": "no",
+    "man_made": "survey_point",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Stronend",
+    "natural": "peak",
+    "prominence": "286",
+    "source": "Bing;survey"
+  }
+},
+{
+  "type": "node",
+  "id": 773380657,
+  "lat": 56.1674061,
+  "lon": -4.8843698,
+  "tags": {
+    "ele": "383",
+    "name": "The Steeple",
+    "natural": "peak",
+    "source": "historical",
+    "wikidata": "Q7766459",
+    "wikipedia": "en:The Steeple (Lochgoilhead)"
+  }
+},
+{
+  "type": "node",
+  "id": 773380658,
+  "lat": 56.1545968,
+  "lon": -4.8668088,
+  "tags": {
+    "ele": "502",
+    "name": "Carn Clas",
+    "natural": "peak",
+    "source": "historical"
+  }
+},
+{
+  "type": "node",
+  "id": 773380659,
+  "lat": 56.1260474,
+  "lon": -4.8739327,
+  "tags": {
+    "ele": "368",
+    "name": "Tom Molach",
+    "natural": "peak",
+    "source": "historical",
+    "wikidata": "Q7816911",
+    "wikipedia": "en:Tom Molach"
+  }
+},
+{
+  "type": "node",
+  "id": 773380662,
+  "lat": 56.1040829,
+  "lon": -4.8627747,
+  "tags": {
+    "ele": "144",
+    "name": "Meall Daraich",
+    "natural": "peak",
+    "source": "historical"
+  }
+},
+{
+  "type": "node",
+  "id": 773380663,
+  "lat": 56.1467142,
+  "lon": -4.8518975,
+  "tags": {
+    "ele": "652",
+    "name": "Beinn Reithe",
+    "natural": "peak",
+    "source": "historical",
+    "wikidata": "Q35366",
+    "wikipedia": "en:Beinn Reithe"
+  }
+},
+{
+  "type": "node",
+  "id": 773380665,
+  "lat": 56.1315007,
+  "lon": -4.8565520,
+  "tags": {
+    "ele": "521",
+    "name": "The Saddle",
+    "natural": "peak",
+    "source": "historical",
+    "wikidata": "Q7761995",
+    "wikipedia": "en:The Saddle (Lochgoilhead)"
+  }
+},
+{
+  "type": "node",
+  "id": 773380666,
+  "lat": 56.1154734,
+  "lon": -4.8759068,
+  "tags": {
+    "ele": "437",
+    "man_made": "survey_point",
+    "name": "Clach Bheinn",
+    "natural": "peak",
+    "source": "historical",
+    "wikidata": "Q5124856",
+    "wikipedia": "en:Clach Bheinn (Lochgoilhead)"
+  }
+},
+{
+  "type": "node",
+  "id": 773380667,
+  "lat": 56.1666633,
+  "lon": -4.8465533,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-046",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "ele": "763.5",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Cnoc Coinnich",
+    "natural": "peak",
+    "prominence": "273",
+    "source": "historical",
+    "wikidata": "Q5137384",
+    "wikipedia": "en:Cnoc Còinnich"
+  }
+},
+{
+  "type": "node",
+  "id": 843516637,
+  "lat": 56.1886790,
+  "lon": -4.3424423,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-223",
+    "communication:amateur_radio:sota:points": "1",
+    "corbett": "no",
+    "description": "Crag of the speckled moor",
+    "donald": "no",
+    "ele": "400",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Craig of Monievreckie",
+    "natural": "peak",
+    "prominence": "175",
+    "source": "survey"
+  }
+},
+{
+  "type": "node",
+  "id": 843785732,
+  "lat": 56.1880272,
+  "lon": -4.4022734,
+  "tags": {
+    "corbett": "no",
+    "donald": "no",
+    "ele": "387",
+    "graham": "no",
+    "munro": "no",
+    "name": "Craigmore",
+    "natural": "peak",
+    "wikidata": "Q30609179",
+    "wikipedia": "en:Craigmore (hill)"
+  }
+},
+{
+  "type": "node",
+  "id": 843814302,
+  "lat": 56.2057419,
+  "lon": -4.2766291,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-207",
+    "communication:amateur_radio:sota:points": "1",
+    "corbett": "no",
+    "description": "Red hill",
+    "ele": "427",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn Dearg",
+    "natural": "peak",
+    "prominence": "212"
+  }
+},
+{
+  "type": "node",
+  "id": 846102364,
+  "lat": 56.3308672,
+  "lon": -4.3514264,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-127",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "description": "Hill/peak of the fairy-mound",
+    "donald": "no",
+    "ele": "572",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn an t-Sìthein",
+    "natural": "peak",
+    "note": "Know and shown as Beinn an t-Sithein on older maps, also early documents back up this name.",
+    "prominence": "287",
+    "source": "local_knowledge"
+  }
+},
+{
+  "type": "node",
+  "id": 846118281,
+  "lat": 56.3242763,
+  "lon": -4.3475210,
+  "tags": {
+    "corbett": "no",
+    "donald": "no",
+    "ele": "546",
+    "graham": "no",
+    "munro": "no",
+    "name": "An Sìthean",
+    "natural": "peak",
+    "note": "sub peak of Beinn an t-Sìthein",
+    "source": "Old 1866 map"
+  }
+},
+{
+  "type": "node",
+  "id": 943598070,
+  "lat": 56.0164307,
+  "lon": -4.2189518,
+  "tags": {
+    "corbett": "no",
+    "donald": "no",
+    "ele": "550",
+    "graham": "no",
+    "man_made": "survey_point",
+    "munro": "no",
+    "name": "Holehead",
+    "natural": "peak",
+    "source": "GPS",
+    "survey_point:structure": "pillar",
+    "wikimedia_commons": "Category:Holehead trig point"
+  }
+},
+{
+  "type": "node",
+  "id": 943599101,
+  "lat": 56.0161612,
+  "lon": -4.2450663,
+  "tags": {
+    "corbett": "no",
+    "donald": "no",
+    "ele": "517",
+    "graham": "no",
+    "munro": "no",
+    "name": "Hart Hill",
+    "natural": "peak",
+    "source": "npe"
+  }
+},
+{
+  "type": "node",
+  "id": 943603222,
+  "lat": 56.0463742,
+  "lon": -4.0921160,
+  "tags": {
+    "corbett": "no",
+    "ele": "413",
+    "ele:ft": "1356",
+    "munro": "no",
+    "name": "Cairnoch Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 943604869,
+  "lat": 56.0395423,
+  "lon": -4.0684826,
+  "tags": {
+    "corbett": "no",
+    "ele": "352",
+    "ele:ft": "1156",
+    "munro": "no",
+    "name": "Craigannet Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 943606672,
+  "lat": 56.0366629,
+  "lon": -4.0307814,
+  "tags": {
+    "corbett": "no",
+    "ele": "352",
+    "ele:ft": "1156",
+    "munro": "no",
+    "name": "Dundaff Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 943607908,
+  "lat": 56.0539465,
+  "lon": -4.0480763,
+  "tags": {
+    "corbett": "no",
+    "ele": "353",
+    "ele:ft": "1159",
+    "munro": "no",
+    "name": "Craigengelt Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 943613204,
+  "lat": 56.0921759,
+  "lon": -4.1559312,
+  "tags": {
+    "corbett": "no",
+    "donald": "no",
+    "ele": "411",
+    "ele:ft": "1349",
+    "graham": "no",
+    "munro": "no",
+    "name": "Lees Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 943613769,
+  "lat": 56.0777131,
+  "lon": -4.1343018,
+  "tags": {
+    "corbett": "no",
+    "donald": "no",
+    "ele": "415",
+    "ele:ft": "1364",
+    "graham": "no",
+    "munro": "no",
+    "name": "Ling Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 957522715,
+  "lat": 56.1144865,
+  "lon": -4.7320401,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-068",
+    "communication:amateur_radio:sota:points": "4",
+    "ele": "702",
+    "name": "Beinn Eich",
+    "natural": "peak",
+    "source": "NPE",
+    "wikidata": "Q20581512"
+  }
+},
+{
+  "type": "node",
+  "id": 957522720,
+  "lat": 56.1362448,
+  "lon": -4.7525805,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-054",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "no",
+    "description": "Hill of the fort",
+    "ele": "734",
+    "graham": "yes",
+    "man_made": "survey_point",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Doune Hill",
+    "natural": "peak",
+    "prominence": "695",
+    "source": "OS7",
+    "wikidata": "Q13127936"
+  }
+},
+{
+  "type": "node",
+  "id": 957522726,
+  "lat": 56.1130373,
+  "lon": -4.7858369,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-066",
+    "communication:amateur_radio:sota:points": "4",
+    "ele": "710",
+    "name": "Beinn a Mhanaich",
+    "natural": "peak",
+    "source": "OS7"
+  }
+},
+{
+  "type": "node",
+  "id": 957522730,
+  "lat": 56.0861433,
+  "lon": -4.6941501,
+  "tags": {
+    "ele": "593",
+    "name": "Beinn Ruisg",
+    "natural": "peak",
+    "source": "OS7"
+  }
+},
+{
+  "type": "node",
+  "id": 957522737,
+  "lat": 56.0894506,
+  "lon": -4.6580261,
+  "tags": {
+    "ele": "352",
+    "name": "Cruach Dubh",
+    "natural": "peak",
+    "source": "OS7"
+  }
+},
+{
+  "type": "node",
+  "id": 957522738,
+  "lat": 56.1207099,
+  "lon": -4.8103934,
+  "tags": {
+    "ele": "285",
+    "name": "Tom Buidhe",
+    "natural": "peak",
+    "source": "OS7"
+  }
+},
+{
+  "type": "node",
+  "id": 957522741,
+  "lat": 56.1451762,
+  "lon": -4.7973476,
+  "tags": {
+    "ele": "283",
+    "name": "Croggan Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 957522748,
+  "lat": 56.1296637,
+  "lon": -4.7772380,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-080",
+    "communication:amateur_radio:sota:points": "2",
+    "ele": "684",
+    "name": "Cruach an t-Sithein",
+    "natural": "peak",
+    "source": "OS7"
+  }
+},
+{
+  "type": "node",
+  "id": 957522749,
+  "lat": 56.0732211,
+  "lon": -4.6761807,
+  "tags": {
+    "ele": "536",
+    "name": "Creaghan Hill",
+    "natural": "peak",
+    "source": "OS7"
+  }
+},
+{
+  "type": "node",
+  "id": 957522758,
+  "lat": 56.0901534,
+  "lon": -4.7160098,
+  "tags": {
+    "ele": "658",
+    "name": "Creag an Leinibh",
+    "natural": "peak",
+    "source": "OS7",
+    "wikidata": "Q20595135"
+  }
+},
+{
+  "type": "node",
+  "id": 957522760,
+  "lat": 56.1678541,
+  "lon": -4.7493779,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-103",
+    "communication:amateur_radio:sota:points": "2",
+    "ele": "632",
+    "name": "Tullich Hill",
+    "natural": "peak",
+    "source": "NPE",
+    "wikidata": "Q13132054"
+  }
+},
+{
+  "type": "node",
+  "id": 957522761,
+  "lat": 56.1630574,
+  "lon": -4.7049044,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-081",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "description": "Speckled hill",
+    "ele": "681",
+    "graham": "yes",
+    "man_made": "survey_point",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn Bhreac",
+    "natural": "peak",
+    "prominence": "524",
+    "source": "OS7",
+    "wikidata": "Q20581162"
+  }
+},
+{
+  "type": "node",
+  "id": 957522762,
+  "lat": 56.0775511,
+  "lon": -4.7268889,
+  "tags": {
+    "ele": "638",
+    "name": "Balcnock",
+    "natural": "peak",
+    "source": "OS7"
+  }
+},
+{
+  "type": "node",
+  "id": 957522769,
+  "lat": 56.0933400,
+  "lon": -4.7544215,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-062",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "no",
+    "description": "Hill of the sheep",
+    "ele": "713",
+    "graham": "yes",
+    "man_made": "survey_point",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn Chaorach",
+    "natural": "peak",
+    "prominence": "381",
+    "source": "OS7",
+    "wikidata": "Q20581243"
+  }
+},
+{
+  "type": "node",
+  "id": 957522771,
+  "lat": 56.0515645,
+  "lon": -4.8553190,
+  "tags": {
+    "alt_name": "Mam Mòr",
+    "ele": "216",
+    "name": "Ach-na-Cloich",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 957522772,
+  "lat": 56.0741516,
+  "lon": -4.7549126,
+  "tags": {
+    "ele": "515",
+    "name": "Auchengaich Hill",
+    "natural": "peak",
+    "source": "OS7"
+  }
+},
+{
+  "type": "node",
+  "id": 957522779,
+  "lat": 56.1810889,
+  "lon": -4.7268044,
+  "tags": {
+    "ele": "661",
+    "name": "Ben Reoch",
+    "natural": "peak",
+    "source": "NPE",
+    "wikidata": "Q20582443"
+  }
+},
+{
+  "type": "node",
+  "id": 957522782,
+  "lat": 56.1018605,
+  "lon": -4.7925806,
+  "tags": {
+    "ele": "589",
+    "name": "Maol am Fheidh",
+    "natural": "peak",
+    "source": "OS7"
+  }
+},
+{
+  "type": "node",
+  "id": 957522783,
+  "lat": 56.0366019,
+  "lon": -4.7532453,
+  "tags": {
+    "ele": "353",
+    "name": "Tom na h-Airidh",
+    "natural": "peak",
+    "source": "OS7"
+  }
+},
+{
+  "type": "node",
+  "id": 957522787,
+  "lat": 56.0904841,
+  "lon": -4.7858495,
+  "tags": {
+    "ele": "513",
+    "name": "The Strone",
+    "natural": "peak",
+    "source": "OS7"
+  }
+},
+{
+  "type": "node",
+  "id": 957522791,
+  "lat": 56.1219549,
+  "lon": -4.6787739,
+  "tags": {
+    "ele": "642",
+    "name": "Beinn Dubh",
+    "natural": "peak",
+    "source": "npe"
+  }
+},
+{
+  "type": "node",
+  "id": 957522793,
+  "lat": 56.0463290,
+  "lon": -4.7697327,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-240",
+    "communication:amateur_radio:sota:points": "1",
+    "corbett": "no",
+    "ele": "361",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "The Fruin",
+    "natural": "peak",
+    "prominence": "169",
+    "source": "OS7"
+  }
+},
+{
+  "type": "node",
+  "id": 957522797,
+  "lat": 56.0863500,
+  "lon": -4.7486140,
+  "tags": {
+    "ele": "699",
+    "name": "Beinn Tharsuinn",
+    "natural": "peak",
+    "source": "OS7",
+    "wikidata": "Q20582010"
+  }
+},
+{
+  "type": "node",
+  "id": 960873835,
+  "lat": 55.9677953,
+  "lon": -5.0341710,
+  "tags": {
+    "ele": "579",
+    "name": "Leacann nan Gall",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 960873844,
+  "lat": 55.9532082,
+  "lon": -4.9943372,
+  "tags": {
+    "ele": "503",
+    "man_made": "survey_point",
+    "name": "Bishop's Seat",
+    "natural": "peak",
+    "ref": "S5044",
+    "source": "NPE",
+    "survey_point:structure": "pillar"
+  }
+},
+{
+  "type": "node",
+  "id": 960873847,
+  "lat": 55.9557840,
+  "lon": -4.9856847,
+  "tags": {
+    "ele": "469",
+    "name": "Elligan",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 960873851,
+  "lat": 55.9502814,
+  "lon": -4.9801973,
+  "tags": {
+    "ele": "370",
+    "name": "The Badd",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 960873854,
+  "lat": 55.9840254,
+  "lon": -5.0871825,
+  "tags": {
+    "ele": "578",
+    "name": "Cruach nan Caorach",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 960873857,
+  "lat": 55.9710954,
+  "lon": -5.0531723,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-109",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "ele": "611",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Cruach nan Capull",
+    "natural": "peak",
+    "prominence": "485",
+    "wikidata": "Q5189748",
+    "wikipedia": "en:Cruach nan Capull"
+  }
+},
+{
+  "type": "node",
+  "id": 998353448,
+  "lat": 56.2953556,
+  "lon": -4.9371180,
+  "tags": {
+    "ele": "658",
+    "name": "Clachan Hill",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 998353450,
+  "lat": 56.3410906,
+  "lon": -4.8805829,
+  "tags": {
+    "ele": "803",
+    "name": "Ceann Garbh",
+    "natural": "peak",
+    "source": "NPE",
+    "wikidata": "Q20581213"
+  }
+},
+{
+  "type": "node",
+  "id": 998353451,
+  "lat": 56.3168348,
+  "lon": -4.7790470,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-079",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "description": "Hill of the little stag",
+    "ele": "684",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn Damhain",
+    "natural": "peak",
+    "prominence": "220",
+    "source": "GPS;NPE",
+    "wikidata": "Q13125831"
+  }
+},
+{
+  "type": "node",
+  "id": 998353492,
+  "lat": 56.3359346,
+  "lon": -4.7674689,
+  "tags": {
+    "ele": "734",
+    "name": "Troisgeach",
+    "natural": "peak",
+    "source": "NPE",
+    "wikidata": "Q13132035"
+  }
+},
+{
+  "type": "node",
+  "id": 998353496,
+  "lat": 56.3266908,
+  "lon": -4.9067779,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-012",
+    "communication:amateur_radio:sota:points": "6",
+    "description": "Yellow hill",
+    "ele": "948",
+    "marilyn": "yes",
+    "munro": "yes",
+    "munro_number": "M216",
+    "name": "Beinn Bhuidhe",
+    "name:gd": "A' Bheinn Bhuidhe",
+    "natural": "peak",
+    "prominence": "592",
+    "source": "NPE",
+    "wikidata": "Q41204",
+    "wikipedia": "en:Beinn Bhuidhe (Glen Fyne)"
+  }
+},
+{
+  "type": "node",
+  "id": 998353515,
+  "lat": 56.2555098,
+  "lon": -4.8844313,
+  "tags": {
+    "corbett": "yes",
+    "description": "Peak of the fiddler",
+    "ele": "811",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Binnein an Fhidhleir",
+    "natural": "peak",
+    "prominence": "504",
+    "source": "NPE",
+    "wikidata": "Q41212",
+    "wikipedia": "en:Binnein an Fhidhleir"
+  }
+},
+{
+  "type": "node",
+  "id": 998353521,
+  "lat": 56.3337882,
+  "lon": -4.7988889,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-045",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "description": "Hill of powder",
+    "ele": "764",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Meall an Fhudair",
+    "natural": "peak",
+    "prominence": "382",
+    "source": "GPS;NPE",
+    "wikidata": "Q13130056"
+  }
+},
+{
+  "type": "node",
+  "id": 998354099,
+  "lat": 56.3330278,
+  "lon": -4.9427962,
+  "tags": {
+    "ele": "694",
+    "name": "Beinn an Sithein",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 998354114,
+  "lat": 56.2868445,
+  "lon": -4.9787673,
+  "tags": {
+    "ele": "431",
+    "name": "Tom a Bhuachaile",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 998354117,
+  "lat": 56.2572002,
+  "lon": -4.8593330,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-032",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "ele": "817",
+    "name": "Stob Coire Creagach",
+    "natural": "peak",
+    "source": "NPE",
+    "wikidata": "Q13131646"
+  }
+},
+{
+  "type": "node",
+  "id": 998354124,
+  "lat": 56.3027046,
+  "lon": -4.8162404,
+  "tags": {
+    "ele": "645",
+    "name": "Maol Breac",
+    "natural": "peak",
+    "source": "NPE",
+    "wikidata": "Q13129924"
+  }
+},
+{
+  "type": "node",
+  "id": 1011304118,
+  "lat": 56.0125262,
+  "lon": -4.8253326,
+  "tags": {
+    "ele": "198",
+    "ele:ft": "651",
+    "man_made": "survey_point",
+    "name": "Clach MacKenny",
+    "natural": "peak",
+    "ref": "S5140",
+    "tpuk_ref": "2188"
+  }
+},
+{
+  "type": "node",
+  "id": 1132227020,
+  "lat": 56.0346663,
+  "lon": -4.9372735,
+  "tags": {
+    "ele": "548",
+    "name": "Stronchullin Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132227804,
+  "lat": 56.0523424,
+  "lon": -4.9630656,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-086",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "ele": "664",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn Ruadh",
+    "natural": "peak",
+    "prominence": "499",
+    "wikidata": "Q65072941"
+  }
+},
+{
+  "type": "node",
+  "id": 1132280652,
+  "lat": 56.0201289,
+  "lon": -5.0550619,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-113",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "ele": "601",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Sgorach Mór",
+    "natural": "peak",
+    "prominence": "428"
+  }
+},
+{
+  "type": "node",
+  "id": 1132280653,
+  "lat": 56.0276596,
+  "lon": -5.0348917,
+  "tags": {
+    "ele": "580",
+    "name": "An Creachan",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132280654,
+  "lat": 55.9907595,
+  "lon": -5.1032129,
+  "tags": {
+    "ele": "311",
+    "name": "Cnoc Madaidh",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132280655,
+  "lat": 56.0048711,
+  "lon": -5.1413217,
+  "tags": {
+    "ele": "365",
+    "name": "A' Chruach",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132280656,
+  "lat": 56.0162910,
+  "lon": -5.1408926,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-204",
+    "communication:amateur_radio:sota:points": "1",
+    "corbett": "no",
+    "ele": "432",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Cruach nan Cuilean",
+    "natural": "peak",
+    "prominence": "205"
+  }
+},
+{
+  "type": "node",
+  "id": 1132280658,
+  "lat": 56.0019437,
+  "lon": -5.0371233,
+  "tags": {
+    "ele": "521",
+    "name": "Clachaig Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132296030,
+  "lat": 56.0588610,
+  "lon": -5.0555942,
+  "tags": {
+    "ele": "509",
+    "name": "Srón Mhór",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132296031,
+  "lat": 56.0533016,
+  "lon": -5.0300167,
+  "tags": {
+    "ele": "577",
+    "name": "Capull Cloiche",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132296032,
+  "lat": 56.0500326,
+  "lon": -5.0232017,
+  "tags": {
+    "ele": "571",
+    "ele:ft": "1874",
+    "name": "Creachan Mór",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132296033,
+  "lat": 56.0537073,
+  "lon": -5.0104936,
+  "tags": {
+    "ele": "643",
+    "ele:ft": "2109",
+    "name": "Clach Bheinn",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132296034,
+  "lat": 56.0417871,
+  "lon": -5.0130737,
+  "tags": {
+    "ele": "547",
+    "ele:ft": "1792",
+    "name": "Creachan Beag",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132296035,
+  "lat": 56.0545861,
+  "lon": -5.1423347,
+  "tags": {
+    "ele": "294",
+    "name": "An Cruachan",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132296036,
+  "lat": 56.0413556,
+  "lon": -5.1232803,
+  "tags": {
+    "ele": "410",
+    "name": "An Socach",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132296037,
+  "lat": 56.0527647,
+  "lon": -5.0910938,
+  "tags": {
+    "ele": "571",
+    "name": "Carn Bán",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132296039,
+  "lat": 56.0767225,
+  "lon": -5.0748718,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-097",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "ele": "643",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Creag Tharsuinn",
+    "natural": "peak",
+    "prominence": "395",
+    "wikidata": "Q65042870"
+  }
+},
+{
+  "type": "node",
+  "id": 1132296040,
+  "lat": 55.9927162,
+  "lon": -5.0736305,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-110",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "ele": "607",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Cruach Neuran",
+    "natural": "peak",
+    "prominence": "296"
+  }
+},
+{
+  "type": "node",
+  "id": 1132317411,
+  "lat": 56.1410611,
+  "lon": -4.9259377,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-111",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "ele": "606",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Cruach nam Miseag",
+    "natural": "peak",
+    "prominence": "205",
+    "wikidata": "Q5189745",
+    "wikipedia": "en:Cruach nam Miseag"
+  }
+},
+{
+  "type": "node",
+  "id": 1132317418,
+  "lat": 56.1368456,
+  "lon": -4.9712946,
+  "tags": {
+    "ele": "767",
+    "name": "Creag Sgoilte",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132317421,
+  "lat": 56.1417713,
+  "lon": -4.9720671,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-041",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "ele": "779",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn Bheula",
+    "natural": "peak",
+    "prominence": "557",
+    "wikidata": "Q41208",
+    "wikipedia": "en:Beinn Bheula"
+  }
+},
+{
+  "type": "node",
+  "id": 1132317425,
+  "lat": 56.1320627,
+  "lon": -4.9901774,
+  "tags": {
+    "ele": "649",
+    "name": "Beinn Dubhain",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132317428,
+  "lat": 56.1492783,
+  "lon": -4.9952414,
+  "tags": {
+    "ele": "634",
+    "name": "Carnach Mór",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132317433,
+  "lat": 56.0951667,
+  "lon": -4.9048617,
+  "tags": {
+    "ele": "400",
+    "name": "Cruach an Draghair",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132317437,
+  "lat": 56.0999542,
+  "lon": -4.9447729,
+  "tags": {
+    "ele": "635",
+    "name": "Cruach a'Bhuic",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132317438,
+  "lat": 56.1037837,
+  "lon": -4.9549868,
+  "tags": {
+    "ele": "623",
+    "name": "Beinn Bhreac",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132317441,
+  "lat": 56.1179019,
+  "lon": -4.9623682,
+  "tags": {
+    "ele": "661",
+    "name": "Sgurr a' Choinnich",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132317445,
+  "lat": 56.1276141,
+  "lon": -4.9510386,
+  "tags": {
+    "ele": "606",
+    "name": "Cnoc na Trí Críche",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132317453,
+  "lat": 56.0320842,
+  "lon": -4.9586775,
+  "tags": {
+    "ele": "435",
+    "name": "Meal Dubh",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132317456,
+  "lat": 56.0482180,
+  "lon": -4.9293234,
+  "tags": {
+    "ele": "351",
+    "name": "Cnap Reamhar",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132317462,
+  "lat": 56.0696874,
+  "lon": -4.9699213,
+  "tags": {
+    "ele": "550",
+    "name": "Sligrachan Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132317469,
+  "lat": 56.0674356,
+  "lon": -4.9564459,
+  "tags": {
+    "ele": "452",
+    "name": "Castle Craig",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132317478,
+  "lat": 56.0148401,
+  "lon": -4.9292376,
+  "tags": {
+    "ele": "426",
+    "name": "Blairmore Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132317482,
+  "lat": 56.0152240,
+  "lon": -4.9426272,
+  "tags": {
+    "ele": "470",
+    "name": "Cnoc a' Mhadaidh",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132317485,
+  "lat": 56.0222712,
+  "lon": -4.9505493,
+  "tags": {
+    "ele": "464",
+    "name": "Creag Mhór",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132335899,
+  "lat": 56.1659385,
+  "lon": -4.9884395,
+  "tags": {
+    "ele": "565",
+    "name": "Cruach na Cioba",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132335900,
+  "lat": 56.1633577,
+  "lon": -4.9638061,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-069",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "no",
+    "ele": "703",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn Lochain",
+    "natural": "peak",
+    "prominence": "377",
+    "wikidata": "Q3777211",
+    "wikipedia": "en:Beinn Lochain"
+  }
+},
+{
+  "type": "node",
+  "id": 1132335901,
+  "lat": 56.1722462,
+  "lon": -4.9576263,
+  "tags": {
+    "ele": "619",
+    "name": "Beinn Tharsuinn",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1132335902,
+  "lat": 56.1804160,
+  "lon": -4.9516181,
+  "tags": {
+    "corbett": "no",
+    "ele": "658",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Stob na Boine Druim-fhinn",
+    "natural": "peak",
+    "prominence": "152",
+    "wikidata": "Q7617766",
+    "wikipedia": "en:Stob na Boine Druim-fhinn"
+  }
+},
+{
+  "type": "node",
+  "id": 1132335903,
+  "lat": 56.1882020,
+  "lon": -4.9485282,
+  "tags": {
+    "ele": "639",
+    "name": "Mullach Coire a'Chuir",
+    "natural": "peak",
+    "wikidata": "Q116622",
+    "wikipedia": "en:Mullach Coire a' Chuir"
+  }
+},
+{
+  "type": "node",
+  "id": 1132335904,
+  "lat": 56.1869601,
+  "lon": -4.8111133,
+  "tags": {
+    "ele": "643",
+    "name": "Cruach Fhiarach",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1140476038,
+  "lat": 56.3750067,
+  "lon": -4.9121761,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-101",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "description": "Hill of red foxes",
+    "ele": "636",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn Bhalgairean",
+    "natural": "peak",
+    "prominence": "209",
+    "wikidata": "Q13125804"
+  }
+},
+{
+  "type": "node",
+  "id": 1140476040,
+  "lat": 56.3706331,
+  "lon": -4.8551788,
+  "tags": {
+    "ele": "739",
+    "name": "Meall nan Tighearn",
+    "natural": "peak",
+    "wikidata": "Q13130089"
+  }
+},
+{
+  "type": "node",
+  "id": 1140476045,
+  "lat": 56.3646433,
+  "lon": -4.9235000,
+  "tags": {
+    "ele": "590",
+    "name": "Beinn Bhoidheach",
+    "natural": "peak",
+    "wikidata": "Q13125876"
+  }
+},
+{
+  "type": "node",
+  "id": 1140762102,
+  "lat": 56.0907603,
+  "lon": -5.0197011,
+  "tags": {
+    "ele": "547",
+    "name": "Meall Breac",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1140762104,
+  "lat": 56.0945908,
+  "lon": -5.0142080,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-107",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "ele": "618",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn Bheag",
+    "natural": "peak",
+    "prominence": "300",
+    "wikidata": "Q24656735"
+  }
+},
+{
+  "type": "node",
+  "id": 1140762106,
+  "lat": 56.1170870,
+  "lon": -5.0926572,
+  "tags": {
+    "ele": "476",
+    "name": "Tom a'Bhiorain",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1140762107,
+  "lat": 56.1278997,
+  "lon": -5.0984937,
+  "tags": {
+    "ele": "481",
+    "name": "Cruach nan Capull",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1140762108,
+  "lat": 56.1462647,
+  "lon": -5.0936872,
+  "tags": {
+    "ele": "335",
+    "name": "An Cárr",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1141845242,
+  "lat": 55.9619794,
+  "lon": -5.1286697,
+  "tags": {
+    "ele": "498",
+    "name": "Stuchdan Capuill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1141845243,
+  "lat": 55.9529943,
+  "lon": -5.1461791,
+  "tags": {
+    "ele": "391",
+    "name": "Cnoc Breamanach",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1141845246,
+  "lat": 55.9760534,
+  "lon": -5.1331329,
+  "tags": {
+    "ele": "405",
+    "name": "Dùn Mòr",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1141845247,
+  "lat": 55.9724994,
+  "lon": -5.1497840,
+  "tags": {
+    "ele": "394",
+    "name": "Ceag nam Fitheach",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1153340813,
+  "lat": 56.4198312,
+  "lon": -4.5079562,
+  "tags": {
+    "ele": "225",
+    "name": "Dun Riobain",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1189350937,
+  "lat": 56.4730306,
+  "lon": -4.9098031,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/WS-172",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "description": "MacMonadh's hill",
+    "ele": "796",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn Mhic-Mhonaidh",
+    "natural": "peak",
+    "prominence": "420",
+    "source": "GPS survey",
+    "wikidata": "Q20581842"
+  }
+},
+{
+  "type": "node",
+  "id": 1189370020,
+  "lat": 56.4588828,
+  "lon": -4.7919882,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/WS-156",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "description": "Gloomy hill",
+    "ele": "840",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn Udlaidh",
+    "natural": "peak",
+    "prominence": "522",
+    "source": "GPS survey",
+    "wikidata": "Q13125895"
+  }
+},
+{
+  "type": "node",
+  "id": 1189370466,
+  "lat": 56.4670684,
+  "lon": -4.7546911,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/WS-169",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "description": "Grey speckled hill",
+    "ele": "802",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn Bhreac-liath",
+    "natural": "peak",
+    "prominence": "215",
+    "source": "GPS survey",
+    "wikidata": "Q13125814"
+  }
+},
+{
+  "type": "node",
+  "id": 1189403941,
+  "lat": 56.4587859,
+  "lon": -4.6650134,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/CS-071",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "description": "Hill of sheep",
+    "ele": "818",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn Chaorach",
+    "natural": "peak",
+    "prominence": "180",
+    "source": "GPS survey",
+    "wikidata": "Q13125827"
+  }
+},
+{
+  "type": "node",
+  "id": 1189404049,
+  "lat": 56.5074520,
+  "lon": -4.6644472,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/CS-075",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "description": "Hill of the spring",
+    "ele": "806",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn nam Fuaran",
+    "natural": "peak",
+    "prominence": "260",
+    "source": "GPS survey",
+    "wikidata": "Q13125932"
+  }
+},
+{
+  "type": "node",
+  "id": 1189404108,
+  "lat": 56.4676708,
+  "lon": -4.7004172,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/CS-050",
+    "communication:amateur_radio:sota:points": "6",
+    "corbett": "yes",
+    "description": "Brown hill",
+    "ele": "901",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn Odhar",
+    "natural": "peak",
+    "prominence": "457",
+    "source": "GPS survey",
+    "wikidata": "Q4881337",
+    "wikipedia": "en:Beinn Odhar"
+  }
+},
+{
+  "type": "node",
+  "id": 1189404146,
+  "lat": 56.4760696,
+  "lon": -4.6394760,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/CS-055",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "description": "Crooked crag",
+    "ele": "884",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Cam Chreag",
+    "natural": "peak",
+    "prominence": "159",
+    "source": "GPS survey",
+    "wikidata": "Q13126516"
+  }
+},
+{
+  "type": "node",
+  "id": 1189404567,
+  "lat": 56.4905027,
+  "lon": -4.6862284,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/CS-054",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "description": "Hill of the castle",
+    "ele": "886",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn a' Chaisteil",
+    "natural": "peak",
+    "prominence": "467",
+    "source": "GPS survey",
+    "wikidata": "Q3776205",
+    "wikipedia": "en:Beinn a' Chaisteil"
+  }
+},
+{
+  "type": "node",
+  "id": 1230597440,
+  "lat": 56.0085134,
+  "lon": -4.0525544,
+  "tags": {
+    "ele": "453",
+    "name": "Tomtain",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1247771861,
+  "lat": 56.3390816,
+  "lon": -4.7780937,
+  "tags": {
+    "ele": "721",
+    "name": "Meall nan Caora",
+    "natural": "peak",
+    "source": "GPS Survey"
+  }
+},
+{
+  "type": "node",
+  "id": 1255839437,
+  "lat": 56.1015839,
+  "lon": -4.1109930,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-175",
+    "communication:amateur_radio:sota:points": "1",
+    "corbett": "no",
+    "ele": "485",
+    "ele:ft": "1593",
+    "graham": "no",
+    "man_made": "survey_point",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Carleatheran",
+    "natural": "peak",
+    "prominence": "168",
+    "source": "survey;bing",
+    "source:name": "os opendata"
+  }
+},
+{
+  "type": "node",
+  "id": 1276917214,
+  "lat": 56.2804774,
+  "lon": -4.6583183,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-044",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "ele": "770",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn a' Choin",
+    "natural": "peak",
+    "prominence": "346",
+    "source": "OS7",
+    "wikidata": "Q20580790"
+  }
+},
+{
+  "type": "node",
+  "id": 1276917533,
+  "lat": 56.2639557,
+  "lon": -4.6519424,
+  "tags": {
+    "corbett": "no",
+    "donald": "no",
+    "ele": "653",
+    "munro": "no",
+    "name": "Stob an Fhainne",
+    "natural": "peak",
+    "source": "OS7",
+    "wikidata": "Q20598644"
+  }
+},
+{
+  "type": "node",
+  "id": 1301238047,
+  "lat": 56.1498779,
+  "lon": -4.6228870,
+  "tags": {
+    "ele": "232",
+    "name": "Coille Mhor Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1301238055,
+  "lat": 56.2004475,
+  "lon": -4.6649805,
+  "tags": {
+    "ele": "491",
+    "name": "Creag Bhocarn",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1301238057,
+  "lat": 56.2325336,
+  "lon": -4.6620001,
+  "tags": {
+    "ele": "537",
+    "name": "Cruachan",
+    "natural": "peak",
+    "note": "This is the right spelling, some maps have the auch  but its uach"
+  }
+},
+{
+  "type": "node",
+  "id": 1301238089,
+  "lat": 56.1693793,
+  "lon": -4.6180377,
+  "tags": {
+    "corbett": "no",
+    "donald": "no",
+    "ele": "577",
+    "graham": "no",
+    "munro": "no",
+    "name": "Sron Aonaich",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1302069809,
+  "lat": 56.2111893,
+  "lon": -4.6374235,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-102",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "description": "Roundness of the hill",
+    "ele": "632",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Cruinn a' Bheinn",
+    "natural": "peak",
+    "prominence": "177",
+    "wikidata": "Q13127566"
+  }
+},
+{
+  "type": "node",
+  "id": 1302069814,
+  "lat": 56.1788125,
+  "lon": -4.5852385,
+  "tags": {
+    "corbett": "no",
+    "donald": "no",
+    "ele": "565",
+    "munro": "no",
+    "name": "Beinn a' Bhan",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1302075326,
+  "lat": 56.1373394,
+  "lon": -4.5458131,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-124",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "description": "Pinnacle of the goats",
+    "ele": "586",
+    "graham": "no",
+    "man_made": "cairn",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Binnean nan Gobhar",
+    "natural": "peak",
+    "prominence": "153",
+    "wikidata": "Q114853653"
+  }
+},
+{
+  "type": "node",
+  "id": 1307242357,
+  "lat": 56.2063696,
+  "lon": -4.5742691,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-162",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "description": "Black hill",
+    "ele": "508",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn Dubh",
+    "natural": "peak",
+    "prominence": "193"
+  }
+},
+{
+  "type": "node",
+  "id": 1307242366,
+  "lat": 56.2273214,
+  "lon": -4.6043913,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-115",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "description": "Hill of the cave",
+    "ele": "596",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn Uamha",
+    "natural": "peak",
+    "prominence": "264"
+  }
+},
+{
+  "type": "node",
+  "id": 1359314899,
+  "lat": 56.0693532,
+  "lon": -4.1160112,
+  "tags": {
+    "ele": "396",
+    "ele:ft": "1301",
+    "name": "Cringate Law",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1435034288,
+  "lat": 56.3804388,
+  "lon": -4.3625911,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-026",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "ele": "852",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Meall an t-Seallaidh",
+    "natural": "peak",
+    "prominence": "427",
+    "source": "OS OpenData Streetview",
+    "source:position": "survey",
+    "wikidata": "Q13130059"
+  }
+},
+{
+  "type": "node",
+  "id": 1435034333,
+  "lat": 56.3998881,
+  "lon": -4.3580238,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-036",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "description": "MacRanach's crag",
+    "ele": "809",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Creag MacRanaich",
+    "natural": "peak",
+    "prominence": "213",
+    "source": "OS OpenData Streetview",
+    "source:position": "survey",
+    "wikidata": "Q13127337"
+  }
+},
+{
+  "type": "node",
+  "id": 1440390212,
+  "lat": 56.4375369,
+  "lon": -4.1503370,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-063",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "no",
+    "ele": "712",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Creag Ruadh",
+    "natural": "peak",
+    "prominence": "196",
+    "wikidata": "Q20595459"
+  }
+},
+{
+  "type": "node",
+  "id": 1541364442,
+  "lat": 56.2934714,
+  "lon": -4.6795308,
+  "tags": {
+    "ele": "612",
+    "name": "Stob nan Eighrach",
+    "natural": "peak",
+    "wikidata": "Q20598631"
+  }
+},
+{
+  "type": "node",
+  "id": 1541365534,
+  "lat": 56.3596998,
+  "lon": -4.2417332,
+  "tags": {
+    "ele": "733",
+    "name": "Ben Our",
+    "natural": "peak",
+    "wikidata": "Q13125966"
+  }
+},
+{
+  "type": "node",
+  "id": 1672360278,
+  "lat": 56.0996198,
+  "lon": -4.4240030,
+  "tags": {
+    "ele": "230",
+    "name": "Bàt a' Charchel",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1765165144,
+  "lat": 56.1525068,
+  "lon": -4.5776262,
+  "tags": {
+    "cairn": "yes",
+    "communication:amateur_radio:sota": "GM/SS-117",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "description": "Rounded hill",
+    "donald": "no",
+    "ele": "597",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn Uird",
+    "natural": "peak",
+    "prominence": "212"
+  }
+},
+{
+  "type": "node",
+  "id": 1927997338,
+  "lat": 56.2810633,
+  "lon": -4.1156609,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-085",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "description": "Little cave",
+    "ele": "665.8",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Uamh Bheag",
+    "natural": "peak",
+    "prominence": "323",
+    "source": "OS7",
+    "wikidata": "Q96411985"
+  }
+},
+{
+  "type": "node",
+  "id": 1927997404,
+  "lat": 56.2902251,
+  "lon": -4.0782494,
+  "tags": {
+    "ele": "626",
+    "name": "Beinn Odhar",
+    "natural": "peak",
+    "source": "OS7"
+  }
+},
+{
+  "type": "node",
+  "id": 1927997500,
+  "lat": 56.2885102,
+  "lon": -4.1186757,
+  "tags": {
+    "ele": "621",
+    "name": "Meall Clachach",
+    "natural": "peak",
+    "source": "OS7"
+  }
+},
+{
+  "type": "node",
+  "id": 1927997524,
+  "lat": 56.2945132,
+  "lon": -4.0653319,
+  "tags": {
+    "ele": "631",
+    "name": "Beinn nan Eun",
+    "natural": "peak",
+    "source": "OS7",
+    "wikidata": "Q96373348",
+    "wikipedia": "en:Beinn nan Eun (Perth and Kinross)"
+  }
+},
+{
+  "type": "node",
+  "id": 2116566997,
+  "lat": 56.3426698,
+  "lon": -4.2194664,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-008",
+    "communication:amateur_radio:sota:points": "6",
+    "description": "Hill of the bay",
+    "ele": "985",
+    "man_made": "survey_point",
+    "marilyn": "yes",
+    "munro": "yes",
+    "munro_number": "M165",
+    "name": "Ben Vorlich",
+    "name:gd": "Beinn Mhùrlaig",
+    "natural": "peak",
+    "prominence": "831",
+    "source": "survey;NPE",
+    "wikidata": "Q4886615",
+    "wikipedia": "en:Ben Vorlich, Loch Earn"
+  }
+},
+{
+  "type": "node",
+  "id": 2185553372,
+  "lat": 56.3146602,
+  "lon": -4.4680976,
+  "tags": {
+    "alt_name": "Stob Fear-tomhais;Ceann na Baintighearna",
+    "communication:amateur_radio:sota": "GM/SS-043",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "ele": "771",
+    "man_made": "survey_point",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn Stacath",
+    "natural": "peak",
+    "prominence": "363",
+    "ref": "6059",
+    "source": "survey",
+    "wikidata": "Q20598765"
+  }
+},
+{
+  "type": "node",
+  "id": 2185793334,
+  "lat": 56.3412595,
+  "lon": -4.1843256,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-035",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "description": "Hill of the alders",
+    "ele": "809",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Meall na Feàrna",
+    "natural": "peak",
+    "prominence": "236"
+  }
+},
+{
+  "type": "node",
+  "id": 2352310653,
+  "lat": 56.5039755,
+  "lon": -4.6179458,
+  "tags": {
+    "ele": "895",
+    "name": "Meall Tionail",
+    "natural": "peak",
+    "wikidata": "Q13127343"
+  }
+},
+{
+  "type": "node",
+  "id": 2354500145,
+  "lat": 56.4834456,
+  "lon": -4.5936613,
+  "tags": {
+    "ele": "837",
+    "name": "Sròn nan Eun",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2354500146,
+  "lat": 56.4998660,
+  "lon": -4.5830838,
+  "tags": {
+    "ele": "1029",
+    "name": "Stob an Fhir Bhogha",
+    "natural": "peak",
+    "wikidata": "Q20581614"
+  }
+},
+{
+  "type": "node",
+  "id": 2354500149,
+  "lat": 56.4809434,
+  "lon": -4.6206228,
+  "tags": {
+    "ele": "956",
+    "name": "Stob nan Clach",
+    "natural": "peak",
+    "wikidata": "Q20595380"
+  }
+},
+{
+  "type": "node",
+  "id": 2354520233,
+  "lat": 56.5174616,
+  "lon": -4.4565938,
+  "tags": {
+    "ele": "786",
+    "name": "Meall Taurnaigh",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2354657249,
+  "lat": 56.4499716,
+  "lon": -4.6933007,
+  "tags": {
+    "ele": "653",
+    "name": "Meall Buidhe",
+    "natural": "peak",
+    "wikidata": "Q20597955"
+  }
+},
+{
+  "type": "node",
+  "id": 2356011043,
+  "lat": 56.4747917,
+  "lon": -4.4147483,
+  "tags": {
+    "ele": "719",
+    "name": "Creag Mhor",
+    "natural": "peak",
+    "source": "OS 7th series historic",
+    "wikidata": "Q13127342"
+  }
+},
+{
+  "type": "node",
+  "id": 2358285955,
+  "lat": 56.4642014,
+  "lon": -4.3668949,
+  "tags": {
+    "ele": "602",
+    "name": "Meall Clachach",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2358285958,
+  "lat": 56.4629187,
+  "lon": -4.3867217,
+  "tags": {
+    "ele": "559",
+    "name": "Mid Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2408919863,
+  "lat": 56.2368829,
+  "lon": -4.8167629,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-006",
+    "communication:amateur_radio:sota:points": "8",
+    "description": "Butter hill",
+    "ele": "1011",
+    "marilyn": "yes",
+    "munro": "yes",
+    "munro_number": "M118",
+    "name": "Beinn Ìme",
+    "natural": "peak",
+    "prominence": "696",
+    "source": "NPE",
+    "wikidata": "Q3396753",
+    "wikipedia": "en:Beinn Ìme"
+  }
+},
+{
+  "type": "node",
+  "id": 2411756345,
+  "lat": 56.2706247,
+  "lon": -4.6218194,
+  "tags": {
+    "ele": "685",
+    "name": "Maol Mor",
+    "natural": "peak",
+    "wikidata": "Q13129933"
+  }
+},
+{
+  "type": "node",
+  "id": 2411756346,
+  "lat": 56.3017336,
+  "lon": -4.6714253,
+  "tags": {
+    "ele": "589",
+    "name": "Ben Ducteach",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2411872273,
+  "lat": 56.1654666,
+  "lon": -4.8776018,
+  "tags": {
+    "ele": "389",
+    "name": "Tom nan Gamhna",
+    "natural": "peak",
+    "wikidata": "Q7818171",
+    "wikipedia": "en:Tom nan Gamhna"
+  }
+},
+{
+  "type": "node",
+  "id": 2411872274,
+  "lat": 56.2083750,
+  "lon": -4.9867208,
+  "tags": {
+    "ele": "565",
+    "name": "Cruach nan Capull",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2411872275,
+  "lat": 56.2075826,
+  "lon": -4.9551244,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-108",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "ele": "611",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Cruach nam Mult",
+    "natural": "peak",
+    "prominence": "282",
+    "wikidata": "Q5189747",
+    "wikipedia": "en:Cruach nam Mult"
+  }
+},
+{
+  "type": "node",
+  "id": 2411872276,
+  "lat": 56.2030807,
+  "lon": -4.9364562,
+  "tags": {
+    "ele": "487",
+    "name": "Stob Liath",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2411872279,
+  "lat": 56.1964868,
+  "lon": -5.0138411,
+  "tags": {
+    "ele": "483",
+    "name": "Creag Dhubh",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2411872280,
+  "lat": 56.1858844,
+  "lon": -5.0555978,
+  "tags": {
+    "ele": "332",
+    "name": "Creagan an Eich",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2415227360,
+  "lat": 56.3158235,
+  "lon": -4.1428775,
+  "tags": {
+    "ele": "562",
+    "name": "Càrn Labhruinn",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2415227367,
+  "lat": 56.2882038,
+  "lon": -4.3638915,
+  "tags": {
+    "ele": "748",
+    "name": "Meall a' Choire Dhuibh",
+    "natural": "peak",
+    "wikidata": "Q20597701"
+  }
+},
+{
+  "type": "node",
+  "id": 2415227385,
+  "lat": 56.3672025,
+  "lon": -4.4411391,
+  "tags": {
+    "ele": "730",
+    "name": "Stob Caol",
+    "natural": "peak",
+    "wikidata": "Q13131642"
+  }
+},
+{
+  "type": "node",
+  "id": 2415227437,
+  "lat": 56.2893018,
+  "lon": -4.4928993,
+  "tags": {
+    "ele": "603",
+    "name": "Meall Gaothach",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2415227455,
+  "lat": 56.4017927,
+  "lon": -4.0486397,
+  "tags": {
+    "ele": "498",
+    "name": "Creag Liath",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2415227462,
+  "lat": 56.5186448,
+  "lon": -4.9079722,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/WS-235",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "description": "Seat hill",
+    "ele": "676",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn Suidhe",
+    "natural": "peak",
+    "prominence": "280",
+    "wikidata": "Q20581969"
+  }
+},
+{
+  "type": "node",
+  "id": 2415227465,
+  "lat": 56.3046590,
+  "lon": -4.1879515,
+  "tags": {
+    "ele": "629",
+    "name": "Meall Odhar",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2415227478,
+  "lat": 56.4565183,
+  "lon": -4.1491431,
+  "tags": {
+    "ele": "681",
+    "name": "Ruadh Mheall",
+    "natural": "peak",
+    "wikidata": "Q20593984"
+  }
+},
+{
+  "type": "node",
+  "id": 2415227483,
+  "lat": 56.3454686,
+  "lon": -4.1293162,
+  "tags": {
+    "alt_name": "Stuc na Cabaig",
+    "communication:amateur_radio:sota": "GM/SS-288",
+    "communication:amateur_radio:sota:points": "4",
+    "ele": "708.3",
+    "graham": "yes",
+    "marilyn": "yes",
+    "name": "Creag na h-Eararuidh",
+    "natural": "peak",
+    "prominence": "353m"
+  }
+},
+{
+  "type": "node",
+  "id": 2415227487,
+  "lat": 56.4267696,
+  "lon": -4.3115391,
+  "tags": {
+    "ele": "704",
+    "name": "Beinn Leabhain",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2415227494,
+  "lat": 56.4984660,
+  "lon": -4.8419684,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/WS-242",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "description": "Hill of the bull",
+    "ele": "665",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Meall Tairbh",
+    "natural": "peak",
+    "prominence": "257",
+    "wikidata": "Q13130038"
+  }
+},
+{
+  "type": "node",
+  "id": 2415227526,
+  "lat": 56.3938624,
+  "lon": -4.3979663,
+  "tags": {
+    "ele": "790",
+    "name": "Meall an Fhiodhain",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2415227538,
+  "lat": 56.5008844,
+  "lon": -4.8586196,
+  "tags": {
+    "ele": "545",
+    "name": "Meall an Laoigh",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2415227549,
+  "lat": 56.5042950,
+  "lon": -4.8102969,
+  "tags": {
+    "ele": "636",
+    "name": "Beinn Inverveigh",
+    "natural": "peak",
+    "wikidata": "Q13125959"
+  }
+},
+{
+  "type": "node",
+  "id": 2415227560,
+  "lat": 56.4667726,
+  "lon": -4.2217707,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-099",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "description": "Rough crag",
+    "ele": "637",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Creag Charbh",
+    "natural": "peak",
+    "prominence": "151"
+  }
+},
+{
+  "type": "node",
+  "id": 2415227579,
+  "lat": 56.3758536,
+  "lon": -4.4966759,
+  "tags": {
+    "ele": "907",
+    "name": "Stob Creagach",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2415227585,
+  "lat": 56.3769942,
+  "lon": -4.4443149,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-048",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "no",
+    "description": "The point",
+    "ele": "753",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "The Stob",
+    "natural": "peak",
+    "prominence": "228",
+    "wikidata": "Q13131839"
+  }
+},
+{
+  "type": "node",
+  "id": 2415227637,
+  "lat": 56.4104775,
+  "lon": -4.1856975,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-084",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "ele": "672",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Creag Each",
+    "natural": "peak",
+    "prominence": "216"
+  }
+},
+{
+  "type": "node",
+  "id": 2415227643,
+  "lat": 56.2497423,
+  "lon": -4.3404597,
+  "tags": {
+    "ele": "634",
+    "name": "Stùc Odhar",
+    "natural": "peak",
+    "wikidata": "Q20599091"
+  }
+},
+{
+  "type": "node",
+  "id": 2415227659,
+  "lat": 56.2766762,
+  "lon": -4.5364155,
+  "tags": {
+    "ele": "544",
+    "name": "Cruinn Bheinn",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2415227680,
+  "lat": 56.3585969,
+  "lon": -4.0732731,
+  "tags": {
+    "ele": "621",
+    "name": "Ben Halton",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2415227685,
+  "lat": 56.3986740,
+  "lon": -4.0296374,
+  "tags": {
+    "ele": "446",
+    "name": "Crappich Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2416107096,
+  "lat": 56.5069825,
+  "lon": -4.0416590,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-019",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "yes",
+    "description": "Crags of the hill",
+    "ele": "888",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Creagan na Beinne",
+    "natural": "peak",
+    "prominence": "455",
+    "wikidata": "Q5183318",
+    "wikipedia": "en:Creagan na Beinne"
+  }
+},
+{
+  "type": "node",
+  "id": 2681104976,
+  "lat": 56.2089736,
+  "lon": -4.5169729,
+  "tags": {
+    "ele": "500",
+    "name": "Sron Lochie",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2681104979,
+  "lat": 56.2204141,
+  "lon": -4.4891572,
+  "tags": {
+    "ele": "699",
+    "name": "Beinn Bhreac",
+    "natural": "peak",
+    "wikidata": "Q13125812"
+  }
+},
+{
+  "type": "node",
+  "id": 2681104980,
+  "lat": 56.3134446,
+  "lon": -4.0068382,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-149",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "description": "Hill of the stone (from Beinn Clach)",
+    "ele": "533",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Ben Clach",
+    "natural": "peak",
+    "prominence": "230"
+  }
+},
+{
+  "type": "node",
+  "id": 2681104985,
+  "lat": 56.3418571,
+  "lon": -4.3012418,
+  "tags": {
+    "ele": "578",
+    "name": "Meall nan Oighreag",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2681104987,
+  "lat": 56.4105298,
+  "lon": -4.3974494,
+  "tags": {
+    "ele": "593",
+    "name": "Creag Ghlas",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2681104988,
+  "lat": 56.2006929,
+  "lon": -4.4318718,
+  "tags": {
+    "ele": "521",
+    "name": "Creag Innich",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2681104991,
+  "lat": 56.2327150,
+  "lon": -4.5469750,
+  "tags": {
+    "ele": "327",
+    "name": "Caisteal Corrach",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2681104995,
+  "lat": 56.3042103,
+  "lon": -4.0364498,
+  "tags": {
+    "ele": "478",
+    "name": "Sròn Odhar",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2681104996,
+  "lat": 56.2858232,
+  "lon": -4.0407700,
+  "tags": {
+    "ele": "497",
+    "name": "Meall Coire Nochd Mòr",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2681104998,
+  "lat": 56.3180621,
+  "lon": -4.0676064,
+  "tags": {
+    "ele": "398",
+    "name": "Cnoc Brannan",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2681104999,
+  "lat": 56.3132089,
+  "lon": -4.0353340,
+  "tags": {
+    "ele": "495",
+    "name": "Cnoc nan Oighreag",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2681105000,
+  "lat": 56.4016990,
+  "lon": -4.4591660,
+  "tags": {
+    "ele": "492",
+    "name": "Stob Luib",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2681142519,
+  "lat": 56.3519883,
+  "lon": -4.4837135,
+  "tags": {
+    "ele": "647",
+    "name": "Meall Monachyle",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2681142520,
+  "lat": 56.3580752,
+  "lon": -4.4444031,
+  "tags": {
+    "ele": "625",
+    "name": "Creag nan Speireag",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2681829641,
+  "lat": 56.0056290,
+  "lon": -4.2305166,
+  "tags": {
+    "ele": "479",
+    "name": "Inner Black Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2682263045,
+  "lat": 56.0706895,
+  "lon": -4.0950691,
+  "tags": {
+    "ele": "435",
+    "ele:ft": "1430",
+    "name": "Hart Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2682263046,
+  "lat": 56.0715543,
+  "lon": -4.0605695,
+  "tags": {
+    "ele": "439",
+    "ele:ft": "1442",
+    "name": "Earl's Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2689610078,
+  "lat": 55.9811019,
+  "lon": -4.4734034,
+  "tags": {
+    "ele": "343",
+    "ele:ft": "1118",
+    "name": "Knockupple",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2689610081,
+  "lat": 55.9614066,
+  "lon": -4.4670519,
+  "tags": {
+    "ele": "400",
+    "ele:ft": "1313",
+    "name": "Fynloch Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2689610083,
+  "lat": 55.9753872,
+  "lon": -4.4956335,
+  "tags": {
+    "ele": "354",
+    "ele:ft": "1163",
+    "name": "Meikle White Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2689610084,
+  "lat": 55.9668144,
+  "lon": -4.4893100,
+  "tags": {
+    "ele": "374",
+    "ele:ft": "1227",
+    "man_made": "survey_point",
+    "name": "Doughnot Hill",
+    "natural": "peak",
+    "survey_point:structure": "pillar"
+  }
+},
+{
+  "type": "node",
+  "id": 2689610085,
+  "lat": 55.9555568,
+  "lon": -4.3962115,
+  "tags": {
+    "ele": "357",
+    "ele:ft": "1172",
+    "name": "Jesus' Thimble",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2689614133,
+  "lat": 55.9960323,
+  "lon": -4.0917268,
+  "tags": {
+    "ele": "424",
+    "ele:ft": "1393",
+    "munro": "no",
+    "name": "Laird's Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2691010832,
+  "lat": 56.4750028,
+  "lon": -5.0823933,
+  "tags": {
+    "ele": "351",
+    "name": "Meall an Fheuraich",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2691010844,
+  "lat": 56.4658100,
+  "lon": -5.0559575,
+  "tags": {
+    "ele": "561",
+    "name": "Meall Voirlich",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2694401983,
+  "lat": 56.2389593,
+  "lon": -4.7390576,
+  "tags": {
+    "ele": "288",
+    "munro": "no",
+    "name": "Dubh Chnoc",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2694406392,
+  "lat": 56.2562247,
+  "lon": -4.8692541,
+  "tags": {
+    "ele": "771",
+    "name": "Creag Bhrosgan",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2701917923,
+  "lat": 56.3760159,
+  "lon": -4.8615356,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-051",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "no",
+    "description": "Hill of goats",
+    "ele": "743",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Meall nan Gabhar",
+    "natural": "peak",
+    "prominence": "265",
+    "wikidata": "Q65297139"
+  }
+},
+{
+  "type": "node",
+  "id": 2724262179,
+  "lat": 56.4188361,
+  "lon": -4.3093828,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-060",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "no",
+    "description": "Yellow Hill",
+    "ele": "719",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Meall Buidhe",
+    "natural": "peak",
+    "prominence": "273",
+    "wikidata": "Q65297136"
+  }
+},
+{
+  "type": "node",
+  "id": 2725756834,
+  "lat": 56.3525146,
+  "lon": -4.1099185,
+  "tags": {
+    "corbett": "no",
+    "description": "Red hill",
+    "ele": "706.6",
+    "graham": "no",
+    "marilyn": "no",
+    "munro": "no",
+    "name": "Beinn Dearg",
+    "natural": "peak",
+    "prominence": "73.4"
+  }
+},
+{
+  "type": "node",
+  "id": 2725761571,
+  "lat": 56.3663988,
+  "lon": -4.0778178,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-098",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "description": "Big hill",
+    "ele": "640",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Mòr Bheinn",
+    "natural": "peak",
+    "prominence": "327"
+  }
+},
+{
+  "type": "node",
+  "id": 2777606547,
+  "lat": 56.1342401,
+  "lon": -4.5426279,
+  "tags": {
+    "ele": "577",
+    "name": "Beinn Bhreac",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2777666833,
+  "lat": 56.3185329,
+  "lon": -5.0222047,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-141",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "description": "Green-grey hill",
+    "ele": "550",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn Ghlas",
+    "natural": "peak",
+    "prominence": "255"
+  }
+},
+{
+  "type": "node",
+  "id": 2777719603,
+  "lat": 56.1304865,
+  "lon": -4.7012838,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-090",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "description": "Black hill",
+    "ele": "657",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Coire na h-Eanachan",
+    "natural": "peak",
+    "prominence": "430"
+  }
+},
+{
+  "type": "node",
+  "id": 2777737486,
+  "lat": 56.0099952,
+  "lon": -4.6646813,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-251",
+    "communication:amateur_radio:sota:points": "1",
+    "corbett": "no",
+    "description": "Yellow hill",
+    "ele": "313",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Ben Bouie",
+    "natural": "peak",
+    "prominence": "220"
+  }
+},
+{
+  "type": "node",
+  "id": 2778985987,
+  "lat": 56.3075838,
+  "lon": -4.1016699,
+  "tags": {
+    "ele": "379",
+    "name": "Auchnashelloch Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2781514815,
+  "lat": 56.4414797,
+  "lon": -4.9232090,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/WS-252",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "ele": "650",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn Donachain",
+    "natural": "peak",
+    "prominence": "375",
+    "wikidata": "Q20581390"
+  }
+},
+{
+  "type": "node",
+  "id": 2781530956,
+  "lat": 56.4868112,
+  "lon": -4.9768532,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/WS-222",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "no",
+    "description": "Rough hill",
+    "ele": "701",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Meall Garbh",
+    "natural": "peak",
+    "prominence": "257",
+    "wikidata": "Q13130023"
+  }
+},
+{
+  "type": "node",
+  "id": 2781531239,
+  "lat": 56.4952930,
+  "lon": -4.9524772,
+  "tags": {
+    "ele": "624",
+    "name": "Meall Buidhe",
+    "natural": "peak",
+    "wikidata": "Q13130007"
+  }
+},
+{
+  "type": "node",
+  "id": 2781540016,
+  "lat": 56.4929702,
+  "lon": -5.0376556,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/WS-219",
+    "communication:amateur_radio:sota:points": "4",
+    "corbett": "no",
+    "description": "Hill of the plants",
+    "ele": "709",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn nan Lus",
+    "natural": "peak",
+    "prominence": "240",
+    "wikidata": "Q20581930"
+  }
+},
+{
+  "type": "node",
+  "id": 2781548473,
+  "lat": 56.4212610,
+  "lon": -4.8635534,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/WS-256",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "description": "Hill of the nose",
+    "ele": "636",
+    "graham": "yes",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn na Sroine",
+    "natural": "peak",
+    "prominence": "221",
+    "wikidata": "Q13125928"
+  }
+},
+{
+  "type": "node",
+  "id": 2781577770,
+  "lat": 56.4943205,
+  "lon": -4.8953119,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/WS-279",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "description": "Hill of the cairn",
+    "ele": "569",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn a' Chùirn",
+    "natural": "peak",
+    "prominence": "157"
+  }
+},
+{
+  "type": "node",
+  "id": 2794496161,
+  "lat": 56.2849188,
+  "lon": -5.1407505,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-121",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "ele": "589",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Cruach Mhòr",
+    "natural": "peak",
+    "prominence": "383",
+    "wikidata": "Q59247123",
+    "wikipedia": "en:Cruach Mhor (Argyll and Bute)"
+  }
+},
+{
+  "type": "node",
+  "id": 2794520881,
+  "lat": 56.3922897,
+  "lon": -5.1451279,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-258",
+    "communication:amateur_radio:sota:points": "1",
+    "corbett": "no",
+    "ele": "294",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Meall an Fhithich",
+    "natural": "peak",
+    "prominence": "169"
+  }
+},
+{
+  "type": "node",
+  "id": 2794930922,
+  "lat": 56.0975611,
+  "lon": -5.1379944,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-166",
+    "communication:amateur_radio:sota:points": "2",
+    "corbett": "no",
+    "ele": "508",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Cruach an Lochain",
+    "natural": "peak",
+    "prominence": "259"
+  }
+},
+{
+  "type": "node",
+  "id": 2794933550,
+  "lat": 56.1519716,
+  "lon": -5.0285389,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-185",
+    "communication:amateur_radio:sota:points": "1",
+    "corbett": "no",
+    "ele": "465",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Beinn Lagan",
+    "natural": "peak",
+    "prominence": "243"
+  }
+},
+{
+  "type": "node",
+  "id": 2939246880,
+  "lat": 56.0130275,
+  "lon": -4.2227036,
+  "tags": {
+    "ele": "548",
+    "name": "Outer Black Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2953182762,
+  "lat": 55.9699093,
+  "lon": -4.3899048,
+  "tags": {
+    "ele": "249",
+    "munro": "no",
+    "name": "Tomibeg",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2953182768,
+  "lat": 55.9799013,
+  "lon": -4.4494713,
+  "tags": {
+    "ele": "313",
+    "munro": "no",
+    "name": "Thiefs Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3100590732,
+  "lat": 55.9546603,
+  "lon": -4.4566950,
+  "tags": {
+    "ele": "352",
+    "name": "Berry Bank",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3100590733,
+  "lat": 55.9659918,
+  "lon": -4.4515388,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/SS-222",
+    "communication:amateur_radio:sota:points": "1",
+    "corbett": "no",
+    "ele": "401",
+    "ele:ft": "1314",
+    "graham": "no",
+    "marilyn": "yes",
+    "munro": "no",
+    "name": "Duncolm",
+    "natural": "peak",
+    "prominence": "308",
+    "wikidata": "Q5314702",
+    "wikipedia": "en:Duncolm"
+  }
+},
+{
+  "type": "node",
+  "id": 3100590736,
+  "lat": 55.9627932,
+  "lon": -4.4572670,
+  "tags": {
+    "ele": "393",
+    "name": "Middle Duncolm",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3133257154,
+  "lat": 56.5154981,
+  "lon": -4.3120436,
+  "tags": {
+    "ele": "1026",
+    "name": "Meall Garbh",
+    "natural": "peak",
+    "wikidata": "Q13130090"
+  }
+},
+{
+  "type": "node",
+  "id": 3475000535,
+  "lat": 56.3797482,
+  "lon": -5.1318209,
+  "tags": {
+    "corbett": "no",
+    "ele": "222",
+    "graham": "no",
+    "marilyn": "no",
+    "munro": "no",
+    "name": "Creag Thulach",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3544445098,
+  "lat": 56.3212841,
+  "lon": -4.9256931,
+  "tags": {
+    "corbett": "yes",
+    "ele": "852",
+    "name": "Stac a' Chùirn",
+    "natural": "peak",
+    "wikidata": "Q13125823"
+  }
+},
+{
+  "type": "node",
+  "id": 3800049083,
+  "lat": 56.4505490,
+  "lon": -4.8160078,
+  "tags": {
+    "ele": "767",
+    "name": "Meall Garbh",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3951626899,
+  "lat": 55.9599048,
+  "lon": -4.4850887,
+  "tags": {
+    "ele": "376",
+    "ele:ft": "1232",
+    "name": "Darnycaip",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 4140881252,
+  "lat": 55.9864013,
+  "lon": -4.9722163,
+  "tags": {
+    "ele": "196",
+    "name": "Dalinlongart Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 4140881254,
+  "lat": 55.9804725,
+  "lon": -4.9648349,
+  "tags": {
+    "ele": "198",
+    "name": "Finbracken Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 4201030529,
+  "lat": 55.9577942,
+  "lon": -4.4067925,
+  "tags": {
+    "ele": "342",
+    "name": "Dunellan",
+    "natural": "peak",
+    "source": "survey;local knowledge"
+  }
+},
+{
+  "type": "node",
+  "id": 4325846564,
+  "lat": 56.1814728,
+  "lon": -4.7564719,
+  "tags": {
+    "ele": "447",
+    "name": "Monadh Tighe Na Laraich",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 4433385492,
+  "lat": 56.4340429,
+  "lon": -5.0845498,
+  "tags": {
+    "ele": "966",
+    "name": "Sron An Isean",
+    "natural": "peak",
+    "wikidata": "Q13131656"
+  }
+},
+{
+  "type": "node",
+  "id": 4666005378,
+  "lat": 56.2190296,
+  "lon": -4.4958403,
+  "tags": {
+    "ele": "703",
+    "name": "Beinn Chochan",
+    "natural": "peak",
+    "wikidata": "Q13125830"
+  }
+},
+{
+  "type": "node",
+  "id": 4669656671,
+  "lat": 56.2180875,
+  "lon": -4.5159112,
+  "tags": {
+    "ele": "517",
+    "name": "Meall a' Chapuill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 4743883025,
+  "lat": 55.9549629,
+  "lon": -4.4934141,
+  "tags": {
+    "ele": "349",
+    "name": "Brown Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5077016253,
+  "lat": 56.4498628,
+  "lon": -5.0694072,
+  "tags": {
+    "communication:amateur_radio:sota": "GM/WS-071",
+    "communication:amateur_radio:sota:points": "6",
+    "description": "Hill of the hood or shell",
+    "ele": "980",
+    "man_made": "cairn",
+    "marilyn": "yes",
+    "munro": "yes",
+    "munro_number": "M172",
+    "name": "Beinn a' Chochuill",
+    "natural": "peak",
+    "prominence": "252",
+    "source": "survey",
+    "wikidata": "Q20580779",
+    "wikipedia": "en:Beinn a' Chochuill"
+  }
+},
+{
+  "type": "node",
+  "id": 5077016284,
+  "lat": 56.4082983,
+  "lon": -5.0577451,
+  "tags": {
+    "ele": "641",
+    "name": "Monadh Driseig",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5233450886,
+  "lat": 56.1310618,
+  "lon": -4.7564149,
+  "tags": {
+    "ele": "698",
+    "name": "Beinn Lochain",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5362305214,
+  "lat": 55.9554947,
+  "lon": -4.7933908,
+  "tags": {
+    "ele": "130",
+    "name": "Lyle Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5436160841,
+  "lat": 56.3207017,
+  "lon": -4.7456217,
+  "tags": {
+    "ele": "453",
+    "name": "Garabal Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5810973250,
+  "lat": 56.2204931,
+  "lon": -5.1349097,
+  "tags": {
+    "ele": "323",
+    "name": "Am Buachaille",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 6320825368,
+  "lat": 56.4770931,
+  "lon": -4.9553491,
+  "tags": {
+    "ele": "589",
+    "name": "Beinn Larachan",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 6320826597,
+  "lat": 56.4606648,
+  "lon": -4.9782229,
+  "tags": {
+    "ele": "719",
+    "name": "Beinn Lurachan",
+    "natural": "peak",
+    "wikidata": "Q20581741"
+  }
+},
+{
+  "type": "node",
+  "id": 6320826598,
+  "lat": 56.4628462,
+  "lon": -4.9998093,
+  "tags": {
+    "ele": "810",
+    "name": "Meall Copagach",
+    "natural": "peak",
+    "wikidata": "Q13125849"
+  }
+},
+{
+  "type": "node",
+  "id": 6320826658,
+  "lat": 56.4722696,
+  "lon": -4.9744892,
+  "tags": {
+    "ele": "693",
+    "name": "Meall Beithe",
+    "natural": "peak",
+    "wikidata": "Q13129992"
+  }
+},
+{
+  "type": "node",
+  "id": 6860116344,
+  "lat": 56.0067345,
+  "lon": -4.4821411,
+  "tags": {
+    "ele": "170",
+    "name": "Gallangad Muir",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9163058464,
+  "lat": 56.2762203,
+  "lon": -4.3290532,
+  "tags": {
+    "ele": "722",
+    "name": "Bioran na Circe",
+    "natural": "peak",
+    "source": "OS OpenMap Local (April 2021); https://www.mudandroutes.com/summit/bioran-na-circe/",
+    "wikidata": "Q13126017"
+  }
+},
+{
+  "type": "node",
+  "id": 10235844093,
+  "lat": 56.4090163,
+  "lon": -4.0137019,
+  "tags": {
+    "ele": "236",
+    "name": "Cnoc na Sìthe",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 10303507066,
+  "lat": 56.4282883,
+  "lon": -4.1924268,
+  "tags": {
+    "ele": "510",
+    "name": "Creag Dhubh",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 10303507224,
+  "lat": 56.4180824,
+  "lon": -4.2025495,
+  "tags": {
+    "ele": "650",
+    "name": "Sròn Mhòr",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 10315182015,
+  "lat": 56.3965156,
+  "lon": -4.1646974,
+  "tags": {
+    "ele": "190",
+    "name": "An Tom",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 11061384690,
+  "lat": 56.4844679,
+  "lon": -4.1836146,
+  "tags": {
+    "ele": "377",
+    "name": "Meall Inneach",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 12829209173,
+  "lat": 56.3957156,
+  "lon": -4.0187299,
+  "tags": {
+    "ele": "405",
+    "name": "Sgòrr Racaineach",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 12832467519,
+  "lat": 56.4225573,
+  "lon": -4.0176093,
+  "tags": {
+    "ele": "538",
+    "name": "Dubh Chreag",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 12832467520,
+  "lat": 56.4250019,
+  "lon": -4.0092694,
+  "tags": {
+    "ele": "518",
+    "name": "Dùn Mòr",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 12832467522,
+  "lat": 56.4341382,
+  "lon": -4.0006577,
+  "tags": {
+    "ele": "630",
+    "name": "Creag Gharbh",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 13187436146,
+  "lat": 56.2742082,
+  "lon": -4.2053532,
+  "tags": {
+    "ele": "280",
+    "name": "Tom an Eòrna",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 13187436147,
+  "lat": 56.2754799,
+  "lon": -4.2043070,
+  "tags": {
+    "ele": "290",
+    "name": "Tom a' Bhranndaidh",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 13187436148,
+  "lat": 56.2750288,
+  "lon": -4.2073870,
+  "tags": {
+    "ele": "300",
+    "name": "Druim na Mòine",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 13795718854,
+  "lat": 56.0246825,
+  "lon": -4.5696953,
+  "tags": {
+    "ele": "175",
+    "name": "Whinny Hill",
+    "natural": "peak"
+  }
+}
+
+  ]
+}

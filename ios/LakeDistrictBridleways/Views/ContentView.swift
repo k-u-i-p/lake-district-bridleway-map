@@ -76,7 +76,7 @@ struct MapControls: View {
             control("square.3.layers.3d", "Map layers") { model.activeSheet = .display }
             control("slider.horizontal.3", "Routing settings") { model.activeSheet = .settings }
             control(model.loop != nil ? "point.topleft.down.to.point.bottomright.curvepath" : "arrow.up.left.and.down.right.magnifyingglass",
-                    model.loop != nil ? "Fit route" : "Fit the \(model.region.name)") { model.fitToRoute() }
+                    model.loop != nil ? "Fit route" : "Fit \(model.region.name)") { model.fitToRoute() }
             control(locationIcon, locationLabel, tint: model.locationTracking == .off ? .white : .blue) { model.cycleLocationTracking() }
         }
     }
