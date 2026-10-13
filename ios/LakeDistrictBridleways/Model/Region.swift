@@ -12,6 +12,7 @@ nonisolated enum Region: String, CaseIterable, Identifiable, Sendable {
     case lakeDistrict = "lakes"
     case northYorkMoors = "nym"
     case yorkshireDales = "dales"
+    case cairngorms = "cairngorms"
 
     var id: String { rawValue }
 
@@ -20,6 +21,7 @@ nonisolated enum Region: String, CaseIterable, Identifiable, Sendable {
         case .lakeDistrict: "Lake District"
         case .northYorkMoors: "North York Moors"
         case .yorkshireDales: "Yorkshire Dales"
+        case .cairngorms: "Cairngorms"
         }
     }
 
@@ -29,6 +31,7 @@ nonisolated enum Region: String, CaseIterable, Identifiable, Sendable {
         case .lakeDistrict: "Ennerdale to Haweswater, Bassenthwaite to Windermere"
         case .northYorkMoors: "Osmotherley to the coast, Guisborough to Helmsley"
         case .yorkshireDales: "The Howgills to Nidderdale, Kirkby Stephen to Malham"
+        case .cairngorms: "Newtonmore to Glen Tanar, Grantown to Blair Atholl"
         }
     }
 
@@ -37,6 +40,7 @@ nonisolated enum Region: String, CaseIterable, Identifiable, Sendable {
         case .lakeDistrict: "mountain.2.fill"
         case .northYorkMoors: "leaf.fill"
         case .yorkshireDales: "water.waves"
+        case .cairngorms: "snowflake"
         }
     }
 
@@ -45,6 +49,35 @@ nonisolated enum Region: String, CaseIterable, Identifiable, Sendable {
         switch self {
         case .lakeDistrict, .yorkshireDales: "Ten highest fells"
         case .northYorkMoors: "Ten highest tops"
+        case .cairngorms: "Ten highest Munros"
+        }
+    }
+
+    /// Layers shown until the rider picks their own. The Cairngorms has no bridleways (Scottish
+    /// access rights cover tracks instead), so it opens on its tracks.
+    var defaultLayers: Set<String> {
+        switch self {
+        case .lakeDistrict, .northYorkMoors, .yorkshireDales: ["bridleway"]
+        case .cairngorms: ["track"]
+        }
+    }
+
+    /// UserDefaults key for the layers shown. The English regions share one choice, under the key
+    /// the single-region app used; the Cairngorms, with its different rights of way, keeps its own.
+    var visibleLayersKey: String {
+        switch self {
+        case .lakeDistrict, .northYorkMoors, .yorkshireDales: "visibleLayers"
+        case .cairngorms: "visibleLayers-cairngorms"
+        }
+    }
+
+    /// The access caveat under the planner card.
+    var accessNote: String {
+        switch self {
+        case .lakeDistrict, .northYorkMoors, .yorkshireDales:
+            "Cycling on a public footpath is not a right of way in England; check the definitive map before relying on a right of way."
+        case .cairngorms:
+            "Scottish access rights cover cycling on most tracks and paths if you ride responsibly; follow the Scottish Outdoor Access Code."
         }
     }
 
@@ -55,7 +88,7 @@ nonisolated enum Region: String, CaseIterable, Identifiable, Sendable {
     var routeResource: String? {
         switch self {
         case .lakeDistrict: "route-lakes"
-        case .northYorkMoors, .yorkshireDales: nil
+        case .northYorkMoors, .yorkshireDales, .cairngorms: nil
         }
     }
 
@@ -66,6 +99,7 @@ nonisolated enum Region: String, CaseIterable, Identifiable, Sendable {
         case .lakeDistrict: "LakeDistrictBridleways.sqlite"
         case .northYorkMoors: "NorthYorkMoors.sqlite"
         case .yorkshireDales: "YorkshireDales.sqlite"
+        case .cairngorms: "Cairngorms.sqlite"
         }
     }
 
@@ -74,6 +108,7 @@ nonisolated enum Region: String, CaseIterable, Identifiable, Sendable {
         case .lakeDistrict: FocusBounds(south: 54.27, north: 54.69, west: -3.44, east: -2.74)
         case .northYorkMoors: FocusBounds(south: 54.21, north: 54.56, west: -1.33, east: -0.47)
         case .yorkshireDales: FocusBounds(south: 54.02, north: 54.46, west: -2.58, east: -1.80)
+        case .cairngorms: FocusBounds(south: 56.76, north: 57.34, west: -4.15, east: -2.85)
         }
     }
 
@@ -83,6 +118,7 @@ nonisolated enum Region: String, CaseIterable, Identifiable, Sendable {
         case .lakeDistrict: Self.lakeDistrictLabels
         case .northYorkMoors: Self.northYorkMoorsLabels
         case .yorkshireDales: Self.yorkshireDalesLabels
+        case .cairngorms: Self.cairngormsLabels
         }
     }
 
@@ -162,5 +198,36 @@ nonisolated enum Region: String, CaseIterable, Identifiable, Sendable {
         .init(text: "Kettlewell", coordinate: LatLon(54.147, -2.047), rotation: 0, small: true),
         .init(text: "Grassington", coordinate: LatLon(54.071, -1.998), rotation: 0, small: true),
         .init(text: "Pateley Bridge", coordinate: LatLon(54.086, -1.758), rotation: 0, small: true),
+    ]
+
+    private static let cairngormsLabels: [MapLabel] = [
+        .init(text: "Strathspey", coordinate: LatLon(57.160, -3.880), rotation: -40, small: false),
+        .init(text: "Glen Feshie", coordinate: LatLon(57.050, -3.850), rotation: 63, small: false),
+        .init(text: "Rothiemurchus", coordinate: LatLon(57.150, -3.785), rotation: 0, small: true),
+        .init(text: "Glenmore", coordinate: LatLon(57.168, -3.700), rotation: -10, small: true),
+        .init(text: "Lairig Ghru", coordinate: LatLon(57.090, -3.700), rotation: 80, small: true),
+        .init(text: "Glen Derry", coordinate: LatLon(57.050, -3.592), rotation: 85, small: true),
+        .init(text: "Glen Avon", coordinate: LatLon(57.128, -3.480), rotation: -8, small: true),
+        .init(text: "Deeside", coordinate: LatLon(57.025, -3.290), rotation: -12, small: false),
+        .init(text: "Glen Clunie", coordinate: LatLon(56.940, -3.395), rotation: 85, small: true),
+        .init(text: "Glen Muick", coordinate: LatLon(56.990, -3.110), rotation: -55, small: true),
+        .init(text: "Glen Tanar", coordinate: LatLon(57.026, -2.913), rotation: -38, small: true),
+        .init(text: "Strathdon", coordinate: LatLon(57.190, -3.110), rotation: 0, small: false),
+        .init(text: "Glen Tilt", coordinate: LatLon(56.833, -3.758), rotation: -50, small: false),
+        .init(text: "Glen Clova", coordinate: LatLon(56.840, -3.130), rotation: 47, small: true),
+        .init(text: "Aviemore", coordinate: LatLon(57.194, -3.829), rotation: 0, small: true),
+        .init(text: "Kingussie", coordinate: LatLon(57.080, -4.051), rotation: 0, small: true),
+        .init(text: "Newtonmore", coordinate: LatLon(57.066, -4.119), rotation: 0, small: true),
+        .init(text: "Kincraig", coordinate: LatLon(57.127, -3.931), rotation: 0, small: true),
+        .init(text: "Carrbridge", coordinate: LatLon(57.283, -3.815), rotation: 0, small: true),
+        .init(text: "Boat of Garten", coordinate: LatLon(57.249, -3.754), rotation: 0, small: true),
+        .init(text: "Nethy Bridge", coordinate: LatLon(57.265, -3.658), rotation: 0, small: true),
+        .init(text: "Grantown-on-Spey", coordinate: LatLon(57.330, -3.610), rotation: 0, small: true),
+        .init(text: "Tomintoul", coordinate: LatLon(57.252, -3.379), rotation: 0, small: true),
+        .init(text: "Braemar", coordinate: LatLon(57.006, -3.400), rotation: 0, small: true),
+        .init(text: "Ballater", coordinate: LatLon(57.050, -3.041), rotation: 0, small: true),
+        .init(text: "Dinnet", coordinate: LatLon(57.077, -2.893), rotation: 0, small: true),
+        .init(text: "Spittal of Glenshee", coordinate: LatLon(56.813, -3.461), rotation: 0, small: true),
+        .init(text: "Blair Atholl", coordinate: LatLon(56.766, -3.848), rotation: 0, small: true),
     ]
 }

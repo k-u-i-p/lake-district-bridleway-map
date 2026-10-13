@@ -54,7 +54,7 @@ final class AppModel {
 
     // MARK: Display
     var baseMap: BaseMap { didSet { defaults.set(baseMap.rawValue, forKey: "baseMap") } }
-    var visibleLayers: Set<String> { didSet { defaults.set(Array(visibleLayers), forKey: "visibleLayers") } }
+    var visibleLayers: Set<String> { didSet { defaults.set(Array(visibleLayers), forKey: region.visibleLayersKey) } }
     var showPeaks: Bool { didSet { defaults.set(showPeaks, forKey: "showPeaks") } }
     var showLabels: Bool { didSet { defaults.set(showLabels, forKey: "showLabels") } }
     var showFocus: Bool { didSet { defaults.set(showFocus, forKey: "showFocus") } }
@@ -121,11 +121,7 @@ final class AppModel {
         self.defaults = defaults
         defaults.set(region.rawValue, forKey: "lastRegion")
         baseMap = BaseMap(rawValue: defaults.string(forKey: "baseMap") ?? "") ?? .satellite
-        if let saved = defaults.stringArray(forKey: "visibleLayers") {
-            visibleLayers = Set(saved)
-        } else {
-            visibleLayers = Set(DisplayLayer.all.filter(\.defaultOn).map(\.key))
-        }
+        visibleLayers = defaults.stringArray(forKey: region.visibleLayersKey).map(Set.init) ?? region.defaultLayers
         showPeaks = defaults.object(forKey: "showPeaks") as? Bool ?? true
         showLabels = defaults.object(forKey: "showLabels") as? Bool ?? true
         showFocus = defaults.object(forKey: "showFocus") as? Bool ?? true

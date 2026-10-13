@@ -1,7 +1,7 @@
 #!/bin/sh
 # Rebuild a region's network from fresh OpenStreetMap data.
 #   tools/build.sh [--offline] [region]
-#   region     lakes (default), nym or dales; see tools/regions/*.json
+#   region     lakes (default), nym, dales or cairngorms; see tools/regions/*.json
 #   --offline  skip the Overpass fetch, reuse tools/data/<region>/*.json
 # The Lake District also rebuilds its reference loop and the web page (index.html).
 # Every region refreshes the copy bundled in the iOS app.

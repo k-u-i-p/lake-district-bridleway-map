@@ -310,7 +310,7 @@ struct PlanView: View {
     }
 
     private var attribution: some View {
-        Text("Map data © OpenStreetMap contributors. Cycling on a public footpath is not a right of way in England; check the definitive map before relying on a right of way.")
+        Text("Map data © OpenStreetMap contributors. \(model.region.accessNote)")
             .font(.system(size: 10))
             .foregroundStyle(Theme.muted.opacity(0.8))
             .padding(.top, 6)

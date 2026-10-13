@@ -1,0 +1,8 @@
+{
+  "id": "cairngorms",
+  "name": "Cairngorms",
+  "bbox": [56.74, -4.20, 57.36, -2.78],
+  "peaks": ["Ben Macdui", "Braeriach", "Cairn Toul", "Sgor an Lochain Uaine", "Cairn Gorm", "Beinn a' Bhùird North Top", "Beinn Mheadhoin", "Leabaidh an Daimh Bhuidhe", "Beinn Bhrotain", "Cac Càrn Beag"],
+  "peakAliases": {"Beinn a' Bhùird North Top": "Beinn a' Bhùird", "Leabaidh an Daimh Bhuidhe": "Ben Avon", "Cac Càrn Beag": "Lochnagar"},
+  "scottishAccess": true
+}

@@ -1,6 +1,7 @@
 """Merge Overpass results into one compact dataset for the map + router.
 Usage: convert.py region.json out.json bridleways.json paths.json roads.json peaks.json
-region.json (tools/regions/) names the ten peaks to show, or "auto" for the ten highest in the data.
+region.json (tools/regions/) names the ten peaks to show, or "auto" for the ten highest in the data,
+and sets "scottishAccess" for regions in Scotland.
 """
 import json, math, sys
 from collections import Counter, defaultdict
@@ -9,6 +10,7 @@ region = json.load(open(sys.argv[1]))
 out = sys.argv[2]; files = sys.argv[3:6]; peaksfile = sys.argv[6]
 CATS = ['bridleway','boat','restricted','permissive','other','footpath','path','cycleway','track','road_minor','road_major','trunk','ferry']
 CI = {c:i for i,c in enumerate(CATS)}
+SCOTTISH = region.get('scottishAccess', False)
 
 def hav(a, b):
     R = 6371000.0
@@ -28,6 +30,9 @@ def category(t):
     if des in ('public_footpath','permissive_footpath'): return 'footpath'
     if hw == 'cycleway' or (hw in ('path','footway') and t.get('bicycle') in ('designated','yes')): return 'cycleway'
     private = acc in ('private','no') and t.get('bicycle') not in ('yes','permissive','designated') and t.get('foot') not in ('yes','permissive','designated')
+    # Scottish access rights (Land Reform Act 2003) cover cycling on tracks and paths whatever the
+    # landowner's access tag says, so there a private one is dropped only if bikes are excluded too.
+    if SCOTTISH and hw in ('path','footway','track'): private = private and t.get('bicycle') == 'no'
     if hw in ('path','footway'):
         if t.get('footway') in ('sidewalk','crossing'): return 'road_minor'
         return None if private else 'path'

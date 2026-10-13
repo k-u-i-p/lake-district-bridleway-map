@@ -8,19 +8,19 @@ nonisolated struct DisplayLayer: Identifiable, Sendable, Hashable {
     let dashed: Bool
     let thin: Bool
     let categories: [String]   // network categories drawn by this layer
-    let defaultOn: Bool
 
     var id: String { key }
     var color: Color { Color(hex: colorHex) }
 
     static let all: [DisplayLayer] = [
-        DisplayLayer(key: "bridleway", name: "Public bridleway", colorHex: 0x3ddc84, dashed: false, thin: false, categories: ["bridleway"], defaultOn: true),
-        DisplayLayer(key: "boat", name: "Byway open to all traffic", colorHex: 0xff9f1a, dashed: false, thin: false, categories: ["boat"], defaultOn: false),
-        DisplayLayer(key: "restricted", name: "Restricted byway", colorHex: 0xb388ff, dashed: false, thin: false, categories: ["restricted"], defaultOn: false),
-        DisplayLayer(key: "permissive", name: "Permissive bridleway", colorHex: 0x4fd1ff, dashed: true, thin: false, categories: ["permissive"], defaultOn: false),
-        DisplayLayer(key: "other", name: "Bridleway (undesignated)", colorHex: 0xffffff, dashed: true, thin: false, categories: ["other"], defaultOn: false),
-        DisplayLayer(key: "footpath", name: "Public footpath", colorHex: 0xff6b9d, dashed: true, thin: true, categories: ["footpath"], defaultOn: false),
-        DisplayLayer(key: "path", name: "Other paths & cycleways", colorHex: 0xe8d5a3, dashed: true, thin: true, categories: ["path", "cycleway"], defaultOn: false),
+        DisplayLayer(key: "bridleway", name: "Public bridleway", colorHex: 0x3ddc84, dashed: false, thin: false, categories: ["bridleway"]),
+        DisplayLayer(key: "boat", name: "Byway open to all traffic", colorHex: 0xff9f1a, dashed: false, thin: false, categories: ["boat"]),
+        DisplayLayer(key: "restricted", name: "Restricted byway", colorHex: 0xb388ff, dashed: false, thin: false, categories: ["restricted"]),
+        DisplayLayer(key: "permissive", name: "Permissive bridleway", colorHex: 0x4fd1ff, dashed: true, thin: false, categories: ["permissive"]),
+        DisplayLayer(key: "other", name: "Bridleway (undesignated)", colorHex: 0xffffff, dashed: true, thin: false, categories: ["other"]),
+        DisplayLayer(key: "footpath", name: "Public footpath", colorHex: 0xff6b9d, dashed: true, thin: true, categories: ["footpath"]),
+        DisplayLayer(key: "path", name: "Other paths & cycleways", colorHex: 0xe8d5a3, dashed: true, thin: true, categories: ["path", "cycleway"]),
+        DisplayLayer(key: "track", name: "Track", colorHex: 0xd4a373, dashed: false, thin: false, categories: ["track"]),
     ]
 
     static func layer(forCategory c: String) -> DisplayLayer? {
@@ -31,7 +31,6 @@ nonisolated struct DisplayLayer: Identifiable, Sendable, Hashable {
     static func displayName(forCategory c: String) -> String {
         switch c {
         case "cycleway": return "Cycleway"
-        case "track": return "Track"
         case "road_minor": return "Minor road"
         case "road_major": return "Main road"
         case "trunk": return "Trunk road"
