@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="24000" systemVersion="25A5338b" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="GPXTrack" representedClassName="GPXTrack" syncable="YES">
+        <attribute name="ascentMetres" optional="YES" attributeType="Integer 32" usesScalarValueType="NO"/>
+        <attribute name="elevationData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="importedAt" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="lengthMetres" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String" defaultValueString=""/>
+        <attribute name="pointData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+    </entity>
+    <entity name="PlannedLoop" representedClassName="PlannedLoop" syncable="YES">
+        <attribute name="ascentMetres" optional="YES" attributeType="Integer 32" usesScalarValueType="NO"/>
+        <attribute name="breakdownJSON" optional="YES" attributeType="String"/>
+        <attribute name="coordinateData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="elevationData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="footpathPenalty" attributeType="Double" defaultValueString="3" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isDraft" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="lengthMetres" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String" defaultValueString=""/>
+        <attribute name="reridePenalty" attributeType="Double" defaultValueString="4" usesScalarValueType="YES"/>
+        <attribute name="roadPenalty" attributeType="Double" defaultValueString="5" usesScalarValueType="YES"/>
+        <attribute name="updatedAt" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="waypoints" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Waypoint" inverseName="loop" inverseEntity="Waypoint"/>
+    </entity>
+    <entity name="Waypoint" representedClassName="Waypoint" syncable="YES">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="order" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="loop" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlannedLoop" inverseName="waypoints" inverseEntity="PlannedLoop"/>
+    </entity>
+</model>

@@ -14,3 +14,5 @@ fi
 python3 tools/convert.py tools/data/network.json tools/data/bridleways.json tools/data/paths.json tools/data/roads.json tools/data/peaks.json
 node tools/make-route.js tools/data/network.json tools/wp.json routes/lakes-loop.gpx tools/data/route.json
 python3 tools/assemble.py tools/template.html tools/router.js tools/data/network.json tools/data/route.json index.html
+# keep the iOS app's bundled copies in step with the web page
+cp tools/data/network.json tools/data/route.json ios/LakeDistrictBridleways/Resources/
