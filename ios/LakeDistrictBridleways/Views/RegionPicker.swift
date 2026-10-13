@@ -12,7 +12,7 @@ struct RegionPicker: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 28) {
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("Bridleway Map")
+                        Text("Bens Mapper")
                             .font(.system(size: 34, weight: .bold))
                         Text("Choose where you are riding. Each region has its own map and its own saved routes.")
                             .font(.system(size: 15))
