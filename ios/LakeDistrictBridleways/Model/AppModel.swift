@@ -26,12 +26,15 @@ struct FitRequest: Identifiable, Sendable {
     let animated: Bool
 }
 
-/// What the stats box is currently describing.
-struct Stats: Sendable {
-    let title: String
-    let length: Double
-    let ascent: Int?
-    let profile: [Double]?
+/// Progress of the automatic elevation lookup for the planned loop.
+enum ElevationState: Equatable, Sendable {
+    case none, fetching(Double), ready, failed
+}
+
+/// Sheets opened from the floating map controls.
+enum ActiveSheet: String, Identifiable {
+    case display, settings
+    var id: String { rawValue }
 }
 
 /// All application state: the loaded network and graph, map display options, routing settings, the
@@ -60,7 +63,10 @@ final class AppModel {
             defaults.set(routing.footpathPenalty, forKey: "footpathPenalty")
             defaults.set(routing.roadPenalty, forKey: "roadPenalty")
             defaults.set(routing.reridePenalty, forKey: "reridePenalty")
-            if routing != oldValue { recompute() }
+            if routing != oldValue {
+                if !waypoints.isEmpty { hasUnsavedChanges = true }
+                recompute()
+            }
         }
     }
 
@@ -71,12 +77,24 @@ final class AppModel {
     private(set) var loopFailed = false
     private(set) var loopElevations: [Double]?
     private(set) var loopAscent: Int?
-    private(set) var isFetchingElevation = false
-    var elevationMessage: String?
+    private(set) var elevationState: ElevationState = .none
     private(set) var isRouting = false
     private var routingGeneration = 0
     private var elevationTask: Task<Void, Never>?
+    private var elevationDebounce: Task<Void, Never>?
+    /// Name of the route being planned; nil until it is saved or named.
+    private(set) var routeName: String?
+    /// The saved route the planner was loaded from, if any.
     private(set) var loadedLoopID: UUID?
+    /// True once the waypoints or routing settings differ from the saved route (or from empty).
+    private(set) var hasUnsavedChanges = false
+
+    var isFetchingElevation: Bool {
+        if case .fetching = elevationState { return true }
+        return false
+    }
+    var isEditingSavedRoute: Bool { loadedLoopID != nil }
+    var displayName: String { routeName ?? "New route" }
 
     // MARK: GPX overlay
     private(set) var gpxTrack: RouteSummary?
@@ -84,6 +102,7 @@ final class AppModel {
     // MARK: UI
     var selectedWay: WayInfo?
     var fitRequest: FitRequest?
+    var activeSheet: ActiveSheet?
 
     let persistence: PersistenceController
     private let defaults: UserDefaults
@@ -160,6 +179,11 @@ final class AppModel {
         fitRequest = FitRequest(south: FocusArea.south, north: FocusArea.north, west: FocusArea.west, east: FocusArea.east, animated: animated)
     }
 
+    /// Frames the planned loop, else the shown GPX track, else the whole focus area.
+    func fitToRoute() {
+        if let loop { fit(to: loop.coords) } else if let gpxTrack { fit(to: gpxTrack.coords) } else { fitFocusArea() }
+    }
+
     func fit(to coords: [LatLon], animated: Bool = true) {
         guard let f = coords.first else { return }
         var s = f.lat, n = f.lat, w = f.lon, e = f.lon
@@ -224,23 +248,47 @@ final class AppModel {
         waypointsChanged()
     }
 
-    func clearPlan() {
+    /// Empties the planner and starts a fresh, unnamed route in planning mode.
+    func newRoute() {
         waypoints = []
         loadedLoopID = nil
+        routeName = nil
+        isPlanning = true
         waypointsChanged()
+        hasUnsavedChanges = false
+        saveDraft()
+    }
+
+    func clearPlan() {
+        waypoints = []
+        waypointsChanged()
+        if loadedLoopID == nil { hasUnsavedChanges = false; saveDraft() }
     }
 
     private func waypointsChanged() {
+        hasUnsavedChanges = true
         saveDraft()
         recompute()
+    }
+
+    /// A name for the route based on the nearest labelled place to its start.
+    func suggestedName() -> String {
+        if let start = waypoints.first?.coordinate,
+           let near = MapLabel.all.min(by: { Geo.distance($0.coordinate, start) < Geo.distance($1.coordinate, start) }),
+           Geo.distance(near.coordinate, start) < 7000 {
+            return "\(near.text) loop"
+        }
+        if let loop { return "Loop \(Format.km(loop.length, decimals: 0))" }
+        return "New route"
     }
 
     /// Re-routes the loop through the current waypoints on a background task.
     func recompute() {
         elevationTask?.cancel()
         elevationTask = nil
-        isFetchingElevation = false
-        elevationMessage = nil
+        elevationDebounce?.cancel()
+        elevationDebounce = nil
+        elevationState = .none
         loopElevations = nil
         loopAscent = nil
         loopFailed = false
@@ -262,6 +310,18 @@ final class AppModel {
             isRouting = false
             loop = result
             loopFailed = result == nil
+            if result != nil { scheduleElevationFetch() }
+        }
+    }
+
+    /// Fetches elevation a moment after routing settles, so dragging a waypoint does not fire a
+    /// request per step. Skipped when the loop already has elevation (a restored saved route).
+    private func scheduleElevationFetch() {
+        elevationDebounce?.cancel()
+        elevationDebounce = Task { [weak self] in
+            try? await Task.sleep(nanoseconds: 1_200_000_000)
+            guard !Task.isCancelled, let self, self.loopElevations == nil, self.elevationState == .none else { return }
+            self.fetchElevation()
         }
     }
 
@@ -270,51 +330,40 @@ final class AppModel {
         guard let loop, !isFetchingElevation else { return }
         let samples = Geo.resample(loop.coords, step: 100)
         let loopID = loop.id
-        isFetchingElevation = true
-        elevationMessage = "Fetching elevation…"
+        elevationState = .fetching(0)
         elevationTask = Task {
             do {
                 let eles = try await ElevationService.fetch(samples) { fraction in
                     Task { @MainActor in
                         guard self.isFetchingElevation, self.loop?.id == loopID else { return }
-                        self.elevationMessage = "Fetching elevation from Open-Meteo… \(Int(fraction * 100))%"
+                        self.elevationState = .fetching(fraction)
                     }
                 }
-                guard loop.id == loopID, self.loop?.id == loopID else { return }
+                guard self.loop?.id == loopID else { return }
                 loopElevations = eles
                 loopAscent = Geo.ascent(eles)
-                elevationMessage = "\(loopAscent ?? 0) m of climbing. The GPX now includes elevation."
-                isFetchingElevation = false
+                elevationState = .ready
                 updateLoadedLoopResult()
             } catch {
                 guard self.loop?.id == loopID else { return }
-                isFetchingElevation = false
-                if case ElevationService.ElevationError.cancelled = error { elevationMessage = nil; return }
-                elevationMessage = "Elevation lookup failed: the free elevation service is rate-limited or offline. Try again later."
+                if case ElevationService.ElevationError.cancelled = error { elevationState = .none; return }
+                elevationState = .failed
             }
         }
     }
 
     /// GPX text for the planned loop (resampled when elevation is attached, as the web app does).
-    func plannedLoopGPX(name: String = "Planned loop") -> String? {
+    func plannedLoopGPX() -> String? {
         guard let loop else { return nil }
+        let name = routeName ?? "Planned loop"
         let pts = loopElevations != nil ? Geo.resample(loop.coords, step: 100) : loop.coords
         return GPX.document(name: name, coords: pts, elevations: loopElevations)
     }
 
-    // MARK: - Stats
-
-    var stats: Stats? {
-        if let loop {
-            return Stats(title: "Planned loop", length: loop.length, ascent: loopAscent, profile: loopElevations)
-        }
-        if let gpxTrack {
-            return Stats(title: gpxTrack.name, length: gpxTrack.length, ascent: gpxTrack.ascent, profile: gpxTrack.profile)
-        }
-        if let reference, showReference {
-            return Stats(title: reference.name, length: reference.length, ascent: reference.ascent, profile: reference.profile)
-        }
-        return nil
+    /// File name for a shared GPX of the planned loop.
+    var gpxFileName: String {
+        let base = (routeName ?? "Planned loop").replacingOccurrences(of: "/", with: "-")
+        return base + ".gpx"
     }
 
     // MARK: - GPX import
@@ -369,6 +418,9 @@ final class AppModel {
     private func saveDraft() {
         guard let d = draftLoop(create: true) else { return }
         d.updatedAt = .now
+        d.name = routeName ?? "Draft"
+        defaults.set(loadedLoopID?.uuidString, forKey: "loadedLoopID")
+        defaults.set(hasUnsavedChanges, forKey: "hasUnsavedChanges")
         d.footpathPenalty = routing.footpathPenalty
         d.roadPenalty = routing.roadPenalty
         d.reridePenalty = routing.reridePenalty
@@ -383,36 +435,125 @@ final class AppModel {
             return PlanWaypoint(id: w.id, node: s.node, coordinate: s.coordinate)
         }
         waypoints = restored
-        if !restored.isEmpty { recompute() }
+        routeName = d.name == "Draft" ? nil : d.name
+        if let idString = defaults.string(forKey: "loadedLoopID"), let id = UUID(uuidString: idString), savedLoop(id) != nil {
+            loadedLoopID = id
+        }
+        hasUnsavedChanges = defaults.bool(forKey: "hasUnsavedChanges")
+        if !restored.isEmpty {
+            recompute()
+            // Reuse the saved route's elevation when the plan is unchanged, instead of fetching it again.
+            if let loadedLoopID, !hasUnsavedChanges, let saved = savedLoop(loadedLoopID) { reattachElevation(from: saved) }
+        }
     }
 
-    /// Stores the current loop under `name`.
-    func saveCurrentLoop(named name: String) {
+    private func savedLoop(_ id: UUID) -> PlannedLoop? {
+        let r = PlannedLoop.fetchRequest()
+        r.predicate = NSPredicate(format: "id == %@ AND isDraft == NO", id as CVarArg)
+        r.fetchLimit = 1
+        return try? persistence.context.fetch(r).first
+    }
+
+    private func cleanName(_ name: String, fallback: String) -> String {
+        let t = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        return t.isEmpty ? fallback : t
+    }
+
+    /// Stores the current loop as a new saved route and makes it the one being edited.
+    func saveAsNew(named name: String) {
         guard let loop else { return }
         let l = PlannedLoop(context: persistence.context)
         l.id = UUID()
-        l.name = name.trimmingCharacters(in: .whitespaces).isEmpty ? "Loop \(Format.km(loop.length))" : name
+        l.name = cleanName(name, fallback: suggestedName())
         l.isDraft = false
         l.createdAt = .now; l.updatedAt = .now
+        write(into: l, loop: loop)
+        persistence.save()
+        loadedLoopID = l.id
+        routeName = l.name
+        hasUnsavedChanges = false
+        saveDraft()
+        flashStatus("Saved “\(l.name)”")
+    }
+
+    /// Writes the current waypoints and route back into the saved route being edited.
+    func saveChanges() {
+        guard let loadedLoopID, let loop, let l = savedLoop(loadedLoopID) else { return }
+        if let routeName { l.name = routeName }
+        l.updatedAt = .now
+        write(into: l, loop: loop)
+        persistence.save()
+        hasUnsavedChanges = false
+        saveDraft()
+        flashStatus("Saved changes to “\(l.name)”")
+    }
+
+    private func write(into l: PlannedLoop, loop: LoopResult) {
         l.footpathPenalty = routing.footpathPenalty
         l.roadPenalty = routing.roadPenalty
         l.reridePenalty = routing.reridePenalty
         l.setWaypoints(waypoints.map(\.coordinate), in: persistence.context)
         l.setResult(coords: loop.coords, length: loop.length, byCategory: loop.byCategory, elevations: loopElevations, ascent: loopAscent)
-        persistence.save()
-        loadedLoopID = l.id
-        flashStatus("Saved “\(l.name)”")
     }
 
-    /// Writes new elevation data back to the saved loop it was loaded from.
+    /// Renames the route being planned, and the saved route it came from.
+    func renameCurrent(to name: String) {
+        let n = cleanName(name, fallback: routeName ?? suggestedName())
+        routeName = n
+        if let loadedLoopID, let l = savedLoop(loadedLoopID) {
+            l.name = n; l.updatedAt = .now
+            persistence.save()
+        }
+        saveDraft()
+    }
+
+    func rename(loop: PlannedLoop, to name: String) {
+        loop.name = cleanName(name, fallback: loop.name)
+        loop.updatedAt = .now
+        persistence.save()
+        if loadedLoopID == loop.id { routeName = loop.name; saveDraft() }
+    }
+
+    func duplicate(loop: PlannedLoop) {
+        let copy = PlannedLoop(context: persistence.context)
+        copy.id = UUID()
+        copy.name = loop.name + " copy"
+        copy.isDraft = false
+        copy.createdAt = .now; copy.updatedAt = .now
+        copy.footpathPenalty = loop.footpathPenalty
+        copy.roadPenalty = loop.roadPenalty
+        copy.reridePenalty = loop.reridePenalty
+        copy.setWaypoints(loop.orderedWaypoints.map(\.coordinate), in: persistence.context)
+        copy.setResult(coords: loop.coordinates, length: loop.lengthMetres, byCategory: loop.breakdown, elevations: loop.elevations, ascent: loop.ascent)
+        persistence.save()
+        flashStatus("Duplicated “\(loop.name)”")
+    }
+
+    /// Writes new elevation data back to the saved loop it was loaded from, when the plan is unchanged.
     private func updateLoadedLoopResult() {
-        guard let loadedLoopID, let loop else { return }
-        let r = PlannedLoop.fetchRequest()
-        r.predicate = NSPredicate(format: "id == %@ AND isDraft == NO", loadedLoopID as CVarArg)
-        guard let l = try? persistence.context.fetch(r).first, abs(l.lengthMetres - loop.length) < 1 else { return }
+        guard let loadedLoopID, !hasUnsavedChanges, let loop, let l = savedLoop(loadedLoopID), abs(l.lengthMetres - loop.length) < 1 else { return }
         l.setResult(coords: loop.coords, length: loop.length, byCategory: loop.byCategory, elevations: loopElevations, ascent: loopAscent)
         l.updatedAt = .now
         persistence.save()
+    }
+
+    /// Re-attaches a saved route's elevation once routing finishes, if the loop came out the same length.
+    private func reattachElevation(from saved: PlannedLoop) {
+        let generation = routingGeneration
+        let storedLength = saved.lengthMetres
+        let storedEles = saved.elevations
+        let storedAscent = saved.ascent
+        Task { [weak self] in
+            while let self, self.isRouting, self.routingGeneration == generation {
+                try? await Task.sleep(nanoseconds: 50_000_000)
+            }
+            guard let self, self.routingGeneration == generation, let loop = self.loop,
+                  let eles = storedEles, abs(loop.length - storedLength) < 1 else { return }
+            self.elevationDebounce?.cancel()
+            self.loopElevations = eles
+            self.loopAscent = storedAscent ?? Geo.ascent(eles)
+            self.elevationState = .ready
+        }
     }
 
     /// Restores a saved loop's waypoints and settings, keeping its elevation data when the route still matches.
@@ -423,28 +564,21 @@ final class AppModel {
             graph.nearest(to: w.coordinate, maxMetres: 400).map { PlanWaypoint(id: UUID(), node: $0.node, coordinate: $0.coordinate) }
         }
         loadedLoopID = saved.id
-        let storedLength = saved.lengthMetres
-        let storedEles = saved.elevations
-        let storedAscent = saved.ascent
+        routeName = saved.name
+        hasUnsavedChanges = false
         saveDraft()
         recompute()
-        let generation = routingGeneration
-        // Re-attach elevation once routing finishes, if the loop came out the same length.
-        Task { [weak self] in
-            while let self, self.isRouting, self.routingGeneration == generation {
-                try? await Task.sleep(nanoseconds: 50_000_000)
-            }
-            guard let self, self.routingGeneration == generation, let loop = self.loop,
-                  let eles = storedEles, abs(loop.length - storedLength) < 1 else { return }
-            self.loopElevations = eles
-            self.loopAscent = storedAscent ?? Geo.ascent(eles)
-        }
-        isPlanning = true
+        reattachElevation(from: saved)
+        isPlanning = false
         fit(to: saved.coordinates.isEmpty ? waypoints.map(\.coordinate) : saved.coordinates)
     }
 
     func delete(loop: PlannedLoop) {
-        if loadedLoopID == loop.id { loadedLoopID = nil }
+        if loadedLoopID == loop.id {
+            loadedLoopID = nil
+            hasUnsavedChanges = !waypoints.isEmpty
+            saveDraft()
+        }
         persistence.context.delete(loop)
         persistence.save()
     }

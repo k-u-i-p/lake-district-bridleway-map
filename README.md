@@ -30,15 +30,26 @@ file. The waypoints are in `tools/wp.json`.
 (iOS 17 or later). Open it in Xcode 16 or newer, pick a simulator or set your signing team, and run.
 The app bundles the same `network.json` and `route.json` as the page, builds the routing graph on
 launch and runs the A* loop planner on-device, so planning works offline; only the base-map tiles and
-the Open-Meteo elevation lookup need a connection. Planning is the same: press **Start planning**, tap
-the map to drop waypoints, drag a waypoint to move it, tap it and press the bin to remove it. Tap a
-drawn path to see its name, PROW reference and surface. **Share GPX** exports the loop and **Load GPX**
-overlays a track; GPX files shared to the app from other apps are imported too.
+the elevation lookup need a connection.
+
+The map fills the screen. Floating buttons at the top right open the map layers, the routing
+penalties and fit the view to the route. The planner is a card at the bottom (a sidebar on iPad)
+that shows the route's name, distance, climb and waypoint count even when collapsed. Press
+**Add waypoints** and tap the map; drag a marker to move it, tap it and press the bin to remove it.
+Elevation is fetched automatically from Open-Meteo once routing settles, and the card shows the
+profile and a surface breakdown. **Save route** stores the loop under a suggested name (the nearest
+labelled place); a saved route that is reopened shows an unsaved-changes dot and a **Save changes**
+button, with rename and save-as-new in the menu. **Share** exports GPX.
+
+**Routes** lists the saved routes with distance, climb and date: tap one to open it, swipe to rename
+or delete, long-press to duplicate or share. The same screen toggles the built-in reference loop
+and imported GPX tracks, which are drawn for comparison, and imports GPX files (files shared to the
+app from other apps are imported too).
 
 Core Data (`Persistence/LakeDistrictBridleways.xcdatamodeld`) stores the loop being planned so it
-survives relaunches, loops you **Save** (waypoints, route, elevation and the penalties used) and
-imported GPX tracks. Display and routing preferences live in UserDefaults. The routing engine in
-`Routing/` is a line-for-line port of `tools/router.js`.
+survives relaunches, saved routes (waypoints, route, elevation and the penalties used) and imported
+GPX tracks. Display and routing preferences live in UserDefaults. The routing engine in `Routing/`
+is a line-for-line port of `tools/router.js`.
 
 ## Data and rebuilding
 OpenStreetMap via the Overpass API, fetched 13 Oct 2026. Run `tools/build.sh` to refetch and rebuild,

@@ -1,56 +1,56 @@
 import SwiftUI
 
-/// Full-screen map with the planner panel: a bottom sheet on iPhone, a floating card on iPad.
+/// Full-screen map with floating map controls and the planner: a bottom sheet on iPhone, a side
+/// card on iPad.
 struct ContentView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.horizontalSizeClass) private var sizeClass
+    @State private var detent: PresentationDetent = .height(ContentView.collapsedHeight)
 
     private var isRegular: Bool { sizeClass == .regular }
-    private static let panelWidth: CGFloat = 320
-    private static let sheetCollapsedHeight: CGFloat = 156
+    static let panelWidth: CGFloat = 340
+    static let collapsedHeight: CGFloat = 168
 
     var body: some View {
-        ZStack(alignment: .top) {
+        ZStack(alignment: .topTrailing) {
             MapView(model: model, panelInsets: isRegular
                     ? UIEdgeInsets(top: 0, left: Self.panelWidth + 32, bottom: 0, right: 0)
-                    : UIEdgeInsets(top: 0, left: 0, bottom: Self.sheetCollapsedHeight, right: 0))
+                    : UIEdgeInsets(top: 0, left: 0, bottom: Self.collapsedHeight, right: 0))
                 .ignoresSafeArea()
 
+            MapControls()
+                .padding(.top, 8)
+                .padding(.trailing, 12)
+
             if isRegular {
-                HStack(alignment: .top, spacing: 0) {
-                    PlannerPanel(compact: false)
+                VStack(spacing: 0) {
+                    PlannerPanel(compact: false, detent: .constant(.large))
                         .frame(width: Self.panelWidth)
-                        .background(Theme.panel.opacity(0.94))
-                        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-                        .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous).stroke(Theme.panelBorder))
+                        .background(Theme.panel.opacity(0.96))
+                        .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+                        .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).stroke(Theme.panelBorder))
                         .shadow(color: .black.opacity(0.45), radius: 15, y: 10)
-                    Spacer()
+                    Spacer(minLength: 0)
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(16)
-
-                VStack {
-                    Spacer()
-                    HStack {
-                        Spacer()
-                        if let stats = model.stats { StatsBox(stats: stats, fixedWidth: 300) }
-                    }
-                }
-                .padding(.trailing, 16)
-                .padding(.bottom, 36)
             }
-
+        }
+        .overlay(alignment: .top) {
             if let status = model.status {
-                StatusPill(text: status)
-                    .padding(.top, 8)
-                    .transition(.opacity)
+                StatusPill(text: status, busy: true).padding(.top, 8).transition(.opacity)
+            } else if model.isPlanning {
+                StatusPill(text: model.waypoints.isEmpty ? "Tap the map to add your first waypoint" : "Tap the map to add waypoints", busy: false)
+                    .padding(.top, 8).transition(.opacity)
             }
         }
         .animation(.easeInOut(duration: 0.2), value: model.status)
+        .animation(.easeInOut(duration: 0.2), value: model.isPlanning)
         .sheet(isPresented: Binding(get: { !isRegular }, set: { _ in })) {
-            PlannerPanel(compact: true)
-                .presentationDetents([.height(Self.sheetCollapsedHeight), .medium, .large])
+            PlannerPanel(compact: true, detent: $detent)
+                .presentationDetents([.height(Self.collapsedHeight), .medium, .large], selection: $detent)
                 .presentationBackgroundInteraction(.enabled(upThrough: .medium))
-                .presentationBackground(Theme.panel.opacity(0.96))
+                .presentationBackground(Theme.panel.opacity(0.97))
                 .presentationDragIndicator(.visible)
                 .interactiveDismissDisabled()
         }
@@ -60,16 +60,45 @@ struct ContentView: View {
     }
 }
 
+/// Round buttons floating over the map: layers, routing settings and fit-to-route.
+struct MapControls: View {
+    @Environment(AppModel.self) private var model
+
+    var body: some View {
+        VStack(spacing: 8) {
+            control("square.3.layers.3d", "Map layers") { model.activeSheet = .display }
+            control("slider.horizontal.3", "Routing settings") { model.activeSheet = .settings }
+            control(model.loop != nil || model.gpxTrack != nil ? "point.topleft.down.to.point.bottomright.curvepath" : "arrow.up.left.and.down.right.magnifyingglass",
+                    model.loop != nil ? "Fit route" : "Fit the Lake District") { model.fitToRoute() }
+        }
+    }
+
+    private func control(_ system: String, _ label: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Image(systemName: system)
+                .font(.system(size: 16, weight: .medium))
+                .frame(width: 42, height: 42)
+                .background(Theme.panel.opacity(0.88), in: RoundedRectangle(cornerRadius: 11, style: .continuous))
+                .overlay(RoundedRectangle(cornerRadius: 11, style: .continuous).stroke(.white.opacity(0.12)))
+                .shadow(color: .black.opacity(0.35), radius: 6, y: 3)
+        }
+        .buttonStyle(.plain)
+        .foregroundStyle(.white)
+        .accessibilityLabel(label)
+    }
+}
+
 struct StatusPill: View {
     let text: String
+    var busy = true
     var body: some View {
         HStack(spacing: 8) {
-            ProgressView().controlSize(.small).tint(.white)
-            Text(text).font(.footnote)
+            if busy { ProgressView().controlSize(.small).tint(.white) } else { Image(systemName: "hand.tap").font(.footnote) }
+            Text(text).font(.footnote.weight(.medium))
         }
-        .padding(.horizontal, 12)
-        .padding(.vertical, 7)
-        .background(.black.opacity(0.75), in: Capsule())
+        .padding(.horizontal, 14)
+        .padding(.vertical, 8)
+        .background(.black.opacity(0.78), in: Capsule())
         .foregroundStyle(.white)
     }
 }

@@ -29,7 +29,7 @@ struct MapView: UIViewRepresentable {
         let map = FocusMapView()
         map.delegate = context.coordinator
         map.isPitchEnabled = false
-        map.showsCompass = true
+        map.showsCompass = false // the floating controls sit where the compass would appear
         map.showsScale = true
         map.register(WaypointView.self, forAnnotationViewWithReuseIdentifier: WaypointView.reuseID)
         map.register(PeakView.self, forAnnotationViewWithReuseIdentifier: PeakView.reuseID)

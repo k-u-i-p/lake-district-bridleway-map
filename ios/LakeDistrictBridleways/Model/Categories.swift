@@ -44,17 +44,18 @@ nonisolated struct DisplayLayer: Identifiable, Sendable, Hashable {
 /// Groups used for the planned-loop distance breakdown. Mirrors `GROUPS` in the web app.
 nonisolated struct BreakdownGroup: Identifiable, Sendable {
     let name: String
+    let shortName: String
     let categories: [String]
     let colorHex: UInt32
     var id: String { name }
     var color: Color { Color(hex: colorHex) }
 
     static let all: [BreakdownGroup] = [
-        BreakdownGroup(name: "Bridleways & byways", categories: ["bridleway", "boat", "restricted", "permissive", "other"], colorHex: 0x3ddc84),
-        BreakdownGroup(name: "Cycleways & tracks", categories: ["cycleway", "track"], colorHex: 0xe8d5a3),
-        BreakdownGroup(name: "Footpaths", categories: ["footpath", "path"], colorHex: 0xff6b9d),
-        BreakdownGroup(name: "Roads", categories: ["road_minor", "road_major", "trunk"], colorHex: 0x9aa3ad),
-        BreakdownGroup(name: "Ferry", categories: ["ferry"], colorHex: 0x4fd1ff),
+        BreakdownGroup(name: "Bridleways & byways", shortName: "Bridleways", categories: ["bridleway", "boat", "restricted", "permissive", "other"], colorHex: 0x3ddc84),
+        BreakdownGroup(name: "Cycleways & tracks", shortName: "Tracks", categories: ["cycleway", "track"], colorHex: 0xe8d5a3),
+        BreakdownGroup(name: "Footpaths", shortName: "Footpaths", categories: ["footpath", "path"], colorHex: 0xff6b9d),
+        BreakdownGroup(name: "Roads", shortName: "Roads", categories: ["road_minor", "road_major", "trunk"], colorHex: 0x9aa3ad),
+        BreakdownGroup(name: "Ferry", shortName: "Ferry", categories: ["ferry"], colorHex: 0x4fd1ff),
     ]
 
     func metres(in byCategory: [String: Double]) -> Double {
@@ -162,6 +163,10 @@ extension UIColor {
 nonisolated enum Format {
     static func km(_ metres: Double, decimals: Int = 1) -> String {
         String(format: "%.\(decimals)f km", metres / 1000)
+    }
+    /// Metres with thousands grouping, e.g. "3,715 m".
+    static func metres(_ m: Int) -> String {
+        m.formatted(.number.grouping(.automatic)) + " m"
     }
     static func kmShort(_ metres: Double) -> String {
         metres < 10_000 ? String(format: "%.2f km", metres / 1000) : String(format: "%.1f km", metres / 1000)
