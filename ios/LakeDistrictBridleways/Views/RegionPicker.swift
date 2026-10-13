@@ -42,40 +42,62 @@ struct RegionPicker: View {
     }
 }
 
-/// One region: name, extent, how many routes are saved in it and whether it was open last time.
+/// One region: a photo of the National Park, its name, extent, how many routes are saved in it and
+/// whether it was open last time.
 struct RegionCard: View {
     let region: Region
     let lastUsed: Bool
     let savedRoutes: Int
 
+    private let shape = RoundedRectangle(cornerRadius: 14, style: .continuous)
+
     var body: some View {
-        HStack(spacing: 14) {
-            Image(systemName: region.systemImage)
-                .font(.system(size: 20, weight: .semibold))
-                .foregroundStyle(Theme.accent)
-                .frame(width: 46, height: 46)
-                .background(Theme.panel.opacity(0.7), in: RoundedRectangle(cornerRadius: 11, style: .continuous))
-            VStack(alignment: .leading, spacing: 4) {
-                Text(region.name).font(.system(size: 18, weight: .semibold))
-                Text(region.extent).font(.system(size: 13)).foregroundStyle(Theme.muted)
-                HStack(spacing: 8) {
-                    Text(savedRoutes == 1 ? "1 saved route" : "\(savedRoutes) saved routes")
-                        .font(.system(size: 12)).foregroundStyle(Theme.muted.opacity(0.8))
+        VStack(alignment: .leading, spacing: 0) {
+            Color.clear
+                .frame(height: 132)
+                .overlay {
+                    Image(region.photo)
+                        .resizable()
+                        .scaledToFill()
+                        .accessibilityHidden(true)
+                }
+                .clipped()
+                .overlay {
+                    LinearGradient(colors: [.clear, .black.opacity(0.65)], startPoint: .center, endPoint: .bottom)
+                }
+                .overlay(alignment: .bottomLeading) {
+                    Text(region.name)
+                        .font(.system(size: 20, weight: .bold))
+                        .shadow(color: .black.opacity(0.5), radius: 4, y: 1)
+                        .padding(.horizontal, 16).padding(.bottom, 12)
+                }
+                .overlay(alignment: .topTrailing) {
                     if lastUsed {
                         Text("LAST USED").font(.system(size: 9, weight: .bold)).kerning(0.8)
-                            .padding(.horizontal, 6).padding(.vertical, 3)
-                            .background(Theme.planned.opacity(0.18), in: Capsule())
+                            .padding(.horizontal, 7).padding(.vertical, 4)
+                            .background(.black.opacity(0.55), in: Capsule())
                             .foregroundStyle(Theme.planned)
+                            .padding(10)
                     }
                 }
+            HStack(spacing: 14) {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(region.extent).font(.system(size: 13)).foregroundStyle(Theme.muted)
+                    Text(savedRoutes == 1 ? "1 saved route" : "\(savedRoutes) saved routes")
+                        .font(.system(size: 12)).foregroundStyle(Theme.muted.opacity(0.8))
+                    Text(region.photoCredit)
+                        .font(.system(size: 9)).foregroundStyle(Theme.muted.opacity(0.55))
+                        .padding(.top, 2)
+                }
+                Spacer(minLength: 8)
+                Image(systemName: "chevron.right").font(.system(size: 13, weight: .semibold)).foregroundStyle(Theme.muted.opacity(0.6))
             }
-            Spacer(minLength: 8)
-            Image(systemName: "chevron.right").font(.system(size: 13, weight: .semibold)).foregroundStyle(Theme.muted.opacity(0.6))
+            .padding(.horizontal, 16).padding(.vertical, 12)
         }
-        .padding(16)
-        .background(lastUsed ? Theme.controlOn : Theme.control, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-        .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).stroke(lastUsed ? Color.white.opacity(0.18) : Theme.panelBorder))
-        .contentShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .background(lastUsed ? Theme.controlOn : Theme.control)
+        .clipShape(shape)
+        .overlay(shape.stroke(lastUsed ? Color.white.opacity(0.18) : Theme.panelBorder))
+        .contentShape(shape)
         .accessibilityElement(children: .combine)
         .accessibilityLabel("\(region.name), \(savedRoutes) saved routes")
     }

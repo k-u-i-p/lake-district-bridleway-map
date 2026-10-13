@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "region-cairngorms.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -35,12 +35,16 @@ nonisolated enum Region: String, CaseIterable, Identifiable, Sendable {
         }
     }
 
-    var systemImage: String {
+    /// Photo of the National Park on the region picker, in `Assets.xcassets/region-<id>`.
+    var photo: String { "region-\(rawValue)" }
+
+    /// Credit for `photo`, from Wikimedia Commons; the sources are listed in the README.
+    var photoCredit: String {
         switch self {
-        case .lakeDistrict: "mountain.2.fill"
-        case .northYorkMoors: "leaf.fill"
-        case .yorkshireDales: "water.waves"
-        case .cairngorms: "snowflake"
+        case .lakeDistrict: "Derwent Water · Diliff, CC BY-SA 3.0"
+        case .northYorkMoors: "Heather moorland · Thelight00702, CC BY-SA 4.0"
+        case .yorkshireDales: "Swaledale from Kisdon Hill · Kreuzschnabel, CC BY-SA 3.0"
+        case .cairngorms: "Cairngorms · Thomas Andy Branson, CC BY-SA 4.0"
         }
     }
 

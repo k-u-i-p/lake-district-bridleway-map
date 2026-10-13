@@ -43,6 +43,14 @@ Core Data store, so only that region's saved routes are loaded. The card shows h
 saved in each and which was open last. The region pill at the top left of the map goes back to the
 picker; the draft being planned is kept per region.
 
+Each region card shows a photo of the National Park, credited on the card. They come from Wikimedia
+Commons, resized to 1280 px wide in `Assets.xcassets/region-<id>.imageset`:
+
+- Lake District: [Derwent Water, Lake District, Cumbria - June 2009](https://commons.wikimedia.org/wiki/File:Derwent_Water,_Lake_District,_Cumbria_-_June_2009.jpg) by Diliff, CC BY-SA 3.0
+- North York Moors: [The sea of purple in North York Moors 03](https://commons.wikimedia.org/wiki/File:The_sea_of_purple_in_North_York_Moors_03.jpg) by Thelight00702, CC BY-SA 4.0
+- Yorkshire Dales: [2015 Swaledale from Kisdon Hill](https://commons.wikimedia.org/wiki/File:2015_Swaledale_from_Kisdon_Hill.jpg) by Kreuzschnabel, CC BY-SA 3.0
+- Cairngorms: [Cairngorms National Park, Scotland](https://commons.wikimedia.org/wiki/File:Cairngorms_National_Park,_Scotland.jpg) by Thomas Andy Branson, CC BY-SA 4.0
+
 Scotland has no public bridleways: the Land Reform (Scotland) Act gives cyclists access to most
 tracks and paths, so the Cairngorms network is tracks, paths and roads, the bridleway layers are
 empty there, and the map opens on the **Track** layer instead. Routing there trades tracks against
