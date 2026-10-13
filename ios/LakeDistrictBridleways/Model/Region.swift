@@ -11,6 +11,7 @@ nonisolated struct FocusBounds: Sendable, Hashable {
 nonisolated enum Region: String, CaseIterable, Identifiable, Sendable {
     case lakeDistrict = "lakes"
     case northYorkMoors = "nym"
+    case yorkshireDales = "dales"
 
     var id: String { rawValue }
 
@@ -18,6 +19,7 @@ nonisolated enum Region: String, CaseIterable, Identifiable, Sendable {
         switch self {
         case .lakeDistrict: "Lake District"
         case .northYorkMoors: "North York Moors"
+        case .yorkshireDales: "Yorkshire Dales"
         }
     }
 
@@ -26,6 +28,7 @@ nonisolated enum Region: String, CaseIterable, Identifiable, Sendable {
         switch self {
         case .lakeDistrict: "Ennerdale to Haweswater, Bassenthwaite to Windermere"
         case .northYorkMoors: "Osmotherley to the coast, Guisborough to Helmsley"
+        case .yorkshireDales: "The Howgills to Nidderdale, Kirkby Stephen to Malham"
         }
     }
 
@@ -33,13 +36,14 @@ nonisolated enum Region: String, CaseIterable, Identifiable, Sendable {
         switch self {
         case .lakeDistrict: "mountain.2.fill"
         case .northYorkMoors: "leaf.fill"
+        case .yorkshireDales: "water.waves"
         }
     }
 
     /// Title of the peaks overlay toggle: the ten highest summits in the bundled data.
     var peaksTitle: String {
         switch self {
-        case .lakeDistrict: "Ten highest fells"
+        case .lakeDistrict, .yorkshireDales: "Ten highest fells"
         case .northYorkMoors: "Ten highest tops"
         }
     }
@@ -51,7 +55,7 @@ nonisolated enum Region: String, CaseIterable, Identifiable, Sendable {
     var routeResource: String? {
         switch self {
         case .lakeDistrict: "route-lakes"
-        case .northYorkMoors: nil
+        case .northYorkMoors, .yorkshireDales: nil
         }
     }
 
@@ -61,6 +65,7 @@ nonisolated enum Region: String, CaseIterable, Identifiable, Sendable {
         switch self {
         case .lakeDistrict: "LakeDistrictBridleways.sqlite"
         case .northYorkMoors: "NorthYorkMoors.sqlite"
+        case .yorkshireDales: "YorkshireDales.sqlite"
         }
     }
 
@@ -68,6 +73,7 @@ nonisolated enum Region: String, CaseIterable, Identifiable, Sendable {
         switch self {
         case .lakeDistrict: FocusBounds(south: 54.27, north: 54.69, west: -3.44, east: -2.74)
         case .northYorkMoors: FocusBounds(south: 54.21, north: 54.56, west: -1.33, east: -0.47)
+        case .yorkshireDales: FocusBounds(south: 54.02, north: 54.46, west: -2.58, east: -1.80)
         }
     }
 
@@ -76,6 +82,7 @@ nonisolated enum Region: String, CaseIterable, Identifiable, Sendable {
         switch self {
         case .lakeDistrict: Self.lakeDistrictLabels
         case .northYorkMoors: Self.northYorkMoorsLabels
+        case .yorkshireDales: Self.yorkshireDalesLabels
         }
     }
 
@@ -127,5 +134,33 @@ nonisolated enum Region: String, CaseIterable, Identifiable, Sendable {
         .init(text: "Goathland", coordinate: LatLon(54.401, -0.722), rotation: 0, small: true),
         .init(text: "Whitby", coordinate: LatLon(54.486, -0.613), rotation: 0, small: true),
         .init(text: "Robin Hood's Bay", coordinate: LatLon(54.434, -0.536), rotation: 0, small: true),
+    ]
+
+    private static let yorkshireDalesLabels: [MapLabel] = [
+        .init(text: "Swaledale", coordinate: LatLon(54.390, -2.140), rotation: 10, small: false),
+        .init(text: "Arkengarthdale", coordinate: LatLon(54.452, -2.000), rotation: -50, small: true),
+        .init(text: "Wensleydale", coordinate: LatLon(54.285, -1.930), rotation: 5, small: false),
+        .init(text: "Wharfedale", coordinate: LatLon(54.000, -1.905), rotation: 55, small: false),
+        .init(text: "Littondale", coordinate: LatLon(54.125, -2.130), rotation: 45, small: true),
+        .init(text: "Ribblesdale", coordinate: LatLon(54.168, -2.305), rotation: 55, small: false),
+        .init(text: "Dentdale", coordinate: LatLon(54.278, -2.405), rotation: -10, small: false),
+        .init(text: "Garsdale", coordinate: LatLon(54.322, -2.350), rotation: -20, small: true),
+        .init(text: "Mallerstang", coordinate: LatLon(54.395, -2.335), rotation: -80, small: true),
+        .init(text: "Howgill Fells", coordinate: LatLon(54.395, -2.500), rotation: 0, small: false),
+        .init(text: "Coverdale", coordinate: LatLon(54.235, -1.930), rotation: -35, small: true),
+        .init(text: "Bishopdale", coordinate: LatLon(54.245, -2.040), rotation: -50, small: true),
+        .init(text: "Nidderdale", coordinate: LatLon(54.125, -1.815), rotation: 60, small: false),
+        .init(text: "Hawes", coordinate: LatLon(54.304, -2.197), rotation: 0, small: true),
+        .init(text: "Askrigg", coordinate: LatLon(54.313, -2.078), rotation: 0, small: true),
+        .init(text: "Leyburn", coordinate: LatLon(54.309, -1.828), rotation: 0, small: true),
+        .init(text: "Reeth", coordinate: LatLon(54.388, -1.943), rotation: 0, small: true),
+        .init(text: "Kirkby Stephen", coordinate: LatLon(54.472, -2.349), rotation: 0, small: true),
+        .init(text: "Sedbergh", coordinate: LatLon(54.323, -2.528), rotation: 0, small: true),
+        .init(text: "Ingleton", coordinate: LatLon(54.154, -2.468), rotation: 0, small: true),
+        .init(text: "Settle", coordinate: LatLon(54.068, -2.278), rotation: 0, small: true),
+        .init(text: "Malham", coordinate: LatLon(54.061, -2.152), rotation: 0, small: true),
+        .init(text: "Kettlewell", coordinate: LatLon(54.147, -2.047), rotation: 0, small: true),
+        .init(text: "Grassington", coordinate: LatLon(54.071, -1.998), rotation: 0, small: true),
+        .init(text: "Pateley Bridge", coordinate: LatLon(54.086, -1.758), rotation: 0, small: true),
     ]
 }

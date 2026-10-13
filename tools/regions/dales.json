@@ -1,0 +1,6 @@
+{
+  "id": "dales",
+  "name": "Yorkshire Dales",
+  "bbox": [53.95, -2.65, 54.50, -1.75],
+  "peaks": ["Whernside", "Ingleborough", "Great Shunner Fell", "High Seat", "Wild Boar Fell", "Great Whernside", "Buckden Pike", "Pen-y-ghent", "Great Coum", "Swarth Fell"]
+}
