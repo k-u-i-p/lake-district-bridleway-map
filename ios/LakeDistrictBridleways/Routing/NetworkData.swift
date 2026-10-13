@@ -28,8 +28,9 @@ nonisolated struct NetworkData: Sendable {
 
     enum LoadError: Error { case missing, malformed }
 
-    static func loadBundled() throws -> NetworkData {
-        guard let url = Bundle.main.url(forResource: "network", withExtension: "json") else { throw LoadError.missing }
+    /// Loads a region's `network-<id>.json` from the app bundle.
+    static func loadBundled(resource: String) throws -> NetworkData {
+        guard let url = Bundle.main.url(forResource: resource, withExtension: "json") else { throw LoadError.missing }
         let data = try Data(contentsOf: url, options: .mappedIfSafe)
         return try parse(data)
     }
@@ -63,9 +64,12 @@ nonisolated struct NetworkData: Sendable {
     }
 }
 
-/// A route with its summary statistics: the bundled reference loop, an imported GPX track or a
-/// planned loop that has been given elevation data.
+/// A route with its summary statistics: the bundled reference loop, or a planned loop that has been
+/// given elevation data.
 nonisolated struct RouteSummary: Sendable, Identifiable {
+    /// The fixed id of the bundled reference loop, so the planner can remember it was open.
+    static let referenceID = UUID(uuidString: "7D1C2B6E-5A40-4F3E-9C8B-0F2E5A7B9D11")!
+
     let id: UUID
     var name: String
     var coords: [LatLon]
@@ -84,9 +88,11 @@ nonisolated struct RouteSummary: Sendable, Identifiable {
         self.byCategory = byCategory
     }
 
-    /// Loads `route.json`, the loop reconstructed from the reference image by `tools/make-route.js`.
-    static func loadBundledReference() -> RouteSummary? {
-        guard let url = Bundle.main.url(forResource: "route", withExtension: "json"),
+    /// Loads a region's bundled reference loop (`route-lakes.json`, the loop reconstructed from the
+    /// reference image by `tools/make-route.js`). Nil for regions without one.
+    static func loadBundledReference(resource: String?) -> RouteSummary? {
+        guard let resource,
+              let url = Bundle.main.url(forResource: resource, withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let root = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
               let name = root["name"] as? String,
@@ -96,6 +102,6 @@ nonisolated struct RouteSummary: Sendable, Identifiable {
         let asc = root["asc"] as? Int
         let profile = root["profile"] as? [Double]
         let byCat = (root["byCat"] as? [String: Double]) ?? [:]
-        return RouteSummary(name: name, coords: coords, length: len, ascent: asc, profile: profile, byCategory: byCat)
+        return RouteSummary(id: referenceID, name: name, coords: coords, length: len, ascent: asc, profile: profile, byCategory: byCat)
     }
 }

@@ -1,10 +1,12 @@
 """Merge Overpass results into one compact dataset for the map + router.
-Usage: convert.py out.json bridleways.json paths.json roads.json peaks.json
+Usage: convert.py region.json out.json bridleways.json paths.json roads.json peaks.json
+region.json (tools/regions/) names the ten peaks to show, or "auto" for the ten highest in the data.
 """
 import json, math, sys
 from collections import Counter, defaultdict
 
-out = sys.argv[1]; files = sys.argv[2:5]; peaksfile = sys.argv[5]
+region = json.load(open(sys.argv[1]))
+out = sys.argv[2]; files = sys.argv[3:6]; peaksfile = sys.argv[6]
 CATS = ['bridleway','boat','restricted','permissive','other','footpath','path','cycleway','track','road_minor','road_major','trunk','ferry']
 CI = {c:i for i,c in enumerate(CATS)}
 
@@ -96,6 +98,7 @@ for wid,(c,t,pts) in ways.items():
     nv_after+=len(sp)
     L = sum(hav((sp[i][0]/1e5,sp[i][1]/1e5),(sp[i+1][0]/1e5,sp[i+1][1]/1e5)) for i in range(len(sp)-1))
     if c=='ferry' and t.get('bicycle')!='yes': continue   # only ferries that carry bikes (Windermere, Ullswater)
+    if c=='ferry' and L > 30000: continue   # sea crossings passing through the box (Newcastle to IJmuiden), not local ferries
     km[c]+=L/1000
     rec=[CI[c], round(L), wid, encode(sp)]
     extra={}
@@ -110,12 +113,17 @@ for e in json.load(open(peaksfile))['elements']:
     try: ele=float(str(e['tags']['ele']).replace('m','').strip())
     except: continue
     peaks.append({'n':e['tags']['name'],'e':round(ele),'la':round(e['lat'],5),'lo':round(e['lon'],5)})
-# The ten highest Lake District fells (Wainwright summits; subsidiary tops such as Broad Crag excluded)
-TOP10=['Scafell Pike','Sca Fell','Helvellyn','Skiddaw','Great End','Bowfell','Great Gable','Pillar','Nethermost Pike','Catstycam']
+# The ten peaks to show: either listed in the region file (the Lake District lists the Wainwright
+# summits, so subsidiary tops such as Broad Crag are excluded) or the ten highest named peaks in the data.
+aliases=region.get('peakAliases',{})
 byname={}
 for p in peaks:
-    if p['n'] in TOP10 and (p['n'] not in byname or p['e']>byname[p['n']]['e']): byname[p['n']]=p
-top=[dict(byname[n], n={'Sca Fell':'Scafell','Catstycam':'Catstye Cam'}.get(n,n)) for n in TOP10 if n in byname]
+    if p['n'] not in byname or p['e']>byname[p['n']]['e']: byname[p['n']]=p
+if region.get('peaks')=='auto':
+    TOP10=[p['n'] for p in sorted(byname.values(), key=lambda p:-p['e'])[:10]]
+else:
+    TOP10=region['peaks']
+top=[dict(byname[n], n=aliases.get(n,n)) for n in TOP10 if n in byname]
 
 json.dump({'cats':CATS,'ways':outways,'peaks':top}, open(out,'w'), separators=(',',':'), ensure_ascii=False)
 for c in CATS: print(f"{c:11s} {km[c]:8.1f} km")

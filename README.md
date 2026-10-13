@@ -3,6 +3,7 @@
 `index.html` is a self-contained interactive map and loop planner for mountain biking in the central
 Lake District (Ennerdale to Haweswater, Bassenthwaite to Windermere). Open it directly in a browser.
 It needs an internet connection only for the base map tiles and the optional elevation lookup.
+The iOS app below covers the North York Moors as well; the web page is Lake District only.
 
 ## Planning a loop
 Press **Start planning** and click the map to drop waypoints. After two or more waypoints the planner
@@ -28,9 +29,16 @@ file. The waypoints are in `tools/wp.json`.
 ## iOS app
 `ios/LakeDistrictBridleways.xcodeproj` is a native SwiftUI port of the page for iPhone and iPad
 (iOS 17 or later). Open it in Xcode 16 or newer, pick a simulator or set your signing team, and run.
-The app bundles the same `network.json` and `route.json` as the page, builds the routing graph on
-launch and runs the A* loop planner on-device, so planning works offline; only the base-map tiles and
-the elevation lookup need a connection.
+The app bundles a network file per region (`Resources/network-lakes.json`, `network-nym.json`) plus
+the Lake District's `route-lakes.json`, builds the routing graph on launch and runs the A* loop
+planner on-device, so planning works offline; only the base-map tiles and the elevation lookup need
+a connection.
+
+The first screen picks the region: the **Lake District** or the **North York Moors** (Osmotherley to
+the coast, Guisborough to Helmsley). Each region has its own map framing, labels and ten highest
+tops, and its own Core Data store, so only that region's saved routes are loaded. The card shows how
+many routes are saved in each and which was open last. The region pill at the top left of the map
+goes back to the picker; the draft being planned is kept per region.
 
 The map fills the screen. Floating buttons at the top right open the map layers, the routing
 penalties and fit the view to the route. The planner is a card at the bottom (a sidebar on iPad)
@@ -38,21 +46,28 @@ that shows the route's name, distance, climb and waypoint count even when collap
 **Add waypoints** and tap the map; drag a marker to move it, tap it and press the bin to remove it.
 Elevation is fetched automatically from Open-Meteo once routing settles, and the card shows the
 profile and a surface breakdown. **Save route** stores the loop under a suggested name (the nearest
-labelled place); a saved route that is reopened shows an unsaved-changes dot and a **Save changes**
-button, with rename and save-as-new in the menu. **Share** exports GPX.
+labelled place). **Share** exports GPX.
 
-**Routes** lists the saved routes with distance, climb and date: tap one to open it, swipe to rename
-or delete, long-press to duplicate or share. The same screen toggles the built-in reference loop
-and imported GPX tracks, which are drawn for comparison, and imports GPX files (files shared to the
-app from other apps are imported too).
+A saved route opens for viewing, with just its line on the map. Press the pencil in the card to edit
+it: the waypoint markers, planning buttons, **Save changes** button and the rename / save-as-new menu
+appear, and an unsaved-changes dot shows next to the name. Press the tick to finish; if there are
+unsaved changes you are asked whether to save or discard them.
+
+**Routes** lists the saved routes with distance, climb, waypoint count and date: tap one to open it,
+swipe to rename or delete, long-press to edit, duplicate or share. The built-in reference loop
+("Loop from the image") is listed last, marked with a padlock: it opens and shares like any other
+route but cannot be edited.
 
 Core Data (`Persistence/LakeDistrictBridleways.xcdatamodeld`) stores the loop being planned so it
-survives relaunches, saved routes (waypoints, route, elevation and the penalties used) and imported
-GPX tracks. Display and routing preferences live in UserDefaults. The routing engine in `Routing/`
-is a line-for-line port of `tools/router.js`.
+survives relaunches and the saved routes (waypoints, route, elevation and the penalties used). The
+model is shared; each region opens its own store file (`LakeDistrictBridleways.sqlite`,
+`NorthYorkMoors.sqlite`). Display and routing preferences live in UserDefaults. The routing engine
+in `Routing/` is a line-for-line port of `tools/router.js`.
 
 ## Data and rebuilding
-OpenStreetMap via the Overpass API, fetched 13 Oct 2026. Run `tools/build.sh` to refetch and rebuild,
-or `tools/build.sh --offline` to rebuild from the cached data in `tools/data`. Both also refresh the
-copies bundled in the iOS app. Needs `curl`, `python3`
+OpenStreetMap via the Overpass API, fetched 13 Oct 2026. Regions are described in
+`tools/regions/<id>.json` (bounding box and which peaks to show). Run `tools/build.sh` to refetch and
+rebuild the Lake District, `tools/build.sh nym` for the North York Moors, or add `--offline` to
+rebuild from the cached data in `tools/data/<id>`. Both refresh the copy bundled in the iOS app; the
+Lake District build also rebuilds the reference loop and `index.html`. Needs `curl`, `python3`
 and `node`. Always check the definitive map before relying on a right of way.

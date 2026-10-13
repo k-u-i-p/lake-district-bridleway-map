@@ -34,7 +34,7 @@ struct DisplaySheet: View {
                     }
                 }
                 Section("Overlays") {
-                    Toggle("Ten highest fells", isOn: $model.showPeaks)
+                    Toggle(model.region.peaksTitle, isOn: $model.showPeaks)
                     Toggle("Valley & lake labels", isOn: $model.showLabels)
                     Toggle("Focus area outline", isOn: $model.showFocus)
                 }

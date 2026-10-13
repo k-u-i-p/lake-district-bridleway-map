@@ -40,7 +40,7 @@ struct PlannerPanel: View {
                         showRoutes = true
                     })
                     .toolbar(.hidden, for: .navigationBar)
-                    .navigationDestination(isPresented: $showRoutes) { RoutesView() }
+                    .navigationDestination(isPresented: $showRoutes) { RoutesView(embedded: true) }
                 }
             } else {
                 ViewThatFits(in: .vertical) {
@@ -76,6 +76,7 @@ struct PlanView: View {
 
     @State private var namePrompt: NamePrompt?
     @State private var confirmClear = false
+    @State private var confirmEndEditing = false
 
     var body: some View {
         Group {
@@ -91,17 +92,25 @@ struct PlanView: View {
         .confirmationDialog("Remove all \(model.waypoints.count) waypoints?", isPresented: $confirmClear, titleVisibility: .visible) {
             Button("Clear route", role: .destructive) { model.clearPlan() }
         }
+        .confirmationDialog("Keep your changes to “\(model.displayName)”?", isPresented: $confirmEndEditing, titleVisibility: .visible) {
+            Button("Save changes") { model.saveChanges(); model.endEditing() }
+            Button("Discard changes", role: .destructive) { model.discardChanges() }
+        }
     }
 
     private var content: some View {
             VStack(alignment: .leading, spacing: 14) {
                 header
                 summary
-                planningButtons
+                if model.isEditing { planningButtons }
                 if model.loadError != nil {
                     Text(model.loadError ?? "").font(.footnote).foregroundStyle(.red)
+                } else if model.isReadOnly {
+                    hint("This loop is built in. It can be viewed and shared but not changed.")
                 } else if model.isPlanning {
                     hint("Tap the map to add waypoints. Drag a marker to move it, tap it to remove it. The loop returns to the start by a different way where it can.")
+                } else if !model.isEditing {
+                    hint("Press the pencil to change this route's waypoints or settings.")
                 } else if model.waypoints.isEmpty {
                     hint("Press Add waypoints, then tap the map where you want to ride. Tap any path to see what it is.")
                 }
@@ -122,22 +131,42 @@ struct PlanView: View {
     private var header: some View {
         HStack(alignment: .center, spacing: 10) {
             Button {
-                namePrompt = model.loop == nil && !model.isEditingSavedRoute ? nil : .rename(current: model.displayName)
+                namePrompt = canRename ? .rename(current: model.displayName) : nil
             } label: {
                 HStack(spacing: 7) {
                     Text(model.displayName)
                         .font(.system(size: 20, weight: .semibold))
                         .foregroundStyle(model.routeName == nil ? Theme.muted : .white)
                         .lineLimit(1)
-                    if model.isEditingSavedRoute && model.hasUnsavedChanges {
+                    if model.isSavedRouteOpen && model.hasUnsavedChanges {
                         Circle().fill(Theme.planned).frame(width: 7, height: 7)
                             .accessibilityLabel("Unsaved changes")
                     }
                 }
             }
             .buttonStyle(.plain)
-            .disabled(model.loop == nil && !model.isEditingSavedRoute)
+            .disabled(!canRename)
             Spacer(minLength: 8)
+            if model.canEdit {
+                Button {
+                    if !model.isEditing {
+                        model.beginEditing()
+                    } else if model.hasUnsavedChanges {
+                        confirmEndEditing = true
+                    } else {
+                        model.endEditing()
+                    }
+                } label: {
+                    Image(systemName: model.isEditing ? "checkmark" : "pencil")
+                        .font(.system(size: 13, weight: .semibold))
+                        .frame(width: 32, height: 32)
+                        .background(model.isEditing ? Theme.controlOn : Theme.control, in: Circle())
+                        .overlay(Circle().stroke(model.isEditing ? Color.white.opacity(0.25) : Theme.panelBorder))
+                }
+                .buttonStyle(.plain)
+                .foregroundStyle(.white)
+                .accessibilityLabel(model.isEditing ? "Finish editing" : "Edit route")
+            }
             Button(action: openRoutes) {
                 HStack(spacing: 5) {
                     Image(systemName: "list.bullet")
@@ -152,6 +181,11 @@ struct PlanView: View {
             .buttonStyle(.plain)
             .foregroundStyle(.white)
         }
+    }
+
+    /// The name can be changed while editing, once there is a route or a saved route to name.
+    private var canRename: Bool {
+        model.isEditing && !model.isReadOnly && (model.loop != nil || model.isSavedRouteOpen)
     }
 
     private var summary: some View {
@@ -170,7 +204,7 @@ struct PlanView: View {
                     Text(" · ")
                     Text("climb…")
                 }
-                Text(" · \(model.waypoints.count) waypoints")
+                if !model.waypoints.isEmpty { Text(" · \(model.waypoints.count) waypoints") }
             } else if model.waypoints.count == 1 {
                 Text("One waypoint. Add another to make a loop.")
             } else {
@@ -229,7 +263,8 @@ struct PlanView: View {
                 }
                 .frame(height: 72)
             case .none:
-                Text("Elevation will load shortly…").font(.system(size: 12)).foregroundStyle(Theme.muted).frame(height: 72)
+                Text(model.isReadOnly ? "No elevation data for this loop." : "Elevation will load shortly…")
+                    .font(.system(size: 12)).foregroundStyle(Theme.muted).frame(height: 72)
             }
         }
         .padding(12)
@@ -238,14 +273,15 @@ struct PlanView: View {
 
     // MARK: Saving
 
+    /// Share is always available. Saving, renaming and save-as-new only appear while editing.
     private var saveRow: some View {
         HStack(spacing: 8) {
-            if model.isEditingSavedRoute {
+            if model.isEditing, model.isSavedRouteOpen {
                 PanelButton(model.hasUnsavedChanges ? "Save changes" : "Saved",
                             icon: model.hasUnsavedChanges ? "bookmark.fill" : "checkmark",
                             style: model.hasUnsavedChanges ? .prominent : .standard) { model.saveChanges() }
                     .disabled(!model.hasUnsavedChanges)
-            } else {
+            } else if model.isEditing {
                 PanelButton("Save route", icon: "bookmark.fill", style: .prominent) {
                     namePrompt = .save(suggested: model.suggestedName())
                 }
@@ -257,9 +293,9 @@ struct PlanView: View {
                 }
                 .buttonStyle(.plain)
             }
-            if model.isEditingSavedRoute {
+            if model.isEditing, model.isSavedRouteOpen {
                 Menu {
-                    Button("Rename…", systemImage: "pencil") { namePrompt = .rename(current: model.displayName) }
+                    Button("Rename…", systemImage: "character.cursor.ibeam") { namePrompt = .rename(current: model.displayName) }
                     Button("Save as new route…", systemImage: "plus.square.on.square") { namePrompt = .save(suggested: model.displayName + " copy") }
                 } label: {
                     PanelButtonLabel("", icon: "ellipsis")

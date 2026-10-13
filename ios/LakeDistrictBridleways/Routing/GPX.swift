@@ -1,10 +1,5 @@
 import Foundation
 
-nonisolated struct GPXPoint: Sendable {
-    let coordinate: LatLon
-    let elevation: Double?
-}
-
 nonisolated enum GPX {
     /// GPX 1.1 track from a list of coordinates and optional elevations (matches the web app output).
     static func document(name: String, coords: [LatLon], elevations: [Double]?) -> String {
@@ -18,49 +13,5 @@ nonisolated enum GPX {
             s += "</trkpt>\n"
         }
         return s + "</trkseg></trk>\n</gpx>\n"
-    }
-
-    /// Track and route points from a GPX file.
-    static func parse(_ data: Data) -> [GPXPoint] {
-        let parser = XMLParser(data: data)
-        let delegate = Delegate()
-        parser.delegate = delegate
-        parser.parse()
-        return delegate.points
-    }
-
-    private final class Delegate: NSObject, XMLParserDelegate {
-        var points: [GPXPoint] = []
-        private var lat: Double?, lon: Double?, ele: Double?
-        private var inEle = false
-        private var text = ""
-
-        func parser(_ parser: XMLParser, didStartElement name: String, namespaceURI: String?, qualifiedName: String?, attributes: [String: String] = [:]) {
-            switch name {
-            case "trkpt", "rtept":
-                lat = attributes["lat"].flatMap(Double.init)
-                lon = attributes["lon"].flatMap(Double.init)
-                ele = nil
-            case "ele":
-                inEle = true; text = ""
-            default: break
-            }
-        }
-
-        func parser(_ parser: XMLParser, foundCharacters string: String) {
-            if inEle { text += string }
-        }
-
-        func parser(_ parser: XMLParser, didEndElement name: String, namespaceURI: String?, qualifiedName: String?) {
-            switch name {
-            case "ele":
-                inEle = false
-                ele = Double(text.trimmingCharacters(in: .whitespacesAndNewlines))
-            case "trkpt", "rtept":
-                if let la = lat, let lo = lon { points.append(GPXPoint(coordinate: LatLon(la, lo), elevation: ele)) }
-                lat = nil; lon = nil; ele = nil
-            default: break
-            }
-        }
     }
 }

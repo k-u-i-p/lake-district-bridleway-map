@@ -17,7 +17,7 @@ final class FocusMapView: MKMapView {
 }
 
 /// The map. Bridges `AppModel` to an `MKMapView`: base map and tile overlays, the rights-of-way layers,
-/// the reference / GPX / planned routes, waypoint markers, peaks, labels and the focus outline.
+/// the open route, waypoint markers, peaks, labels and the focus outline.
 struct MapView: UIViewRepresentable {
     let model: AppModel
     /// Screen area covered by the planner panel, used when framing routes.
@@ -48,7 +48,8 @@ struct MapView: UIViewRepresentable {
         let coordinator = context.coordinator
         map.onSizeChange = { [weak map, weak coordinator] _ in
             guard let map, let coordinator, !coordinator.userHasMovedMap else { return }
-            coordinator.fit(FitRequest(south: FocusArea.south, north: FocusArea.north, west: FocusArea.west, east: FocusArea.east, animated: false), on: map)
+            let f = coordinator.model.region.focus
+            coordinator.fit(FitRequest(south: f.south, north: f.north, west: f.west, east: f.east, animated: false), on: map)
         }
         return map
     }
@@ -69,9 +70,6 @@ struct MapView: UIViewRepresentable {
         private var layersBuilding: Set<String> = []
         private var graphApplied = false
         private var focusOverlay: FocusPolygon?
-        private var referenceItems: [AnyObject] = []
-        private var referenceShown = false
-        private var gpxItems: [AnyObject] = [], gpxID: UUID?
         private var loopItems: [AnyObject] = [], loopID: UUID?
         private var waypointAnnotations: [UUID: WaypointAnnotation] = [:]
         private var peakAnnotations: [PeakAnnotation] = []
@@ -95,8 +93,6 @@ struct MapView: UIViewRepresentable {
             applyBaseMap(model.baseMap, to: map)
             applyFocus(model.showFocus, to: map)
             applyLayers(to: map)
-            applyReference(to: map)
-            applyGPX(to: map)
             applyLoop(to: map)
             applyWaypoints(to: map)
             applyPeaks(to: map)
@@ -131,10 +127,11 @@ struct MapView: UIViewRepresentable {
 
         private func applyFocus(_ show: Bool, to map: MKMapView) {
             if show, focusOverlay == nil {
-                let c = [CLLocationCoordinate2D(latitude: FocusArea.south, longitude: FocusArea.west),
-                         CLLocationCoordinate2D(latitude: FocusArea.north, longitude: FocusArea.west),
-                         CLLocationCoordinate2D(latitude: FocusArea.north, longitude: FocusArea.east),
-                         CLLocationCoordinate2D(latitude: FocusArea.south, longitude: FocusArea.east)]
+                let f = model.region.focus
+                let c = [CLLocationCoordinate2D(latitude: f.south, longitude: f.west),
+                         CLLocationCoordinate2D(latitude: f.north, longitude: f.west),
+                         CLLocationCoordinate2D(latitude: f.north, longitude: f.east),
+                         CLLocationCoordinate2D(latitude: f.south, longitude: f.east)]
                 let poly = FocusPolygon(coordinates: c, count: c.count)
                 focusOverlay = poly
                 map.addOverlay(poly, level: .aboveLabels)
@@ -188,7 +185,7 @@ struct MapView: UIViewRepresentable {
 
         /// Routes must draw above the rights-of-way layers, which can be added later than the routes.
         private func bringRoutesToFront(on map: MKMapView) {
-            for item in referenceItems + gpxItems + loopItems {
+            for item in loopItems {
                 if let o = item as? MKOverlay, map.overlays.contains(where: { $0 === o }) {
                     map.removeOverlay(o)
                     map.addOverlay(o, level: .aboveLabels)
@@ -219,30 +216,6 @@ struct MapView: UIViewRepresentable {
             }
         }
 
-        private func applyReference(to map: MKMapView) {
-            let wanted = model.showReference && model.reference != nil
-            if wanted, !referenceShown, let ref = model.reference {
-                if referenceItems.isEmpty { referenceItems = routeItems(ref.coords, color: UIColor(hex: 0xe41b23)) }
-                add(referenceItems, to: map)
-                referenceShown = true
-            } else if !wanted, referenceShown {
-                remove(referenceItems, from: map)
-                referenceShown = false
-            }
-        }
-
-        private func applyGPX(to map: MKMapView) {
-            let id = model.gpxTrack?.id
-            guard id != gpxID else { return }
-            remove(gpxItems, from: map)
-            gpxItems = []
-            gpxID = id
-            if let track = model.gpxTrack {
-                gpxItems = routeItems(track.coords, color: UIColor(hex: 0xffd400))
-                add(gpxItems, to: map)
-            }
-        }
-
         private func applyLoop(to map: MKMapView) {
             let id = model.loop?.id
             guard id != loopID else { return }
@@ -255,8 +228,9 @@ struct MapView: UIViewRepresentable {
             }
         }
 
+        /// Waypoint markers are only shown while editing; a route being viewed is just its line.
         private func applyWaypoints(to map: MKMapView) {
-            let wps = model.waypoints
+            let wps = model.isEditing ? model.waypoints : []
             let ids = Set(wps.map(\.id))
             for (id, a) in waypointAnnotations where !ids.contains(id) {
                 map.removeAnnotation(a)
@@ -287,7 +261,7 @@ struct MapView: UIViewRepresentable {
         }
 
         private func applyLabels(to map: MKMapView) {
-            if labelAnnotations.isEmpty { labelAnnotations = MapLabel.all.map(LabelAnnotation.init) }
+            if labelAnnotations.isEmpty { labelAnnotations = model.region.labels.map(LabelAnnotation.init) }
             if model.showLabels, !labelsShown {
                 map.addAnnotations(labelAnnotations); labelsShown = true
             } else if !model.showLabels, labelsShown {

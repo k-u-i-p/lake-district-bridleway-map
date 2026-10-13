@@ -1,0 +1,7 @@
+{
+  "id": "nym",
+  "name": "North York Moors",
+  "bbox": [54.15, -1.40, 54.60, -0.38],
+  "peaks": ["Urra Moor - Round Hill", "Cringle Moor", "Stony Ridge", "Cockayne Ridge", "Ledging Hill", "Carlton Bank", "Noon Hill", "Cock Heads", "Cock Howe", "Black Hambleton"],
+  "peakAliases": {"Urra Moor - Round Hill": "Urra Moor"}
+}

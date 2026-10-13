@@ -37,11 +37,14 @@ enum ActiveSheet: String, Identifiable {
     var id: String { rawValue }
 }
 
-/// All application state: the loaded network and graph, map display options, routing settings, the
-/// loop being planned, the reference loop and imported GPX tracks. Persists the draft loop and saved
-/// loops through Core Data and the display preferences through UserDefaults.
+/// All application state for one region: the loaded network and graph, map display options, routing
+/// settings, the route being planned or viewed and the built-in reference loop. Persists the draft
+/// loop and saved loops through the region's Core Data store and the display preferences through
+/// UserDefaults. Choosing another region makes a new model.
 @Observable
 final class AppModel {
+    let region: Region
+
     // MARK: Network
     private(set) var network: NetworkData?
     private(set) var graph: RouteGraph?
@@ -55,7 +58,6 @@ final class AppModel {
     var showPeaks: Bool { didSet { defaults.set(showPeaks, forKey: "showPeaks") } }
     var showLabels: Bool { didSet { defaults.set(showLabels, forKey: "showLabels") } }
     var showFocus: Bool { didSet { defaults.set(showFocus, forKey: "showFocus") } }
-    var showReference: Bool { didSet { defaults.set(showReference, forKey: "showReference") } }
 
     // MARK: Routing settings
     var routing = RoutingOptions() {
@@ -88,16 +90,21 @@ final class AppModel {
     private(set) var loadedLoopID: UUID?
     /// True once the waypoints or routing settings differ from the saved route (or from empty).
     private(set) var hasUnsavedChanges = false
+    /// False while a saved route is open for viewing: the planning and saving controls are hidden
+    /// until the user presses Edit. A route that has never been saved is always being edited.
+    private(set) var isEditing = true
+    /// True while the built-in reference loop is open. It has no waypoints and cannot be changed.
+    private(set) var isReadOnly = false
 
     var isFetchingElevation: Bool {
         if case .fetching = elevationState { return true }
         return false
     }
-    var isEditingSavedRoute: Bool { loadedLoopID != nil }
+    /// A saved route (or the built-in loop) is open in the planner.
+    var isSavedRouteOpen: Bool { loadedLoopID != nil }
+    /// The open route is a saved route of the user's own, so it can be put into edit mode.
+    var canEdit: Bool { isSavedRouteOpen && !isReadOnly }
     var displayName: String { routeName ?? "New route" }
-
-    // MARK: GPX overlay
-    private(set) var gpxTrack: RouteSummary?
 
     // MARK: UI
     var selectedWay: WayInfo?
@@ -108,9 +115,11 @@ final class AppModel {
     private let defaults: UserDefaults
     private var statusTask: Task<Void, Never>?
 
-    init(persistence: PersistenceController = .shared, defaults: UserDefaults = .standard) {
-        self.persistence = persistence
+    init(region: Region, persistence: PersistenceController? = nil, defaults: UserDefaults = .standard) {
+        self.region = region
+        self.persistence = persistence ?? .forRegion(region)
         self.defaults = defaults
+        defaults.set(region.rawValue, forKey: "lastRegion")
         baseMap = BaseMap(rawValue: defaults.string(forKey: "baseMap") ?? "") ?? .satellite
         if let saved = defaults.stringArray(forKey: "visibleLayers") {
             visibleLayers = Set(saved)
@@ -120,7 +129,6 @@ final class AppModel {
         showPeaks = defaults.object(forKey: "showPeaks") as? Bool ?? true
         showLabels = defaults.object(forKey: "showLabels") as? Bool ?? true
         showFocus = defaults.object(forKey: "showFocus") as? Bool ?? true
-        showReference = defaults.object(forKey: "showReference") as? Bool ?? true
         routing = RoutingOptions(footpathPenalty: defaults.object(forKey: "footpathPenalty") as? Double ?? 3,
                                  roadPenalty: defaults.object(forKey: "roadPenalty") as? Double ?? 5,
                                  reridePenalty: defaults.object(forKey: "reridePenalty") as? Double ?? 4)
@@ -128,15 +136,16 @@ final class AppModel {
 
     // MARK: - Loading
 
-    /// Parses the bundled network and builds the routing graph off the main thread, then restores the draft loop.
+    /// Parses the region's bundled network and builds the routing graph off the main thread, then restores the draft loop.
     func load() async {
         guard network == nil, loadError == nil else { return }
-        status = "Loading network…"
-        reference = RouteSummary.loadBundledReference()
+        status = "Loading \(region.name) network…"
+        reference = RouteSummary.loadBundledReference(resource: region.routeResource)
+        let resource = region.networkResource
         let result = await Task.detached(priority: .userInitiated) { () -> Result<(NetworkData, RouteGraph), Error> in
             do {
                 let t0 = Date()
-                let data = try NetworkData.loadBundled()
+                let data = try NetworkData.loadBundled(resource: resource)
                 let t1 = Date()
                 let graph = RouteGraph.build(data)
                 Logger(subsystem: "LakeDistrictBridleways", category: "network").info("Parsed \(data.ways.count) ways in \(Int(t1.timeIntervalSince(t0) * 1000)) ms; built graph with \(graph.nodeCount) nodes and \(graph.edgeCount) edges in \(Int(Date().timeIntervalSince(t1) * 1000)) ms")
@@ -176,12 +185,13 @@ final class AppModel {
     }
 
     func fitFocusArea(animated: Bool = true) {
-        fitRequest = FitRequest(south: FocusArea.south, north: FocusArea.north, west: FocusArea.west, east: FocusArea.east, animated: animated)
+        let f = region.focus
+        fitRequest = FitRequest(south: f.south, north: f.north, west: f.west, east: f.east, animated: animated)
     }
 
-    /// Frames the planned loop, else the shown GPX track, else the whole focus area.
+    /// Frames the open route, else the whole focus area.
     func fitToRoute() {
-        if let loop { fit(to: loop.coords) } else if let gpxTrack { fit(to: gpxTrack.coords) } else { fitFocusArea() }
+        if let loop { fit(to: loop.coords) } else { fitFocusArea() }
     }
 
     func fit(to coords: [LatLon], animated: Bool = true) {
@@ -211,11 +221,34 @@ final class AppModel {
     var canPlan: Bool { graph != nil }
 
     func togglePlanning() {
+        guard isEditing else { return }
         isPlanning.toggle()
         if isPlanning { selectedWay = nil }
     }
 
+    /// Shows the planning and saving controls for the open saved route.
+    func beginEditing() {
+        guard canEdit else { return }
+        isEditing = true
+        saveDraft()
+    }
+
+    /// Hides the planning controls again. Any unsaved changes are kept until saved or discarded.
+    func endEditing() {
+        guard canEdit else { return }
+        isEditing = false
+        isPlanning = false
+        saveDraft()
+    }
+
+    /// Throws away unsaved changes to the open saved route by reloading it.
+    func discardChanges() {
+        guard let loadedLoopID, let saved = savedLoop(loadedLoopID) else { return }
+        load(loop: saved, frame: false)
+    }
+
     func addWaypoint(at p: LatLon) {
+        guard isEditing else { return }
         guard let graph else { flashStatus("The route network is still loading"); return }
         guard let snap = graph.nearest(to: p, maxMetres: 400) else {
             flashStatus("No path or road within 400 m of that point")
@@ -226,7 +259,7 @@ final class AppModel {
     }
 
     func moveWaypoint(_ id: UUID, to p: LatLon) {
-        guard let graph, let i = waypoints.firstIndex(where: { $0.id == id }) else { return }
+        guard isEditing, let graph, let i = waypoints.firstIndex(where: { $0.id == id }) else { return }
         if let snap = graph.nearest(to: p, maxMetres: 400) {
             waypoints[i].node = snap.node
             waypoints[i].coordinate = snap.coordinate
@@ -238,12 +271,13 @@ final class AppModel {
     }
 
     func removeWaypoint(_ id: UUID) {
+        guard isEditing else { return }
         waypoints.removeAll { $0.id == id }
         waypointsChanged()
     }
 
     func undoWaypoint() {
-        guard !waypoints.isEmpty else { return }
+        guard isEditing, !waypoints.isEmpty else { return }
         waypoints.removeLast()
         waypointsChanged()
     }
@@ -253,6 +287,8 @@ final class AppModel {
         waypoints = []
         loadedLoopID = nil
         routeName = nil
+        isReadOnly = false
+        isEditing = true
         isPlanning = true
         waypointsChanged()
         hasUnsavedChanges = false
@@ -260,6 +296,7 @@ final class AppModel {
     }
 
     func clearPlan() {
+        guard isEditing else { return }
         waypoints = []
         waypointsChanged()
         if loadedLoopID == nil { hasUnsavedChanges = false; saveDraft() }
@@ -274,7 +311,7 @@ final class AppModel {
     /// A name for the route based on the nearest labelled place to its start.
     func suggestedName() -> String {
         if let start = waypoints.first?.coordinate,
-           let near = MapLabel.all.min(by: { Geo.distance($0.coordinate, start) < Geo.distance($1.coordinate, start) }),
+           let near = region.labels.min(by: { Geo.distance($0.coordinate, start) < Geo.distance($1.coordinate, start) }),
            Geo.distance(near.coordinate, start) < 7000 {
             return "\(near.text) loop"
         }
@@ -284,6 +321,7 @@ final class AppModel {
 
     /// Re-routes the loop through the current waypoints on a background task.
     func recompute() {
+        guard !isReadOnly else { return } // the built-in loop is stored, not routed
         elevationTask?.cancel()
         elevationTask = nil
         elevationDebounce?.cancel()
@@ -366,43 +404,36 @@ final class AppModel {
         return base + ".gpx"
     }
 
-    // MARK: - GPX import
+    // MARK: - Built-in reference loop
 
-    func importGPX(from url: URL) {
-        let scoped = url.startAccessingSecurityScopedResource()
-        defer { if scoped { url.stopAccessingSecurityScopedResource() } }
-        guard let data = try? Data(contentsOf: url) else { flashStatus("Could not read that file"); return }
-        let pts = GPX.parse(data)
-        guard pts.count >= 2 else { flashStatus("No track points found in that file"); return }
-        let name = url.deletingPathExtension().lastPathComponent
-        let coords = pts.map(\.coordinate)
-        let eles = pts.compactMap(\.elevation).filter(\.isFinite)
-        let ascent = eles.count > pts.count / 2 ? Geo.ascent(eles) : nil
-        let summary = RouteSummary(name: name, coords: coords, length: Geo.length(of: coords), ascent: ascent, profile: ascent != nil ? eles : nil)
-
-        let track = GPXTrack(context: persistence.context)
-        track.id = summary.id; track.name = name; track.importedAt = .now
-        track.lengthMetres = summary.length
-        track.ascentMetres = ascent.map { NSNumber(value: $0) }
-        track.pointData = BinaryCodec.pack(coords)
-        track.elevationData = summary.profile.map(BinaryCodec.pack)
-        persistence.save()
-
-        show(track: summary)
-    }
-
-    func show(track: RouteSummary?) {
-        gpxTrack = track
-        if let track { fit(to: track.coords) }
-    }
-
-    func delete(track: GPXTrack) {
-        if gpxTrack?.id == track.id { gpxTrack = nil }
-        persistence.context.delete(track)
-        persistence.save()
+    /// Opens the bundled reference loop in the planner as a route that can be viewed and shared
+    /// but not changed. It is drawn from its stored line rather than routed, so it has no waypoints.
+    func viewReference(frame: Bool = true) {
+        guard let reference else { return }
+        elevationTask?.cancel(); elevationTask = nil
+        elevationDebounce?.cancel(); elevationDebounce = nil
+        routingGeneration += 1
+        isRouting = false
+        waypoints = []
+        loadedLoopID = reference.id
+        routeName = reference.name
+        isReadOnly = true
+        isEditing = false
+        isPlanning = false
+        hasUnsavedChanges = false
+        loop = LoopResult(coords: reference.coords, length: reference.length, byCategory: reference.byCategory, legs: [])
+        loopFailed = false
+        loopElevations = reference.profile
+        loopAscent = reference.ascent
+        elevationState = reference.profile == nil ? .failed : .ready
+        saveDraft()
+        if frame { fit(to: reference.coords) }
     }
 
     // MARK: - Core Data: draft and saved loops
+
+    /// UserDefaults key for per-region draft state.
+    private func key(_ name: String) -> String { "\(region.rawValue).\(name)" }
 
     private func draftLoop(create: Bool) -> PlannedLoop? {
         let r = PlannedLoop.fetchRequest()
@@ -419,8 +450,9 @@ final class AppModel {
         guard let d = draftLoop(create: true) else { return }
         d.updatedAt = .now
         d.name = routeName ?? "Draft"
-        defaults.set(loadedLoopID?.uuidString, forKey: "loadedLoopID")
-        defaults.set(hasUnsavedChanges, forKey: "hasUnsavedChanges")
+        defaults.set(loadedLoopID?.uuidString, forKey: key("loadedLoopID"))
+        defaults.set(hasUnsavedChanges, forKey: key("hasUnsavedChanges"))
+        defaults.set(isEditing, forKey: key("isEditing"))
         d.footpathPenalty = routing.footpathPenalty
         d.roadPenalty = routing.roadPenalty
         d.reridePenalty = routing.reridePenalty
@@ -430,16 +462,21 @@ final class AppModel {
 
     private func restoreDraft() {
         guard let graph, let d = draftLoop(create: false) else { return }
+        if defaults.string(forKey: key("loadedLoopID")) == RouteSummary.referenceID.uuidString {
+            viewReference(frame: false)
+            return
+        }
         let restored = d.orderedWaypoints.compactMap { w -> PlanWaypoint? in
             guard let s = graph.nearest(to: w.coordinate, maxMetres: 400) else { return nil }
             return PlanWaypoint(id: w.id, node: s.node, coordinate: s.coordinate)
         }
         waypoints = restored
         routeName = d.name == "Draft" ? nil : d.name
-        if let idString = defaults.string(forKey: "loadedLoopID"), let id = UUID(uuidString: idString), savedLoop(id) != nil {
+        if let idString = defaults.string(forKey: key("loadedLoopID")), let id = UUID(uuidString: idString), savedLoop(id) != nil {
             loadedLoopID = id
         }
-        hasUnsavedChanges = defaults.bool(forKey: "hasUnsavedChanges")
+        hasUnsavedChanges = defaults.bool(forKey: key("hasUnsavedChanges"))
+        isEditing = loadedLoopID == nil || (defaults.object(forKey: key("isEditing")) as? Bool ?? hasUnsavedChanges)
         if !restored.isEmpty {
             recompute()
             // Reuse the saved route's elevation when the plan is unchanged, instead of fetching it again.
@@ -461,7 +498,7 @@ final class AppModel {
 
     /// Stores the current loop as a new saved route and makes it the one being edited.
     func saveAsNew(named name: String) {
-        guard let loop else { return }
+        guard let loop, !isReadOnly else { return }
         let l = PlannedLoop(context: persistence.context)
         l.id = UUID()
         l.name = cleanName(name, fallback: suggestedName())
@@ -498,6 +535,7 @@ final class AppModel {
 
     /// Renames the route being planned, and the saved route it came from.
     func renameCurrent(to name: String) {
+        guard !isReadOnly else { return }
         let n = cleanName(name, fallback: routeName ?? suggestedName())
         routeName = n
         if let loadedLoopID, let l = savedLoop(loadedLoopID) {
@@ -508,6 +546,7 @@ final class AppModel {
     }
 
     func rename(loop: PlannedLoop, to name: String) {
+        guard loop.id != RouteSummary.referenceID else { return }
         loop.name = cleanName(name, fallback: loop.name)
         loop.updatedAt = .now
         persistence.save()
@@ -556,9 +595,11 @@ final class AppModel {
         }
     }
 
-    /// Restores a saved loop's waypoints and settings, keeping its elevation data when the route still matches.
-    func load(loop saved: PlannedLoop) {
+    /// Restores a saved loop's waypoints and settings, keeping its elevation data when the route still
+    /// matches. The route opens for viewing; press Edit to change it.
+    func load(loop saved: PlannedLoop, frame: Bool = true) {
         guard let graph else { return }
+        isReadOnly = false
         routing = saved.routingOptions // may trigger recompute; waypoints are replaced below anyway
         waypoints = saved.orderedWaypoints.compactMap { w in
             graph.nearest(to: w.coordinate, maxMetres: 400).map { PlanWaypoint(id: UUID(), node: $0.node, coordinate: $0.coordinate) }
@@ -566,17 +607,20 @@ final class AppModel {
         loadedLoopID = saved.id
         routeName = saved.name
         hasUnsavedChanges = false
+        isEditing = false
+        isPlanning = false
         saveDraft()
         recompute()
         reattachElevation(from: saved)
-        isPlanning = false
-        fit(to: saved.coordinates.isEmpty ? waypoints.map(\.coordinate) : saved.coordinates)
+        if frame { fit(to: saved.coordinates.isEmpty ? waypoints.map(\.coordinate) : saved.coordinates) }
     }
 
     func delete(loop: PlannedLoop) {
+        guard loop.id != RouteSummary.referenceID else { return }
         if loadedLoopID == loop.id {
             loadedLoopID = nil
             hasUnsavedChanges = !waypoints.isEmpty
+            isEditing = true
             saveDraft()
         }
         persistence.context.delete(loop)

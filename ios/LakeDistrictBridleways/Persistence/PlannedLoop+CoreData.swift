@@ -80,29 +80,3 @@ public class Waypoint: NSManagedObject, Identifiable {
 
     var coordinate: LatLon { LatLon(latitude, longitude) }
 }
-
-@objc(GPXTrack)
-public class GPXTrack: NSManagedObject, Identifiable {
-    @NSManaged public var id: UUID
-    @NSManaged public var name: String
-    @NSManaged public var importedAt: Date
-    @NSManaged public var lengthMetres: Double
-    @NSManaged public var ascentMetres: NSNumber?
-    @NSManaged public var pointData: Data?
-    @NSManaged public var elevationData: Data?
-
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<GPXTrack> {
-        NSFetchRequest<GPXTrack>(entityName: "GPXTrack")
-    }
-
-    @nonobjc public class func allRequest() -> NSFetchRequest<GPXTrack> {
-        let r = fetchRequest()
-        r.sortDescriptors = [NSSortDescriptor(keyPath: \GPXTrack.importedAt, ascending: false)]
-        return r
-    }
-
-    var summary: RouteSummary {
-        RouteSummary(id: id, name: name, coords: BinaryCodec.unpackCoords(pointData), length: lengthMetres,
-                     ascent: ascentMetres?.intValue, profile: BinaryCodec.unpackDoubles(elevationData))
-    }
-}

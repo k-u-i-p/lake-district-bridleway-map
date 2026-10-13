@@ -1,11 +1,13 @@
 import SwiftUI
 
-/// Full-screen map with floating map controls and the planner: a bottom sheet on iPhone, a side
-/// card on iPad.
+/// Full-screen map for the open region, with floating map controls and the planner: a bottom sheet
+/// on iPhone, a side card on iPad. The region pill at the top left returns to the region picker.
 struct ContentView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.horizontalSizeClass) private var sizeClass
     @State private var detent: PresentationDetent = .height(ContentView.collapsedHeight)
+    /// Leaves this region for the region picker.
+    var changeRegion: () -> Void = {}
 
     private var isRegular: Bool { sizeClass == .regular }
     static let panelWidth: CGFloat = 340
@@ -22,6 +24,11 @@ struct ContentView: View {
                 .padding(.top, 8)
                 .padding(.trailing, 12)
 
+            RegionPill(name: model.region.name, action: changeRegion)
+                .padding(.top, 8)
+                .padding(.leading, isRegular ? Self.panelWidth + 32 : 12)
+                .frame(maxWidth: .infinity, alignment: .leading)
+
             if isRegular {
                 VStack(spacing: 0) {
                     PlannerPanel(compact: false, detent: .constant(.large))
@@ -37,11 +44,12 @@ struct ContentView: View {
             }
         }
         .overlay(alignment: .top) {
+            // Below the region pill and map controls, which share the top row.
             if let status = model.status {
-                StatusPill(text: status, busy: true).padding(.top, 8).transition(.opacity)
+                StatusPill(text: status, busy: true).padding(.top, 58).transition(.opacity)
             } else if model.isPlanning {
                 StatusPill(text: model.waypoints.isEmpty ? "Tap the map to add your first waypoint" : "Tap the map to add waypoints", busy: false)
-                    .padding(.top, 8).transition(.opacity)
+                    .padding(.top, 58).transition(.opacity)
             }
         }
         .animation(.easeInOut(duration: 0.2), value: model.status)
@@ -54,7 +62,6 @@ struct ContentView: View {
                 .presentationDragIndicator(.visible)
                 .interactiveDismissDisabled()
         }
-        .onOpenURL { url in model.importGPX(from: url) }
         .task { await model.load() }
         .preferredColorScheme(.dark)
     }
@@ -68,8 +75,8 @@ struct MapControls: View {
         VStack(spacing: 8) {
             control("square.3.layers.3d", "Map layers") { model.activeSheet = .display }
             control("slider.horizontal.3", "Routing settings") { model.activeSheet = .settings }
-            control(model.loop != nil || model.gpxTrack != nil ? "point.topleft.down.to.point.bottomright.curvepath" : "arrow.up.left.and.down.right.magnifyingglass",
-                    model.loop != nil ? "Fit route" : "Fit the Lake District") { model.fitToRoute() }
+            control(model.loop != nil ? "point.topleft.down.to.point.bottomright.curvepath" : "arrow.up.left.and.down.right.magnifyingglass",
+                    model.loop != nil ? "Fit route" : "Fit the \(model.region.name)") { model.fitToRoute() }
         }
     }
 
@@ -85,6 +92,30 @@ struct MapControls: View {
         .buttonStyle(.plain)
         .foregroundStyle(.white)
         .accessibilityLabel(label)
+    }
+}
+
+/// The open region's name, floating at the top left of the map. Tapping it goes back to the picker.
+struct RegionPill: View {
+    let name: String
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 6) {
+                Image(systemName: "chevron.left").font(.system(size: 12, weight: .semibold))
+                Text(name).font(.system(size: 14, weight: .medium))
+            }
+            .padding(.leading, 10)
+            .padding(.trailing, 13)
+            .frame(height: 42)
+            .background(Theme.panel.opacity(0.88), in: Capsule())
+            .overlay(Capsule().stroke(.white.opacity(0.12)))
+            .shadow(color: .black.opacity(0.35), radius: 6, y: 3)
+        }
+        .buttonStyle(.plain)
+        .foregroundStyle(.white)
+        .accessibilityLabel("Change region")
     }
 }
 
@@ -105,6 +136,6 @@ struct StatusPill: View {
 
 #Preview {
     ContentView()
-        .environment(AppModel(persistence: .preview, defaults: UserDefaults(suiteName: "preview")!))
+        .environment(AppModel(region: .lakeDistrict, persistence: .preview, defaults: UserDefaults(suiteName: "preview")!))
         .environment(\.managedObjectContext, PersistenceController.preview.context)
 }

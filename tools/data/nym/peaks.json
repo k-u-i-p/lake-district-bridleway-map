@@ -1,0 +1,666 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-13T11:24:48Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 196175306,
+  "lat": 54.4255773,
+  "lon": -1.1281586,
+  "tags": {
+    "ele": "398",
+    "name": "White Hill",
+    "natural": "peak",
+    "wikidata": "Q5680696",
+    "wikipedia": "en:Hasty Bank"
+  }
+},
+{
+  "type": "node",
+  "id": 196179449,
+  "lat": 54.4186952,
+  "lon": -1.1721697,
+  "tags": {
+    "communication:amateur_radio:sota": "G/TW-002",
+    "communication:amateur_radio:sota:points": "1",
+    "ele": "434.7",
+    "name": "Cringle Moor",
+    "natural": "peak",
+    "source": "https://www.hill-bagging.co.uk/hill-view/?rf=2831",
+    "wikidata": "Q5185741",
+    "wikipedia": "en:Cringle Moor"
+  }
+},
+{
+  "type": "node",
+  "id": 196179451,
+  "lat": 54.3611783,
+  "lon": -1.1515810,
+  "tags": {
+    "ele": "394.4",
+    "man_made": "cairn",
+    "name": "Bilsdale West Moor",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 280855204,
+  "lat": 54.2552633,
+  "lon": -1.1248316,
+  "tags": {
+    "ele": "160",
+    "name": "Ashberry Hill",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 286488497,
+  "lat": 54.5836317,
+  "lon": -0.9304963,
+  "tags": {
+    "ele": "166",
+    "man_made": "survey_point",
+    "name": "Warsett Hill",
+    "natural": "peak",
+    "source": "OS7"
+  }
+},
+{
+  "type": "node",
+  "id": 352864190,
+  "lat": 54.3910084,
+  "lon": -1.2936363,
+  "tags": {
+    "ele": "299",
+    "name": "Beacon Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 432645888,
+  "lat": 54.4063980,
+  "lon": -0.8795126,
+  "tags": {
+    "ele": "396",
+    "name": "Peat Hill",
+    "natural": "peak",
+    "source": "OS7"
+  }
+},
+{
+  "type": "node",
+  "id": 439689427,
+  "lat": 54.4160804,
+  "lon": -1.2012731,
+  "tags": {
+    "ele": "408",
+    "man_made": "survey_point",
+    "name": "Carlton Bank",
+    "natural": "peak",
+    "ref": "OS BM S4421",
+    "wikidata": "Q5042959"
+  }
+},
+{
+  "type": "node",
+  "id": 651508020,
+  "lat": 54.4086081,
+  "lon": -0.9634888,
+  "tags": {
+    "ele": "429",
+    "name": "Ledging Hill",
+    "natural": "peak",
+    "source": "OS7"
+  }
+},
+{
+  "type": "node",
+  "id": 651508021,
+  "lat": 54.4176986,
+  "lon": -1.0256302,
+  "tags": {
+    "ele": "433",
+    "name": "Stony Ridge",
+    "natural": "peak",
+    "source": "OS7"
+  }
+},
+{
+  "type": "node",
+  "id": 651508022,
+  "lat": 54.3974170,
+  "lon": -0.8919919,
+  "tags": {
+    "ele": "402",
+    "name": "Cock Heads",
+    "natural": "peak",
+    "source": "OS7"
+  }
+},
+{
+  "type": "node",
+  "id": 710658775,
+  "lat": 54.3444925,
+  "lon": -1.2624325,
+  "tags": {
+    "ele": "399",
+    "name": "Black Hambleton",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 740704674,
+  "lat": 54.4163157,
+  "lon": -1.2408940,
+  "tags": {
+    "ele": "235.6",
+    "man_made": "survey_point",
+    "name": "Whorl Hill",
+    "natural": "peak",
+    "source:position": "NLS-OS 1:25k"
+  }
+},
+{
+  "type": "node",
+  "id": 768470084,
+  "lat": 54.2008131,
+  "lon": -1.1714884,
+  "tags": {
+    "ele": "122",
+    "name": "Brink Hill",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 768471278,
+  "lat": 54.2262097,
+  "lon": -1.2284370,
+  "tags": {
+    "ele": "253",
+    "name": "Hood Hill",
+    "natural": "peak",
+    "source": "NPE",
+    "source:ele": "estimated",
+    "wikidata": "Q114298414",
+    "wikipedia": "en:Hood Hill"
+  }
+},
+{
+  "type": "node",
+  "id": 1206070305,
+  "lat": 54.5046698,
+  "lon": -0.9363571,
+  "tags": {
+    "ele": "250",
+    "name": "Freebrough Hill",
+    "natural": "peak",
+    "wikidata": "Q129904961",
+    "wikipedia": "en:Freebrough Hill"
+  }
+},
+{
+  "type": "node",
+  "id": 1244293594,
+  "lat": 54.4039301,
+  "lon": -1.1777092,
+  "tags": {
+    "ele": "303",
+    "name": "Wath Hill",
+    "natural": "peak",
+    "source:name": "OS_OpenData_StreetView"
+  }
+},
+{
+  "type": "node",
+  "id": 1250070499,
+  "lat": 54.3107021,
+  "lon": -1.1720535,
+  "tags": {
+    "ele": "298",
+    "name": "Hawnby Hill",
+    "natural": "peak",
+    "source:name": "OS_OpenData_StreetView"
+  }
+},
+{
+  "type": "node",
+  "id": 1251239357,
+  "lat": 54.4252753,
+  "lon": -1.1741214,
+  "tags": {
+    "ele": "283",
+    "name": "Eweing Knoll",
+    "natural": "peak",
+    "source:geometry": "Bing",
+    "source:name": "OS_OpenData_StreetView"
+  }
+},
+{
+  "type": "node",
+  "id": 1808690294,
+  "lat": 54.3716186,
+  "lon": -0.7237765,
+  "tags": {
+    "ele": "260",
+    "man_made": "cairn",
+    "name": "Simon's Howe",
+    "natural": "peak",
+    "wikidata": "Q17663090"
+  }
+},
+{
+  "type": "node",
+  "id": 3268206672,
+  "lat": 54.1851514,
+  "lon": -0.4554200,
+  "tags": {
+    "ele": "157",
+    "name": "Staxton Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 4292763534,
+  "lat": 54.4891848,
+  "lon": -1.0427125,
+  "tags": {
+    "ele": "278",
+    "name": "Brown Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 4597055798,
+  "lat": 54.1882140,
+  "lon": -1.2197155,
+  "tags": {
+    "ele": "91",
+    "name": "Wildon Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 4597083626,
+  "lat": 54.2003156,
+  "lon": -1.2219123,
+  "tags": {
+    "ele": "131",
+    "name": "Snape Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 4600371756,
+  "lat": 54.3695992,
+  "lon": -0.7113900,
+  "tags": {
+    "ele": "252",
+    "name": "Crag Stone Rigg",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 4605555527,
+  "lat": 54.2502474,
+  "lon": -1.2372150,
+  "tags": {
+    "ele": "170",
+    "name": "Skipton Hill",
+    "natural": "peak",
+    "source:ele": "estimated"
+  }
+},
+{
+  "type": "node",
+  "id": 4609393400,
+  "lat": 54.3208040,
+  "lon": -1.2744276,
+  "tags": {
+    "ele": "222",
+    "name": "The Nab",
+    "natural": "peak",
+    "source:ele": "contour interpolation"
+  }
+},
+{
+  "type": "node",
+  "id": 4609393415,
+  "lat": 54.2764955,
+  "lon": -1.2717494,
+  "tags": {
+    "ele": "276.5",
+    "name": "Wind Egg",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 4609393416,
+  "lat": 54.2749482,
+  "lon": -1.2798711,
+  "tags": {
+    "ele": "192",
+    "name": "Knowle Hill",
+    "natural": "peak",
+    "source:ele": "contour interpolation"
+  }
+},
+{
+  "type": "node",
+  "id": 4609393417,
+  "lat": 54.2867113,
+  "lon": -1.2459036,
+  "tags": {
+    "ele": "268",
+    "name": "Bleaky Hill",
+    "natural": "peak",
+    "source:ele": "contour interpolation"
+  }
+},
+{
+  "type": "node",
+  "id": 4609393422,
+  "lat": 54.2969840,
+  "lon": -1.2752523,
+  "tags": {
+    "ele": "184",
+    "name": "Round Hill",
+    "natural": "peak",
+    "source:ele": "estimated"
+  }
+},
+{
+  "type": "node",
+  "id": 4620314739,
+  "lat": 54.3582431,
+  "lon": -0.8918242,
+  "tags": {
+    "ele": "201",
+    "name": "Abbey Heads",
+    "natural": "peak",
+    "source:ele": "estimated from contours"
+  }
+},
+{
+  "type": "node",
+  "id": 4620314740,
+  "lat": 54.3659947,
+  "lon": -0.8940129,
+  "tags": {
+    "ele": "268",
+    "name": "Bell Top",
+    "natural": "peak",
+    "source:ele": "estimated from contours"
+  }
+},
+{
+  "type": "node",
+  "id": 5340880508,
+  "lat": 54.3807882,
+  "lon": -0.6363561,
+  "tags": {
+    "ele": "292",
+    "man_made": "survey_point",
+    "name": "Stony Leas",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5409534950,
+  "lat": 54.3811403,
+  "lon": -1.1701011,
+  "tags": {
+    "ele": "404.2",
+    "name": "Noon Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5414292232,
+  "lat": 54.4218951,
+  "lon": -1.1928964,
+  "tags": {
+    "ele": "301",
+    "name": "Green Bank",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5414292249,
+  "lat": 54.4075294,
+  "lon": -1.2160063,
+  "tags": {
+    "ele": "320",
+    "name": "Gold Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5480116087,
+  "lat": 54.4301935,
+  "lon": -1.1168367,
+  "tags": {
+    "ele": "179",
+    "name": "Lawns Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5546320449,
+  "lat": 54.5297673,
+  "lon": -0.9165967,
+  "tags": {
+    "ele": "141",
+    "name": "Hagg Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5700447000,
+  "lat": 54.3921279,
+  "lon": -1.0561819,
+  "tags": {
+    "ele": "430",
+    "name": "Cockayne Ridge",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5713590224,
+  "lat": 54.3778128,
+  "lon": -1.1660702,
+  "tags": {
+    "ele": "400",
+    "name": "Cock Howe",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5713663626,
+  "lat": 54.3103659,
+  "lon": -1.1501189,
+  "tags": {
+    "ele": "319",
+    "name": "Easterside Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5982603303,
+  "lat": 54.3039536,
+  "lon": -1.1927891,
+  "tags": {
+    "ele": "294",
+    "name": "Coomb Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9530459052,
+  "lat": 54.4063754,
+  "lon": -1.0858960,
+  "tags": {
+    "communication:amateur_radio:sota": "G/TW-001",
+    "communication:amateur_radio:sota:points": "1",
+    "ele": "454.6",
+    "name": "Urra Moor - Round Hill",
+    "natural": "peak",
+    "wikidata": "Q131539383"
+  }
+},
+{
+  "type": "node",
+  "id": 9886824443,
+  "lat": 54.5054302,
+  "lon": -1.1074353,
+  "tags": {
+    "ele": "322",
+    "name": "Roseberry Topping",
+    "natural": "peak",
+    "wikidata": "Q8519110",
+    "wikipedia": "en:Roseberry Topping"
+  }
+},
+{
+  "type": "node",
+  "id": 9892816124,
+  "lat": 54.5059765,
+  "lon": -1.0538250,
+  "tags": {
+    "ele": "296",
+    "name": "Codhill Heights",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9892831159,
+  "lat": 54.5065556,
+  "lon": -1.0357091,
+  "tags": {
+    "ele": "321",
+    "name": "Penrod Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9905350549,
+  "lat": 54.3564784,
+  "lon": -1.0883104,
+  "tags": {
+    "ele": "363",
+    "name": "Loosehow Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9996687093,
+  "lat": 54.3141490,
+  "lon": -1.1509327,
+  "tags": {
+    "ele": "251",
+    "name": "Pepper Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 11195336437,
+  "lat": 54.4189518,
+  "lon": -0.6858093,
+  "tags": {
+    "ele": "297",
+    "name": "Breckon Howe",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 11196481369,
+  "lat": 54.4375759,
+  "lon": -0.8867826,
+  "tags": {
+    "ele": "308",
+    "name": "Heads",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 11298038772,
+  "lat": 54.5030798,
+  "lon": -1.0249151,
+  "tags": {
+    "communication:amateur_radio:sota": "G/TW-003",
+    "communication:amateur_radio:sota:points": "1",
+    "ele": "328.7",
+    "name": "Gisborough Moor",
+    "natural": "peak",
+    "source": "https://www.hill-bagging.co.uk/hill-view/?rf=2832"
+  }
+},
+{
+  "type": "node",
+  "id": 12709972369,
+  "lat": 54.3606715,
+  "lon": -1.3154485,
+  "tags": {
+    "ele": "127",
+    "name": "Hemmel Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 14107355356,
+  "lat": 54.4192334,
+  "lon": -1.1732008,
+  "tags": {
+    "ele": "434.1",
+    "name": "Cringle Moor - Drake Howe",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 14107355358,
+  "lat": 54.5021659,
+  "lon": -1.0231846,
+  "tags": {
+    "ele": "328.4",
+    "name": "Gisborough Moor SE Top",
+    "natural": "peak"
+  }
+}
+
+  ]
+}

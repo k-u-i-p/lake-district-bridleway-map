@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="24000" systemVersion="25A5338b" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="GPXTrack" representedClassName="GPXTrack" syncable="YES">
-        <attribute name="ascentMetres" optional="YES" attributeType="Integer 32" usesScalarValueType="NO"/>
-        <attribute name="elevationData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
-        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="importedAt" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="lengthMetres" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="name" attributeType="String" defaultValueString=""/>
-        <attribute name="pointData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
-    </entity>
     <entity name="PlannedLoop" representedClassName="PlannedLoop" syncable="YES">
         <attribute name="ascentMetres" optional="YES" attributeType="Integer 32" usesScalarValueType="NO"/>
         <attribute name="breakdownJSON" optional="YES" attributeType="String"/>

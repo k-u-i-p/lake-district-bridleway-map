@@ -57,7 +57,7 @@ nonisolated final class LabelAnnotation: MKPointAnnotation {
     }
 }
 
-/// The start marker of a route (reference, GPX or planned).
+/// The start marker of the open route.
 nonisolated final class StartDotAnnotation: MKPointAnnotation {
     let color: UIColor
     init(coordinate: CLLocationCoordinate2D, color: UIColor) {

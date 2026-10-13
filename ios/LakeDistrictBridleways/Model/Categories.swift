@@ -102,39 +102,14 @@ nonisolated enum BaseMap: String, CaseIterable, Identifiable, Sendable {
     }
 }
 
-/// Valley, lake and town labels drawn over the map, with a rotation in degrees.
+/// A valley, lake, moor or town label drawn over the map, with a rotation in degrees. The lists live
+/// on `Region`.
 nonisolated struct MapLabel: Identifiable, Sendable {
     let text: String
     let coordinate: LatLon
     let rotation: Double
     let small: Bool
     var id: String { text }
-
-    static let all: [MapLabel] = [
-        .init(text: "Bassenthwaite", coordinate: LatLon(54.650, -3.215), rotation: -62, small: false),
-        .init(text: "Buttermere", coordinate: LatLon(54.542, -3.280), rotation: -40, small: false),
-        .init(text: "Ennerdale", coordinate: LatLon(54.522, -3.385), rotation: 0, small: false),
-        .init(text: "Borrowdale", coordinate: LatLon(54.515, -3.150), rotation: 80, small: false),
-        .init(text: "Thirlmere", coordinate: LatLon(54.535, -3.065), rotation: 60, small: false),
-        .init(text: "Ullswater", coordinate: LatLon(54.580, -2.885), rotation: -30, small: false),
-        .init(text: "Haweswater", coordinate: LatLon(54.515, -2.800), rotation: -60, small: false),
-        .init(text: "Langdale", coordinate: LatLon(54.445, -3.090), rotation: 0, small: false),
-        .init(text: "Eskdale", coordinate: LatLon(54.395, -3.275), rotation: -45, small: false),
-        .init(text: "Wast Water", coordinate: LatLon(54.440, -3.300), rotation: -35, small: true),
-        .init(text: "Windermere", coordinate: LatLon(54.335, -2.930), rotation: -65, small: false),
-        .init(text: "Coniston", coordinate: LatLon(54.335, -3.072), rotation: -80, small: false),
-        .init(text: "Duddon", coordinate: LatLon(54.335, -3.200), rotation: -70, small: false),
-        .init(text: "Keswick", coordinate: LatLon(54.601, -3.137), rotation: 0, small: true),
-        .init(text: "Ambleside", coordinate: LatLon(54.428, -2.962), rotation: 0, small: true),
-        .init(text: "Grasmere", coordinate: LatLon(54.459, -3.025), rotation: 0, small: true),
-        .init(text: "Kentmere", coordinate: LatLon(54.430, -2.845), rotation: -80, small: true),
-        .init(text: "Shap", coordinate: LatLon(54.531, -2.676), rotation: 0, small: true),
-    ]
-}
-
-/// The focus area: Ennerdale to Haweswater, Bassenthwaite to Windermere.
-nonisolated enum FocusArea {
-    static let south = 54.27, north = 54.69, west = -3.44, east = -2.74
 }
 
 nonisolated enum Theme {
@@ -145,7 +120,6 @@ nonisolated enum Theme {
     static let control = Color(hex: 0x1b1f26)
     static let controlOn = Color(hex: 0x2b303a)
     static let planned = Color(hex: 0xffd400)
-    static let reference = Color(hex: 0xe41b23)
 }
 
 extension Color {

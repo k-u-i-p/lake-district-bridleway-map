@@ -1,13 +1,22 @@
 import CoreData
 
-/// Owns the Core Data stack. Saved loops, their waypoints and imported GPX tracks live here, as does
-/// the in-progress draft loop so planning survives relaunches.
+/// Owns the Core Data stack for one region. Saved loops and their waypoints live here, as does the
+/// in-progress draft loop so planning survives relaunches. Every region has its own store file, so
+/// its routes are only loaded while that region is open.
 final class PersistenceController {
-    static let shared = PersistenceController()
+    private static var byRegion: [Region: PersistenceController] = [:]
+
+    /// The store for a region, opened on first use and kept for the life of the app.
+    static func forRegion(_ region: Region) -> PersistenceController {
+        if let existing = byRegion[region] { return existing }
+        let controller = PersistenceController(region: region)
+        byRegion[region] = controller
+        return controller
+    }
 
     /// In-memory store for SwiftUI previews.
     static let preview: PersistenceController = {
-        let controller = PersistenceController(inMemory: true)
+        let controller = PersistenceController(region: .lakeDistrict, inMemory: true)
         let ctx = controller.container.viewContext
         let loop = PlannedLoop(context: ctx)
         loop.id = UUID(); loop.name = "Kentmere to Keswick"; loop.createdAt = .now; loop.updatedAt = .now
@@ -16,13 +25,16 @@ final class PersistenceController {
         return controller
     }()
 
+    let region: Region
     let container: NSPersistentContainer
 
-    init(inMemory: Bool = false) {
+    init(region: Region, inMemory: Bool = false) {
+        self.region = region
+        // All regions share the data model; only the store file differs.
         container = NSPersistentContainer(name: "LakeDistrictBridleways")
-        if inMemory {
-            container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
-        }
+        let url = inMemory ? URL(fileURLWithPath: "/dev/null")
+                           : NSPersistentContainer.defaultDirectoryURL().appendingPathComponent(region.storeFileName)
+        container.persistentStoreDescriptions.first?.url = url
         container.loadPersistentStores { _, error in
             if let error { fatalError("Core Data store failed to load: \(error)") }
         }
@@ -31,6 +43,11 @@ final class PersistenceController {
     }
 
     var context: NSManagedObjectContext { container.viewContext }
+
+    /// Number of saved (non-draft) routes in this region's store.
+    var savedRouteCount: Int {
+        (try? context.count(for: PlannedLoop.savedLoopsRequest())) ?? 0
+    }
 
     func save() {
         let ctx = container.viewContext
