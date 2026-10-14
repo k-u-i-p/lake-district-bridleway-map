@@ -1,7 +1,7 @@
 import Foundation
 
 nonisolated enum GPX {
-    /// GPX 1.1 track from a list of coordinates and optional elevations (matches the web app output).
+    /// GPX 1.1 track from a list of coordinates and optional elevations.
     static func document(name: String, coords: [LatLon], elevations: [Double]?) -> String {
         func esc(_ s: String) -> String {
             s.replacingOccurrences(of: "&", with: "&amp;").replacingOccurrences(of: "<", with: "&lt;").replacingOccurrences(of: ">", with: "&gt;")

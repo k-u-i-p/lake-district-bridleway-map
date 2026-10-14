@@ -109,8 +109,6 @@ def main():
             if name not in photos: sys.exit(f'{region}: no photo fetched for {name}; run tools/peaks.py {region}')
             p, ph = peaks[name], photos[name]
             out[name] = {'photo': ph['asset'], 'credit': f'{ph["author"]}, {ph["license"]}', 'source': ph['page'],
-                         # for the web page, which loads the photo from Commons
-                         'image': 'https://commons.wikimedia.org/wiki/Special:FilePath/' + urllib.parse.quote(ph['file'].replace(' ', '_')) + '?width=500',
                          'about': p.get('about', ''), 'routes': p.get('routes', [])}
             # The Wikipedia article: the OSM node's wikipedia tag unless peaks.json overrides it (null for none).
             node = min(osm, key=lambda e: (e['lat'] - s['la']) ** 2 + (e['lon'] - s['lo']) ** 2)

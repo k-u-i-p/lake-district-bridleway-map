@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Details for a tapped way: the web app's popup.
+/// Details for a tapped way.
 struct WayDetailSheet: View {
     let info: WayInfo
     @Environment(\.dismiss) private var dismiss

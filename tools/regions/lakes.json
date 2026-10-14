@@ -4,6 +4,5 @@
   "bbox": [54.22, -3.52, 54.74, -2.68],
   "peaks": ["Scafell Pike", "Sca Fell", "Helvellyn", "Skiddaw", "Great End", "Bowfell", "Great Gable", "Pillar", "Nethermost Pike", "Catstycam"],
   "peakAliases": {"Sca Fell": "Scafell", "Catstycam": "Catstye Cam"},
-  "reference": {"waypoints": "tools/wp.json", "gpx": "routes/lakes-loop.gpx"},
-  "page": "index.html"
+  "reference": {"waypoints": "tools/wp.json", "gpx": "routes/lakes-loop.gpx"}
 }

@@ -1,21 +1,13 @@
 # Lake District Bridleway Map
 
-`index.html` is a self-contained interactive map and loop planner for mountain biking in the central
-Lake District (Ennerdale to Haweswater, Bassenthwaite to Windermere). Open it directly in a browser.
-It needs an internet connection only for the base map tiles and the optional elevation lookup. The
-iOS app below covers the North York Moors, the Yorkshire Dales, the North Pennines, the Cairngorms and
-Loch Lomond & The Trossachs as well; the web page is Lake District only.
+Bens Mapper is an iPhone and iPad app for planning mountain bike loops on the rights of way of six
+UK National Parks: the Lake District, the North York Moors, the Yorkshire Dales, the North Pennines,
+the Cairngorms and Loch Lomond & The Trossachs.
 
-## Planning a loop
-Press **Start planning** and click the map to drop waypoints. After two or more waypoints the planner
-draws a loop that visits them in order and returns to the start. It routes on an embedded network of
-roughly 52,000 OpenStreetMap ways, preferring public bridleways and byways, falling back to footpaths
-and finally roads, and penalising tracks already ridden so the return leg differs from the way out.
-Drag a waypoint to move it, right-click to remove it. **Get elevation** fetches a profile and total
-climb from the Open-Meteo digital elevation model (online). **Download GPX** saves the loop.
-
-The settings icon adjusts the footpath, road and re-riding penalties. The display icon switches base
-maps and shows other rights of way, footpaths, the ten highest fells and labels.
+The planner draws a loop that visits the waypoints in order and returns to the start. It routes on an
+embedded network of OpenStreetMap ways, preferring public bridleways and byways, falling back to
+footpaths and finally roads, and penalising tracks already ridden so the return leg differs from the
+way out. The settings adjust the footpath, road and re-riding penalties.
 
 Footpaths are included as a last resort because the request asked for it. Cycling on a public
 footpath is not a right of way in England, so treat footpath sections as something to check locally.
@@ -27,8 +19,8 @@ Hause, Sticks Pass, Keswick, Skiddaw House, Honister, Black Sail, Wasdale, Eskda
 Coniston, the Windermere ferry, Garburn), so the line follows real tracks but is not the original
 file. The waypoints are in `tools/wp.json`.
 
-## iOS app
-`ios/LakeDistrictBridleways.xcodeproj` is a native SwiftUI port of the page for iPhone and iPad
+## The app
+`ios/LakeDistrictBridleways.xcodeproj` is the SwiftUI app for iPhone and iPad
 (iOS 17 or later). Open it in Xcode 16 or newer, pick a simulator or set your signing team, and run.
 The app bundles a network file per region (`Resources/network-lakes.json`, `network-nym.json`,
 `network-dales.json`, `network-pennines.json`, `network-cairngorms.json`, `network-lomond.json`) plus the Lake District's `route-lakes.json`, builds the routing graph on launch and runs the A* loop
@@ -105,5 +97,5 @@ Pennines, `tools/build.sh cairngorms` for the
 Cairngorms, `tools/build.sh lomond` for Loch Lomond & The Trossachs, or add `--offline` to rebuild from the cached data in `tools/data/<id>`.
 Each refreshes the copy bundled in the iOS app, including its summit cards (run `tools/peaks.py <id>`
 first if the ten peaks change, to fetch their photos); the Lake District build also rebuilds the reference
-loop and `index.html`. Needs `curl`, `python3` and `node`. Always check the definitive map before
+loop. Needs `curl`, `python3` and `node`. Always check the definitive map before
 relying on a right of way.

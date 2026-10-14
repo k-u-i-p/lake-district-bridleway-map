@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// A toggleable rights-of-way layer on the map. Mirrors `CATS` in the web app.
+/// A toggleable rights-of-way layer on the map.
 nonisolated struct DisplayLayer: Identifiable, Sendable, Hashable {
     let key: String
     let name: String
@@ -40,7 +40,7 @@ nonisolated struct DisplayLayer: Identifiable, Sendable, Hashable {
     }
 }
 
-/// Groups used for the planned-loop distance breakdown. Mirrors `GROUPS` in the web app.
+/// Groups used for the planned-loop distance breakdown.
 nonisolated struct BreakdownGroup: Identifiable, Sendable {
     let name: String
     let shortName: String
@@ -62,7 +62,7 @@ nonisolated struct BreakdownGroup: Identifiable, Sendable {
     }
 }
 
-/// Base map choices. Satellite and Standard use Apple's map; the rest are raster tile servers, as in the web app.
+/// Base map choices. Satellite and Standard use Apple's map; the rest are raster tile servers.
 nonisolated enum BaseMap: String, CaseIterable, Identifiable, Sendable {
     case satellite = "Satellite"
     case topo = "Topo"

@@ -62,7 +62,7 @@ nonisolated enum Geo {
         return out
     }
 
-    /// Total climb in metres with 5 m hysteresis to ignore DEM noise (matches the web app).
+    /// Total climb in metres with 5 m hysteresis to ignore DEM noise.
     static func ascent(_ eles: [Double]) -> Int {
         guard var base = eles.first else { return 0 }
         var asc = 0.0

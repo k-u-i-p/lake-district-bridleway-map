@@ -3,7 +3,7 @@
 #   tools/build.sh [--offline] [region]
 #   region     lakes (default), nym, dales, pennines, cairngorms or lomond; see tools/regions/*.json
 #   --offline  skip the Overpass fetch, reuse tools/data/<region>/*.json
-# The Lake District also rebuilds its reference loop and the web page (index.html).
+# The Lake District also rebuilds its reference loop.
 # Every region refreshes the copy bundled in the iOS app.
 set -e
 cd "$(dirname "$0")/.."
@@ -45,5 +45,4 @@ python3 tools/peaks.py --offline "$region"
 if [ "$region" = lakes ]; then
   node tools/make-route.js "$data/network.json" tools/wp.json routes/lakes-loop.gpx "$data/route.json"
   cp "$data/route.json" ios/LakeDistrictBridleways/Resources/route-lakes.json
-  python3 tools/assemble.py tools/template.html tools/router.js "$data/network.json" "$data/route.json" index.html ios/LakeDistrictBridleways/Resources/peaks-lakes.json
 fi

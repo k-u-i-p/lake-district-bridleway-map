@@ -435,7 +435,7 @@ final class AppModel {
         }
     }
 
-    /// GPX text for the planned loop (resampled when elevation is attached, as the web app does).
+    /// GPX text for the planned loop (resampled when elevation is attached).
     func plannedLoopGPX() -> String? {
         guard let loop else { return nil }
         let name = routeName ?? "Planned loop"

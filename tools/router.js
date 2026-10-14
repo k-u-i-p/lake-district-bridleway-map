@@ -1,5 +1,5 @@
 /* Lake District bridleway router: graph build, A* routing, loop planning.
-   Works in the browser (window.Router) and in Node (module.exports). */
+   Used from Node (module.exports) by make-route.js; the iOS app's Routing/ is a port of it. */
 (function(root){
 'use strict';
 const Router = {};
