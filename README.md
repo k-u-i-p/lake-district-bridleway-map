@@ -3,8 +3,8 @@
 `index.html` is a self-contained interactive map and loop planner for mountain biking in the central
 Lake District (Ennerdale to Haweswater, Bassenthwaite to Windermere). Open it directly in a browser.
 It needs an internet connection only for the base map tiles and the optional elevation lookup. The
-iOS app below covers the North York Moors, the Yorkshire Dales, the Cairngorms and Loch Lomond & The
-Trossachs as well; the web page is Lake District only.
+iOS app below covers the North York Moors, the Yorkshire Dales, the North Pennines, the Cairngorms and
+Loch Lomond & The Trossachs as well; the web page is Lake District only.
 
 ## Planning a loop
 Press **Start planning** and click the map to drop waypoints. After two or more waypoints the planner
@@ -31,13 +31,14 @@ file. The waypoints are in `tools/wp.json`.
 `ios/LakeDistrictBridleways.xcodeproj` is a native SwiftUI port of the page for iPhone and iPad
 (iOS 17 or later). Open it in Xcode 16 or newer, pick a simulator or set your signing team, and run.
 The app bundles a network file per region (`Resources/network-lakes.json`, `network-nym.json`,
-`network-dales.json`, `network-cairngorms.json`, `network-lomond.json`) plus the Lake District's `route-lakes.json`, builds the routing graph on launch and runs the A* loop
+`network-dales.json`, `network-pennines.json`, `network-cairngorms.json`, `network-lomond.json`) plus the Lake District's `route-lakes.json`, builds the routing graph on launch and runs the A* loop
 planner on-device, so planning works offline; only the base-map tiles and the elevation lookup need
 a connection.
 
 The first screen picks the region: the **Lake District**, the **North York Moors** (Osmotherley to
 the coast, Guisborough to Helmsley), the **Yorkshire Dales** (the Howgills to Nidderdale, Kirkby
-Stephen to Malham), the **Cairngorms** (Newtonmore to Glen Tanar, Grantown to Blair Atholl) or
+Stephen to Malham), the **North Pennines** (the Eden Valley to Hamsterley Forest, Allendale to
+Stainmore, starting where the Dales stop so the two do not overlap), the **Cairngorms** (Newtonmore to Glen Tanar, Grantown to Blair Atholl) or
 **Loch Lomond & The Trossachs** (Loch Eck to Loch Earn, Balloch to Tyndrum). Each region has its own
 map framing, labels and ten highest tops (Munros in the Scottish parks), and its own
 Core Data store, so only that region's saved routes are loaded. The card shows how many routes are
@@ -50,6 +51,7 @@ Commons, resized to 1280 px wide in `Assets.xcassets/region-<id>.imageset`:
 - Lake District: [Derwent Water, Lake District, Cumbria - June 2009](https://commons.wikimedia.org/wiki/File:Derwent_Water,_Lake_District,_Cumbria_-_June_2009.jpg) by Diliff, CC BY-SA 3.0
 - North York Moors: [The sea of purple in North York Moors 03](https://commons.wikimedia.org/wiki/File:The_sea_of_purple_in_North_York_Moors_03.jpg) by Thelight00702, CC BY-SA 4.0
 - Yorkshire Dales: [2015 Swaledale from Kisdon Hill](https://commons.wikimedia.org/wiki/File:2015_Swaledale_from_Kisdon_Hill.jpg) by Kreuzschnabel, CC BY-SA 3.0
+- North Pennines: [High Cup Nick Panorama](https://commons.wikimedia.org/wiki/File:High_Cup_Nick_Panorama.jpg) by Miura-photo, CC BY-SA 4.0
 - Cairngorms: [Cairngorms National Park, Scotland](https://commons.wikimedia.org/wiki/File:Cairngorms_National_Park,_Scotland.jpg) by Thomas Andy Branson, CC BY-SA 4.0
 - Loch Lomond & The Trossachs: [Loch Lomond from Conic Hill](https://commons.wikimedia.org/wiki/File:Loch_Lomond_from_Conic_Hill.jpg) by Craigmacl, CC BY-SA 4.0
 
@@ -79,16 +81,17 @@ route but cannot be edited.
 Core Data (`Persistence/LakeDistrictBridleways.xcdatamodeld`) stores the loop being planned so it
 survives relaunches and the saved routes (waypoints, route, elevation and the penalties used). The
 model is shared; each region opens its own store file (`LakeDistrictBridleways.sqlite`,
-`NorthYorkMoors.sqlite`, `YorkshireDales.sqlite`, `Cairngorms.sqlite`, `LochLomond.sqlite`). Display and routing preferences live in
+`NorthYorkMoors.sqlite`, `YorkshireDales.sqlite`, `NorthPennines.sqlite`, `Cairngorms.sqlite`, `LochLomond.sqlite`). Display and routing preferences live in
 UserDefaults; the layers shown are one choice for the English regions and a separate one for the
 Scottish regions. The routing engine in `Routing/` is a line-for-line port of `tools/router.js`.
 
 ## Data and rebuilding
-OpenStreetMap via the Overpass API, fetched 13 Oct 2026. Regions are described in
+OpenStreetMap via the Overpass API, fetched 13 Oct 2026 (the North Pennines 14 Oct). Regions are described in
 `tools/regions/<id>.json` (bounding box, which peaks to show, and `scottishAccess` for Scottish
 regions, where tracks and paths tagged private are kept unless bikes are excluded too). Run
 `tools/build.sh` to refetch and rebuild the Lake District, `tools/build.sh nym` for the North York
-Moors, `tools/build.sh dales` for the Yorkshire Dales, `tools/build.sh cairngorms` for the
+Moors, `tools/build.sh dales` for the Yorkshire Dales, `tools/build.sh pennines` for the North
+Pennines, `tools/build.sh cairngorms` for the
 Cairngorms, `tools/build.sh lomond` for Loch Lomond & The Trossachs, or add `--offline` to rebuild from the cached data in `tools/data/<id>`.
 Each refreshes the copy bundled in the iOS app; the Lake District build also rebuilds the reference
 loop and `index.html`. Needs `curl`, `python3` and `node`. Always check the definitive map before

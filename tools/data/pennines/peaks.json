@@ -1,0 +1,2594 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-14T08:53:21Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 29537105,
+  "lat": 54.5988657,
+  "lon": -2.2187891,
+  "tags": {
+    "ele": "597.4",
+    "name": "Standards",
+    "natural": "peak",
+    "source": "OS 1:25k"
+  }
+},
+{
+  "type": "node",
+  "id": 29537116,
+  "lat": 54.6253406,
+  "lon": -2.1840445,
+  "tags": {
+    "ele": "578.2",
+    "name": "Millstone How Hill",
+    "natural": "peak",
+    "source": "npe"
+  }
+},
+{
+  "type": "node",
+  "id": 29537120,
+  "lat": 54.6092016,
+  "lon": -2.1133326,
+  "tags": {
+    "ele": "480.7",
+    "man_made": "survey_point",
+    "name": "Harter Fell",
+    "natural": "peak",
+    "ref": "NZ42S015",
+    "source": "npe",
+    "tpuk_ref": "TP3654",
+    "website": "https://trigpointing.uk/trig/3654",
+    "wikidata": "Q5674358",
+    "wikimedia_commons": "File:Trig Point on Harter Fell - geograph.org.uk - 887429.jpg",
+    "wikipedia": "en:Harter Fell, Lunedale"
+  }
+},
+{
+  "type": "node",
+  "id": 29537127,
+  "lat": 54.5487067,
+  "lon": -2.1427498,
+  "tags": {
+    "ele": "454.2",
+    "image": "https://www.geograph.org.uk/photo/3125263",
+    "man_made": "survey_point",
+    "name": "Shacklesborough",
+    "natural": "peak",
+    "ref": "NZ42S031",
+    "source": "npe",
+    "survey_point": "pillar",
+    "tpuk_ref": "TP5905"
+  }
+},
+{
+  "type": "node",
+  "id": 29537150,
+  "lat": 54.6880228,
+  "lon": -2.1207792,
+  "tags": {
+    "ele": "675.74",
+    "image": "https://www.geograph.org.uk/photo/6501922",
+    "man_made": "survey_point",
+    "name": "Westernhope Moor",
+    "natural": "peak",
+    "ref": "NY86S015",
+    "source": "npe",
+    "tpuk_ref": "TP6838",
+    "website": "https://www.hill-bagging.co.uk/mountaindetails.php?qu=S&rf=2736"
+  }
+},
+{
+  "type": "node",
+  "id": 29537159,
+  "lat": 54.6920582,
+  "lon": -2.1770836,
+  "tags": {
+    "ele": "657.8",
+    "name": "Dora's Seat",
+    "natural": "peak",
+    "source": "npe"
+  }
+},
+{
+  "type": "node",
+  "id": 29537161,
+  "lat": 54.6548206,
+  "lon": -2.1074183,
+  "tags": {
+    "ele": "529.7",
+    "image": "https://www.geograph.org.uk/photo/4738017",
+    "man_made": "survey_point",
+    "name": "Hardberry Hill",
+    "natural": "peak",
+    "ref": "NY71T005",
+    "source": "npe",
+    "tpuk_ref": "TP3609",
+    "website": "https://trigpointing.uk/trig/3609"
+  }
+},
+{
+  "type": "node",
+  "id": 29537227,
+  "lat": 54.6560527,
+  "lon": -2.0590074,
+  "tags": {
+    "ele": "565.1",
+    "name": "Monks",
+    "natural": "peak",
+    "source": "npe"
+  }
+},
+{
+  "type": "node",
+  "id": 29537228,
+  "lat": 54.6949134,
+  "lon": -2.1923364,
+  "tags": {
+    "ele": "696.4",
+    "image": "https://www.geograph.org.uk/photo/1655984",
+    "man_made": "survey_point",
+    "name": "Fendrith Hill",
+    "natural": "peak",
+    "ref": "NY86S013",
+    "source": "npe",
+    "tpuk_ref": "TP3138",
+    "website": "https://trigpointing.uk/trig/3138",
+    "wikidata": "Q24643197"
+  }
+},
+{
+  "type": "node",
+  "id": 33791045,
+  "lat": 54.8323549,
+  "lon": -1.9743673,
+  "tags": {
+    "ele": "376",
+    "name": "Stoterley Hill",
+    "natural": "peak",
+    "source": "npe"
+  }
+},
+{
+  "type": "node",
+  "id": 33796461,
+  "lat": 54.7990444,
+  "lon": -2.1363265,
+  "tags": {
+    "ele": "561.1",
+    "image": "https://www.geograph.org.uk/photo/1758200",
+    "man_made": "survey_point",
+    "name": "Dry Rigg",
+    "natural": "peak",
+    "ref": "NY86T022",
+    "source": "npe",
+    "tpuk_ref": "TP2865",
+    "website": "https://trigpointing.uk/trig/2865"
+  }
+},
+{
+  "type": "node",
+  "id": 33797336,
+  "lat": 54.7184369,
+  "lon": -2.0096442,
+  "tags": {
+    "ele": "426.46",
+    "image": "https://www.geograph.org.uk/photo/5836606",
+    "man_made": "survey_point",
+    "name": "Catterick Moss",
+    "natural": "peak",
+    "ref": "NZ42T008",
+    "source": "npe",
+    "tpuk_ref": "TP2051"
+  }
+},
+{
+  "type": "node",
+  "id": 33797581,
+  "lat": 54.7144723,
+  "lon": -2.0612048,
+  "tags": {
+    "alt_name": "Carrs Top",
+    "ele": "540.72",
+    "image": "https://www.geograph.org.uk/photo/1736055",
+    "man_made": "survey_point",
+    "material": "concrete",
+    "name": "Bollihope Carrs",
+    "natural": "peak",
+    "ref": "NY86T008",
+    "source": "OS 1:25k"
+  }
+},
+{
+  "type": "node",
+  "id": 33797582,
+  "lat": 54.7586251,
+  "lon": -2.0648755,
+  "tags": {
+    "ele": "465.9",
+    "image": "https://www.geograph.org.uk/photo/5237017",
+    "man_made": "survey_point",
+    "name": "Crow Coal Hill",
+    "natural": "peak",
+    "ref": "NY86T020",
+    "source": "npe",
+    "source:name": "OS_OpenData_StreetView",
+    "website": "https://trigpointing.uk/trig/2625"
+  }
+},
+{
+  "type": "node",
+  "id": 33798026,
+  "lat": 54.6911012,
+  "lon": -1.9818128,
+  "tags": {
+    "ele": "478.7",
+    "image": "https://www.geograph.org.uk/photo/4069957",
+    "man_made": "survey_point",
+    "name": "Five Pikes",
+    "natural": "peak",
+    "ref": "NZ42T027",
+    "source": "npe",
+    "tpuk_ref": "TP3188",
+    "website": "https://trigpointing.uk/trig/3188"
+  }
+},
+{
+  "type": "node",
+  "id": 33798031,
+  "lat": 54.6206060,
+  "lon": -1.9811660,
+  "tags": {
+    "ele": "461",
+    "name": "Grey Carrs",
+    "natural": "peak",
+    "source": "npe",
+    "source:name": "OS 1:25k"
+  }
+},
+{
+  "type": "node",
+  "id": 33798035,
+  "lat": 54.6680148,
+  "lon": -2.0237980,
+  "tags": {
+    "ele": "490.4",
+    "name": "White Hill",
+    "natural": "peak",
+    "source": "npe"
+  }
+},
+{
+  "type": "node",
+  "id": 318497932,
+  "lat": 54.6665510,
+  "lon": -2.4336092,
+  "tags": {
+    "ele": "793.7",
+    "man_made": "survey_point",
+    "name": "Knock Fell",
+    "natural": "peak",
+    "source": "NPE",
+    "wikidata": "Q24640155"
+  }
+},
+{
+  "type": "node",
+  "id": 323100600,
+  "lat": 54.9092714,
+  "lon": -2.5689099,
+  "tags": {
+    "ele": "458",
+    "name": "Byers Pike",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 323103642,
+  "lat": 54.8896522,
+  "lon": -2.5442791,
+  "tags": {
+    "ele": "475",
+    "name": "Larchet Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 323103644,
+  "lat": 54.8735070,
+  "lon": -2.5902096,
+  "tags": {
+    "ele": "595.0",
+    "name": "Great Blacklaw Hill",
+    "natural": "peak",
+    "source": "npe",
+    "wikidata": "Q24643986"
+  }
+},
+{
+  "type": "node",
+  "id": 323103645,
+  "lat": 54.8638656,
+  "lon": -2.5794847,
+  "tags": {
+    "ele": "574",
+    "name": "West Dun Hill",
+    "natural": "peak",
+    "source": "npe"
+  }
+},
+{
+  "type": "node",
+  "id": 323103646,
+  "lat": 54.8605596,
+  "lon": -2.6012464,
+  "tags": {
+    "ele": "524",
+    "name": "Crookburn Pike",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 323103648,
+  "lat": 54.8686490,
+  "lon": -2.5449290,
+  "tags": {
+    "ele": "484",
+    "name": "Black Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 323103658,
+  "lat": 54.8568432,
+  "lon": -2.5717699,
+  "tags": {
+    "ele": "584",
+    "name": "Three Pikes",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 323105979,
+  "lat": 54.8082380,
+  "lon": -2.5813414,
+  "tags": {
+    "ele": "602",
+    "name": "Watch Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 323114201,
+  "lat": 54.8711898,
+  "lon": -2.4749455,
+  "tags": {
+    "ele": "462",
+    "man_made": "survey_point",
+    "name": "Wardley Law",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 323114202,
+  "lat": 54.8662628,
+  "lon": -2.4830724,
+  "tags": {
+    "ele": "451.1",
+    "man_made": "survey_point",
+    "name": "Kitten Tom",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 323114217,
+  "lat": 54.8720321,
+  "lon": -2.4287258,
+  "tags": {
+    "ele": "524",
+    "name": "Whitfield Law",
+    "natural": "peak",
+    "source": "Bing"
+  }
+},
+{
+  "type": "node",
+  "id": 323114793,
+  "lat": 54.8330550,
+  "lon": -2.3906470,
+  "tags": {
+    "ele": "546",
+    "name": "Hard Rigg",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 323122163,
+  "lat": 54.8795437,
+  "lon": -2.4225319,
+  "tags": {
+    "ele": "525",
+    "name": "Pike Rigg",
+    "natural": "peak",
+    "wikidata": "Q24639086"
+  }
+},
+{
+  "type": "node",
+  "id": 323134199,
+  "lat": 54.8503765,
+  "lon": -2.3093600,
+  "tags": {
+    "ele": "533",
+    "name": "Brownley Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 323134227,
+  "lat": 54.8281498,
+  "lon": -2.2836040,
+  "tags": {
+    "ele": "571",
+    "name": "Hartley Moor Top",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 323137638,
+  "lat": 54.7804701,
+  "lon": -2.3616319,
+  "tags": {
+    "ele": "607.5",
+    "man_made": "survey_point",
+    "name": "Nunnery Hill",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 323138756,
+  "lat": 54.7982890,
+  "lon": -2.2823227,
+  "tags": {
+    "ele": "673.0",
+    "image": "https://www.geograph.org.uk/photo/5060979",
+    "man_made": "survey_point",
+    "name": "Killhope Law",
+    "natural": "peak",
+    "ref": "NY86S012",
+    "website": "https://trigpointing.uk/trig/4193"
+  }
+},
+{
+  "type": "node",
+  "id": 323138763,
+  "lat": 54.7953428,
+  "lon": -2.3232717,
+  "tags": {
+    "ele": "609",
+    "name": "Black Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 323147190,
+  "lat": 54.8230108,
+  "lon": -2.2117710,
+  "tags": {
+    "ele": "529.8",
+    "man_made": "survey_point",
+    "name": "Green Hill",
+    "natural": "peak",
+    "tpuk_ref": "TP3479"
+  }
+},
+{
+  "type": "node",
+  "id": 369686617,
+  "lat": 54.7933132,
+  "lon": -2.5486953,
+  "tags": {
+    "ele": "664",
+    "name": "Black Fell",
+    "natural": "peak",
+    "wikidata": "Q4920758"
+  }
+},
+{
+  "type": "node",
+  "id": 369686620,
+  "lat": 54.7979144,
+  "lon": -2.5145821,
+  "tags": {
+    "ele": "439",
+    "name": "Watcher's Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 369686622,
+  "lat": 54.7870982,
+  "lon": -2.5008235,
+  "tags": {
+    "ele": "598",
+    "name": "Scarberry Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 418322723,
+  "lat": 54.7774634,
+  "lon": -2.5444526,
+  "tags": {
+    "ele": "620",
+    "name": "Hartside Height",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 418322724,
+  "lat": 54.7810811,
+  "lon": -2.5147357,
+  "tags": {
+    "ele": "609",
+    "name": "Benty Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 426582385,
+  "lat": 54.6436788,
+  "lon": -2.4262774,
+  "tags": {
+    "ele": "698.6",
+    "image": "https://www.geograph.org.uk/photo/1925756",
+    "name": "Backstone Edge",
+    "natural": "peak",
+    "source": "https://www.hill-bagging.co.uk/hill-view/?rf=2723"
+  }
+},
+{
+  "type": "node",
+  "id": 426583515,
+  "lat": 54.6420224,
+  "lon": -2.4574360,
+  "tags": {
+    "ele": "519",
+    "name": "Brownber Hill",
+    "natural": "peak",
+    "source": "https://www.hill-bagging.co.uk/hill-view/?rf=3603"
+  }
+},
+{
+  "type": "node",
+  "id": 426584144,
+  "lat": 54.6349774,
+  "lon": -2.4525246,
+  "tags": {
+    "ele": "406.6",
+    "name": "Bluethwaite Hill",
+    "natural": "peak",
+    "razed:man_made": "survey_point",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 426584590,
+  "lat": 54.6338783,
+  "lon": -2.4665558,
+  "tags": {
+    "communication:amateur_radio:sota": "G/NP-027",
+    "communication:amateur_radio:sota:points": "1",
+    "ele": "481.2",
+    "name": "Dufton Pike",
+    "natural": "peak",
+    "source": "https://www.hill-bagging.co.uk/hill-view/?rf=2775",
+    "wikidata": "Q5312421",
+    "wikipedia": "en:Dufton Pike"
+  }
+},
+{
+  "type": "node",
+  "id": 426595735,
+  "lat": 54.6559483,
+  "lon": -2.3557376,
+  "tags": {
+    "ele": "767",
+    "name": "Meldon Hill",
+    "natural": "peak",
+    "source": "NPE",
+    "source:ele": "themountainguide.co.uk"
+  }
+},
+{
+  "type": "node",
+  "id": 426617816,
+  "lat": 54.6156404,
+  "lon": -2.3019950,
+  "tags": {
+    "communication:amateur_radio:sota": "G/NP-002",
+    "communication:amateur_radio:sota:points": "6",
+    "ele": "790.2",
+    "name": "Mickle Fell",
+    "natural": "peak",
+    "source": "https://www.hill-bagging.co.uk/hill-view/?rf=2711",
+    "wikidata": "Q1140310",
+    "wikipedia": "en:Mickle Fell"
+  }
+},
+{
+  "type": "node",
+  "id": 426624927,
+  "lat": 54.6218729,
+  "lon": -2.4349594,
+  "tags": {
+    "ele": "502.9",
+    "name": "Peeping Hill",
+    "natural": "peak",
+    "razed:man_made": "survey_point",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 426628523,
+  "lat": 54.6110000,
+  "lon": -2.3759147,
+  "tags": {
+    "ele": "673.3",
+    "name": "Murton Fell SE Top",
+    "natural": "peak",
+    "razed:man_made": "survey_point",
+    "source": "https://www.hill-bagging.co.uk/hill-view/?rf=2929",
+    "wikidata": "Q105506679"
+  }
+},
+{
+  "type": "node",
+  "id": 426685254,
+  "lat": 54.6421237,
+  "lon": -2.2207081,
+  "tags": {
+    "ele": "530.0",
+    "name": "Noon Hill",
+    "natural": "peak",
+    "source": "OS 1854"
+  }
+},
+{
+  "type": "node",
+  "id": 426859452,
+  "lat": 54.5728305,
+  "lon": -2.1199154,
+  "tags": {
+    "ele": "412.4",
+    "name": "Kelton Hill",
+    "natural": "peak",
+    "source": "NPE",
+    "source:name": "OS_OpenData_StreetView"
+  }
+},
+{
+  "type": "node",
+  "id": 427605666,
+  "lat": 54.7034364,
+  "lon": -2.2588223,
+  "tags": {
+    "ele": "649.2",
+    "name": "Three Pikes",
+    "natural": "peak",
+    "source": "NPE",
+    "wikidata": "Q24637916"
+  }
+},
+{
+  "type": "node",
+  "id": 427609968,
+  "lat": 54.7163847,
+  "lon": -2.1740505,
+  "tags": {
+    "ele": "586.4",
+    "name": "High Pike",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 427618008,
+  "lat": 54.6675707,
+  "lon": -2.1146127,
+  "tags": {
+    "ele": "592.8",
+    "name": "Weather Beds",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 429428960,
+  "lat": 54.7042455,
+  "lon": -1.9894195,
+  "tags": {
+    "ele": "356.0",
+    "name": "Whitfield Brow",
+    "natural": "peak",
+    "source": "npe"
+  }
+},
+{
+  "type": "node",
+  "id": 429432575,
+  "lat": 54.5954606,
+  "lon": -2.3401065,
+  "tags": {
+    "ele": "748",
+    "name": "Little Fell",
+    "natural": "peak",
+    "source": "https://www.hill-bagging.co.uk/hill-view/?rf=2713"
+  }
+},
+{
+  "type": "node",
+  "id": 429432742,
+  "lat": 54.5856287,
+  "lon": -2.3448230,
+  "tags": {
+    "ele": "647.1",
+    "name": "Burton Fell",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 429432789,
+  "lat": 54.5741092,
+  "lon": -2.3488395,
+  "tags": {
+    "ele": "624",
+    "name": "Tinside Rigg",
+    "natural": "peak",
+    "source": "https://www.hill-bagging.co.uk/hill-view/?rf=2930"
+  }
+},
+{
+  "type": "node",
+  "id": 430116399,
+  "lat": 54.8184721,
+  "lon": -2.6155881,
+  "tags": {
+    "ele": "483.4",
+    "is_in:county": "Cumbria",
+    "name": "Peel Dod",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 430116492,
+  "lat": 54.8098594,
+  "lon": -2.6059798,
+  "tags": {
+    "ele": "610",
+    "is_in:county": "Cumbria",
+    "name": "Thack Moor",
+    "natural": "peak",
+    "source": "http://www.grough.co.uk/magazine/2013/04/03/hill-sleuths-survey-confirms-thack-moor-as-new-2000ft-mountain"
+  }
+},
+{
+  "type": "node",
+  "id": 433584383,
+  "lat": 54.7674157,
+  "lon": -2.4730913,
+  "tags": {
+    "ele": "422.1",
+    "name": "Cawood Hill",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 433591308,
+  "lat": 54.7647845,
+  "lon": -2.5651360,
+  "tags": {
+    "ele": "549",
+    "name": "Twotop Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 433596998,
+  "lat": 54.7249052,
+  "lon": -2.5484152,
+  "tags": {
+    "ele": "535.2",
+    "name": "Cuns Fell",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 433601111,
+  "lat": 54.7209559,
+  "lon": -2.5629990,
+  "tags": {
+    "ele": "380.1",
+    "man_made": "survey_point",
+    "name": "Catterpallot Hill",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 433601251,
+  "lat": 54.7133582,
+  "lon": -2.5445024,
+  "tags": {
+    "ele": "536",
+    "name": "Muska Hill",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 433613079,
+  "lat": 54.7083006,
+  "lon": -2.4640791,
+  "tags": {
+    "ele": "803.8",
+    "man_made": "survey_point",
+    "name": "Black Dub",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 433613211,
+  "lat": 54.7130407,
+  "lon": -2.4646618,
+  "tags": {
+    "ele": "787.3",
+    "man_made": "survey_point",
+    "name": "Fallow Hill",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 433618160,
+  "lat": 54.6912568,
+  "lon": -2.4601306,
+  "tags": {
+    "ele": "841.6",
+    "man_made": "survey_point",
+    "name": "Little Dun Fell",
+    "name:en": "Little Dun Fell",
+    "natural": "peak",
+    "source": "NPE",
+    "wikidata": "Q1141169",
+    "wikipedia": "en:Cross Fell"
+  }
+},
+{
+  "type": "node",
+  "id": 433618223,
+  "lat": 54.6841450,
+  "lon": -2.4515686,
+  "tags": {
+    "ele": "847.3",
+    "man_made": "survey_point",
+    "name": "Great Dun Fell",
+    "natural": "peak",
+    "source": "NPE",
+    "wikidata": "Q1544260",
+    "wikipedia": "en:Great Dun Fell"
+  }
+},
+{
+  "type": "node",
+  "id": 433624423,
+  "lat": 54.6650866,
+  "lon": -2.4908583,
+  "tags": {
+    "ele": "427.3",
+    "man_made": "survey_point",
+    "name": "Burney Hill",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 433631647,
+  "lat": 54.6482922,
+  "lon": -2.4883048,
+  "tags": {
+    "ele": "398.1",
+    "name": "Knock Pike",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 433635443,
+  "lat": 54.6926278,
+  "lon": -2.4185888,
+  "tags": {
+    "ele": "678.2",
+    "man_made": "survey_point",
+    "name": "Hard Hill",
+    "natural": "peak",
+    "ref": "NY71T002",
+    "source": "NPE",
+    "tpuk_ref": "TP3607"
+  }
+},
+{
+  "type": "node",
+  "id": 433637095,
+  "lat": 54.7137053,
+  "lon": -2.4394457,
+  "tags": {
+    "ele": "695.9",
+    "man_made": "survey_point",
+    "name": "Rake End",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 433641448,
+  "lat": 54.7208939,
+  "lon": -2.3572199,
+  "tags": {
+    "ele": "608.4",
+    "name": "Slack's Rigg",
+    "natural": "peak",
+    "not:man_made": "survey_point",
+    "note": "Historic spot height only. Not a true survey point",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 433670279,
+  "lat": 54.7678160,
+  "lon": -2.4398328,
+  "tags": {
+    "ele": "420",
+    "name": "Lingy Hill",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 433712672,
+  "lat": 54.7557821,
+  "lon": -2.3013530,
+  "tags": {
+    "ele": "648.6",
+    "name": "Lamb's Head",
+    "natural": "peak",
+    "note": "No record of trig point. Tag as razed although may not have existed",
+    "razed:man_made": "survey_point",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 433712845,
+  "lat": 54.7549269,
+  "lon": -2.2795601,
+  "tags": {
+    "ele": "639.5",
+    "image": "https://www.geograph.org.uk/photo/5260271",
+    "man_made": "survey_point",
+    "name": "Highwatch Currick",
+    "natural": "peak",
+    "ref": "NY86T035",
+    "source": "NPE",
+    "tpuk_ref": "TP3841",
+    "website": "https://trigpointing.uk/trig/3841"
+  }
+},
+{
+  "type": "node",
+  "id": 433719399,
+  "lat": 54.8973217,
+  "lon": -2.6615345,
+  "tags": {
+    "ele": "400",
+    "name": "Simmerson Hill",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 433730648,
+  "lat": 54.5750177,
+  "lon": -2.2924051,
+  "tags": {
+    "ele": "587.0",
+    "man_made": "survey_point",
+    "name": "Hillbeck Fell",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 433737375,
+  "lat": 54.5157235,
+  "lon": -2.0907244,
+  "tags": {
+    "ele": "401.7",
+    "name": "Sun Dodd",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 433738177,
+  "lat": 54.5196594,
+  "lon": -2.1684012,
+  "tags": {
+    "ele": "477.0",
+    "name": "Beldoo Hill",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 433739879,
+  "lat": 54.5318497,
+  "lon": -2.1287154,
+  "tags": {
+    "ele": "469.1",
+    "is_in:historic_county": "Yorkshire",
+    "name": "Lartington High Moor",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 433778454,
+  "lat": 54.5391336,
+  "lon": -2.0940718,
+  "tags": {
+    "ele": "427.3",
+    "name": "Race Yate",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 433822907,
+  "lat": 54.5812877,
+  "lon": -2.0399985,
+  "tags": {
+    "ele": "308.8",
+    "name": "The Cross",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 434332761,
+  "lat": 54.5029458,
+  "lon": -2.2141505,
+  "tags": {
+    "ele": "487.1",
+    "is_in:country_code": "GB",
+    "is_in:county": "Cumbria",
+    "is_in:municipality": "Eden",
+    "man_made": "survey_point",
+    "name": "Millstone Howe",
+    "natural": "peak",
+    "source": "NLS - OS 1:25k 1st Series 1937-61"
+  }
+},
+{
+  "type": "node",
+  "id": 434332763,
+  "lat": 54.5000788,
+  "lon": -2.2006558,
+  "tags": {
+    "ele": "518.5",
+    "is_in:country_code": "GB",
+    "is_in:county": "Cumbria",
+    "is_in:municipality": "Eden",
+    "man_made": "survey_point",
+    "name": "Moudy Mea",
+    "natural": "peak",
+    "source": "NLS - OS 1:25k 1st Series 1937-61"
+  }
+},
+{
+  "type": "node",
+  "id": 434332821,
+  "lat": 54.5079294,
+  "lon": -2.2115326,
+  "tags": {
+    "ele": "433.7",
+    "is_in:country_code": "GB",
+    "is_in:county": "Cumbria",
+    "is_in:municipality": "Eden",
+    "man_made": "survey_point",
+    "name": "Haska Rigg",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 434335600,
+  "lat": 54.5060357,
+  "lon": -2.3993302,
+  "tags": {
+    "ele": "184.1",
+    "is_in:country_code": "GB",
+    "is_in:county": "Cumbria",
+    "is_in:municipality": "Eden",
+    "man_made": "survey_point",
+    "name": "Strutforth Hill",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 1083427099,
+  "lat": 54.6111207,
+  "lon": -2.4453290,
+  "tags": {
+    "ele": "354",
+    "name": "Keisley Bank",
+    "natural": "peak",
+    "razed:man_made": "survey_point",
+    "source": "https://www.hill-bagging.co.uk/hill-view/?rf=16399"
+  }
+},
+{
+  "type": "node",
+  "id": 1083427724,
+  "lat": 54.6024179,
+  "lon": -2.4119561,
+  "tags": {
+    "ele": "594.4",
+    "image": "https://www.geograph.org.uk/photo/1804112",
+    "man_made": "survey_point",
+    "name": "Murton Pike",
+    "natural": "peak",
+    "source": "NPE",
+    "tpuk_ref": "TP4987"
+  }
+},
+{
+  "type": "node",
+  "id": 1133793763,
+  "lat": 54.5249075,
+  "lon": -2.2062158,
+  "tags": {
+    "ele": "512.1",
+    "man_made": "survey_point",
+    "name": "Great Knipe",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1159023718,
+  "lat": 54.5057824,
+  "lon": -2.6242970,
+  "tags": {
+    "ele": "351",
+    "is_in:country_code": "GB",
+    "is_in:county": "Cumbria",
+    "name": "Seal Howe",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 1708734153,
+  "lat": 54.7185507,
+  "lon": -2.2284312,
+  "tags": {
+    "ele": "616.3",
+    "image": "https://www.geograph.org.uk/photo/2479268",
+    "name": "Noon Hill",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 1708734196,
+  "lat": 54.7072385,
+  "lon": -2.1941634,
+  "tags": {
+    "ele": "700.1",
+    "name": "Chapel Fell Top",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 1717948612,
+  "lat": 54.5644363,
+  "lon": -2.2696633,
+  "tags": {
+    "ele": "490",
+    "name": "Petty Hill",
+    "natural": "peak",
+    "source": "OS_OpenData_StreetView"
+  }
+},
+{
+  "type": "node",
+  "id": 1717948968,
+  "lat": 54.5686293,
+  "lon": -2.2720666,
+  "tags": {
+    "ele": "490",
+    "name": "Shotmoss Hill",
+    "natural": "peak",
+    "source": "OS_OpenData_StreetView"
+  }
+},
+{
+  "type": "node",
+  "id": 1825151193,
+  "lat": 54.7326080,
+  "lon": -2.3363214,
+  "tags": {
+    "communication:amateur_radio:sota": "G/NP-003",
+    "communication:amateur_radio:sota:points": "6",
+    "ele": "747.8",
+    "name": "Burnhope Seat",
+    "natural": "peak",
+    "note": "Nuttall summit",
+    "source": "https://www.hill-bagging.co.uk/hill-view/?rf=2714",
+    "wikidata": "Q1016785",
+    "wikipedia": "en:Burnhope Seat"
+  }
+},
+{
+  "type": "node",
+  "id": 1825151224,
+  "lat": 54.7181584,
+  "lon": -2.2752294,
+  "tags": {
+    "ele": "708",
+    "image": "https://www.geograph.org.uk/photo/4165380",
+    "man_made": "cairn",
+    "name": "Great Stony Hill",
+    "natural": "peak",
+    "source": "OS 1:25k"
+  }
+},
+{
+  "type": "node",
+  "id": 1825420596,
+  "lat": 54.6238453,
+  "lon": -1.9189184,
+  "tags": {
+    "ele": "369",
+    "name": "Hindon Hill",
+    "natural": "peak",
+    "source": "OS 1:25k"
+  }
+},
+{
+  "type": "node",
+  "id": 1827284672,
+  "lat": 54.6564442,
+  "lon": -2.1661075,
+  "tags": {
+    "ele": "340",
+    "name": "White Hill",
+    "natural": "peak",
+    "source": "OS 1:25k"
+  }
+},
+{
+  "type": "node",
+  "id": 2117883252,
+  "lat": 54.7181779,
+  "lon": -2.0520459,
+  "tags": {
+    "ele": "477.3",
+    "name": "Turf Hill",
+    "natural": "peak",
+    "source": "OS 1:25k"
+  }
+},
+{
+  "type": "node",
+  "id": 2117883528,
+  "lat": 54.7067764,
+  "lon": -2.0885196,
+  "tags": {
+    "ele": "607.2",
+    "name": "Snowhope Hill",
+    "natural": "peak",
+    "source": "OS 1:25k"
+  }
+},
+{
+  "type": "node",
+  "id": 2117883606,
+  "lat": 54.6923035,
+  "lon": -2.0946565,
+  "tags": {
+    "ele": "650.1",
+    "image": "https://www.geograph.org.uk/photo/593912",
+    "name": "Outberry Plain",
+    "natural": "peak",
+    "note": "Elevation converted from 2133 ft on historic OS map",
+    "source": "OS 1:25k",
+    "website": "https://www.hill-bagging.co.uk/mountaindetails.php?qu=N&rf=2748"
+  }
+},
+{
+  "type": "node",
+  "id": 2216123774,
+  "lat": 54.5774868,
+  "lon": -2.3818200,
+  "tags": {
+    "ele": "594",
+    "name": "Roman Fell",
+    "natural": "peak",
+    "source": "https://www.hill-bagging.co.uk/hill-view/?rf=3577"
+  }
+},
+{
+  "type": "node",
+  "id": 2265582860,
+  "lat": 54.8063885,
+  "lon": -2.3256380,
+  "tags": {
+    "ele": "614",
+    "name": "The Dodd",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2311680217,
+  "lat": 54.8064341,
+  "lon": -2.3495518,
+  "tags": {
+    "ele": "572",
+    "name": "Whimsey Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2329497373,
+  "lat": 54.6999743,
+  "lon": -2.3572588,
+  "tags": {
+    "ele": "560.2",
+    "name": "Metalband Hill",
+    "natural": "peak",
+    "source": "OS Historic"
+  }
+},
+{
+  "type": "node",
+  "id": 2793431686,
+  "lat": 54.9007628,
+  "lon": -2.4566525,
+  "tags": {
+    "ele": "446",
+    "name": "Great Black Pike",
+    "natural": "peak",
+    "source": "Bing"
+  }
+},
+{
+  "type": "node",
+  "id": 2806925895,
+  "lat": 54.8889611,
+  "lon": -2.5186946,
+  "tags": {
+    "ele": "345",
+    "name": "Proudy Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2806938892,
+  "lat": 54.8867200,
+  "lon": -2.5731810,
+  "tags": {
+    "ele": "522",
+    "name": "Black Rigg",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2933413826,
+  "lat": 54.6956910,
+  "lon": -2.3001860,
+  "tags": {
+    "ele": "519",
+    "ele:ft": "1702",
+    "name": "Rough Hill",
+    "natural": "peak",
+    "source": "unknown;OS 6\" 1901"
+  }
+},
+{
+  "type": "node",
+  "id": 2933413830,
+  "lat": 54.6799883,
+  "lon": -2.2934180,
+  "tags": {
+    "ele": "585.5",
+    "name": "Touting Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2934649185,
+  "lat": 54.6483858,
+  "lon": -2.3329563,
+  "tags": {
+    "ele": "595",
+    "name": "Thistly Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3644248530,
+  "lat": 54.5792278,
+  "lon": -2.5063102,
+  "tags": {
+    "ele": "155",
+    "name": "Thistley Hill",
+    "natural": "peak",
+    "source": "OS 1:25k"
+  }
+},
+{
+  "type": "node",
+  "id": 3644248531,
+  "lat": 54.5864442,
+  "lon": -2.5544949,
+  "tags": {
+    "ele": "176",
+    "name": "Threat Rigg",
+    "natural": "peak",
+    "source": "OS 1:25k"
+  }
+},
+{
+  "type": "node",
+  "id": 4011590996,
+  "lat": 54.8616566,
+  "lon": -2.6402235,
+  "tags": {
+    "ele": "491",
+    "name": "Middle Top",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 4011590998,
+  "lat": 54.8438565,
+  "lon": -2.6474024,
+  "tags": {
+    "ele": "488",
+    "name": "Newbiggin Fell",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 4559114223,
+  "lat": 54.5047867,
+  "lon": -2.4146827,
+  "tags": {
+    "ele": "190.8",
+    "name": "Codgy Bank",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 4559114224,
+  "lat": 54.5066680,
+  "lon": -2.5579770,
+  "tags": {
+    "ele": "310",
+    "name": "Coalpit Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 4559114225,
+  "lat": 54.5022450,
+  "lon": -2.5386007,
+  "tags": {
+    "ele": "344.1",
+    "name": "Linglow Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 4559114226,
+  "lat": 54.5086488,
+  "lon": -2.4790342,
+  "tags": {
+    "ele": "245.3",
+    "name": "Turkeytarn Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 4559114227,
+  "lat": 54.5088108,
+  "lon": -2.4288474,
+  "tags": {
+    "ele": "219.8",
+    "name": "Tewfill Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 4559114228,
+  "lat": 54.5216154,
+  "lon": -2.4043213,
+  "tags": {
+    "ele": "170.7",
+    "name": "Rain Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 4559114229,
+  "lat": 54.5145410,
+  "lon": -2.4007808,
+  "tags": {
+    "ele": "185.9",
+    "name": "Hemmel Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 4559114230,
+  "lat": 54.5092219,
+  "lon": -2.3857819,
+  "tags": {
+    "ele": "164.9",
+    "is_in:country_code": "GB",
+    "is_in:county": "Cumbria",
+    "is_in:municipality": "Eden",
+    "name": "Intake Hill",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 4571519433,
+  "lat": 54.6302142,
+  "lon": -2.1923210,
+  "tags": {
+    "ele": "557",
+    "name": "Green Fell End",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 4604287478,
+  "lat": 54.6833815,
+  "lon": -2.5160292,
+  "tags": {
+    "ele": "390",
+    "name": "Moray Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 4618994657,
+  "lat": 54.6876757,
+  "lon": -2.5237195,
+  "tags": {
+    "ele": "406",
+    "name": "Wiythwaite Top",
+    "natural": "peak",
+    "source:ele": "estimated from contours"
+  }
+},
+{
+  "type": "node",
+  "id": 5151236594,
+  "lat": 54.7872742,
+  "lon": -2.5486105,
+  "tags": {
+    "ele": "661",
+    "name": "Daffenside Beacon",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5151649223,
+  "lat": 54.8842071,
+  "lon": -2.6453771,
+  "tags": {
+    "ele": "512",
+    "name": "Tarnmonath Fell",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5152188372,
+  "lat": 54.8390357,
+  "lon": -2.6294642,
+  "tags": {
+    "ele": "591",
+    "name": "Blotting Raise",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5228251233,
+  "lat": 54.6174928,
+  "lon": -2.4665996,
+  "tags": {
+    "ele": "226",
+    "name": "Bale Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5228554227,
+  "lat": 54.5529074,
+  "lon": -2.3736847,
+  "tags": {
+    "ele": "245",
+    "name": "Black Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5230011759,
+  "lat": 54.5353031,
+  "lon": -2.3645123,
+  "tags": {
+    "ele": "193.6",
+    "name": "Brough Hill",
+    "natural": "peak",
+    "source": "https://www.hill-bagging.co.uk/hill-view/?rf=16452"
+  }
+},
+{
+  "type": "node",
+  "id": 5230028159,
+  "lat": 54.5409136,
+  "lon": -2.3199791,
+  "tags": {
+    "ele": "371",
+    "name": "Barnarm Scar",
+    "natural": "peak",
+    "source": "https://www.hill-bagging.co.uk/hill-view/?rf=16393"
+  }
+},
+{
+  "type": "node",
+  "id": 5230063541,
+  "lat": 54.5443705,
+  "lon": -2.3179653,
+  "tags": {
+    "ele": "449",
+    "name": "Mount Ida",
+    "natural": "peak",
+    "source": "https://www.hill-bagging.co.uk/hill-view/?rf=16361"
+  }
+},
+{
+  "type": "node",
+  "id": 5232387851,
+  "lat": 54.5121668,
+  "lon": -2.1342876,
+  "tags": {
+    "ele": "424",
+    "name": "Sandy Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5232448130,
+  "lat": 54.5276462,
+  "lon": -2.0928292,
+  "tags": {
+    "ele": "374",
+    "name": "Green How",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5284089697,
+  "lat": 54.5637927,
+  "lon": -2.5418058,
+  "tags": {
+    "ele": "210",
+    "name": "Fouson's Rigg",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5284113978,
+  "lat": 54.5854208,
+  "lon": -2.4986703,
+  "tags": {
+    "ele": "162",
+    "name": "St Nicholas's Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5295402373,
+  "lat": 54.5370214,
+  "lon": -2.4334118,
+  "tags": {
+    "ele": "195",
+    "name": "Trickle Banks",
+    "natural": "peak",
+    "source": "https://www.hill-bagging.co.uk/hill-view/?rf=16207"
+  }
+},
+{
+  "type": "node",
+  "id": 5295457186,
+  "lat": 54.5435002,
+  "lon": -2.4028017,
+  "tags": {
+    "ele": "176",
+    "name": "Wildboar Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5295457207,
+  "lat": 54.5385117,
+  "lon": -2.4008681,
+  "tags": {
+    "ele": "177.5",
+    "name": "Vicarage Bank",
+    "natural": "peak",
+    "source": "https://www.hill-bagging.co.uk/hill-view/?rf=16465"
+  }
+},
+{
+  "type": "node",
+  "id": 5295457220,
+  "lat": 54.5296781,
+  "lon": -2.4087669,
+  "tags": {
+    "ele": "192",
+    "name": "Sourlands Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5295669849,
+  "lat": 54.5169704,
+  "lon": -2.3819107,
+  "tags": {
+    "ele": "158",
+    "name": "Greenplats Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5295669857,
+  "lat": 54.5117807,
+  "lon": -2.4008556,
+  "tags": {
+    "ele": "179",
+    "name": "Loy's Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5295669858,
+  "lat": 54.5084546,
+  "lon": -2.4064990,
+  "tags": {
+    "ele": "171",
+    "name": "Black Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5295819024,
+  "lat": 54.5226428,
+  "lon": -2.3508878,
+  "tags": {
+    "ele": "191",
+    "name": "Thorny Hill",
+    "natural": "peak",
+    "source": "https://www.hill-bagging.co.uk/hill-view/?rf=16455"
+  }
+},
+{
+  "type": "node",
+  "id": 6665044260,
+  "lat": 54.6162740,
+  "lon": -2.4441654,
+  "tags": {
+    "ele": "380",
+    "name": "Gregory",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 6665197659,
+  "lat": 54.6226450,
+  "lon": -2.4468790,
+  "tags": {
+    "ele": "370",
+    "name": "Dod Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 7643659474,
+  "lat": 54.9269148,
+  "lon": -2.6412925,
+  "tags": {
+    "ele": "230",
+    "name": "Seat Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 7643691596,
+  "lat": 54.9006555,
+  "lon": -2.6719990,
+  "tags": {
+    "ele": "381",
+    "name": "Talkin Fell",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 7643691766,
+  "lat": 54.9166054,
+  "lon": -2.6401798,
+  "tags": {
+    "ele": "296",
+    "name": "Tortie Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 7650153196,
+  "lat": 54.9103086,
+  "lon": -2.6722042,
+  "tags": {
+    "ele": "360",
+    "name": "Whinny Fell",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 7667679876,
+  "lat": 54.7070508,
+  "lon": -2.0961356,
+  "tags": {
+    "ele": "561",
+    "image": "https://www.geograph.org.uk/photo/378653",
+    "name": "Outberry Hill",
+    "natural": "peak",
+    "note": "Elevation converted from 1839 ft on historic OS map"
+  }
+},
+{
+  "type": "node",
+  "id": 7671612732,
+  "lat": 54.6856869,
+  "lon": -2.0483588,
+  "tags": {
+    "alt_name": "Harnisha Hill",
+    "ele": "588.87",
+    "image": "https://www.geograph.org.uk/photo/6151169",
+    "man_made": "survey_point",
+    "name": "Raven Seat",
+    "natural": "peak",
+    "ref": "NZ42S039"
+  }
+},
+{
+  "type": "node",
+  "id": 7707937535,
+  "lat": 54.7103979,
+  "lon": -1.8553430,
+  "tags": {
+    "ele": "283.6",
+    "image": "https://www.geograph.org.uk/photo/2275996",
+    "man_made": "survey_point",
+    "material": "concrete",
+    "name": "Knitsley Fell",
+    "natural": "peak",
+    "ref": "NZ42T037",
+    "tpuk_ref": "TP4268",
+    "website": "https://trigpointing.uk/trig/4268"
+  }
+},
+{
+  "type": "node",
+  "id": 8615409451,
+  "lat": 54.6621790,
+  "lon": -2.2181386,
+  "tags": {
+    "ele": "381",
+    "name": "Haugh Hill",
+    "natural": "peak",
+    "source": "NLS-OS-NatGrid-110k-1940-60"
+  }
+},
+{
+  "type": "node",
+  "id": 8733241457,
+  "lat": 54.6564592,
+  "lon": -2.1465385,
+  "tags": {
+    "ele": "356",
+    "name": "Hare Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9384058418,
+  "lat": 54.7029375,
+  "lon": -2.4867071,
+  "tags": {
+    "communication:amateur_radio:sota": "G/NP-001",
+    "communication:amateur_radio:sota:points": "8",
+    "description": "highest point in England outside the Lake District.",
+    "ele": "893.1",
+    "name": "Cross Fell",
+    "natural": "peak",
+    "source": "NPE",
+    "wikidata": "Q1141169",
+    "wikipedia": "en:Cross Fell"
+  }
+},
+{
+  "type": "node",
+  "id": 9385364853,
+  "lat": 54.6805720,
+  "lon": -2.5098702,
+  "tags": {
+    "ele": "412.1",
+    "name": "Grumply Hill",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 9385387454,
+  "lat": 54.7127677,
+  "lon": -2.5000412,
+  "tags": {
+    "ele": "785.8",
+    "name": "Skirwith Hill",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 9385410054,
+  "lat": 54.6838311,
+  "lon": -2.5404828,
+  "tags": {
+    "ele": "220",
+    "name": "Barons Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9385410090,
+  "lat": 54.6814127,
+  "lon": -2.5329691,
+  "tags": {
+    "ele": "239",
+    "name": "Willie Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9385410100,
+  "lat": 54.6821542,
+  "lon": -2.5247108,
+  "tags": {
+    "ele": "290",
+    "name": "Tottle Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9391601957,
+  "lat": 54.7595762,
+  "lon": -2.5560521,
+  "tags": {
+    "ele": "634.6",
+    "name": "Fiends Fell",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 9391601958,
+  "lat": 54.7467378,
+  "lon": -2.5537864,
+  "tags": {
+    "ele": "657",
+    "name": "Little Knapside Hill",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 9391605547,
+  "lat": 54.7397274,
+  "lon": -2.5508564,
+  "tags": {
+    "ele": "685",
+    "name": "Knapside Hill",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 9391605644,
+  "lat": 54.7358162,
+  "lon": -2.5417442,
+  "tags": {
+    "ele": "710.5",
+    "name": "Melmerby Fell",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 9401995464,
+  "lat": 54.5959090,
+  "lon": -2.4144592,
+  "tags": {
+    "ele": "352",
+    "name": "Cringley Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9401995466,
+  "lat": 54.5983800,
+  "lon": -2.4122088,
+  "tags": {
+    "ele": "403",
+    "name": "Moley Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9404288995,
+  "lat": 54.7380091,
+  "lon": -2.4310328,
+  "tags": {
+    "ele": "625",
+    "name": "Pikeman Hill",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 9404289117,
+  "lat": 54.7299437,
+  "lon": -2.4303346,
+  "tags": {
+    "ele": "658",
+    "name": "Long Man Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9404308146,
+  "lat": 54.7549915,
+  "lon": -2.4211078,
+  "tags": {
+    "ele": "565",
+    "name": "Black Band",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9439083818,
+  "lat": 54.7517200,
+  "lon": -2.4630430,
+  "tags": {
+    "ele": "566.3",
+    "name": "Hound Hill",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 9439083841,
+  "lat": 54.7492377,
+  "lon": -2.4499497,
+  "tags": {
+    "ele": "596",
+    "name": "Staneshaw Rigg",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 9439188752,
+  "lat": 54.7447674,
+  "lon": -2.3931046,
+  "tags": {
+    "ele": "545.3",
+    "name": "Paper Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9439208647,
+  "lat": 54.7366170,
+  "lon": -2.3927552,
+  "tags": {
+    "ele": "626",
+    "name": "Noonstones Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9439257571,
+  "lat": 54.7285944,
+  "lon": -2.4590677,
+  "tags": {
+    "ele": "614",
+    "name": "Bullman Hills",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9439259245,
+  "lat": 54.7150938,
+  "lon": -2.5261597,
+  "tags": {
+    "ele": "666",
+    "name": "Brown Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9439266405,
+  "lat": 54.7427787,
+  "lon": -2.5309391,
+  "tags": {
+    "ele": "627",
+    "name": "Hard Rigg Edge",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9441865354,
+  "lat": 54.7196415,
+  "lon": -2.3985913,
+  "tags": {
+    "ele": "685.5",
+    "name": "Round Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9441946177,
+  "lat": 54.7238195,
+  "lon": -2.5009847,
+  "tags": {
+    "ele": "719.9",
+    "name": "Raehow End",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9441972528,
+  "lat": 54.7195633,
+  "lon": -2.5148083,
+  "tags": {
+    "ele": "740.4",
+    "name": "Green Fell",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9473819070,
+  "lat": 54.7504363,
+  "lon": -2.3981097,
+  "tags": {
+    "ele": "476",
+    "name": "Green Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9474095856,
+  "lat": 54.7074023,
+  "lon": -2.5469564,
+  "tags": {
+    "ele": "352",
+    "name": "Rusby Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9474095919,
+  "lat": 54.7078512,
+  "lon": -2.5408816,
+  "tags": {
+    "ele": "426",
+    "name": "Ladslack Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9482969402,
+  "lat": 54.7552507,
+  "lon": -2.5862140,
+  "tags": {
+    "ele": "297",
+    "name": "Long Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9497578336,
+  "lat": 54.7843046,
+  "lon": -2.4881599,
+  "tags": {
+    "ele": "490",
+    "name": "Great Dow Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9502198702,
+  "lat": 54.8137503,
+  "lon": -2.5378042,
+  "tags": {
+    "ele": "637",
+    "name": "Tom Smith's Stone Top",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9502231513,
+  "lat": 54.8221523,
+  "lon": -2.5232093,
+  "tags": {
+    "ele": "656",
+    "name": "Grey Nag",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9502280943,
+  "lat": 54.8313451,
+  "lon": -2.4921675,
+  "tags": {
+    "ele": "481",
+    "name": "Great Heaplaw",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9510008947,
+  "lat": 54.8257674,
+  "lon": -2.5664892,
+  "tags": {
+    "ele": "589.5",
+    "name": "Farlam Currick",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9513262505,
+  "lat": 54.8429823,
+  "lon": -2.6630022,
+  "tags": {
+    "ele": "430.1",
+    "name": "Newbiggin Fell",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9516186607,
+  "lat": 54.8696441,
+  "lon": -2.5884618,
+  "tags": {
+    "ele": "582",
+    "name": "Little Blacklaw Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9516211445,
+  "lat": 54.8938994,
+  "lon": -2.6162420,
+  "tags": {
+    "communication:amateur_radio:sota": "G/NP-020",
+    "communication:amateur_radio:sota:points": "4",
+    "ele": "621",
+    "name": "Cold Fell",
+    "natural": "peak",
+    "wikidata": "Q5142254"
+  }
+},
+{
+  "type": "node",
+  "id": 9559996046,
+  "lat": 54.7768436,
+  "lon": -2.5007071,
+  "tags": {
+    "ele": "492",
+    "name": "Meathaw Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9572477885,
+  "lat": 54.8226309,
+  "lon": -2.5010508,
+  "tags": {
+    "ele": "527.0",
+    "name": "Black Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9577344579,
+  "lat": 54.8357058,
+  "lon": -2.4888582,
+  "tags": {
+    "ele": "438",
+    "name": "Little Heaplaw",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9582475394,
+  "lat": 54.8439266,
+  "lon": -2.5204314,
+  "tags": {
+    "ele": "511",
+    "name": "Stouthard",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 9900030981,
+  "lat": 54.7017946,
+  "lon": -2.5245014,
+  "tags": {
+    "ele": "546.5",
+    "name": "High Cap",
+    "natural": "peak",
+    "source": "NPE"
+  }
+},
+{
+  "type": "node",
+  "id": 9918596281,
+  "lat": 54.6430569,
+  "lon": -2.3462155,
+  "tags": {
+    "ele": "641",
+    "name": "Rasp Hill",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 11113614774,
+  "lat": 54.7722011,
+  "lon": -2.3576359,
+  "tags": {
+    "ele": "614",
+    "name": "Flinty Fell",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 12558755846,
+  "lat": 54.5728957,
+  "lon": -2.3593054,
+  "tags": {
+    "ele": "623.5",
+    "name": "Long Fell",
+    "natural": "peak",
+    "source": "https://www.hill-bagging.co.uk/hill-view/?rf=2762"
+  }
+},
+{
+  "type": "node",
+  "id": 12558755847,
+  "lat": 54.6164018,
+  "lon": -2.3846788,
+  "tags": {
+    "ele": "673.6",
+    "name": "Murton Fell",
+    "natural": "peak",
+    "source": "https://www.hill-bagging.co.uk/hill-view/?rf=2735"
+  }
+},
+{
+  "type": "node",
+  "id": 12558755849,
+  "lat": 54.5775116,
+  "lon": -2.4741372,
+  "tags": {
+    "ele": "188",
+    "name": "Gale Hill",
+    "natural": "peak",
+    "source": "https://www.hill-bagging.co.uk/hill-view/?rf=16456"
+  }
+},
+{
+  "type": "node",
+  "id": 12558762154,
+  "lat": 54.5157603,
+  "lon": -2.3576963,
+  "tags": {
+    "ele": "180.6",
+    "name": "Great Musgrave Hill",
+    "natural": "peak",
+    "source": "https://www.hill-bagging.co.uk/hill-view/?rf=16461"
+  }
+},
+{
+  "type": "node",
+  "id": 14106844083,
+  "lat": 54.7323645,
+  "lon": -2.3309524,
+  "tags": {
+    "ele": "746.5",
+    "name": "Burnhope Seat",
+    "natural": "peak",
+    "note": "County Top summit",
+    "source": "https://www.hill-bagging.co.uk/hill-view/?rf=2714"
+  }
+}
+
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "id": "pennines",
+  "name": "North Pennines",
+  "bbox": [54.50, -2.68, 55.00, -1.80],
+  "peaks": ["Cross Fell", "Great Dun Fell", "Little Dun Fell", "Knock Fell", "Mickle Fell", "Meldon Hill", "Little Fell", "Burnhope Seat", "Melmerby Fell", "Great Stony Hill"]
+}
