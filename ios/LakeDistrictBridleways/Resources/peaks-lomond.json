@@ -1,0 +1,198 @@
+{
+ "Ben More": {
+  "photo": "peak-lomond-ben-more",
+  "credit": "Richard Webb, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Ben_More,_Crainlarich.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ben_More%2C_Crainlarich.jpg?width=500",
+  "about": "The highest mountain in the National Park, a huge steep cone above Crianlarich.",
+  "routes": [
+   {
+    "name": "Benmore Farm",
+    "text": "From Benmore Farm on the A85, a relentless climb up the north-west shoulder: almost all ascent and no respite.",
+    "km": 4,
+    "ascent": 1000
+   },
+   {
+    "name": "With Stob Binnein",
+    "text": "Down to the Bealach-eadar-dhà Bheinn and up Stob Binnein, returning down Benmore Glen."
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Ben_More_(Crianlarich)"
+ },
+ "Stob Binnein": {
+  "photo": "peak-lomond-stob-binnein",
+  "credit": "Alistair Pooler, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Stob_Binnein.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Stob_Binnein.jpg?width=500",
+  "about": "Ben More's twin, with a distinctive cone that looks sliced off at the top.",
+  "routes": [
+   {
+    "name": "Inverlochlarig",
+    "text": "From the road end in Balquhidder Glen, up the south ridge over Stob Coire an Lochain.",
+    "km": 5,
+    "ascent": 1000
+   },
+   {
+    "name": "From Ben More",
+    "text": "Down to the bealach between them and up the steep north ridge.",
+    "km": 1.5,
+    "ascent": 300
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Stob_Binnein"
+ },
+ "Ben Lui": {
+  "photo": "peak-lomond-ben-lui",
+  "credit": "Grinner at English Wikipedia, Attribution",
+  "source": "https://commons.wikimedia.org/wiki/File:Ben_lui_northern_corrie.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ben_lui_northern_corrie.jpg?width=500",
+  "about": "One of the finest Munros: a great north-east corrie, Coire Gaothach, often holding snow into spring.",
+  "routes": [
+   {
+    "name": "Glen Cononish",
+    "text": "From Dalrigh near Tyndrum, the track up Glen Cononish past the gold mine (rideable to the end), then into Coire Gaothach and up its north-east ridge.",
+    "km": 11,
+    "ascent": 1000
+   },
+   {
+    "name": "Glen Lochy",
+    "text": "Shorter but wetter: from the A85, cross the river and the railway, then up the forest and Fionn Choirein.",
+    "km": 5,
+    "ascent": 920
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Ben_Lui"
+ },
+ "Cruach Ardrain": {
+  "photo": "peak-lomond-cruach-ardrain",
+  "credit": "Nigel Homer, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Cruach_Ardrain_from_Beinn_Tulaichean_-_geograph.org.uk_-_87786.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cruach_Ardrain_from_Beinn_Tulaichean_-_geograph.org.uk_-_87786.jpg?width=500",
+  "about": "A complex hill of ridges and corries south of Crianlarich, with Beinn Tulaichean as its southern top.",
+  "routes": [
+   {
+    "name": "Crianlarich",
+    "text": "From the A82, through the forest and up the Grey Height ridge over Meall Dhamh.",
+    "km": 6,
+    "ascent": 900
+   },
+   {
+    "name": "Inverlochlarig via Beinn Tulaichean",
+    "text": "From Balquhidder Glen, up the grassy south ridge over Beinn Tulaichean.",
+    "km": 5,
+    "ascent": 920
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Cruach_Ardrain"
+ },
+ "Ben Oss": {
+  "photo": "peak-lomond-ben-oss",
+  "credit": "John Knight from Clackmannanshire, Scotland, CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Ben_Oss_and_Beinn_Dubhcraig_(Explored_24-04-24)_-_Flickr_-_jkiscycling.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ben_Oss_and_Beinn_Dubhcraig_%28Explored_24-04-24%29_-_Flickr_-_jkiscycling.jpg?width=500",
+  "about": "A shapely peak between Ben Lui and Beinn Dubhchraig, above Loch Oss.",
+  "routes": [
+   {
+    "name": "Dalrigh with Beinn Dubhchraig",
+    "text": "From Dalrigh, through the Caledonian pinewood of Coille Coire Chuilc and up Beinn Dubhchraig, then over the bealach to Ben Oss.",
+    "km": 10,
+    "ascent": 1100
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Ben_Oss"
+ },
+ "Beinn Ìme": {
+  "photo": "peak-lomond-beinn-ime",
+  "credit": "Grinner, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Beinn_ime_from_the_butterbridge.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Beinn_ime_from_the_butterbridge.jpg?width=500",
+  "about": "The highest of the Arrochar Alps, a bulky hill above the Rest and Be Thankful.",
+  "routes": [
+   {
+    "name": "Succoth via Bealach a' Mhàim",
+    "text": "From the head of Loch Long, the Cobbler path into the corrie, then over Bealach a' Mhàim and up the south-east slopes.",
+    "km": 7,
+    "ascent": 1000
+   },
+   {
+    "name": "Butterbridge",
+    "text": "Short and steep from Glen Kinglas on the A83.",
+    "km": 4.5,
+    "ascent": 900
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Beinn_%C3%8Cme"
+ },
+ "An Caisteal": {
+  "photo": "peak-lomond-an-caisteal",
+  "credit": "Mick Knapton at English Wikipedia, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:An_Caisteal_summit_from_Twistin_Hill.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/An_Caisteal_summit_from_Twistin_Hill.jpg?width=500",
+  "about": "'The castle': a rocky summit at the head of Glen Falloch, reached by the long north ridge of Twistin Hill.",
+  "routes": [
+   {
+    "name": "Glen Falloch via Twistin Hill",
+    "text": "From the A82 south of Crianlarich, under the railway, up Sròn Gharbh and along Twistin Hill. Often climbed with Beinn a' Chroin.",
+    "km": 6,
+    "ascent": 850
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/An_Caisteal"
+ },
+ "Ben Vorlich": {
+  "photo": "peak-lomond-ben-vorlich",
+  "credit": "Grinner at English Wikipedia, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Ben_vorlich_lochearn.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ben_vorlich_lochearn.jpg?width=500",
+  "about": "A neat pointed summit with a trig point above Loch Earn, and one of the great viewpoints of the southern Highlands.",
+  "routes": [
+   {
+    "name": "Ardvorlich",
+    "text": "From Ardvorlich on the south shore of Loch Earn, up Glen Vorlich on a track, then the clear north ridge path.",
+    "km": 5,
+    "ascent": 900
+   },
+   {
+    "name": "With Stùc a' Chroin",
+    "text": "Down the south-west ridge to the Bealach an Dubh Choirein and up Stùc a' Chroin."
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Ben_Vorlich,_Loch_Earn"
+ },
+ "Beinn Dubhchraig": {
+  "photo": "peak-lomond-beinn-dubhchraig",
+  "credit": "John Armitstead, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Bealach_between_Ben_Oss_and_Ben_Dubhchraig_-_geograph.org.uk_-_122147.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bealach_between_Ben_Oss_and_Ben_Dubhchraig_-_geograph.org.uk_-_122147.jpg?width=500",
+  "about": "A broad hill rising above the Caledonian pinewood of Coille Coire Chuilc, west of Tyndrum.",
+  "routes": [
+   {
+    "name": "Dalrigh",
+    "text": "Through the pinewood and up beside the Allt Coire Dubhchraig to the north-east ridge. Usually combined with Ben Oss.",
+    "km": 7,
+    "ascent": 830
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Beinn_Dubhchraig"
+ },
+ "Stùc a' Chroin": {
+  "photo": "peak-lomond-stuc-a-chroin",
+  "credit": "Rob Burke, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Stuc_a%27Chroin_-_geograph.org.uk_-_32775.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Stuc_a%27Chroin_-_geograph.org.uk_-_32775.jpg?width=500",
+  "about": "Ben Vorlich's craggy neighbour, guarded on the north by a steep buttress.",
+  "routes": [
+   {
+    "name": "Over Ben Vorlich",
+    "text": "From Ardvorlich over Ben Vorlich to the Bealach an Dubh Choirein, then steep rough paths with scrambling up the right side of the buttress.",
+    "km": 7,
+    "ascent": 1200
+   },
+   {
+    "name": "Glen Ample and Beinn Each",
+    "text": "From Ardchullarie on Loch Lubnaig, the forest path to the head of Glen Ample, over Beinn Each and along a very rough, rocky ridge."
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/St%C3%B9c_a'_Chroin"
+ }
+}

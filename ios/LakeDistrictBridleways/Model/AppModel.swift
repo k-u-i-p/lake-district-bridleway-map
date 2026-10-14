@@ -60,6 +60,8 @@ final class AppModel {
     private(set) var network: NetworkData?
     private(set) var graph: RouteGraph?
     private(set) var reference: RouteSummary?
+    /// Summit cards for the region's ten peaks, keyed by peak name.
+    private(set) var peakDetails: [String: PeakDetails] = [:]
     private(set) var loadError: String?
     var status: String?
 
@@ -119,6 +121,7 @@ final class AppModel {
 
     // MARK: UI
     var selectedWay: WayInfo?
+    var selectedPeak: PeakInfo?
     var fitRequest: FitRequest?
     var activeSheet: ActiveSheet?
 
@@ -153,6 +156,7 @@ final class AppModel {
         guard network == nil, loadError == nil else { return }
         status = "Loading \(region.name) network…"
         reference = RouteSummary.loadBundledReference(resource: region.routeResource)
+        peakDetails = PeakDetails.loadBundled(resource: region.peaksResource)
         let resource = region.networkResource
         let result = await Task.detached(priority: .userInitiated) { () -> Result<(NetworkData, RouteGraph), Error> in
             do {
@@ -241,6 +245,22 @@ final class AppModel {
         selectedWay = WayInfo(id: hit.way, way: way, category: network.categories[Int(way.category)], coordinate: p)
     }
 
+    /// Called when a peak marker is tapped outside planning mode: opens its summit card.
+    func selectPeak(_ peak: Peak) {
+        guard let rank = peaks.firstIndex(where: { $0.id == peak.id }).map({ $0 + 1 }) else { return }
+        selectedWay = nil
+        selectedPeak = PeakInfo(peak: peak, rank: rank, details: peakDetails[peak.name], nearestRide: nearestRide(to: peak.coordinate))
+    }
+
+    /// The closest bridleway or byway (a track in Scotland) to a point, within 6 km.
+    private func nearestRide(to p: LatLon) -> NearestRide? {
+        guard let graph, let network else { return nil }
+        let cats = Set(region.rideCategories.compactMap(graph.categoryIndex))
+        guard !cats.isEmpty, let hit = graph.nearestWay(to: p, maxMetres: 6000, categories: cats) else { return nil }
+        let way = network.ways[hit.way]
+        return NearestRide(distance: hit.distance, name: way.name, category: network.categories[Int(way.category)])
+    }
+
     // MARK: - Planning
 
     var canPlan: Bool { graph != nil }
@@ -248,7 +268,7 @@ final class AppModel {
     func togglePlanning() {
         guard isEditing else { return }
         isPlanning.toggle()
-        if isPlanning { selectedWay = nil }
+        if isPlanning { selectedWay = nil; selectedPeak = nil }
     }
 
     /// Shows the planning and saving controls for the open saved route.

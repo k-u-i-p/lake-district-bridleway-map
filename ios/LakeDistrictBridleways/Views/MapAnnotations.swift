@@ -37,10 +37,11 @@ nonisolated final class WaypointAnnotation: MKPointAnnotation {
 
 nonisolated final class PeakAnnotation: MKPointAnnotation {
     let rank: Int
-    let elevation: Int
+    let peak: Peak
+    var elevation: Int { peak.elevation }
     init(rank: Int, peak: Peak) {
         self.rank = rank
-        self.elevation = peak.elevation
+        self.peak = peak
         super.init()
         coordinate = CLLocationCoordinate2D(latitude: peak.coordinate.lat, longitude: peak.coordinate.lon)
         title = peak.name
@@ -149,6 +150,13 @@ final class PeakView: MKAnnotationView {
 
     var showsLabel = true {
         didSet { label.isHidden = !showsLabel }
+    }
+
+    /// Where a tap opens the summit card: the triangle with a finger's width around it, plus the label.
+    /// The view itself takes no touches, so taps elsewhere still reach the map.
+    var tapArea: CGRect {
+        let mark = bounds.insetBy(dx: -14, dy: -14)
+        return label.isHidden ? mark : mark.union(label.frame.insetBy(dx: -4, dy: -6))
     }
 
     private func configure() {

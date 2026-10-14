@@ -86,6 +86,20 @@
   .peak i{position:absolute;left:-7px;top:-6px;width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:12px solid #fff;filter:drop-shadow(0 0 2px #000)}
   .peak b{display:none;position:absolute;left:10px;top:-8px;font-family:Oswald,sans-serif;font-weight:500;font-size:12px;letter-spacing:.03em;color:#fff;white-space:nowrap;text-shadow:0 0 3px #000,0 0 5px #000}
   .peak b small{color:#ddd;font-weight:400}
+  .peak i,.peak b{pointer-events:auto;cursor:pointer}
+  .peak i::after{content:'';position:absolute;left:-12px;top:-4px;width:24px;height:24px}
+  .pk{width:300px}
+  .pk .ph{display:block;width:calc(100% + 28px);height:160px;object-fit:cover;margin:-12px -14px 8px;border-radius:8px 8px 0 0;background:#1b1f26}
+  .pk h3{font-family:Oswald,sans-serif;font-weight:500;font-size:18px;margin:0;letter-spacing:.03em}
+  .pk .el{color:var(--muted);font-size:12px;margin-bottom:6px}
+  .pk .cr{color:var(--muted);font-size:10.5px;margin:-4px 0 6px}
+  .pk p{margin:0 0 8px}
+  .pk .sub{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:8px 0 4px}
+  .pk .rt{margin-bottom:6px}
+  .pk .rt small{color:var(--muted);white-space:nowrap}
+  .pk .rt div{color:#c9ced6}
+  .pk .ride{border-top:1px solid var(--panel-border);padding-top:6px;margin-top:6px}
+  .pk a{color:#8ab4ff}
   .wp{width:22px;height:22px;border-radius:50%;background:var(--accent);border:2px solid #fff;color:#fff;font:600 11px/22px Inter,sans-serif;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.6);cursor:grab}
   .wp.start{background:#111}
 
@@ -187,6 +201,7 @@
 <script>
 const DATA = /*__DATA__*/;
 const REF = /*__ROUTE__*/;
+const PEAKS = /*__PEAKS__*/; // summit cards from tools/peaks.py
 
 const CATS = {
   bridleway:  {name:'Public bridleway',           color:'#3ddc84', dash:null, on:true},
@@ -276,7 +291,34 @@ Object.keys(CATS).forEach(k=>{
 const LABELS=[['Bassenthwaite',54.650,-3.215,-62],['Buttermere',54.542,-3.280,-40],['Ennerdale',54.522,-3.385,0],['Borrowdale',54.515,-3.150,80],['Thirlmere',54.535,-3.065,60],['Ullswater',54.580,-2.885,-30],['Haweswater',54.515,-2.800,-60],['Langdale',54.445,-3.090,0],['Eskdale',54.395,-3.275,-45],['Wast Water',54.440,-3.300,-35,'sm'],['Windermere',54.335,-2.930,-65],['Coniston',54.335,-3.072,-80],['Duddon',54.335,-3.200,-70],['Keswick',54.601,-3.137,0,'sm'],['Ambleside',54.428,-2.962,0,'sm'],['Grasmere',54.459,-3.025,0,'sm'],['Kentmere',54.430,-2.845,-80,'sm'],['Shap',54.531,-2.676,0,'sm']];
 const labelLayer=L.layerGroup(LABELS.map(([t,la,lo,rot,cls])=>L.marker([la,lo],{interactive:false,icon:L.divIcon({className:'',html:`<div class="lake-label ${cls||''}" style="transform:translate(-50%,-50%) rotate(${rot}deg)">${t}</div>`,iconSize:[0,0]})}))).addTo(map);
 document.getElementById('labels').onchange=e=>e.target.checked?labelLayer.addTo(map):map.removeLayer(labelLayer);
-const peakLayer=L.layerGroup(DATA.peaks.map((p,i)=>L.marker([p.la,p.lo],{interactive:false,icon:L.divIcon({className:'',html:`<div class="peak"><i></i><b>${i+1}. ${esc(p.n)} <small>${p.e} m</small></b></div>`,iconSize:[0,0]})}))).addTo(map);
+const peakLayer=L.layerGroup(DATA.peaks.map((p,i)=>L.marker([p.la,p.lo],{icon:L.divIcon({className:'',html:`<div class="peak"><i></i><b>${i+1}. ${esc(p.n)} <small>${p.e} m</small></b></div>`,iconSize:[0,0]})})
+  .on('click',e=>{ if(planMode){ map.fire('click',{latlng:e.latlng}); return; } L.popup({maxWidth:340,maxHeight:Math.max(240,map.getSize().y-120),offset:[0,-4]}).setLatLng([p.la,p.lo]).setContent(peakHtml(p,i+1)).openOn(map); }))).addTo(map);
+// Distance in metres from a summit to the nearest bridleway or byway, and its name.
+function nearestRide(p){
+  const cats=['bridleway','boat','restricted','permissive','other'].map(c=>CI[c]);
+  const kx=111320*Math.cos(p.la*Math.PI/180), ky=110540;
+  let best=Infinity, bw=-1;
+  DATA.ways.forEach((r,w)=>{ if(!cats.includes(r[0])) return; const c=coordsOf(w);
+    if(Math.abs(c[0][0]-p.la)>0.1 || Math.abs(c[0][1]-p.lo)>0.15) return;
+    for(let i=1;i<c.length;i++){
+      const ax=(c[i-1][1]-p.lo)*kx, ay=(c[i-1][0]-p.la)*ky, bx=(c[i][1]-p.lo)*kx, by=(c[i][0]-p.la)*ky;
+      const dx=bx-ax, dy=by-ay, l2=dx*dx+dy*dy, t=l2?Math.max(0,Math.min(1,-(ax*dx+ay*dy)/l2)):0;
+      const d=Math.hypot(ax+t*dx, ay+t*dy); if(d<best){ best=d; bw=w; } } });
+  return bw<0||best>6000 ? null : {d:best, p:props(bw)};
+}
+function peakHtml(p,rank){
+  const d=PEAKS[p.n]||{}, ride=nearestRide(p);
+  const ord=n=>n+(n%100>10&&n%100<14?'th':({1:'st',2:'nd',3:'rd'}[n%10]||'th'));
+  const routes=(d.routes||[]).map(r=>{ const st=[r.km!=null?r.km+' km':null, r.ascent!=null?r.ascent.toLocaleString()+' m up':null].filter(Boolean).join(' · ');
+    return `<div class="rt"><b>${esc(r.name)}</b> ${st?`<small>≈ ${st}</small>`:''}<div>${esc(r.text)}</div></div>`; }).join('');
+  const rideTxt=ride?(ride.d<50?'at the summit':(ride.d<1000?Math.round(ride.d/10)*10+' m':(ride.d/1000).toFixed(1)+' km')+' away')+` (${esc(ride.p.name||CATS[ride.p.c].name.toLowerCase())})`:'over 6 km away';
+  return `<div class="pk">${d.image?`<img class="ph" src="${esc(d.image)}" alt="">`:''}<h3>${esc(p.n)}</h3>
+    <div class="el">${p.e.toLocaleString()} m · ${Math.round(p.e*3.28084).toLocaleString()} ft · ${rank===1?'highest':ord(rank)+' highest'} of the ten</div>
+    ${d.credit?`<div class="cr">Photo: <a href="${esc(d.source)}" target="_blank" rel="noopener">${esc(d.credit)}</a></div>`:''}
+    ${d.about?`<p>${esc(d.about)}</p>`:''}${routes?`<div class="sub">Routes up</div>${routes}`:''}
+    <div class="ride">Nearest bridleway or byway: ${rideTxt}</div>
+    ${d.wiki?`<div style="margin-top:6px"><a href="${esc(d.wiki)}" target="_blank" rel="noopener">Wikipedia ↗</a></div>`:''}</div>`;
+}
 document.getElementById('peaks').onchange=e=>e.target.checked?peakLayer.addTo(map):map.removeLayer(peakLayer);
 function zoomStyles(){ const z=map.getZoom(); document.querySelectorAll('.lake-label').forEach(el=>el.style.opacity = z<=13 && z>=9 ? 1 : 0); document.querySelectorAll('.peak b').forEach(el=>el.style.display = z>=11 ? 'block' : 'none'); }
 map.on('zoomend',zoomStyles); map.on('layeradd',()=>setTimeout(zoomStyles,0));

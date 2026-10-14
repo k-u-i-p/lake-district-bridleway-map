@@ -40,8 +40,10 @@ fi
 python3 tools/convert.py "$cfg" "$data/network.json" "$data/bridleways.json" "$data/paths.json" "$data/roads.json" "$data/peaks.json"
 # keep the iOS app's bundled copy in step
 cp "$data/network.json" "ios/LakeDistrictBridleways/Resources/network-$region.json"
+# and its summit cards, from the photos already fetched (run tools/peaks.py <region> for new peaks)
+python3 tools/peaks.py --offline "$region"
 if [ "$region" = lakes ]; then
   node tools/make-route.js "$data/network.json" tools/wp.json routes/lakes-loop.gpx "$data/route.json"
   cp "$data/route.json" ios/LakeDistrictBridleways/Resources/route-lakes.json
-  python3 tools/assemble.py tools/template.html tools/router.js "$data/network.json" "$data/route.json" index.html
+  python3 tools/assemble.py tools/template.html tools/router.js "$data/network.json" "$data/route.json" index.html ios/LakeDistrictBridleways/Resources/peaks-lakes.json
 fi

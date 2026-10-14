@@ -64,6 +64,7 @@ struct PlannerPanel: View {
             }
         }
         .sheet(item: $model.selectedWay) { info in WayDetailSheet(info: info) }
+        .sheet(item: $model.selectedPeak) { info in PeakDetailSheet(info: info, region: model.region) }
     }
 }
 

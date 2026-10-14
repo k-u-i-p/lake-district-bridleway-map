@@ -141,6 +141,10 @@ nonisolated enum Format {
     static func metres(_ m: Int) -> String {
         m.formatted(.number.grouping(.automatic)) + " m"
     }
+    /// A distance away: "180 m" under a kilometre (to the nearest 10 m), else "1.8 km".
+    static func distance(_ metres: Double) -> String {
+        metres < 1000 ? "\(Int((metres / 10).rounded()) * 10) m" : String(format: "%.1f km", metres / 1000)
+    }
     static func kmShort(_ metres: Double) -> String {
         metres < 10_000 ? String(format: "%.2f km", metres / 1000) : String(format: "%.1f km", metres / 1000)
     }

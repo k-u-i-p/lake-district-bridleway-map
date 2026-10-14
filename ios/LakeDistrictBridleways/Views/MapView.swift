@@ -378,11 +378,27 @@ struct MapView: UIViewRepresentable {
             let p = LatLon(coord.latitude, coord.longitude)
             if model.isPlanning {
                 model.addWaypoint(at: p)
+            } else if let peak = peak(at: point, in: map) {
+                model.selectPeak(peak.peak)
             } else {
                 let mapPointsPerPoint = map.visibleMapRect.size.width / Double(map.bounds.width)
                 let metresPerPoint = mapPointsPerPoint / MKMapPointsPerMeterAtLatitude(coord.latitude)
                 model.selectWay(near: p, toleranceMetres: max(8, metresPerPoint * 14))
             }
+        }
+
+        /// The peak marker under a tap, nearest first when markers overlap.
+        private func peak(at point: CGPoint, in map: MKMapView) -> PeakAnnotation? {
+            guard peaksShown else { return nil }
+            var best: PeakAnnotation?, bestDistance = CGFloat.infinity
+            for a in peakAnnotations {
+                guard let v = map.view(for: a) as? PeakView, !v.isHidden else { continue }
+                let local = map.convert(point, to: v)
+                guard v.tapArea.contains(local) else { continue }
+                let d = hypot(local.x - v.bounds.midX, local.y - v.bounds.midY)
+                if d < bestDistance { bestDistance = d; best = a }
+            }
+            return best
         }
 
         func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith other: UIGestureRecognizer) -> Bool { true }

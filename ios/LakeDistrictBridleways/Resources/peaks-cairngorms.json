@@ -1,0 +1,204 @@
+{
+ "Ben Macdui": {
+  "photo": "peak-cairngorms-ben-macdui",
+  "credit": "Mick Knapton at English Wikipedia, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Ben_Macdui_from_Derry_Cairngorm.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ben_Macdui_from_Derry_Cairngorm.jpg?width=500",
+  "about": "Britain's second-highest mountain: a vast stony plateau with a view indicator, said to be haunted by the Big Grey Man, Am Fear Liath Mòr.",
+  "routes": [
+   {
+    "name": "From the Cairn Gorm ski centre",
+    "text": "From the Coire Cas car park, up the ridge of Fiacaill a' Choire Chais, then across the plateau past Lochan Buidhe. Navigation is serious in mist.",
+    "km": 8,
+    "ascent": 750
+   },
+   {
+    "name": "Linn of Dee via Derry Lodge",
+    "text": "Ride the estate track to Derry Lodge, then walk up Glen Luibeg and the long Sròn Riach ridge or by Loch Etchachan.",
+    "km": 17,
+    "ascent": 950
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Ben_Macdui"
+ },
+ "Braeriach": {
+  "photo": "peak-cairngorms-braeriach",
+  "credit": "Grinner at English Wikipedia, Attribution",
+  "source": "https://commons.wikimedia.org/wiki/File:Braeriach.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Braeriach.jpg?width=500",
+  "about": "Britain's third-highest summit, perched on the rim of huge corries above the Lairig Ghru. The River Dee rises at the Wells of Dee on its plateau.",
+  "routes": [
+   {
+    "name": "Chalamain Gap",
+    "text": "From the Sugar Bowl car park on the ski road, through the bouldery Chalamain Gap, down into the Lairig Ghru and up the Sròn na Lairige ridge.",
+    "km": 9,
+    "ascent": 1100
+   },
+   {
+    "name": "Gleann Einich",
+    "text": "Ride the long Gleann Einich track from Whitewell or Coylumbridge, then up Coire Dhondail onto the plateau and round the corrie rim.",
+    "km": 18,
+    "ascent": 1000
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Braeriach"
+ },
+ "Cairn Toul": {
+  "photo": "peak-cairngorms-cairn-toul",
+  "credit": "Graham Ellis, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Cairn_toul.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cairn_toul.jpg?width=500",
+  "about": "A pointed summit on the west rim of the Lairig Ghru, Britain's fourth-highest, usually climbed with Braeriach and the Angel's Peak.",
+  "routes": [
+   {
+    "name": "From Braeriach",
+    "text": "Round the rim of the plateau and over the Angel's Peak: the classic high Cairngorm traverse.",
+    "km": 5,
+    "ascent": 300
+   },
+   {
+    "name": "Corrour Bothy",
+    "text": "From Linn of Dee via Derry Lodge and the Lairig Ghru to Corrour Bothy, then up the Coire Odhar path to the ridge.",
+    "km": 18,
+    "ascent": 950
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Cairn_Toul"
+ },
+ "Sgor an Lochain Uaine": {
+  "photo": "peak-cairngorms-sgor-an-lochain-uaine",
+  "credit": "El.Sarmiento, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Sgor_an_Lochain_Uaine.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sgor_an_Lochain_Uaine.jpg?width=500",
+  "about": "The Angel's Peak: a sharp top above the green lochan of Garbh Choire, between Braeriach and Cairn Toul.",
+  "routes": [
+   {
+    "name": "Braeriach to Cairn Toul",
+    "text": "Climbed on the traverse between them, from Braeriach round the corrie rim or a short climb from the col with Cairn Toul."
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Sg%C3%B2r_an_Lochain_Uaine"
+ },
+ "Cairn Gorm": {
+  "photo": "peak-cairngorms-cairn-gorm",
+  "credit": "Grinner at English Wikipedia, Attribution",
+  "source": "https://commons.wikimedia.org/wiki/File:Cairn_gorm.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cairn_gorm.jpg?width=500",
+  "about": "The mountain that names the range, above the ski area, with a weather station on top and the Ptarmigan station of the funicular railway just below.",
+  "routes": [
+   {
+    "name": "Windy Ridge",
+    "text": "From the Coire Cas car park up the Sròn an Aonaich ridge beside the ski tows, past the Ptarmigan station to the summit.",
+    "km": 4,
+    "ascent": 620
+   },
+   {
+    "name": "Northern corries",
+    "text": "Up Fiacaill a' Choire Chais and round the cliff tops of Coire an t-Sneachda, a fine high circuit.",
+    "km": 5,
+    "ascent": 650
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Cairn_Gorm"
+ },
+ "Beinn a' Bhùird": {
+  "photo": "peak-cairngorms-beinn-a-bhuird",
+  "credit": "TheCreator, Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Beinn-a-bhuird-01.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Beinn-a-bhuird-01.jpg?width=500",
+  "about": "A huge flat-topped mountain in the eastern Cairngorms, ringed by fine corries; the North Top is its highest point.",
+  "routes": [
+   {
+    "name": "Glen Quoich and An Diollaid",
+    "text": "From the car park at Allanaquoich, up Glen Quoich, then the path on the line of the old Land Rover road up An Diollaid to the plateau and north to the top. Often biked to the start of the climb.",
+    "km": 14,
+    "ascent": 850
+   },
+   {
+    "name": "Quoich Water to The Sneck",
+    "text": "Through the pinewoods along the Quoich Water to The Sneck, the col with Ben Avon."
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Beinn_a'_Bh%C3%B9ird"
+ },
+ "Beinn Mheadhoin": {
+  "photo": "peak-cairngorms-beinn-mheadhoin",
+  "credit": "Mick Knapton at English Wikipedia, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Beinn_Mheadhoin_from_Derry_Cairngorm.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Beinn_Mheadhoin_from_Derry_Cairngorm.jpg?width=500",
+  "about": "The 'middle hill': a remote plateau studded with granite tors between Loch Avon and Loch Etchachan.",
+  "routes": [
+   {
+    "name": "From the Cairn Gorm ski centre",
+    "text": "Across the plateau and down to the head of Loch Avon by the Shelter Stone, then up past Loch Etchachan.",
+    "km": 9,
+    "ascent": 1000
+   },
+   {
+    "name": "Linn of Dee via Glen Derry",
+    "text": "Ride to Derry Lodge, walk up Glen Derry to Loch Etchachan, then up the broad south-west slope.",
+    "km": 16,
+    "ascent": 900
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Beinn_Mheadhoin_(Cairngorms)"
+ },
+ "Ben Avon": {
+  "photo": "peak-cairngorms-ben-avon",
+  "credit": "Bruce McAdam, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Ben_Avon.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ben_Avon.jpg?width=500",
+  "about": "A sprawling plateau dotted with granite tors. The top, Leabaidh an Daimh Bhuidhe, is a tor you must scramble up to touch the highest point.",
+  "routes": [
+   {
+    "name": "Via The Sneck",
+    "text": "Up the glen between Ben Avon and Beinn a' Bhùird to The Sneck, the col between them; often combined with Beinn a' Bhùird."
+   },
+   {
+    "name": "Gleann an t-Slugain",
+    "text": "From Keiloch near Braemar, the track through Gleann an t-Slugain (good on a bike), then the long southern slopes, passing close to the rim of the Slochd Mòr corrie."
+   },
+   {
+    "name": "Glen Avon",
+    "text": "From Tomintoul along the long Glen Avon track; one of the remotest approaches in the Cairngorms."
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Ben_Avon"
+ },
+ "Beinn Bhrotain": {
+  "photo": "peak-cairngorms-beinn-bhrotain",
+  "credit": "Nigel Brown, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:View_towards_Beinn_Bhrotain_-_geograph.org.uk_-_1676851.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/View_towards_Beinn_Bhrotain_-_geograph.org.uk_-_1676851.jpg?width=500",
+  "about": "A broad, bouldery dome at the south end of the Cairn Toul ridge, above Glen Dee and Glen Geusachan.",
+  "routes": [
+   {
+    "name": "Linn of Dee via White Bridge",
+    "text": "Ride the track to the White Bridge and up Glen Dee, then climb the south-east slopes. Often combined with Monadh Mòr.",
+    "km": 13,
+    "ascent": 800
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Beinn_Bhrotain"
+ },
+ "Lochnagar": {
+  "photo": "peak-cairngorms-lochnagar",
+  "credit": "Colin Smith, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Lochnagar_-_Mountain_and_Corrie_Lochan._-_geograph.org.uk_-_113301.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lochnagar_-_Mountain_and_Corrie_Lochan._-_geograph.org.uk_-_113301.jpg?width=500",
+  "about": "The royal mountain above Balmoral: a great cliff-ringed corrie and loch beneath a summit ridge whose top is Cac Càrn Beag.",
+  "routes": [
+   {
+    "name": "Spittal of Glenmuick",
+    "text": "Up the track to the col below Meikle Pap, then the steep 'Ladder' path and round the rim of the corrie.",
+    "km": 9,
+    "ascent": 750
+   },
+   {
+    "name": "Circuit via the Glas Allt",
+    "text": "Return down past the Glas Allt falls to Loch Muick for a fine round."
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Lochnagar"
+ }
+}

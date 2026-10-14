@@ -1,0 +1,282 @@
+{
+ "Scafell Pike": {
+  "photo": "peak-lakes-scafell-pike",
+  "credit": "Thorneh at English Wikipedia, Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Scafell_Pike.JPG",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Scafell_Pike.JPG?width=500",
+  "about": "England's highest mountain: a bouldery dome topped by a huge summit cairn, a trig point and the war memorial plaque given with the summit to the National Trust.",
+  "routes": [
+   {
+    "name": "Wasdale Head via Brown Tongue",
+    "text": "The shortest way. Up Lingmell Gill and the steep pitched path of Brown Tongue into Hollow Stones, then left up the bouldery slope to the top.",
+    "km": 4.5,
+    "ascent": 900
+   },
+   {
+    "name": "Seathwaite via the Corridor Route",
+    "text": "From Borrowdale by Stockley Bridge to Sty Head, then the Corridor Route across the flank of Great End and Lingmell to the summit plateau.",
+    "km": 7,
+    "ascent": 950
+   },
+   {
+    "name": "Great Langdale via Esk Hause",
+    "text": "Up Mickleden and Rossett Gill to Angle Tarn and Esk Hause, then the rough boulder ridge over Ill Crag and Broad Crag.",
+    "km": 9,
+    "ascent": 1100
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Scafell_Pike"
+ },
+ "Scafell": {
+  "photo": "peak-lakes-scafell",
+  "credit": "Steve Partridge, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Sca_Fell_Summit_Cairn_and_Symonds_Knott._-_geograph.org.uk_-_246540.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sca_Fell_Summit_Cairn_and_Symonds_Knott._-_geograph.org.uk_-_246540.jpg?width=500",
+  "about": "Scafell Pike's rockier, quieter neighbour across the gap of Mickledore. Broad Stand, the direct way between them, is a serious rock climb, not a walk.",
+  "routes": [
+   {
+    "name": "Wasdale Head via Green How",
+    "text": "A relentless grassy slope from Brackenclose straight up the west side; the easiest way up, if steep.",
+    "km": 4,
+    "ascent": 880
+   },
+   {
+    "name": "From Scafell Pike via Foxes Tarn",
+    "text": "Drop from Mickledore on the Eskdale side, then climb the gully past tiny Foxes Tarn. The usual way to add Scafell to the Pike.",
+    "km": 2,
+    "ascent": 250
+   },
+   {
+    "name": "Eskdale via Slight Side",
+    "text": "From Boot across the moor past Eel Tarn to Slight Side, then up the long south ridge. Long and quiet.",
+    "km": 8,
+    "ascent": 900
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Scafell"
+ },
+ "Helvellyn": {
+  "photo": "peak-lakes-helvellyn",
+  "credit": "Simon Ledingham, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Helvellyn(SimonLedingham)Dec2004.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Helvellyn%28SimonLedingham%29Dec2004.jpg?width=500",
+  "about": "The Lakes' most popular big fell: a broad summit plateau above the Red Tarn corrie, held between the arms of Striding Edge and Swirral Edge.",
+  "routes": [
+   {
+    "name": "Glenridding via Striding Edge",
+    "text": "The classic scramble. Up to the Hole-in-the-Wall, along the exposed rocky crest of Striding Edge, then a steep loose wall to the plateau.",
+    "km": 7,
+    "ascent": 800
+   },
+   {
+    "name": "Glenridding via Swirral Edge",
+    "text": "Past Red Tarn and up the shorter, easier ridge beside Catstye Cam; the usual way down after Striding Edge.",
+    "km": 6.5,
+    "ascent": 800
+   },
+   {
+    "name": "Thirlmere from Swirls",
+    "text": "The quickest way: a steep pitched path over Browncove Crags from the Swirls car park on the A591.",
+    "km": 4,
+    "ascent": 750
+   },
+   {
+    "name": "Bridleway along the ridge",
+    "text": "The main ridge path from Grisedale Tarn over Dollywaggon and Nethermost Pike to the summit, and north towards Whiteside, is a public bridleway: a hard, rocky but legal ride."
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Helvellyn"
+ },
+ "Skiddaw": {
+  "photo": "peak-lakes-skiddaw",
+  "credit": "Antiquary, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Skiddaw.JPG",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Skiddaw.JPG?width=500",
+  "about": "A great slaty whaleback above Keswick, with a long, stony summit ridge and a trig point; one of the few big Lakeland summits on a bridleway.",
+  "routes": [
+   {
+    "name": "Keswick via Jenkin Hill",
+    "text": "From the car park above Latrigg, the broad 'tourist' path climbs Jenkin Hill and skirts Little Man. Long and steady, and a bridleway all the way to the summit.",
+    "km": 5.5,
+    "ascent": 650
+   },
+   {
+    "name": "Millbeck via Carl Side",
+    "text": "Steep and direct from Millbeck up Carl Side, then loose scree to the summit ridge.",
+    "km": 4,
+    "ascent": 850
+   },
+   {
+    "name": "Back o' Skiddaw via Bakestall",
+    "text": "From the road end near Peter House Farm, the track past Whitewater Dash waterfall, then the steep Bakestall ridge from the north.",
+    "km": 6,
+    "ascent": 700
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Skiddaw"
+ },
+ "Great End": {
+  "photo": "peak-lakes-great-end",
+  "credit": "Ann Bowker, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Great_end.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_end.jpg?width=500",
+  "about": "The dark, gully-scored northern end of the Scafell massif, looming over Sprinkling Tarn and Borrowdale. Its gullies are classic winter climbs.",
+  "routes": [
+   {
+    "name": "Seathwaite via Grains Gill",
+    "text": "Up Grains Gill and Ruddy Gill to Esk Hause, then turn north-west up the broad slope to the summit cairns.",
+    "km": 6,
+    "ascent": 800
+   },
+   {
+    "name": "Great Langdale via Rossett Gill",
+    "text": "Over Rossett Pass and past Angle Tarn to Esk Hause, then up the stony slope.",
+    "km": 8,
+    "ascent": 900
+   },
+   {
+    "name": "With Scafell Pike",
+    "text": "Often added on the way to or from the Pike: about 1.5 km of boulders over Ill Crag and Broad Crag."
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Great_End"
+ },
+ "Bowfell": {
+  "photo": "peak-lakes-bowfell",
+  "credit": "GkgAlf at English Wikipedia, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Bow_Fell_from_Lingcove.JPG",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bow_Fell_from_Lingcove.JPG?width=500",
+  "about": "A shapely rock peak at the head of Great Langdale. The Great Slab and the Climbers' Traverse on its north-east face are among the Lakes' best walking terrain.",
+  "routes": [
+   {
+    "name": "Great Langdale via The Band",
+    "text": "From the Old Dungeon Ghyll, up the long ridge of The Band to Three Tarns, then north over the boulder-strewn final cone.",
+    "km": 5,
+    "ascent": 800
+   },
+   {
+    "name": "The Climbers' Traverse",
+    "text": "From the top of The Band, a narrow path under Flat Crags to the Great Slab and a steep, rocky finish. More interesting, a little more exposed.",
+    "km": 5,
+    "ascent": 800
+   },
+   {
+    "name": "Eskdale via Lingcove Beck",
+    "text": "A long, quiet approach from Brotherilkeld up Lingcove Beck to Three Tarns.",
+    "km": 10,
+    "ascent": 850
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Bowfell"
+ },
+ "Great Gable": {
+  "photo": "peak-lakes-great-gable",
+  "credit": "Phillip Capper from Wellington, New Zealand, CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Great_Gable_1962.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_Gable_1962.jpg?width=500",
+  "about": "The rock pyramid between Wasdale and Borrowdale. A bronze war memorial on the summit crag draws a crowd every Remembrance Sunday.",
+  "routes": [
+   {
+    "name": "Honister via Green Gable",
+    "text": "From the slate mine, up the old tramway to the Drum House, then over Brandreth and Green Gable to Windy Gap and a steep rocky finish. Starts high.",
+    "km": 4.5,
+    "ascent": 650
+   },
+   {
+    "name": "Wasdale Head via Sty Head",
+    "text": "Up the valley to Sty Head, then the steep, rocky south-east ridge.",
+    "km": 4.5,
+    "ascent": 830
+   },
+   {
+    "name": "Seathwaite via Sty Head",
+    "text": "Stockley Bridge and Styhead Gill to Sty Head, then the same rough ridge.",
+    "km": 5.5,
+    "ascent": 770
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Great_Gable"
+ },
+ "Pillar": {
+  "photo": "peak-lakes-pillar",
+  "credit": "Philip Halling, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Trig_point_and_cairn_on_summit_of_Pillar_-_geograph.org.uk_-_7625011.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Trig_point_and_cairn_on_summit_of_Pillar_-_geograph.org.uk_-_7625011.jpg?width=500",
+  "about": "The highest fell between Wasdale and Ennerdale, named after Pillar Rock, the great crag on its northern face, first climbed in 1826.",
+  "routes": [
+   {
+    "name": "Wasdale Head via Black Sail Pass",
+    "text": "Up Mosedale to Black Sail Pass, then west along the ridge over Looking Stead.",
+    "km": 5.5,
+    "ascent": 820
+   },
+   {
+    "name": "The High Level Route",
+    "text": "From Looking Stead, a narrow, exposed path traverses under the north face to Robinson's Cairn and Pillar Rock, then climbs steeply to the top.",
+    "km": 6.5,
+    "ascent": 850
+   },
+   {
+    "name": "Ennerdale",
+    "text": "From Bowness Knott, the long Ennerdale forest road (good on a bike) to the head of the valley, then up from Black Sail Hut. A big day.",
+    "km": 13,
+    "ascent": 800
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Pillar_(Lake_District)"
+ },
+ "Nethermost Pike": {
+  "photo": "peak-lakes-nethermost-pike",
+  "credit": "DS Pugh, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Summit_of_Nethermost_Pike_-_geograph.org.uk_-_8367389.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Summit_of_Nethermost_Pike_-_geograph.org.uk_-_8367389.jpg?width=500",
+  "about": "A flat-topped summit on the Helvellyn ridge just south of the main top, with a steep craggy face above Grisedale. Many people pass by without noticing it.",
+  "routes": [
+   {
+    "name": "Along the ridge from Helvellyn",
+    "text": "Under a kilometre south along the broad ridge; the main path skirts the top, so step west to find the cairn.",
+    "km": 1,
+    "ascent": 50
+   },
+   {
+    "name": "Wythburn",
+    "text": "From Wythburn church on Thirlmere, up the pitched path to the ridge, then north.",
+    "km": 4,
+    "ascent": 700
+   },
+   {
+    "name": "Grisedale via the east ridge",
+    "text": "From Patterdale along Grisedale, then up the steep, rough and quiet east ridge.",
+    "km": 7,
+    "ascent": 750
+   },
+   {
+    "name": "Bridleway along the ridge",
+    "text": "The ridge path from Grisedale Tarn to Helvellyn, beside the summit, is a public bridleway."
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Nethermost_Pike"
+ },
+ "Catstye Cam": {
+  "photo": "peak-lakes-catstye-cam",
+  "credit": "Volker Gringmuth, CC BY 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Catstye_Cam_from_Helvellyn.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Catstye_Cam_from_Helvellyn.jpg?width=500",
+  "about": "A perfect little cone at the end of Swirral Edge, and the best perch above Red Tarn.",
+  "routes": [
+   {
+    "name": "Glenridding via Red Tarn Beck",
+    "text": "Past the old Greenside lead mine and up Red Tarn Beck, then the steep path onto the north-east ridge.",
+    "km": 5.5,
+    "ascent": 740
+   },
+   {
+    "name": "From Swirral Edge",
+    "text": "A short there-and-back from the foot of Swirral Edge on the way up or down Helvellyn.",
+    "km": 0.5,
+    "ascent": 60
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Catstye_Cam"
+ }
+}

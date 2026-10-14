@@ -68,6 +68,16 @@ Elevation is fetched automatically from Open-Meteo once routing settles, and the
 profile and a surface breakdown. **Save route** stores the loop under a suggested name (the nearest
 labelled place). **Share** exports GPX.
 
+Tap one of the ten peak markers (when not adding waypoints) to open its summit card: a photo, the
+height in metres and feet, a line about the summit, the usual routes up with rough one-way distance
+and climb, and how far the nearest bridleway or byway (a track in the Scottish regions) is from the
+top, worked out from the bundled network. The cards are written in `tools/peaks.json` and built into
+`Resources/peaks-<region>.json` by `tools/peaks.py`, which also fetches each photo's author and
+licence from Wikimedia Commons (cached in `tools/data/<region>/photos.json`) and saves a 1024 px copy
+as `Assets.xcassets/peak-<region>-<name>`. The photos are mostly from Geograph Britain and Ireland via
+Commons; each card credits its photographer and licence and links to the Commons page. Distances and
+climbs are approximate; check a map before setting out.
+
 A saved route opens for viewing, with just its line on the map. Press the pencil in the card to edit
 it: the waypoint markers, planning buttons, **Save changes** button and the rename / save-as-new menu
 appear, and an unsaved-changes dot shows next to the name. Press the tick to finish; if there are
@@ -93,6 +103,7 @@ regions, where tracks and paths tagged private are kept unless bikes are exclude
 Moors, `tools/build.sh dales` for the Yorkshire Dales, `tools/build.sh pennines` for the North
 Pennines, `tools/build.sh cairngorms` for the
 Cairngorms, `tools/build.sh lomond` for Loch Lomond & The Trossachs, or add `--offline` to rebuild from the cached data in `tools/data/<id>`.
-Each refreshes the copy bundled in the iOS app; the Lake District build also rebuilds the reference
+Each refreshes the copy bundled in the iOS app, including its summit cards (run `tools/peaks.py <id>`
+first if the ten peaks change, to fetch their photos); the Lake District build also rebuilds the reference
 loop and `index.html`. Needs `curl`, `python3` and `node`. Always check the definitive map before
 relying on a right of way.

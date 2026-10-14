@@ -1,0 +1,230 @@
+{
+ "Whernside": {
+  "photo": "peak-dales-whernside",
+  "credit": "Cyberdemon007 at English Wikipedia, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Whernside_and_Ribblehead_Viaduct.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Whernside_and_Ribblehead_Viaduct.jpg?width=500",
+  "about": "The highest of the Yorkshire Three Peaks and of the Dales: a long ridge above the Ribblehead Viaduct on the Settle–Carlisle line.",
+  "routes": [
+   {
+    "name": "Ribblehead",
+    "text": "Past the viaduct and up beside the railway, then by Force Gill onto the ridge and south along it. The Three Peaks route.",
+    "km": 6.5,
+    "ascent": 430
+   },
+   {
+    "name": "Chapel-le-Dale",
+    "text": "Steep and direct up the stone steps from Bruntscar.",
+    "km": 4,
+    "ascent": 450
+   },
+   {
+    "name": "Dentdale",
+    "text": "From Dentdale, the Craven Way, an old packhorse track, climbs over the north-east shoulder; leave it for the ridge."
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Whernside"
+ },
+ "Ingleborough": {
+  "photo": "peak-dales-ingleborough",
+  "credit": "Mick Melvin, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Ingleborough.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ingleborough.jpg?width=500",
+  "about": "A flat-topped gritstone fortress, ringed by the remains of an Iron Age hillfort wall, with a cross-shaped wind shelter and a trig point.",
+  "routes": [
+   {
+    "name": "Clapham via Gaping Gill",
+    "text": "Past Ingleborough Cave and through the limestone gorge of Trow Gill to the Gaping Gill pothole, then up Little Ingleborough.",
+    "km": 7,
+    "ascent": 590
+   },
+   {
+    "name": "Ingleton via Crina Bottom",
+    "text": "Up Fell Lane and past Crina Bottom farm to the steep final climb. Fell Lane is a bridleway all the way to the summit.",
+    "km": 5.5,
+    "ascent": 600
+   },
+   {
+    "name": "Chapel-le-Dale",
+    "text": "The Three Peaks route across Humphrey Bottom and up the stone staircase.",
+    "km": 4,
+    "ascent": 450
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Ingleborough"
+ },
+ "Great Shunner Fell": {
+  "photo": "peak-dales-great-shunner-fell",
+  "credit": "Kreuzschnabel, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Great-Shunner-Fell-NE.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Great-Shunner-Fell-NE.jpg?width=500",
+  "about": "The third-highest fell in the Dales, a broad grassy hill between Wensleydale and Swaledale crossed by the Pennine Way.",
+  "routes": [
+   {
+    "name": "Hardraw on the Pennine Way",
+    "text": "From Hardraw near Hawes, the Pennine Way climbs the long, gentle south-east ridge. Easy to follow, flagged across the boggy parts.",
+    "km": 8,
+    "ascent": 470
+   },
+   {
+    "name": "Thwaite on the Pennine Way",
+    "text": "From Thwaite in Swaledale, steadily up the north-east ridge.",
+    "km": 6,
+    "ascent": 420
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Great_Shunner_Fell"
+ },
+ "High Seat": {
+  "photo": "peak-dales-high-seat",
+  "credit": "John Illingworth, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Mallerstang.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mallerstang.jpg?width=500",
+  "about": "The highest point of Mallerstang Edge, the long gritstone escarpment above the head of the Eden valley.",
+  "routes": [
+   {
+    "name": "From Mallerstang",
+    "text": "The usual way, from the valley road (B6259) at Outhgill, steeply up the western flank onto the edge.",
+    "km": 3,
+    "ascent": 420
+   },
+   {
+    "name": "Along Mallerstang Edge",
+    "text": "North from Hugh Seat and Lady Anne's Pillar, or south from the Kirkby Stephen–Keld road, along the rough, wet top of the edge."
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/High_Seat_(Yorkshire_Dales)"
+ },
+ "Wild Boar Fell": {
+  "photo": "peak-dales-wild-boar-fell",
+  "credit": "Matt westwood at English Wikipedia, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Wildboar_pic.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Wildboar_pic.jpg?width=500",
+  "about": "A flat-topped fell with a dramatic gritstone scarp above Mallerstang, where the last wild boar in England was said to have been killed.",
+  "routes": [
+   {
+    "name": "From Mallerstang via The Nab",
+    "text": "From the B6259, under the Settle–Carlisle railway and up to The Nab, the fell's northern prow, then along the edge.",
+    "km": 4,
+    "ascent": 400
+   },
+   {
+    "name": "Ridge from Swarth Fell",
+    "text": "Along the grassy ridge from Swarth Fell to the south, often walked as a horseshoe from Aisgill.",
+    "km": 2.5,
+    "ascent": 100
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Wild_Boar_Fell"
+ },
+ "Great Whernside": {
+  "photo": "peak-dales-great-whernside",
+  "credit": "StephenDawson at English Wikipedia, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Great_Whernside.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_Whernside.jpg?width=500",
+  "about": "A long gritstone ridge between Wharfedale and Nidderdale with a rocky summit crest; not to be confused with Whernside.",
+  "routes": [
+   {
+    "name": "Kettlewell via Hag Dyke",
+    "text": "Up past Hag Dyke, an old farmhouse that is now a scout hostel, and the steep edge to the summit rocks.",
+    "km": 4,
+    "ascent": 500
+   },
+   {
+    "name": "Park Rash",
+    "text": "From the top of the steep Kettlewell–Coverdale road, south along the ridge.",
+    "km": 4,
+    "ascent": 200
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Great_Whernside"
+ },
+ "Buckden Pike": {
+  "photo": "peak-dales-buckden-pike",
+  "credit": "Chris Heaton, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Buckden_Pike.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Buckden_Pike.jpg?width=500",
+  "about": "A broad top above Upper Wharfedale with a memorial cross to five Polish airmen killed when their Wellington bomber crashed here in a blizzard in 1942.",
+  "routes": [
+   {
+    "name": "Buckden",
+    "text": "From the village car park, a path climbs steadily up the hillside to the summit ridge and the trig point by the wall.",
+    "km": 4,
+    "ascent": 470
+   },
+   {
+    "name": "Starbotton",
+    "text": "Up the Walden Road bridleway from Starbotton to the ridge, then north past the memorial cross.",
+    "km": 4.5,
+    "ascent": 500
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Buckden_Pike"
+ },
+ "Pen-y-ghent": {
+  "photo": "peak-dales-pen-y-ghent",
+  "credit": "Tim Cook, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Fawcett_Moor_and_Pen-y-Ghent_-_geograph.org.uk_-_80390.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Fawcett_Moor_and_Pen-y-Ghent_-_geograph.org.uk_-_80390.jpg?width=500",
+  "about": "A lion-shaped hill above Horton in Ribblesdale, the smallest and most distinctive of the Three Peaks.",
+  "routes": [
+   {
+    "name": "Horton via Brackenbottom",
+    "text": "Up past Brackenbottom farm to the stepped nose of the hill and a short scramble up its rocky tiers.",
+    "km": 3.5,
+    "ascent": 460
+   },
+   {
+    "name": "Horton via Hunt Pot",
+    "text": "The Pennine Way up Horton Scar Lane (a bridleway), then past the potholes of Hull Pot and Hunt Pot.",
+    "km": 5,
+    "ascent": 460
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Pen-y-ghent"
+ },
+ "Great Coum": {
+  "photo": "peak-dales-great-coum",
+  "credit": "T Eyre, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Great_Coum_summit_-_geograph.org.uk_-_8403794.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_Coum_summit_-_geograph.org.uk_-_8403794.jpg?width=500",
+  "about": "A quiet top above Dentdale. The County Stone just below it once marked where Yorkshire, Lancashire and Westmorland met.",
+  "routes": [
+   {
+    "name": "Dent via Flinter Gill",
+    "text": "Up the steep, stony lane of Flinter Gill to the Occupation Road (a bridleway well known to riders), then up beside the wall.",
+    "km": 5,
+    "ascent": 550
+   },
+   {
+    "name": "White Shaw Moss",
+    "text": "The shortest way, from the minor road between Dent and Kingsdale.",
+    "km": 4,
+    "ascent": 210
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Great_Coum"
+ },
+ "Swarth Fell": {
+  "photo": "peak-dales-swarth-fell",
+  "credit": "Andy Waddington, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Summit_cairns,_Swarth_Fell_-_geograph.org.uk_-_2165111.jpg",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Summit_cairns%2C_Swarth_Fell_-_geograph.org.uk_-_2165111.jpg?width=500",
+  "about": "A quiet fell on the ridge south of Wild Boar Fell, above the Settle–Carlisle railway's summit at Aisgill.",
+  "routes": [
+   {
+    "name": "Horseshoe from Aisgill",
+    "text": "From the B6259 near Aisgill, up onto the ridge and over both Swarth Fell and Wild Boar Fell.",
+    "km": 4,
+    "ascent": 350
+   },
+   {
+    "name": "Ridge from Wild Boar Fell",
+    "text": "South along the grassy ridge past a line of tarns.",
+    "km": 2.5,
+    "ascent": 80
+   }
+  ],
+  "wiki": "https://en.wikipedia.org/wiki/Swarth_Fell"
+ }
+}

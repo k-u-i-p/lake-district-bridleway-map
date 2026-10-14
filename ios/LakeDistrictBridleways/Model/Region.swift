@@ -97,6 +97,25 @@ nonisolated enum Region: String, CaseIterable, Identifiable, Sendable {
     /// Bundled `network-<id>.json`, produced by `tools/build.sh <id>`.
     var networkResource: String { "network-\(rawValue)" }
 
+    /// Bundled summit cards (photo, description, routes up) for the ten peaks, from `tools/peaks.py`.
+    var peaksResource: String { "peaks-\(rawValue)" }
+
+    /// The network categories a summit card measures the nearest ride from, and what to call them:
+    /// bridleways and byways in England, tracks under Scottish access rights.
+    var rideCategories: [String] {
+        switch self {
+        case .lakeDistrict, .northYorkMoors, .yorkshireDales, .northPennines: ["bridleway", "boat", "restricted", "permissive", "other"]
+        case .cairngorms, .lochLomond: ["track"]
+        }
+    }
+
+    var rideName: String {
+        switch self {
+        case .lakeDistrict, .northYorkMoors, .yorkshireDales, .northPennines: "bridleway or byway"
+        case .cairngorms, .lochLomond: "track"
+        }
+    }
+
     /// Bundled reference loop, if the region has one.
     var routeResource: String? {
         switch self {
